@@ -37,29 +37,22 @@
       "id": "concept-001",
       "domain": "concept-security",
       "type": "single",
-      "q": "NHN Cloud 서비스 릴리스 정책에서 SLA(Service Level Agreement)가 보장되는 릴리스 단계는 무엇인가요?",
-      "options": [
-        "ALPHA",
-        "BETA",
-        "GA",
-        "ALPHA와 BETA 모두 보장된다"
-      ],
-      "answer": [2],
-      "summary": "NHN Cloud 서비스 릴리스 단계 중 SLA가 보장되는 단계를 묻는 문제",
+      "q": "애플리케이션 개발과 운영에 필요한 서버, 운영체제, 네트워크, 스토리지 등을 환경 형태로 제공하는 클라우드 서비스 모델은 무엇인가요?",
+      "options": ["IaaS", "PaaS", "SaaS", "DaaS"],
+      "answer": [1],
+      "summary": "애플리케이션 개발·운영 환경을 제공하는 클라우드 서비스 모델을 묻는 문제",
       "perOption": [
-        "오답. ALPHA는 정식 서비스 출시 전 사용자에게 공개되는 단계로 SLA가 보장되지 않으며, 회사 정책에 따라 중단될 수 있고 기본 기간이 3개월이다.",
-        "오답. BETA 역시 정식 서비스 출시 전 공개 단계로 SLA가 보장되지 않으며, 기본 기간은 3개월이다.",
-        "정답. GA는 정식 서비스로 SLA가 보장되고 서비스가 지속 제공되며 별도 기간 제한이 없다.",
-        "오답. ALPHA·BETA 모두 SLA 보장(X) 단계이므로 SLA가 보장된다는 설명은 가이드 기재와 일치하지 않는다."
+        "오답. IaaS(Infrastructure as a Service)는 CPU, 서버, 스토리지와 같은 IT 인프라 자원을 네트워크를 통해 제공하는 모델이며, 개발 환경 자체는 사용자가 별도로 구성한다.",
+        "정답. PaaS(Platform as a Service)는 서버, 운영체제, 네트워크, 스토리지 등 애플리케이션을 개발하고 운영하는 데 필요한 환경을 제공하는 클라우드 컴퓨팅 형태이다.",
+        "오답. SaaS(Software as a Service)는 완성된 소프트웨어 기능을 인터넷 브라우저 등 클라이언트를 통해 최종 사용자에게 제공하는 형태이다.",
+        "오답. DaaS(Desktop as a Service)는 데스크톱 컴퓨팅 자원을 클라우드에서 구현해 사용자가 네트워크로 접속해 사용하도록 제공하는 형태이다."
       ],
-      "glossary": [],
+      "glossary": [
+        { "term": "PaaS(Platform as a Service)", "definition": "서버, 운영체제, 네트워크, 스토리지 등 애플리케이션을 개발하고 운영하는 데 필요한 환경을 제공하는 클라우드 컴퓨팅 형태", "source": "glossary" },
+        { "term": "IaaS(Infrastructure as a Service)", "definition": "CPU, 서버, 스토리지 등의 IT 인프라 자원을 네트워크를 통해 제공하는 클라우드 컴퓨팅 형태", "source": "glossary" }
+      ],
       "source": [
-        {
-          "type": "user-guide",
-          "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/",
-          "path": "data/source/guide/ko/nhncloud/ko/overview.md",
-          "section": "서비스 릴리스 정책"
-        }
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/", "path": "data/source/guide/ko/nhncloud/ko/overview.md", "section": "NHN Cloud > 개요" }
       ],
       "status": "approved"
     },
@@ -67,31 +60,24 @@
       "id": "concept-002",
       "domain": "concept-security",
       "type": "single",
-      "q": "NHN Cloud에서 IAM(Identity and Access Management) 계정을 신규 생성했을 때 부여되는 기본 역할(Default Role)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "q": "NHN Cloud의 책임 공유 모델에서 사용자(고객)가 책임져야 하는 영역으로 가장 적절한 것은 무엇인가요?",
       "options": [
-        "기본 역할은 ADMIN으로 설정되어 조직의 모든 리소스를 제어할 수 있다.",
-        "기본 역할은 NONE으로 설정되어 조직 대시보드 읽기와 조직 기본 설정 읽기 역할만 수행할 수 있다.",
-        "기본 역할은 BILLING_VIEWER로 설정되어 결제 정보를 조회할 수 있다.",
-        "기본 역할은 MEMBER로 설정되어 프로젝트를 생성할 수 있다."
+        "데이터 센터의 출입 통제와 물리적 보안",
+        "호스트 가상화 하이퍼바이저의 패치 관리",
+        "인스턴스에 설치한 게스트 OS의 보안 업데이트",
+        "리전을 구성하는 네트워크 백본 인프라 운영"
       ],
-      "answer": [1],
-      "summary": "IAM 신규 계정에 부여되는 기본 역할(Default Role)을 묻는 문제",
+      "answer": [2],
+      "summary": "책임 공유 모델에서 사용자(고객) 책임 영역을 묻는 문제",
       "perOption": [
-        "오답. 가이드에는 ADMIN을 기본 역할로 부여한다는 설명이 없으며, 신규 IAM 계정은 관리 권한이 부여되지 않은 상태로 생성된다.",
-        "정답. IAM 계정 생성 시 기본 역할은 NONE(Default Role)으로 설정되며 조직 대시보드 읽기, 조직 기본 설정 읽기 역할만 수행할 수 있다.",
-        "오답. BILLING_VIEWER는 결제 정보 조회 권한을 가진 역할이지만, IAM 계정 생성 시 자동으로 부여되는 기본 역할이 아니라 별도로 부여해야 하는 역할이다.",
-        "오답. MEMBER는 OrgRole 항목에서 선택할 수 있는 역할 중 하나이며, 신규 IAM 계정의 기본 역할로 자동 부여되지 않는다."
+        "오답. 데이터 센터의 물리적 출입 통제와 보안은 NHN Cloud가 운영하는 IDC의 영역으로, 클라우드 서비스 공급자(CSP)의 책임이다.",
+        "오답. 호스트 가상화 하이퍼바이저는 CSP가 제공·운영하는 인프라 계층의 구성 요소이다.",
+        "정답. 인스턴스 내부에 설치된 게스트 OS, 미들웨어, 애플리케이션의 보안 패치·업데이트는 사용자가 직접 관리해야 하는 영역이다.",
+        "오답. 리전과 네트워크 백본 등 클라우드 인프라 자체의 운영은 CSP가 담당한다."
       ],
-      "glossary": [
-        { "term": "IAM(Identity and Access Management)", "definition": "사용자 식별과 권한 기반의 액세스 제어를 통해 조직 내 자원을 관리하는 NHN Cloud 거버넌스 기능.", "source": "guide" }
-      ],
+      "glossary": [],
       "source": [
-        {
-          "type": "user-guide",
-          "url": "https://docs.nhncloud.com/ko/quickstarts/ko/iam-accounts/",
-          "path": "data/source/guide/ko/quickstarts/ko/iam-accounts.md",
-          "section": "IAM 계정 접속을 위한 준비 - 단계 4. IAM 계정 역할 부여 / 알아두기"
-        }
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/", "path": "data/source/guide/ko/nhncloud/ko/overview.md", "section": "NHN Cloud > 개요" }
       ],
       "status": "approved"
     },
@@ -99,29 +85,27 @@
       "id": "concept-003",
       "domain": "concept-security",
       "type": "single",
-      "q": "NHN Cloud의 IAM 콘솔 도메인 이름 설정 규칙에 대한 설명으로 맞는 것은 무엇인가요?",
+      "q": "NHN Cloud의 리전(Region)에 대한 설명으로 맞는 것은 무엇인가요?",
       "options": [
-        "도메인 이름은 한글, 영문자, 숫자를 자유롭게 조합해 사용할 수 있다.",
-        "도메인 이름은 영문자, 숫자, 하이픈만 사용 가능하며 3에서 40자 사이로 입력해야 하고 첫 글자는 영문과 숫자만 사용할 수 있다.",
-        "도메인 이름은 한 번 설정하면 변경할 수 없다.",
-        "도메인 이름이 다른 사용자와 중복되어도 자동으로 접미사가 부여되어 등록된다."
+        "리전은 독립적이고 지리적으로 격리된 서버의 물리적 위치를 의미한다.",
+        "리전은 모든 서비스가 동일하게 제공되며 리전별 과금 정책의 차이는 없다.",
+        "리전 간에는 가용성 차이가 없어 단일 리전에 배포해도 고가용성이 보장된다.",
+        "리전 서비스는 모든 리전에서 동일하게 사용할 수 있는 글로벌 단위의 서비스이다."
       ],
-      "answer": [1],
-      "summary": "IAM 콘솔 도메인 이름 설정 규칙을 묻는 문제",
+      "answer": [0],
+      "summary": "NHN Cloud 리전의 개념을 묻는 문제",
       "perOption": [
-        "오답. 가이드는 도메인 이름에 영문자, 숫자, 하이픈만 사용할 수 있다고 명시하고 있어 한글 사용은 허용되지 않는다.",
-        "정답. 도메인 이름은 영문자·숫자·하이픈만 허용되고 3~40자 사이로 입력하며, 첫 글자는 영문과 숫자만 사용할 수 있다.",
-        "오답. 가이드는 도메인 이름을 설정 후에도 변경 가능하다고 명시하고 있다.",
-        "오답. 중복된 도메인 이름을 입력하면 '중복된 도메인이 존재합니다.'가 출력되며 등록되지 않는다."
+        "정답. 리전은 독립적이고 지리적으로 격리된 서버의 물리적 위치이며, 가용성 영역이라 부르는 독립된 전원·네트워크를 갖춘 데이터 센터로 구성된다.",
+        "오답. 리전별로 제공되는 서비스 종류와 과금 정책은 다를 수 있다.",
+        "오답. 고가용성을 확보하려면 여러 가용성 영역 혹은 복수의 리전에 애플리케이션을 배포해야 한다.",
+        "오답. 모든 리전에서 동일하게 제공되는 것은 글로벌 서비스이며, 리전 서비스는 특정 리전에서만 이용할 수 있다."
       ],
-      "glossary": [],
+      "glossary": [
+        { "term": "리전(region)", "definition": "독립적이고 지리적으로 격리된 서버의 물리적 위치", "source": "glossary" },
+        { "term": "가용성 영역(availability zone, AZ)", "definition": "독립된 전원 및 네트워크를 갖춘 데이터 센터로, 인스턴스가 만들어지는 물리적인 위치", "source": "glossary" }
+      ],
       "source": [
-        {
-          "type": "user-guide",
-          "url": "https://docs.nhncloud.com/ko/quickstarts/ko/iam-accounts/",
-          "path": "data/source/guide/ko/quickstarts/ko/iam-accounts.md",
-          "section": "IAM 계정 접속을 위한 준비 - 단계 1. IAM 콘솔 도메인 주소 설정하기"
-        }
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/region-guide/", "path": "data/source/guide/ko/nhncloud/ko/region-guide.md", "section": "NHN Cloud 리전" }
       ],
       "status": "approved"
     },
@@ -129,69 +113,178 @@
       "id": "concept-004",
       "domain": "concept-security",
       "type": "single",
-      "q": "Quickstarts 보안 설정 가이드의 시나리오 3에서 Network ACL(Access Control List)을 새로 생성한 직후 통신이 차단되는 이유로 맞는 것은 무엇인가요?",
+      "q": "NHN Cloud의 글로벌 서비스에 대한 설명으로 맞는 것은 무엇인가요?",
       "options": [
-        "Network ACL은 생성 시 자동으로 모든 트래픽을 차단하는 규칙만 적용된다.",
-        "Network ACL이 보안 그룹보다 항상 우선 적용되어 보안 그룹 규칙을 무시한다.",
-        "기본으로 존재하는 'default allow rule'(순서 101)을 삭제하면 허용 규칙이 없어져 ACL이 바인딩된 VPC(Virtual Private Cloud)의 통신이 차단된다.",
-        "Network ACL은 인스턴스 단위로만 적용되어 VPC 전체에는 영향을 주지 않는다."
+        "특정 리전에서만 제공되어 리전별 인프라 환경의 제한을 받는 서비스이다.",
+        "리전과 무관하게 모든 사용자에게 동일한 기능·정책·안정성·사용성을 제공한다.",
+        "리전별로 과금 정책이 다르게 적용되는 서비스 분류이다.",
+        "데이터 이중화를 위해 반드시 복수 리전에 직접 배포해야 하는 서비스이다."
       ],
-      "answer": [2],
-      "summary": "Network ACL을 새로 생성한 직후 통신이 차단되는 원인을 묻는 문제",
+      "answer": [1],
+      "summary": "글로벌 서비스의 개념을 묻는 문제",
       "perOption": [
-        "오답. Network ACL은 생성 시 'default allow rule'(순서 101)이 자동으로 추가되므로 차단 규칙만 존재한다는 설명은 사실과 다르다.",
-        "오답. 가이드는 Network ACL이 보안 그룹보다 항상 우선 적용된다거나 보안 그룹 규칙을 무시한다는 설명을 제공하지 않는다.",
-        "정답. 시나리오 3에서 순서 101번에 표시된 'default allow rule'을 삭제하고 ACL을 MyVPC에 바인딩하면 허용 규칙이 사라져 Ping과 HTTP 통신이 모두 차단되는 결과가 나타난다.",
-        "오답. Network ACL은 VPC에 바인딩되어 적용되며, 시나리오 3 자체가 VPC 단위 적용 결과를 보여 준다."
+        "오답. 특정 리전에서만 제공되며 인프라·법률·상품의 제한을 받는 것은 리전 서비스이다.",
+        "정답. 글로벌 서비스는 모든 리전에서 사용할 수 있으며, 모든 사용자에게 동일한 기능·정책·안정성·사용성을 제공한다.",
+        "오답. 리전별 과금 정책 차이는 리전 서비스의 특징에 가깝다.",
+        "오답. 글로벌 서비스는 모든 리전에서 사용 가능하므로, 사용자가 데이터 이중화를 위해 별도의 다중 리전 배포를 수행할 필요가 없는 분류이다."
       ],
-      "glossary": [
-        { "term": "Network ACL(Access Control List)", "definition": "VPC에 바인딩되어 ACL Rule의 허용·차단으로 네트워크 접근을 제어하는 NHN Cloud 네트워크 보안 기능.", "source": "guide" }
-      ],
+      "glossary": [],
       "source": [
-        {
-          "type": "user-guide",
-          "url": "https://docs.nhncloud.com/ko/quickstarts/ko/configure-security/",
-          "path": "data/source/guide/ko/quickstarts/ko/configure-security.md",
-          "section": "시나리오 3. Network ACL 설정으로 특정 네트워크 대역 차단하기"
-        }
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/region-guide/", "path": "data/source/guide/ko/nhncloud/ko/region-guide.md", "section": "NHN Cloud 리전 서비스" }
       ],
       "status": "approved"
     },
     {
       "id": "concept-005",
       "domain": "concept-security",
-      "type": "multi",
-      "q": "다음 중 NHN Cloud Quickstarts 가이드에 명시된 IAM 거버넌스 및 계정 보안 설정에 대한 설명으로 맞는 것을 2개 이상 고르세요.",
-      "options": [
-        "IAM 거버넌스 설정에서 2차 인증 로그인 보안의 인증 수단으로 이메일 또는 휴대폰을 선택할 수 있다.",
-        "IAM 계정의 비밀번호는 영문, 숫자, 특수 문자를 조합하여 8~15자로 입력해야 한다.",
-        "회원 가입 시 안전한 서비스 사용을 위한 2단계 로그인 설정은 강제 활성화되어 사용자가 해제할 수 없다.",
-        "IAM 계정 ID는 한 번 등록한 뒤에는 변경할 수 없다.",
-        "신규 IAM 계정의 비밀번호는 관리자가 '비밀번호설정 메일링' 기능을 통해 등록 이메일로 설정 링크를 발송해 사용자가 직접 설정한다."
-      ],
-      "answer": [0, 1, 4],
-      "summary": "IAM 거버넌스 및 계정 보안 설정에 관한 사실을 가려내는 문제",
+      "type": "single",
+      "q": "NHN Cloud의 서비스 릴리스 정책에서 SLA(Service Level Agreement)가 보장되는 단계는 무엇인가요?",
+      "options": ["ALPHA", "BETA", "GA", "ALPHA와 BETA 모두"],
+      "answer": [2],
+      "summary": "NHN Cloud 서비스 릴리스 단계 중 SLA 보장 단계를 묻는 문제",
       "perOption": [
-        "정답. IAM 거버넌스 설정의 로그인 보안 설정 단계에서 2차 인증 수단으로 '이메일 또는 휴대폰'을 선택해 저장할 수 있다.",
-        "정답. 비밀번호 변경 페이지의 비밀번호 생성 규칙은 영문, 숫자, 특수 문자를 조합하여 8~15자로 입력하도록 명시되어 있다.",
-        "오답. 회원 가입 환영 페이지에서 '2단계 로그인 설정'은 선택 항목이며, 체크박스를 해제한 뒤 확인을 클릭해 비활성화할 수 있다.",
-        "오답. 가이드는 IAM 계정 ID가 고유해야 하지만 '설정 후에도 변경 가능합니다.'라고 명시하고 있다.",
-        "정답. IAM 멤버 목록의 관리 영역에서 '비밀번호설정 메일링'을 클릭하면 등록 이메일로 설정 링크가 발송되고, 사용자는 메일 본문의 '변경하기'를 통해 비밀번호를 직접 저장한다."
+        "오답. ALPHA는 정식 출시 전 사용자에게 공개되는 단계로 SLA가 보장되지 않으며, 회사 정책에 따라 중단될 수 있다.",
+        "오답. BETA는 정식 출시 전 단계로 서비스 지속성은 보장되지만 SLA는 보장되지 않는다.",
+        "정답. GA(General Availability)는 정식 서비스 단계이며 SLA가 보장된다.",
+        "오답. ALPHA·BETA 단계는 모두 SLA 미보장 단계로 분류된다."
       ],
       "glossary": [],
       "source": [
-        {
-          "type": "user-guide",
-          "url": "https://docs.nhncloud.com/ko/quickstarts/ko/iam-accounts/",
-          "path": "data/source/guide/ko/quickstarts/ko/iam-accounts.md",
-          "section": "IAM 계정 접속을 위한 준비 - 단계 2·3·5"
-        },
-        {
-          "type": "user-guide",
-          "url": "https://docs.nhncloud.com/ko/quickstarts/ko/create-account/",
-          "path": "data/source/guide/ko/quickstarts/ko/create-account.md",
-          "section": "NHN Cloud 회원 가입 및 결제 수단 등록 - 단계 1"
-        }
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/", "path": "data/source/guide/ko/nhncloud/ko/overview.md", "section": "서비스 릴리스 정책" }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "concept-006",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud의 조직(Organization)과 프로젝트(Project)의 관계로 맞는 것은 무엇인가요?",
+      "options": [
+        "조직과 프로젝트는 동일한 개념으로 명칭만 다르게 부른다.",
+        "프로젝트는 조직보다 상위 단위로 여러 조직을 묶어 관리한다.",
+        "조직은 NHN Cloud 서비스를 효율적으로 사용·관리하기 위한 그룹이며, 프로젝트는 조직 내에서 서비스 이용을 관리하기 위해 생성하는 하위 그룹이다.",
+        "프로젝트는 조직과 무관하게 결제 수단을 등록한 회원 단위로 생성된다."
+      ],
+      "answer": [2],
+      "summary": "NHN Cloud 조직과 프로젝트의 관계를 묻는 문제",
+      "perOption": [
+        "오답. 조직과 프로젝트는 서로 다른 단위의 그룹 개념이다.",
+        "오답. 조직이 상위 단위이고 프로젝트가 그 안에서 생성되는 하위 단위이다.",
+        "정답. 조직은 NHN Cloud 서비스를 효율적으로 사용·관리하기 위한 그룹이며, 프로젝트는 조직 내에서 일정 단위로 서비스 이용을 관리하기 위해 생성하는 그룹이다.",
+        "오답. 프로젝트는 조직을 기준으로 생성되며, 결제 수단을 등록한 회원 단위로 계산되는 것은 조직이다."
+      ],
+      "glossary": [
+        { "term": "조직(organization)", "definition": "NHN Cloud 서비스를 효율적으로 사용하고 관리하기 위해 생성하는 그룹", "source": "glossary" },
+        { "term": "프로젝트(project)", "definition": "조직 내에서 일정 단위로 서비스 이용을 관리하기 위해 생성하는 그룹", "source": "glossary" }
+      ],
+      "source": [
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/resource-policy/", "path": "data/source/guide/ko/nhncloud/ko/resource-policy.md", "section": "조직/프로젝트 리소스 제공 정책" }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "concept-007",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud 로그인 시 적용할 수 있는 2단계 로그인 보안 설정 방식으로 맞지 않은 것은 무엇인가요?",
+      "options": [
+        "이메일로 인증번호를 받아 인증",
+        "휴대폰으로 인증번호를 받아 인증",
+        "Google OTP 앱을 이용한 인증",
+        "공인인증서 기반 본인 인증"
+      ],
+      "answer": [3],
+      "summary": "2단계 로그인 보안 설정에서 지원하는 인증 수단을 묻는 문제",
+      "perOption": [
+        "오답. 이메일 인증은 2단계 로그인 보안 설정에서 지원하는 방식이다.",
+        "오답. 휴대폰 인증은 2단계 로그인 보안 설정에서 지원하는 방식이다.",
+        "오답. Google OTP 인증은 2단계 로그인 보안 설정에서 지원하는 방식이다.",
+        "정답. 공인인증서 기반 본인 인증은 계좌이체 결제 수단 등록 시 사용되는 인증 방식이며, 로그인 단계의 2단계 인증 수단은 아니다."
+      ],
+      "glossary": [
+        { "term": "2차 인증(two-factor authentication, 2FA)", "definition": "비밀번호 인증 외에 이메일, OTP 등 다른 수단을 이용하여 추가로 인증을 수행하는 방식", "source": "glossary" }
+      ],
+      "source": [
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/user-guide/", "path": "data/source/guide/ko/nhncloud/ko/user-guide.md", "section": "로그인 보안 설정" }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "concept-008",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud가 DRDoS(Distributed Reflect DoS, 분산 반사 서비스 거부 공격) 공격 차단 정책을 적용하는 주된 이유는 무엇인가요?",
+      "options": [
+        "사용자 인스턴스가 외부 공격의 경유지로 악용되는 것을 방지하기 위함",
+        "고객이 직접 설정하는 보안 그룹 기능을 대체하기 위함",
+        "고객 트래픽을 모두 NHN Cloud 콘솔로 우회 처리하기 위함",
+        "사용자 인스턴스의 가용성 영역을 다중화하기 위함"
+      ],
+      "answer": [0],
+      "summary": "NHN Cloud의 DRDoS 차단 정책의 목적을 묻는 문제",
+      "perOption": [
+        "정답. 외부에 노출된 인스턴스가 DRDoS 공격 경유지로 악용되면 아웃바운드 트래픽 급증으로 서비스 장애나 의도하지 않은 트래픽 과금이 발생할 수 있어, 이를 보호하기 위한 정책이다.",
+        "오답. DRDoS 차단 정책은 고객이 직접 관리하는 보안 그룹과 별개로 적용되는 플랫폼 차원의 정책이다.",
+        "오답. 트래픽을 콘솔로 우회시키는 정책이 아니라 특정 취약 포트에 대한 차단 정책이다.",
+        "오답. 가용성 영역 다중화와 DRDoS 차단 정책은 별개의 목적이다."
+      ],
+      "glossary": [],
+      "source": [
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/security-policy/", "path": "data/source/guide/ko/nhncloud/ko/security-policy.md", "section": "DRDoS 공격 차단 정책" }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "concept-009",
+      "domain": "concept-security",
+      "type": "multi",
+      "q": "NHN Cloud의 안전한 비밀번호 설정 원칙으로 권장되는 내용을 모두 고르시오.",
+      "options": [
+        "영문자, 숫자, 특수문자를 조합하여 구성한다.",
+        "사용자 ID와 동일한 문자열을 비밀번호로 사용한다.",
+        "연속적인 문자나 숫자(예: 1234, abcd)를 피한다.",
+        "전화번호, 생일과 같이 추측이 쉬운 정보를 사용한다.",
+        "null 비밀번호(빈 비밀번호) 사용을 허용한다."
+      ],
+      "answer": [0, 2],
+      "summary": "NHN Cloud가 권장하는 안전한 비밀번호 설정 원칙을 묻는 문제",
+      "perOption": [
+        "정답. 영문자, 숫자, 특수문자 세 종류를 조합해 구성하는 것은 NHN Cloud의 비밀번호 정책에 부합한다.",
+        "오답. 사용자 ID와 같은 비밀번호는 추측 공격에 매우 취약하여 금지되는 형태이다.",
+        "정답. 연속적인 문자·숫자는 비밀번호 대입 공격에 취약하므로 사용하지 말아야 할 형태로 명시된다.",
+        "오답. 전화번호, 생일, 계정명 등 추측이 쉬운 정보는 안전한 비밀번호로 부적절하다.",
+        "오답. null 비밀번호는 인증 우회로 이어질 수 있어 허용되지 않는다."
+      ],
+      "glossary": [],
+      "source": [
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/security-policy/", "path": "data/source/guide/ko/nhncloud/ko/security-policy.md", "section": "비밀번호 정책" }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "concept-010",
+      "domain": "concept-security",
+      "type": "multi",
+      "q": "NHN Cloud의 크레딧 운영 정책에 해당하는 내용을 모두 고르시오.",
+      "options": [
+        "크레딧은 현금 1원과 동일한 가치로 사용된다.",
+        "NHN Cloud 이용 금액 발생 시 보유 크레딧이 있으면 자동으로 차감된다.",
+        "크레딧은 환불이 가능하며 잔액을 현금으로 돌려받을 수 있다.",
+        "크레딧은 유효기간을 별도로 관리하지 않으며 만료되지 않는다.",
+        "NHN Cloud 운영 정책에 위배되는 행동을 한 회원은 크레딧을 회수당할 수 있다."
+      ],
+      "answer": [0, 1, 4],
+      "summary": "NHN Cloud 크레딧 운영 정책의 특징을 묻는 문제",
+      "perOption": [
+        "정답. 크레딧은 현금 1원과 동일한 가치로 NHN Cloud 서비스 이용 금액 지불에 사용된다.",
+        "정답. 이용 금액 발생 시 보유 크레딧이 있으면 자동으로 차감되어 결제에 우선 적용된다.",
+        "오답. 크레딧은 환불되지 않는다.",
+        "오답. 크레딧은 유효기간을 관리하며, 유효기간 이후에는 소멸한다.",
+        "정답. 운영 정책 위배 시 회원의 크레딧이 회수될 수 있다."
+      ],
+      "glossary": [],
+      "source": [
+        { "type": "user-guide", "url": "https://docs.nhncloud.com/ko/nhncloud/ko/user-guide/", "path": "data/source/guide/ko/nhncloud/ko/user-guide.md", "section": "크레딧 관리" }
       ],
       "status": "approved"
     }
