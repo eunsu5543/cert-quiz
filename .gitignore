@@ -11,4 +11,9 @@ out/
 !.claude/agents/
 !.claude/agents/**
 
+# Crawled user guide cache (large, regenerable)
+data/source/guide/
+data/source/glossary.preview.json
+data/source/glossary-raw.xlsx
+
 .vercel

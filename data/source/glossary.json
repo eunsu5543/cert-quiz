@@ -1,0 +1,2389 @@
+[
+  {
+    "koTerm": "2차 인증",
+    "enTerm": "two-factor authentication",
+    "abbr": "2FA",
+    "koDef": "비밀번호 인증 외에 이메일, OTP 등 다른 수단을 이용하여 추가로 인증을 수행하는 방식",
+    "enDef": "An authentication methods beyond password authentication, such as email, OTP, or other means."
+  },
+  {
+    "koTerm": "ACL",
+    "enTerm": "access control list",
+    "abbr": "ACL",
+    "koDef": "접근 제어 목록. 네트워크의 유입/유출 트래픽을 제어하는 기능",
+    "enDef": "Access Control List Ability to control incoming and outgoing traffic on your network"
+  },
+  {
+    "koTerm": "ADM",
+    "enTerm": "Amazon Device Messaging",
+    "abbr": "ADM",
+    "koDef": "타사 앱 개발자가 Amazon 장치에 설치된 앱으로 알림 데이터를 보낼 수 있도록 Amazon에서 만든 플랫폼 알림 서비스",
+    "enDef": "A platform notification service created by Amazon to allow third-party app developers to send notification data to apps installed on Amazon devices."
+  },
+  {
+    "koTerm": "API 서버",
+    "enTerm": "API server",
+    "abbr": "",
+    "koDef": "Kubernetes 클러스터의 중심 컴포넌트이며, 사용자와 클러스터의 다른 부분 및 모든 외부 컴포턴트 간의 상호 작용을 가능하게 하는 역할",
+    "enDef": "The central component of a Kubernetes cluster, enabling interactions between users and other parts of the cluster and all external components."
+  },
+  {
+    "koTerm": "APNs",
+    "enTerm": "Apple Push Notification service",
+    "abbr": "APNs",
+    "koDef": "타사 앱 개발자가 Apple 장치에 설치된 앱으로 알림 데이터를 보낼 수 있도록 Apple에서 만든 플랫폼 알림 서비스",
+    "enDef": "Platform notification service created by Apple to allow third-party app developers to send notification data to apps installed on Apple devices."
+  },
+  {
+    "koTerm": "App Security Check",
+    "enTerm": "App Security Check",
+    "abbr": "",
+    "koDef": "애플리케이션에 대한 보안 취약점 검수를 수행하고, 발견된 취약점에 대한 대응 방법을 제공하는 NHN Cloud의 보안 서비스",
+    "enDef": "NHN Cloud's security service that performs security vulnerability scans for your applications and provides countermeasures for vulnerabilities found."
+  },
+  {
+    "koTerm": "Basic Security",
+    "enTerm": "Basic Security",
+    "abbr": "",
+    "koDef": "NHN Cloud 한국 리전을 이용하는 모든 고객에게 제공하는 무료 보안 서비스",
+    "enDef": "A free security service available for every customer using the NHN Cloud Korea region"
+  },
+  {
+    "koTerm": "CC인증",
+    "enTerm": "Common Criteria Certification",
+    "abbr": "",
+    "koDef": "정보보호 제품의 보안 기능과 신뢰성을 국제 공통 평가 기준인 Common Criteria(CC, ISO/IEC 15408)에 따라 검증·평가하는 인증 제도",
+    "enDef": "A certification system that verifies and evaluates the security functions and reliability of information security products based on the Common Criteria (CC, ISO/IEC 15408), an internationally recognized evaluation standard"
+  },
+  {
+    "koTerm": "CDN",
+    "enTerm": "CDN",
+    "abbr": "CDN",
+    "koDef": "대용량 콘텐츠를 많은 사용자에게 빠르고 안정적으로 전송할 수 있는 NHN Cloud의 콘텐츠 전송 네트워크 서비스",
+    "enDef": "NHN Cloud's content delivery network service for fast and reliable delivery of large amounts of content to many users"
+  },
+  {
+    "koTerm": "cgroups",
+    "enTerm": "cgroups",
+    "abbr": "",
+    "koDef": "컨트롤 그룹(control groups)의 약자로 리소스를 그룹화하고 제한하는 기능을 제공하는 Linux 커널 기술",
+    "enDef": "Short for control groups, a Linux kernel technology that provides the ability to group and limit resources."
+  },
+  {
+    "koTerm": "CIDR",
+    "enTerm": "Classless Inter-Domain Routing",
+    "abbr": "CIDR",
+    "koDef": "클래스 없는 도메인 간 라우팅 기법이자, IP 주소를 효율적으로 사용하기 위한 IP 주소 할당 방법. '사이더' 또는 'CIDR[씨아이디알]'로 읽음",
+    "enDef": "A classless inter-domain routing technique and method of IP address allocation for efficient use of IP addresses. Read as 'sider' or 'CIDR'."
+  },
+  {
+    "koTerm": "CIDR 표기법",
+    "enTerm": "CIDR notation",
+    "abbr": "",
+    "koDef": "IP 주소와 네트워크 마스크를 슬래시로 연결하는 축약 표기법(예: 198.51.100.14/24). 여기서 네트워크 마스크는 서브넷 마스크의 상위 1-bit의 개수를 의미함",
+    "enDef": "Abbreviated notation that connects the IP address and network mask with a slash (for example: 198.51.100.14/24). Here, the network mask refers to the number of high order 1-bit in the subnet mask"
+  },
+  {
+    "koTerm": "Cloud Access",
+    "enTerm": "Cloud Access",
+    "abbr": "",
+    "koDef": "제로 트러스트 보안 모델을 기반으로 NHN Cloud 리소스에 안전하게 접속할 수 있도록 지원하는 서비스",
+    "enDef": "A service that enables you to safely access NHN Cloud resources based on a zero-trust security model"
+  },
+  {
+    "koTerm": "Cloud Scheduler",
+    "enTerm": "Cloud Scheduler",
+    "abbr": "",
+    "koDef": "클라우드에서 수행되는 다양한 작업을 원하는 일정에 따라 실행할 수 있도록 설정할 수 있는 NHN Cloud 서비스",
+    "enDef": "NHN Cloud services that allow you to set up various tasks performed in the cloud to run on your own schedule."
+  },
+  {
+    "koTerm": "CSAP",
+    "enTerm": "CSAP",
+    "abbr": "",
+    "koDef": "공공기관에 클라우드 서비스를 제공하려는 사업자를 대상으로 클라우드 서비스의 정보보호 수준과 안전성을 검증·인증하는 제도",
+    "enDef": "A system to verify and certify the level of information protection and safety of cloud services for business operators intending to provide cloud services to public institutions"
+  },
+  {
+    "koTerm": "cURL",
+    "enTerm": "client URL",
+    "abbr": "cURL",
+    "koDef": "다양한 통신 프로토콜을 이용해 서버와 데이터를 주고받기 위한 명령줄 도구",
+    "enDef": "A command-line tool for sending and receiving data to and from the server using various communication protocols."
+  },
+  {
+    "koTerm": "DaaS",
+    "enTerm": "Desktop as a Service",
+    "abbr": "DaaS",
+    "koDef": "클라우드 서버에 데스크톱 컴퓨팅 자원을 구현하여 사용자가 언제 어디서나 네트워크를 통해 접속할 수 있도록 제공하는 클라우드 컴퓨팅 형태",
+    "enDef": "A form of cloud computing that implements desktop computing resources on cloud servers and makes them accessible to users over a network anytime, anywhere."
+  },
+  {
+    "koTerm": "Data Transporter",
+    "enTerm": "Data Transporter",
+    "abbr": "",
+    "koDef": "고객의 환경에 맞는 다양한 방법을 제공하여 고객의 데이터를 외부 클라우드로 이전하거나, 외부 클라우드의 데이터를 NHN Cloud로 안전하게 이전할 수 있도록 지원하는 NHN Cloud의 서비스",
+    "enDef": "NHN Cloud's services that help you move your data to an external cloud or securely transfer data from an external cloud to NHN Cloud by providing a variety of ways to fit your environment."
+  },
+  {
+    "koTerm": "DB 인스턴스",
+    "enTerm": "DB instance",
+    "abbr": "",
+    "koDef": "RDS 서비스에서 제공하는 관계형 데이터베이스의 단위로, 가상 장비와 설치된 관계형 데이터베이스를 아우르는 개념",
+    "enDef": "A unit of relational database provided by the RDS service, encompassing virtual machines and installed relational databases."
+  },
+  {
+    "koTerm": "DBMS",
+    "enTerm": "database management system",
+    "abbr": "DBMS",
+    "koDef": "데이터베이스에 저장된 데이터를 보다 체계적으로 공유하고 관리할 수 있는 환경을 제공하는 응용 소프트웨어 프로그램",
+    "enDef": "An application software program that provides a more structured environment for sharing and managing data stored in a database."
+  },
+  {
+    "koTerm": "DDoS Guard",
+    "enTerm": "DDoS Guard",
+    "abbr": "",
+    "koDef": "외부로부터의 DDoS 공격을 신속하게 탐지하고 차단하는 보안 서비스",
+    "enDef": "A security service that quickly detects and blocks DDoS attacks from outside"
+  },
+  {
+    "koTerm": "DHCP",
+    "enTerm": "dynamic host configuration protocol",
+    "abbr": "DHCP",
+    "koDef": "TCP/IP 통신을 위해 필요한 설정을 중앙에서 자동으로 할당하고 관리하기 위한 통신 규약",
+    "enDef": "A communication protocol to centrally and automatically assign and manage settings required for TCP/IP communication"
+  },
+  {
+    "koTerm": "Direct Connect",
+    "enTerm": "Direct Connect",
+    "abbr": "",
+    "koDef": "온프레미스 환경과 클라우드 서비스 간의 전용 회선을 통해 빠르고 안전하게 데이터를 전송할 수 있는 NHN Cloud 서비스",
+    "enDef": "NHN Cloud service that allows you to transfer data quickly and securely through a dedicated line between your on-premises environment and cloud services."
+  },
+  {
+    "koTerm": "DMZ",
+    "enTerm": "demilitarized zone",
+    "abbr": "DMZ",
+    "koDef": "조직의 내·외부 네트워크 구간 사이에 위치한 물리적 또는 논리적 서브넷. 일반적으로 공개된 서비스를 제공하는 웹 서버 등이 위치하는 네트워크 영역",
+    "enDef": "A physical or logical subnet located between an organization's internal and external network segments. A network area where web servers, etc. that provide publicly available services are generally located."
+  },
+  {
+    "koTerm": "DNS",
+    "enTerm": "domain name system",
+    "abbr": "DNS",
+    "koDef": "호스트의 도메인 이름을 컴퓨터가 읽을 수 있는 IP 주소로 변환하는 시스템",
+    "enDef": "A system that translates a host's domain name into a computer-readable IP address."
+  },
+  {
+    "koTerm": "DNS Plus",
+    "enTerm": "DNS Plus",
+    "abbr": "",
+    "koDef": "별도의 솔루션이나 서버를 설치하지 않고, 웹 콘솔에서 DNS를 제공할 수 있는 NHN Cloud의 DNS 서비스",
+    "enDef": "NHN Cloud's DNS service, which allows you to provide DNS from the web console without installing a separate solution or server."
+  },
+  {
+    "koTerm": "DNS Zone",
+    "enTerm": "DNS Zone",
+    "abbr": "",
+    "koDef": "DNS가 서비스하는 호스트의 도메인 영역",
+    "enDef": "Domain area of the host that DNS serves"
+  },
+  {
+    "koTerm": "Docker",
+    "enTerm": "Docker",
+    "abbr": "",
+    "koDef": "가상화된 애플리케이션 컨테이너들을 생성, 배포, 관리하기 위한 오픈소스 소프트웨어 플랫폼",
+    "enDef": "An open-source software platform for creating, deploying, and managing virtualized application containers"
+  },
+  {
+    "koTerm": "Docker 레지스트리",
+    "enTerm": "Docker registy",
+    "abbr": "",
+    "koDef": "컨테이너 이미지를 저장하고 공유하는 데 사용되는 저장소",
+    "enDef": "A repository used to store and share container images"
+  },
+  {
+    "koTerm": "Dockerfile",
+    "enTerm": "Dockerfile",
+    "abbr": "",
+    "koDef": "컨테이너 이미지를 빌드하기 위한 텍스트 기반 스크립트 파일",
+    "enDef": "Text-based script file for building container images"
+  },
+  {
+    "koTerm": "GS인증",
+    "enTerm": "Good Software Certification",
+    "abbr": "",
+    "koDef": "소프트웨어의 품질을 국가 표준에 따라 평가·검증하는 인증 제도로, 기능 적합성, 성능, 신뢰성, 사용성 등 전반적인 소프트웨어 품질을 확인하는 제도",
+    "enDef": "A certification system that evaluates and verifies software quality according to national standards. This system assesses overall software quality, including functional suitability, performance, reliability, and usability"
+  },
+  {
+    "koTerm": "EasyCache",
+    "enTerm": "EasyCache",
+    "abbr": "",
+    "koDef": "클라우드에서 고가용성의 인메모리 데이터스토어 환경 또는 인메모리 캐시 환경을 간단하게 설정하고 관리할 수 있는 NHN Cloud 서비스",
+    "enDef": "NHN Cloud service that allows you to easily set up and manage a highly available in-memory datastore environment or in-memory cache environment in the cloud."
+  },
+  {
+    "koTerm": "Ephemeral Storage Instance",
+    "enTerm": "Ephemeral Storage Instance",
+    "abbr": "",
+    "koDef": "인스턴스의 루트 볼륨을 로컬 스토리지로 제공하여 저렴한 비용으로 이용할 수 있는 NHN Cloud의 인스턴스 서비스",
+    "enDef": "NHN Cloud's Instance service, a low-cost service that provides the root volume of an instance as local storage."
+  },
+  {
+    "koTerm": "FCM",
+    "enTerm": "Firebase Cloud Messaging",
+    "abbr": "FCM",
+    "koDef": "Android, iOS 및 웹 애플리케이션용 메시지 및 알림을 위한 크로스 플랫폼 클라우드 솔루션",
+    "enDef": "Cross-platform cloud solution for messaging and notifications for Android, iOS, and web applications"
+  },
+  {
+    "koTerm": "GPU instance",
+    "enTerm": "GPU instance",
+    "abbr": "",
+    "koDef": "인스턴스에 GPU(graphics processing unit)가 추가로 구성된 가상 서버",
+    "enDef": "Virtual server with an additional GPU (graphics processing unit) configured on the instance"
+  },
+  {
+    "koTerm": "GSLB 도메인",
+    "enTerm": "GSLB domain",
+    "abbr": "",
+    "koDef": "Global Server Load Balancing 도메인의 약어로, DNS Plus에서 생성한 서비스 도메인(레코드 세트)에 CNAME을 매핑해 사용할 수 있는 도메인",
+    "enDef": "An abbreviation of Global Server Load Balancing domain. It is a domain that can be used by mapping the CNAME to the service domain (record set) created by DNS Plus"
+  },
+  {
+    "koTerm": "IaaS",
+    "enTerm": "Infrastructure as a Service",
+    "abbr": "IaaS",
+    "koDef": "CPU, 서버, 스토리지 등의 IT 인프라 자원을 네트워크를 통해 제공하는 클라우드 컴퓨팅 형태",
+    "enDef": "A form of cloud computing that delivers IT infrastructure resources such as CPUs, servers, and storage, etc. over a network."
+  },
+  {
+    "koTerm": "IAM 계정",
+    "enTerm": "IAM account",
+    "abbr": "",
+    "koDef": "조직 내에서만 유효한 계정으로, 소속된 조직이 삭제되면 삭제됨",
+    "enDef": "An account that is only valid within an organization and will be deleted if the organization it belongs to is deleted."
+  },
+  {
+    "koTerm": "IAM 콘솔",
+    "enTerm": "IAM console",
+    "abbr": "",
+    "koDef": "IAM 계정 멤버가 소속 조직에 허용된 서비스를 이용할 수 있는 콘솔. 조직 도메인에 따라 URL이 달라짐",
+    "enDef": "A console where IAM account members can access services that are allowed for their organization. URLs vary based on your organization's domain"
+  },
+  {
+    "koTerm": "IdP",
+    "enTerm": "identity provider",
+    "abbr": "IdP",
+    "koDef": "사용자 식별 정보를 생성, 유지 및 관리하고 인증 서비스를 제공하는 시스템",
+    "enDef": "Systems that create, maintain, and manage user identifiers and provide authentication services."
+  },
+  {
+    "koTerm": "Image Builder",
+    "enTerm": "Image Builder",
+    "abbr": "",
+    "koDef": "원하는 애플리케이션이 미리 설치된 개인 이미지를 생성할 수 있는 NHN Cloud의 서비스. 사용자가 직접 인스턴스로부터 이미지를 생성하는 기능을 자동화하여 이미지를 생성할 때 발생할 수 있는 사용자 리소스나 오류를 최소화할 수 있음",
+    "enDef": "A service from NHN Cloud that allows you to create a personalized image with your favorite applications pre-installed. Automating the process of generating images directly from instances helps minimize the resources and errors users might encounter during image creation."
+  },
+  {
+    "koTerm": "IPSec VPN",
+    "enTerm": "IPSec VPN",
+    "abbr": "",
+    "koDef": "IP 계층(L3)에서 데이터 패킷을 암호화하여 네트워크 간 통신을 안전하게 연결하는 가상 사설망 기술",
+    "enDef": "Virtual private network technology effectively secures communication between networks by encrypting data packets at the IP layer (L3)"
+  },
+  {
+    "koTerm": "IP 대역",
+    "enTerm": "CIDR block",
+    "abbr": "",
+    "koDef": "CIDR 표기법으로 지정된 IP 주소 블록",
+    "enDef": "Block of IP addresses specified in CIDR notation"
+  },
+  {
+    "koTerm": "Kubernetes",
+    "enTerm": "Kubernetes",
+    "abbr": "K8s",
+    "koDef": "컨테이너화된 애플리케이션을 배포, 관리 및 크기 조정하기 위한 오픈 소스 오케스트레이션 플랫폼. Google이 2014년 오픈소스화했으며 K와 S 사이에 있는 8자를 줄여 K8s라고도 표기",
+    "enDef": "An open-source orchestration platform for deploying, managing, and scaling containerized applications. Originally open-sourced by Google in 2014, it is also known as K8s, with the eight letters between 'K' and 'S' abbreviated."
+  },
+  {
+    "koTerm": "Kubernetes 클러스터",
+    "enTerm": "Kubernetes cluster",
+    "abbr": "",
+    "koDef": "노드의 집합. 노드는 마스터와 연결되어 동작하므로 Kubernetes 클러스터는 마스터와 노드로 구성됨. 모든 클러스터는 한 개 이상의 노드를 가지며, Kubernetes가 제공하는 기능은 클러스터 단위로 동작하고 설정할 수 있음",
+    "enDef": "A set of nodes. A Kubernetes cluster consists of a master and nodes, as nodes operate in conjunction with the master. Every cluster has one or more nodes, and the features provided by Kubernetes can be operated and configured on a per-cluster basis"
+  },
+  {
+    "koTerm": "NAS",
+    "enTerm": "network-attached storage",
+    "abbr": "NAS",
+    "koDef": "네트워크에 연결된 파일 수준 데이터 스토리지로, 이기종 클라이언트가 데이터에 접근할 수 있음",
+    "enDef": "A file-level data storage system connected to a network, providing data access to heterogeneous clients."
+  },
+  {
+    "koTerm": "NAT",
+    "enTerm": "network address translation",
+    "abbr": "NAT",
+    "koDef": "사설 네트워크의 개별 주소를 공인 IP 주소로 변환하는 기술. 주로 사설 네트워크에 속한 다수의 호스트가 하나의 공인 IP 주소를 사용하여 인터넷에 접근하기 위해 사용함",
+    "enDef": "A technique for converting individual addresses on a private network into public IP addresses. Primarily utilized to enable multiple hosts within a private network to access the internet by sharing a single public IP address."
+  },
+  {
+    "koTerm": "NAT Instance",
+    "enTerm": "NAT Instance",
+    "abbr": "",
+    "koDef": "프라이빗 네트워크의 인스턴스가 인터넷에 액세스할 수 있게 해 주는 NHN Cloud 서비스. NAT Instance를 통해 특정 목적지 IP 주소 대역에 접근하거나 다른 인스턴스에 접속할 수 있음",
+    "enDef": "An NHN Cloud service that allows instances on a private network to access the Internet. NAT Instances can be used to access specific destination IP address bands or to connect to other instances"
+  },
+  {
+    "koTerm": "NAT gateway",
+    "enTerm": "NAT gateway",
+    "abbr": "",
+    "koDef": "인터넷 게이트웨이가 연결되지 않은 인스턴스들이 인터넷에 액세스할 수 있게 IP 주소를 플로팅 IP로 변환해 주는 서비스",
+    "enDef": "A service that converts an IP address to a floating IP so that instances without an Internet gateway can access the Internet."
+  },
+  {
+    "koTerm": "NCC",
+    "enTerm": "NHN Cloud Center",
+    "abbr": "NCC",
+    "koDef": "NHN Cloud의 자체 기술력으로 경기도 판교에 설계·구축한 도심형 데이터 센터",
+    "enDef": "Urban data center designed and built in Pangyo, Gyeonggi-do with NHN Cloud's in-house technology"
+  },
+  {
+    "koTerm": "Network ACL",
+    "enTerm": "Network ACL",
+    "abbr": "",
+    "koDef": "네트워크 트래픽을 통제하고 보안을 강화하기 위해 제공하는 NHN Cloud 서비스로, 네트워크로 유입되는 트래픽을 규칙에 따라 허용하거나 차단하는 접근 제어 목록",
+    "enDef": "An NHN Cloud service provided to control network traffic and enhance security. An access control list that allows or blocks traffic entering the network based on rules"
+  },
+  {
+    "koTerm": "Network Firewall",
+    "enTerm": "Network Firewall",
+    "abbr": "",
+    "koDef": "NHN Cloud에서 사용하는 인프라 자산을 안전하게 보호하기 위해 사용하는 네트워크 방화벽 서비스",
+    "enDef": "Network firewall service used to secure infrastructure assets used by NHN Cloud"
+  },
+  {
+    "koTerm": "NHN AppGuard",
+    "enTerm": "NHN AppGuard",
+    "abbr": "",
+    "koDef": "모바일에서 보안 위협을 탐지하여 여러 가지 보안 사고를 사전에 예방하는 NHN Cloud의 모바일 앱 보호 서비스",
+    "enDef": "NHN Cloud's mobile app protection service that detects security threats on mobile and prevents various security incidents in advance"
+  },
+  {
+    "koTerm": "NHN Bastion",
+    "enTerm": "NHN Bastion",
+    "abbr": "",
+    "koDef": "인스턴스에 안전하게 접근할 수 있도록 사용자의 인증 및 접근 권한을 관리하고, 명령어 통제를 통해 장애를 예방하는 서버 접근 제어 서비스",
+    "enDef": "A server access control service that manages user authentication and access rights, ensuring safe access to instances and preventing failures through command control"
+  },
+  {
+    "koTerm": "NHN Cloud 계정",
+    "enTerm": "NHN Cloud account",
+    "abbr": "",
+    "koDef": "NHN Cloud 이용 약관에 동의한 회원으로, 소속된 조직이 삭제되어도 유지됨",
+    "enDef": "A member who has agreed to the NHN Cloud Terms of Service and will be retained even if their organization is deleted."
+  },
+  {
+    "koTerm": "NHN Cloud 콘솔",
+    "enTerm": "NHN Cloud console",
+    "abbr": "",
+    "koDef": "NHN Cloud 회원이 NHN Cloud 서비스를 이용할 수 있는 콘솔",
+    "enDef": "Console for NHN Cloud members to use NHN Cloud services"
+  },
+  {
+    "koTerm": "NHN Cloud Private Station",
+    "enTerm": "NHN Cloud Private Station",
+    "abbr": "",
+    "koDef": "프라이빗 클라우드와 퍼블릭 클라우드의 장점을 결합한 고객사 전용 관리형 프라이빗 클라우드 서비스",
+    "enDef": "A dedicated managed private cloud service that integrates the benefits of both private and public clouds, tailored for individual customers."
+  },
+  {
+    "koTerm": "OIDC",
+    "enTerm": "openID connect",
+    "abbr": "OIDC",
+    "koDef": "OAuth 2.0 프레임워크를 기반으로 한 상호 운용 가능한 인증 프로토콜",
+    "enDef": "Interoperable authentication protocol based on the OAuth 2.0 framework"
+  },
+  {
+    "koTerm": "OWASP",
+    "enTerm": "OWASP",
+    "abbr": "",
+    "koDef": "웹 애플리케이션 보안 향상을 목표로 하는 비영리 오픈 커뮤니티로, 애플리케이션 보안 위협과 취약점에 대한 가이드라인, 도구, 표준 정보를 제공",
+    "enDef": "A non-profit open community dedicated to enhancing web application security by providing guidelines, tools, and information on application security threats and vulnerabilities"
+  },
+  {
+    "koTerm": "PaaS",
+    "enTerm": "Platform as a Service",
+    "abbr": "PaaS",
+    "koDef": "서버, 운영체제, 네트워크, 스토리지 등 애플리케이션을 개발하고 운영하는 데 필요한 환경을 제공하는 클라우드 컴퓨팅 형태",
+    "enDef": "A form of cloud computing that provides the environment needed to develop and run applications, including servers, operating systems, networks, storage, etc."
+  },
+  {
+    "koTerm": "PCI-DSS",
+    "enTerm": "PCI-DSS",
+    "abbr": "",
+    "koDef": "신용카드 정보를 저장·처리·전송하는 모든 조직을 대상으로 하는 국제 결제 카드 보안 표준으로, 카드 정보 보호를 위한 기술적·관리적 보안 요구 사항을 규정",
+    "enDef": "An international payment card security standard designed for organizations that store, process, and transmit credit card information, specifying technical and managerial security requirements to protect this card information"
+  },
+  {
+    "koTerm": "Pool",
+    "enTerm": "pool",
+    "abbr": "",
+    "koDef": "엔드포인트를 그룹핑하는 요소이며, 라우팅 규칙이 적용되는 최소 단위",
+    "enDef": "The element that groups endpoints together; the smallest unit to which a routing rule applies."
+  },
+  {
+    "koTerm": "Private DNS",
+    "enTerm": "Private DNS",
+    "abbr": "",
+    "koDef": "VPC별로 독립된 DNS를 구성할 수 있는 NHN Cloud의 DNS 서비스",
+    "enDef": "NHN Cloud's DNS service that allows you to configure independent DNS per VPC"
+  },
+  {
+    "koTerm": "RDS",
+    "enTerm": "Relational Database Service",
+    "abbr": "RDS",
+    "koDef": "클라우드 환경에서 관계형 데이터베이스(relational database)를 제공하는 서비스",
+    "enDef": "Services that provide relational databases in a cloud environment"
+  },
+  {
+    "koTerm": "SaaS",
+    "enTerm": "Software as a Service",
+    "abbr": "SaaS",
+    "koDef": "소프트웨어의 기능을 인터넷 브라우저 등의 클라이언트를 통해 최종 사용자에게 제공하는 클라우드 컴퓨팅 형태",
+    "enDef": "A form of cloud computing that delivers the functionality of software to end users through a client, such as an Internet browser."
+  },
+  {
+    "koTerm": "Security Advisor",
+    "enTerm": "Security Advisor",
+    "abbr": "",
+    "koDef": "클라우드 환경의 보안 상태를 점검하고, 보안 설정 권장 가이드를 제공하는 서비스",
+    "enDef": "A service that evaluates the security status of a cloud environment and offers recommended guides for security settings"
+  },
+  {
+    "koTerm": "Security Compliance",
+    "enTerm": "Security Compliance",
+    "abbr": "",
+    "koDef": "효과적인 정보보호 인증 및 컴플라이언스 대응을 위한 보안 인증서와 상세한 가이드를 제공하는 서비스",
+    "enDef": "A service that offers security certificates and guidance for effective information protection and compliance responses"
+  },
+  {
+    "koTerm": "Security Monitoring",
+    "enTerm": "Security Monitoring",
+    "abbr": "",
+    "koDef": "검증된 IDS/SIEM 패턴 및 위협 관리 대응 체계를 기반으로 제공하는 보안 관제 서비스",
+    "enDef": "A security control service based on verified IDS/SIEM patterns and threat management response systems"
+  },
+  {
+    "koTerm": "Server Security Check",
+    "enTerm": "Server Security Check",
+    "abbr": "",
+    "koDef": "시스템의 보안 취약점을 점검하고 발견된 취약점에 대한 대응 방법을 제공하는 NHN Cloud의 보안 서비스",
+    "enDef": "NHN Cloud's security service that checks your system for security vulnerabilities and provides countermeasures for vulnerabilities found."
+  },
+  {
+    "koTerm": "SIEM",
+    "enTerm": "SIEM",
+    "abbr": "",
+    "koDef": "기업 내 IT/보안 시스템에서 발생하는 다양한 로그와 이벤트를 중앙에서 통합 수집·분석하여 위협을 탐지하는 통합 보안 관리 솔루션",
+    "enDef": "An integrated security management solution that identifies threats by centrally collecting and analyzing various logs and events from IT and security systems within a company"
+  },
+  {
+    "koTerm": "SSL VPN",
+    "enTerm": "SSL VPN",
+    "abbr": "",
+    "koDef": "SSL/TLS 암호화 기술을 이용해 사용자 단말과 내부 시스템 간 접근을 안전하게 제공하는 기술",
+    "enDef": "A technology that securely provides access between user terminals and internal systems using SSL/TLS encryption technology"
+  },
+  {
+    "koTerm": "STT",
+    "enTerm": "speech to text",
+    "abbr": "STT",
+    "koDef": "음성을 인식하여 문자로 변환하는 기술",
+    "enDef": "Technology that recognizes speech and converts it to text"
+  },
+  {
+    "koTerm": "Traffic Mirroring",
+    "enTerm": "Traffic Mirroring",
+    "abbr": "",
+    "koDef": "VPC의 네트워크 트래픽을 캡처하여 원하는 감지 도구로 라우팅할 수 있는 NHN Cloud 서비스",
+    "enDef": "NHN Cloud services that can capture network traffic from VPCs and route it to the detection tool of your choice"
+  },
+  {
+    "koTerm": "TTS",
+    "enTerm": "text to speech",
+    "abbr": "TTS",
+    "koDef": "문자를 인식하여 자연스러운 음성으로 합성하는 기술",
+    "enDef": "Technology that recognizes text and synthesizes it into natural speech"
+  },
+  {
+    "koTerm": "vCPU",
+    "enTerm": "vCPU",
+    "abbr": "",
+    "koDef": "가상 중앙 처리 장치. 물리적 CPU의 코어를 논리적으로 분할하여 가상 머신에 할당함",
+    "enDef": "Virtual central processing unit. The logical partitioning of physical CPU cores for allocation to virtual machines"
+  },
+  {
+    "koTerm": "Vaccine",
+    "enTerm": "Vaccine",
+    "abbr": "",
+    "koDef": "최신 악성코드로부터 서버를 실시간으로 보호하고, 강력한 탐지와 신속한 대응으로 중요한 데이터를 안전하게 보호하는 서비스",
+    "enDef": "A service that provides real-time protection against the latest malware and ensures the safe safeguarding of important data through effective detection and rapid response"
+  },
+  {
+    "koTerm": "Virtual Desktop",
+    "enTerm": "Virtual Desktop",
+    "abbr": "",
+    "koDef": "시간, 장소, 기기에 상관없이 언제 어디서나 개인의 업무 환경에서 접속할 수 있는 NHN Cloud의 클라우드 컴퓨팅 기반 가상 데스크톱 서비스",
+    "enDef": "NHN Cloud's cloud computing-based virtual desktop service that allows you to access your personal work environment anytime, anywhere, on any device, regardless of time, location, or device."
+  },
+  {
+    "koTerm": "VPC",
+    "enTerm": "virtual private cloud",
+    "abbr": "VPC",
+    "koDef": "가상 사설 클라우드. 논리적으로 분리된 가상의 네트워크",
+    "enDef": "Virtual private cloud. Logically separated virtual networks"
+  },
+  {
+    "koTerm": "VPN gateway",
+    "enTerm": "VPN gateway",
+    "abbr": "",
+    "koDef": "VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 할 수 있게 해 주는 서비스",
+    "enDef": "A service provides the capability to establish an encrypted network connection between a VPC and a customer's on-premises network."
+  },
+  {
+    "koTerm": "WEB Firewall",
+    "enTerm": "WEB Firewall",
+    "abbr": "",
+    "koDef": "클라우드의 고객 영역에 웹 방화벽을 구성하여 다양한 웹 공격으로부터 고객의 자산을 안전하게 보호하는 서비스",
+    "enDef": "A service that effectively safeguards customer assets against various web attacks by configuring a web firewall in the customer's cloud area"
+  },
+  {
+    "koTerm": "Webshell Threat Detector",
+    "enTerm": "Webshell Threat Detector",
+    "abbr": "",
+    "koDef": "시스템에 존재하는 웹 셸을 점검하고 발견된 웹 셸에 대한 대응 방법을 제공하는 서비스",
+    "enDef": "A service that scans for web shells in the system and offers response methods for any discovered web shells"
+  },
+  {
+    "koTerm": "WORM",
+    "enTerm": "write once read many",
+    "abbr": "WORM",
+    "koDef": "한번 기록한 정보를 수정할 수 없는 저장 방식. 사람 및 시스템 오류 등에 의해 중요한 데이터가 삭제되거나 변조될 위험을 제거하여 무결성을 보장",
+    "enDef": "A storage method that doesn't allow you to modify information once it's recorded. Ensure integrity by eliminating the risk of sensitive data being deleted or tampered with by human and system error"
+  },
+  {
+    "koTerm": "가상 네트워크",
+    "enTerm": "virtual network",
+    "abbr": "VN",
+    "koDef": "물리적 네트워크 자원의 논리적 구현",
+    "enDef": "Logical implementation of physical network resources"
+  },
+  {
+    "koTerm": "가상 데스크톱 인프라",
+    "enTerm": "virtual desktop infrastructure",
+    "abbr": "VDI",
+    "koDef": "원격 작업자가 기존의 데스크톱 워크로드를 실행하는 중앙 집중식 서버에 접속하여 어디서나 안정적이고 일관되게 작업할 수 있도록 가상 데스크톱 환경을 제공하는 기술",
+    "enDef": "A technology that provides a virtual desktop environment that allows remote workers to connect to a centralized server running traditional desktop workloads and work reliably and consistently from anywhere."
+  },
+  {
+    "koTerm": "가상 머신",
+    "enTerm": "virtual machine",
+    "abbr": "VM",
+    "koDef": "물리적 컴퓨팅 환경의 논리적 구현. 운영체제나 응용 프로그램을 설치하고 실행할 수 있으며, 하나의 컴퓨터를 동시에 여러 명의 사용자가 분할하여 사용할 수 있음",
+    "enDef": "The logical implementation of the physical computing environment. You can install and run any operating system or application, and one computer can be partitioned and used by multiple users at the same time"
+  },
+  {
+    "koTerm": "가상화",
+    "enTerm": "virtualization",
+    "abbr": "",
+    "koDef": "서버, 스토리지, 메모리와 같은 물리적 IT 자원을 효율적으로 활용할 수 있도록 디지털 형식으로 추상화하는 기술 또는 프로세스",
+    "enDef": "The technology or process of abstracting physical IT resources, such as servers, storage, and memory, into a digital format so that they can be utilized efficiently."
+  },
+  {
+    "koTerm": "가용성",
+    "enTerm": "availability",
+    "abbr": "",
+    "koDef": "시스템이 정상적으로 사용 가능한 정도. 수식화하면 (정상적인 사용 시간 / 전체 사용 시간)",
+    "enDef": "The extent to which the system is normally available. If you formulate it as (Normal Usage Time / Total Usage Time)"
+  },
+  {
+    "koTerm": "가용성 영역",
+    "enTerm": "availability zone",
+    "abbr": "AZ",
+    "koDef": "독립된 전원 및 네트워크를 갖춘 데이터 센터로, 인스턴스가 만들어지는 물리적인 위치",
+    "enDef": "A data center with independent power and network, the physical location where instances are created."
+  },
+  {
+    "koTerm": "감시 설정",
+    "enTerm": "monitoring setting",
+    "abbr": "",
+    "koDef": "System Monitoring 서비스에서 각 지표 임계치의 상세 설정",
+    "enDef": "Detailed settings for each metric threshold in the System Monitoring service"
+  },
+  {
+    "koTerm": "감축",
+    "enTerm": "scale-in",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 구동 인스턴스 수를 줄이는 것",
+    "enDef": "Reducing the number of running instances in the Auto Scale service"
+  },
+  {
+    "koTerm": "개인 이미지",
+    "enTerm": "private image",
+    "abbr": "",
+    "koDef": "공용 이미지를 토대로 사용자가 자신이 원하는 구성으로 생성한 이미지",
+    "enDef": "Images created by users in their own configuration based on public images"
+  },
+  {
+    "koTerm": "개인 키",
+    "enTerm": "private key",
+    "abbr": "",
+    "koDef": "비대칭 키 암호 기법에서 사용되는 키 쌍 중 공개되지 않는 키",
+    "enDef": "The key that is not disclosed among the key pair used in asymmetric cryptography."
+  },
+  {
+    "koTerm": "결제 어뷰징",
+    "enTerm": "purchase abuse",
+    "abbr": "",
+    "koDef": "결제 시스템을 사용자 자신에게 이득이 되는 방향으로 남용하는 행위",
+    "enDef": "The act of exploiting the payment system for the user's own benefit"
+  },
+  {
+    "koTerm": "고가용성",
+    "enTerm": "high availability",
+    "abbr": "HA",
+    "koDef": "시스템이 상당히 오랜 기간 동안 지속적으로 정상 운영이 가능한 성질",
+    "enDef": "The characteristic of a system to maintain stable and continuous operation over a prolonged duration"
+  },
+  {
+    "koTerm": "고가용성 인스턴스",
+    "enTerm": "high availability instance",
+    "abbr": "",
+    "koDef": "RDS 서비스에서 고가용성을 보장하도록 설정된 인스턴스",
+    "enDef": "An instance set up within the RDS service to guarantee high availability"
+  },
+  {
+    "koTerm": "고성능 컴퓨팅",
+    "enTerm": "high performance computing",
+    "abbr": "HPC",
+    "koDef": "대규모의 데이터 처리와 복잡한 연산을 고속으로 처리하는 컴퓨팅 시스템",
+    "enDef": "Computing systems that handle large amounts of data and complex computations at high speeds."
+  },
+  {
+    "koTerm": "고성능 컴퓨팅 클라우드",
+    "enTerm": "high performance computing cloud",
+    "abbr": "HPC Cloud",
+    "koDef": "고성능 컴퓨팅(HPC)과 클라우드 컴퓨팅을 결합한 개념으로, HPC 시스템이 제공하는 대규모 데이터의 빠른 처리와 강력한 연산 성능을 클라우드 환경에서 제공하는 서비스",
+    "enDef": "A concept that merges high-performance computing (HPC) with cloud computing to deliver the rapid processing of large datasets and strong computational power in a cloud environment"
+  },
+  {
+    "koTerm": "고정 IP",
+    "enTerm": "fixed IP",
+    "abbr": "",
+    "koDef": "인스턴스가 생성되면 서브넷에서 할당 받는 프라이빗 네트워크 주소",
+    "enDef": "The private network address that is assigned by the subnet when the instance is created."
+  },
+  {
+    "koTerm": "공개 키",
+    "enTerm": "public key",
+    "abbr": "",
+    "koDef": "비대칭 키 암호 기법에서 사용되는 키 쌍 중 누구에게나 공개되는 키로, 개인 키와 수학적 쌍을 이룸",
+    "enDef": "The public key in asymmetric encryption, which is openly shared and forms a mathematical pair with the private key."
+  },
+  {
+    "koTerm": "공용 이미지",
+    "enTerm": "public image",
+    "abbr": "",
+    "koDef": "NHN Cloud에서 미리 생성하여 기본 제공하는 이미지",
+    "enDef": "Pre-generated and built-in images from NHN Cloud"
+  },
+  {
+    "koTerm": "공유 이미지",
+    "enTerm": "shared image",
+    "abbr": "",
+    "koDef": "다른 프로젝트와 공유하도록 설정한 사용자 이미지",
+    "enDef": "User images you've set to share with other projects"
+  },
+  {
+    "koTerm": "공통 취약성 및 노출",
+    "enTerm": "common vulnerabilities and exposures",
+    "abbr": "CVE",
+    "koDef": "공개적으로 알려진 보안 결함 및 기타 정보 보안 노출 사항에 대한 규격화된 목록",
+    "enDef": "A standardized catalog of publicly disclosed security vulnerabilities and information security exposures"
+  },
+  {
+    "koTerm": "관리형 서비스 공급자",
+    "enTerm": "managed service provider",
+    "abbr": "MSP",
+    "koDef": "클라우드 전환 설계, 시스템 구축, 운영 및 관리, 기술 지원과 같은 전체적인 서비스를 제공하는 사업자",
+    "enDef": "Providers of holistic services such as cloud transformation design, system deployment, operations and management, and technical support."
+  },
+  {
+    "koTerm": "광학 문자 인식",
+    "enTerm": "optical character recognition",
+    "abbr": "OCR",
+    "koDef": "이미지나 문서의 문자 영역을 인식하여 기계가 읽을 수 있는 문자로 변환하는 기술",
+    "enDef": "A technology that recognizes the character area of an image or document and converts it into machine-readable characters."
+  },
+  {
+    "koTerm": "구독",
+    "enTerm": "subscription",
+    "abbr": "",
+    "koDef": "상품이나 서비스를 일시불로 구매하지 않고 정기적으로 사용료를 지급하는 방식",
+    "enDef": "A payment model where users pay regular fees instead of purchasing a product or service outright"
+  },
+  {
+    "koTerm": "구동 인스턴스",
+    "enTerm": "running instances",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 스케일링 그룹이 생성하여 구동 중인 인스턴스의 수",
+    "enDef": "The number of instances created and running by the scaling group in the Auto Scale service."
+  },
+  {
+    "koTerm": "권한",
+    "enTerm": "permission",
+    "abbr": "",
+    "koDef": "사용자 또는 사용자 그룹이 클라우드 서비스에서 행할 수 있는 기능의 범위",
+    "enDef": "The scope of capabilities granted to users or user groups within a cloud service environment"
+  },
+  {
+    "koTerm": "기계 학습",
+    "enTerm": "machine learning",
+    "abbr": "ML",
+    "koDef": "컴퓨터 프로그램이 데이터와 경험을 통해 학습하여 정보를 처리하는 알고리즘과 기술을 개발하는 연구 분야",
+    "enDef": "A field of study that develops algorithms and techniques for computer programs to process information by learning from data and experience."
+  },
+  {
+    "koTerm": "내결함성",
+    "enTerm": "fault tolerance",
+    "abbr": "FT",
+    "koDef": "장애 등의 상황에서 시스템의 일부 구성 요소가 작동하지 않더라도 시스템 중단 없이 서비스를 지속할 수 있는 속성",
+    "enDef": "An attribute that allows a service to continue without interruption, even if some components of the system are not functioning in a situation such as a failure."
+  },
+  {
+    "koTerm": "네임스페이스",
+    "enTerm": "namespace",
+    "abbr": "",
+    "koDef": "Kubernetes 클러스터 내의 논리적인 공간으로, 리소스의 범위를 구분하여 격리 및 관리함",
+    "enDef": "A logical space within a Kubernetes cluster that compartmentalizes, isolates, and manages a range of resources."
+  },
+  {
+    "koTerm": "네트워크 인터페이스",
+    "enTerm": "network interface",
+    "abbr": "",
+    "koDef": "인스턴스를 네트워크에 연결하기 위한 장치로, '인터페이스'로 줄여서 사용하기도 함",
+    "enDef": "A device for connecting an instance to the network, sometimes abbreviated to ‘interface’"
+  },
+  {
+    "koTerm": "네트워크 접근제어",
+    "enTerm": "network access control",
+    "abbr": "",
+    "koDef": "프로토콜, IP, 포트 등을 기준으로 인바운드 및 아웃바운드 통신을 허용하거나 차단하는 것. 불특정 다수에게 공개된 서비스와 허가된 관리자만 접근하는 서비스를 구분하여 불필요한 트래픽의 송수신을 막고 악의적인 접근을 차단하는 것을 목적으로 함",
+    "enDef": "Allow or block inbound and outbound communications based on protocol, IP, port, and more. It is intended to separate services accessible to the general public from those restricted to authorized administrators, minimizing unnecessary traffic exchanges and preventing malicious access"
+  },
+  {
+    "koTerm": "노드",
+    "enTerm": "node",
+    "abbr": "",
+    "koDef": "사용자 애플리케이션이 실행되는 워커 머신(worker machine). 노드는 마스터와의 연결을 통해 동작하며 마스터의 명령에 따라 구동, 정지 등의 동작을 수행함",
+    "enDef": "The worker machine on which the user application runs. Nodes operate through a connection to a master and perform actions such as start, stop, etc. based on the master's commands."
+  },
+  {
+    "koTerm": "다중 인증",
+    "enTerm": "multi-factor authentication",
+    "abbr": "MFA",
+    "koDef": "최소 두 가지 이상의 인증 요소를 요구하여 사용자의 신원을 확인하는 보안 방식. 인증 요소에는 패스워드, PIN과 같은 지식 기반 요소(someting you know), 토큰, 보안 카드와 같은 소지 기반 요소(someting you have), 지문, 얼굴 인식과 같은 생체 인식 요소(someting you are)가 있으며, 다중 인증에서는 각 인증 요소 중 두 개 이상을 결합하여 사용함",
+    "enDef": "A security method that verifies a user's identity by requiring at least two authentication factors. Authentication factors include knowledge-based factors (something you know), such as passwords and PINs; possession-based factors (something you have), such as tokens and security cards; and biometric factors (something you are), such as fingerprints and facial recognition, and multi-factor authentication uses a combination of two or more of each."
+  },
+  {
+    "koTerm": "단말기",
+    "enTerm": "device",
+    "abbr": "",
+    "koDef": "주로 모바일 장치를 일컫는 말",
+    "enDef": "Primarily refers to mobile devices"
+  },
+  {
+    "koTerm": "대역폭",
+    "enTerm": "bandwidth",
+    "abbr": "",
+    "koDef": "신호를 전송할 수 있는 주파수 범위 또는 폭",
+    "enDef": "The frequency range or width over which a signal can be transmitted"
+  },
+  {
+    "koTerm": "대칭 키 암호 기법",
+    "enTerm": "symmetric key cryptography",
+    "abbr": "",
+    "koDef": "암호화와 복호화에 동일한 비밀 키를 사용하는 기법으로, 비밀 키 암호 기법(secret key cryptography)이라고도 함",
+    "enDef": "A technique that uses the same secret key for encryption and decryption, also known as secret key cryptography"
+  },
+  {
+    "koTerm": "데이터 레이크",
+    "enTerm": "data lake",
+    "abbr": "",
+    "koDef": "대량의 가공되지 않은 원시 데이터의 집합을 수집, 저장, 처리, 보호하기 위한 중앙 집중식 저장소",
+    "enDef": "A centralized repository for collecting, storing, processing, and protecting large sets of raw, unprocessed data"
+  },
+  {
+    "koTerm": "데이터 센터",
+    "enTerm": "data center",
+    "abbr": "DC",
+    "koDef": "기업의 서버, 스토리지 등 컴퓨팅 자원을 효과적이고 안정적으로 운영하기 위해 고도화된 전원 관리 시스템이나 고대역 네트워크 환경, 백업 시스템, 보안 시스템, 공조 시스템, 재난 대비 시스템 등을 갖춘 시설",
+    "enDef": "A facility equipped with an advanced power management system, high-bandwidth network environment, backup system, security system, air conditioning system, disaster preparedness system, etc. to effectively and reliably operate a company's computing resources such as servers, storage, etc."
+  },
+  {
+    "koTerm": "데이터베이스",
+    "enTerm": "database",
+    "abbr": "DB",
+    "koDef": "여러 사람 또는 조직이 공유하여 사용할 목적으로 체계화하여 통합 관리하는 정보의 집합",
+    "enDef": "A set of information that is organized and managed for the purpose of being shared and used by multiple people or organizations."
+  },
+  {
+    "koTerm": "도메인 기반 메시지 인증 보고 및 적합성",
+    "enTerm": "domain-based message authentication reporting and conformance",
+    "abbr": "DMARC",
+    "koDef": "SPF와 DKIM을 통합하여 더 강력한 이메일 검증 정책을 설정하는 매커니즘으로 이를 통해 허위 발신을 방지하고, 이메일 스푸핑과 피싱 공격을 차단하기 위한 도메인 기반 메시지 인증에 대한 보고 및 준수 정책",
+    "enDef": "A mechanism that combines SPF and DKIM to create a stronger email authentication policy, helping prevent sender spoofing and block email spoofing and phishing attacks through domain-based message authentication, reporting, and compliance protocol."
+  },
+  {
+    "koTerm": "도메인 이름",
+    "enTerm": "domain name",
+    "abbr": "",
+    "koDef": "IP 주소에 매핑되는 텍스트 문자열",
+    "enDef": "Text string that maps to an IP address"
+  },
+  {
+    "koTerm": "도메인 키 식별 메일",
+    "enTerm": "domainkeys identified mail",
+    "abbr": "DKIM",
+    "koDef": "이메일 발송 서버가 이메일을 디지털 서명하고 이메일 수신 서버는 발신자 진위 여부를 확인하여 전송 중에 메시지가 위조, 변조되지 않았는지 확인하는 이메일 검증 방법",
+    "enDef": "An email verification method where the sending server digitally signs the email and the receiving server verifies the sender’s authenticity to ensure that the message was not forged or tampered with during transmission"
+  },
+  {
+    "koTerm": "디플로이먼트",
+    "enTerm": "deployment",
+    "abbr": "",
+    "koDef": "애플리케이션을 배포하기 위한 리소스로 레플리카셋을 생성하고 관리하는 역할을 수행. 롤링 업데이트 및 롤백과 같은 배포 전략을 제공",
+    "enDef": "Responsible for creating and managing replica sets as resources for deploying applications. Provide deployment strategies like rolling updates and rollbacks"
+  },
+  {
+    "koTerm": "라우팅 테이블",
+    "enTerm": "routing table",
+    "abbr": "",
+    "koDef": "네트워크 통신을 위해 목적지로 가는 경로 정보를 담고 있는 테이블",
+    "enDef": "A table that contains route information to a destination for network communication."
+  },
+  {
+    "koTerm": "랜섬웨어",
+    "enTerm": "ransomware",
+    "abbr": "",
+    "koDef": "컴퓨터 사용자의 파일들을 암호화하여 금전을 요구하는 악성코드",
+    "enDef": "Malicious software that encrypts a user's files and demands a ransom payment"
+  },
+  {
+    "koTerm": "레이아웃",
+    "enTerm": "layout",
+    "abbr": "",
+    "koDef": "System Monitoring 서비스에서 시스템 지표 차트의 묶음",
+    "enDef": "Bundles of system metrics charts in the System Monitoring service"
+  },
+  {
+    "koTerm": "레지스트리",
+    "enTerm": "registry",
+    "abbr": "",
+    "koDef": "컴퓨터 및 응용 프로그램의 환경 설정 및 구성 정보가 저장된 장소",
+    "enDef": "A place where preferences and configuration information for your computer and applications are stored."
+  },
+  {
+    "koTerm": "레코드 세트",
+    "enTerm": "record set",
+    "abbr": "",
+    "koDef": "DNS Zone으로 서비스하는 호스트 정보로, 해당 영역에서 이름과 유형이 같은 DNS 레코드의 모음",
+    "enDef": "Information about the hosts served by a DNS zone, a collection of DNS records with the same name and type in the corresponding zone."
+  },
+  {
+    "koTerm": "레플리카셋",
+    "enTerm": "replicaset",
+    "abbr": "",
+    "koDef": "파드의 복제본을 유지하고 관리하는 Kubernetes 리소스. 지정된 수의 파드 인스턴스를 유지하고 부하 분산을 위해 사용",
+    "enDef": "A Kubernetes resource that maintains and manages replicas of a Pod. Maintain a specified number of Pod instances and use them for load balancing"
+  },
+  {
+    "koTerm": "로드 밸런서",
+    "enTerm": "load balancer",
+    "abbr": "",
+    "koDef": "인스턴스의 트래픽 부하 분산 기능을 제공하는 서비스",
+    "enDef": "Services that provide traffic load balancing for instances"
+  },
+  {
+    "koTerm": "로드 밸런싱",
+    "enTerm": "load balancing",
+    "abbr": "",
+    "koDef": "병렬로 트래픽을 처리하는 리소스들 간에 특정 리소스에 부하가 집중되지 않도록 트래픽을 적절하게 분배하는 것",
+    "enDef": "Properly distributing traffic among resources that process traffic in parallel so that no particular resource is overwhelmed."
+  },
+  {
+    "koTerm": "리소스",
+    "enTerm": "resource",
+    "abbr": "",
+    "koDef": "데이터, 가상 인스턴스, 컴퓨팅 리소스를 포함하여 클라우드에 존재하는 모든 종류의 디지털 자산",
+    "enDef": "Any kind of digital asset that exists in the cloud, including data, virtual instances, and computing resources"
+  },
+  {
+    "koTerm": "리전",
+    "enTerm": "region",
+    "abbr": "",
+    "koDef": "독립적이고 지리적으로 격리된 서버의 물리적 위치",
+    "enDef": "Physical location of independent, geographically isolated servers"
+  },
+  {
+    "koTerm": "리전 피어링",
+    "enTerm": "region peering",
+    "abbr": "",
+    "koDef": "다른 리전, 동일 프로젝트의 서로 다른 두 개의 VPC를 연결하는 기능",
+    "enDef": "This is a feature to connect two different VPCs that are in different regions but in the same project."
+  },
+  {
+    "koTerm": "리퍼러",
+    "enTerm": "referrer",
+    "abbr": "",
+    "koDef": "URL 링크를 클릭해 웹사이트에 접속한 이용자가 직전에 접속해 있던 페이지 또는 리소스의 링크. 이용자가 어떤 경로를 통해 웹사이트에 방문했는지 알기 위해 수집하는 정보",
+    "enDef": "A link to the page or resource a user was on immediately before clicking a URL to access a website. Information gathered to track how a user navigated to a website"
+  },
+  {
+    "koTerm": "마운트 해제하다",
+    "enTerm": "unmount",
+    "abbr": "",
+    "koDef": "마운트된 디렉터리의 연결을 해제하다",
+    "enDef": "Disconnect a mounted directory"
+  },
+  {
+    "koTerm": "마운트하다",
+    "enTerm": "mount",
+    "abbr": "",
+    "koDef": "지정된 디렉터리에 특정 장치의 파일 시스템을 연결하다",
+    "enDef": "Connect the file system of a specific device to a specified directory"
+  },
+  {
+    "koTerm": "마이그레이션",
+    "enTerm": "migration",
+    "abbr": "",
+    "koDef": "데이터 또는 서버, 네트워크 등을 다른 시스템으로(온프레미스에서 클라우드로, 또는 어떤 클라우드 서비스에서 다른 클라우드 서비스로) 옮기는 일",
+    "enDef": "Moving data or servers, networks, etc. to another system (from on-premises to the cloud, or from one cloud service to another)."
+  },
+  {
+    "koTerm": "마이그레이션하다",
+    "enTerm": "migrate",
+    "abbr": "",
+    "koDef": "데이터 또는 서버, 네트워크 등을 다른 시스템으로(온프레미스에서 클라우드로, 또는 어떤 클라우드 서비스에서 다른 클라우드 서비스로) 옮기다",
+    "enDef": "Move data or servers, networks, etc. from one system to another (on-premises to the cloud, or from one cloud service to another)."
+  },
+  {
+    "koTerm": "마이크로서비스 아키텍처",
+    "enTerm": "microservice architecture",
+    "abbr": "MSA",
+    "koDef": "독립적으로 배치되어 단독으로 실행 가능한 모듈 단위로 기능을 분해하여 서비스하는 애플리케이션 아키텍처. 각 마이크로서비스는 잘 정의된 API를 통해 연결되며, 공유나 프로세스와의 통신이 없어도 독립적으로 실행되므로 애플리케이션의 확장에 용이하고, 개발 및 유지 보수에 드는 시간과 비용을 절감할 수 있음",
+    "enDef": "An application architecture that decomposes functionality into modules that can be deployed independently and run on their own. Each microservice is connected through a well-defined API and runs independently with no sharing or communication with processes, making it easy to scale applications and reducing the time and cost of development and maintenance."
+  },
+  {
+    "koTerm": "만료",
+    "enTerm": "expiry",
+    "abbr": "",
+    "koDef": "어떤 것의 효력이 끝나는 일",
+    "enDef": "When something ceases to be effective"
+  },
+  {
+    "koTerm": "만료일",
+    "enTerm": "expiration date",
+    "abbr": "",
+    "koDef": "인증서가 만료되는 날짜, 또는 어떤 것의 효력이 끝나는 날짜",
+    "enDef": "The date that a certificate expires, or the date that something ends in effect"
+  },
+  {
+    "koTerm": "멀티 가용 영역",
+    "enTerm": "muti-availability zone",
+    "abbr": "Multi-AZ",
+    "koDef": "클라우드 인프라에서 가용성과 장애 대응 능력을 높이기 위해 물리적으로 분리된 여러 개의 가용 영역에 자원을 분산시키는 아키텍처 설계",
+    "enDef": "Architectural design that distributes resources across multiple physically separated availability zones to increase availability and fault tolerance in cloud infrastructure."
+  },
+  {
+    "koTerm": "매니페스트",
+    "enTerm": "manifest",
+    "abbr": "",
+    "koDef": "Kubernetes 클러스터에서 실행되는 리소스를 정의하는 YAML 또는 JSON 형식의 파일",
+    "enDef": "A file in YAML or JSON format that defines the resources running in the Kubernetes cluster."
+  },
+  {
+    "koTerm": "매니페스트 오브젝트",
+    "enTerm": "manifest object",
+    "abbr": "",
+    "koDef": "Object Storage 서비스에서 멀티파트 업로드 시 세그먼트 오브젝트의 경로 정보를 담고 있는 오브젝트",
+    "enDef": "An object that contains path information for a segment object in a multipart upload from the Object Storage service."
+  },
+  {
+    "koTerm": "멀티 클라우드",
+    "enTerm": "multi-cloud",
+    "abbr": "",
+    "koDef": "필요에 따라 여러 클라우드 서비스 공급자(CSP)를 동시에 사용하는 클라우드 컴퓨팅 전략",
+    "enDef": "A cloud computing strategy that uses multiple cloud service providers (CSPs) simultaneously, whenever necessary."
+  },
+  {
+    "koTerm": "멀티테넌시",
+    "enTerm": "multitenancy",
+    "abbr": "",
+    "koDef": "여러 사용자가 클라우드에서 동일한 애플리케이션 및 컴퓨팅 리소스를 공유하는 소프트웨어 아키텍처",
+    "enDef": "A software architecture in which multiple users share the same applications and computing resources in the cloud."
+  },
+  {
+    "koTerm": "멀티파트 업로드",
+    "enTerm": "multipart upload",
+    "abbr": "",
+    "koDef": "Object Storage 서비스에서 오브젝트를 여러 부분(세그먼트)으로 나누어 업로드하는 방식",
+    "enDef": "How the Object Storage service divides objects into parts (segments) to upload them"
+  },
+  {
+    "koTerm": "메서드",
+    "enTerm": "method",
+    "abbr": "",
+    "koDef": "HTTP 프로토콜에서 클라이언트가 서버에게 보내는 요청의 유형 및 그 동작 방식, 또는 객체 지향 프로그래밍에서 클래스 내부에 정의된 함수",
+    "enDef": "In the HTTP protocol, the type of request a client sends to a server and how it behaves; or in object-oriented programming, a function defined inside a class."
+  },
+  {
+    "koTerm": "메타데이터",
+    "enTerm": "metadata",
+    "abbr": "",
+    "koDef": "다른 데이터를 정의하고 기술하는 구조화된 데이터",
+    "enDef": "Structured data that defines and describes other data"
+  },
+  {
+    "koTerm": "멤버",
+    "enTerm": "member",
+    "abbr": "",
+    "koDef": "조직 또는 프로젝트에 소속된 구성원",
+    "enDef": "Members of an organization or project"
+  },
+  {
+    "koTerm": "발신 도메인",
+    "enTerm": "source domain",
+    "abbr": "",
+    "koDef": "네트워크 요청을 보내는 도메인",
+    "enDef": "A domain sending network requests"
+  },
+  {
+    "koTerm": "발신자",
+    "enTerm": "sender",
+    "abbr": "",
+    "koDef": "네트워크로 요청을 보내는 사람",
+    "enDef": "A user who sends requests to the network"
+  },
+  {
+    "koTerm": "발신자 정책 프레임워크",
+    "enTerm": "sender policy framework",
+    "abbr": "SPF",
+    "koDef": "이메일 발신자와 발송 서버의 신뢰성을 검증하기 위한 메커니즘으로, 이메일 수신 서버가 특정 도메인에서 발송된 메일이 실제로 허가된 이메일 발송 서버에서 왔는지 확인하는 방식",
+    "enDef": "A mechanism for verifying the authenticity of email senders and sending servers, whereby an email receiving server verifies that mail originating from a particular domain actually comes from an authorized email sending server."
+  },
+  {
+    "koTerm": "발신지",
+    "enTerm": "source",
+    "abbr": "",
+    "koDef": "네트워크 요청을 보내는 지점",
+    "enDef": "The point from which a network request is sent"
+  },
+  {
+    "koTerm": "방화벽",
+    "enTerm": "firewall",
+    "abbr": "",
+    "koDef": "미리 정의된 보안 규칙에 기반하여 들어오고 나가는 네트워크 트래픽을 모니터링하고 제어하는 네트워크 보안 시스템",
+    "enDef": "A network security system that monitors and controls incoming and outgoing network traffic based on predefined security rules."
+  },
+  {
+    "koTerm": "백신",
+    "enTerm": "anti-virus",
+    "abbr": "",
+    "koDef": "컴퓨터나 서버, 모바일 단말에서 실행되는 악성코드(바이러스, 웜, 트로이목마 등)를 탐지·차단·치료하기 위한 보안 소프트웨어",
+    "enDef": "Security software designed to detect, block, and manage malicious code such as viruses, worms, and Trojan horses on computers, servers, and mobile devices"
+  },
+  {
+    "koTerm": "백업 주기",
+    "enTerm": "backup cycle",
+    "abbr": "",
+    "koDef": "백업이 일정한 시간 간격으로 수행되도록 설정하는 주기",
+    "enDef": "Periodicity, which sets backups to occur at regular time intervals."
+  },
+  {
+    "koTerm": "버킷",
+    "enTerm": "bucket",
+    "abbr": "",
+    "koDef": "Amazon S3 서비스에서 NHN Cloud Object Storage 서비스의 컨테이너에 해당하는 용어",
+    "enDef": "Terminology for containers in the NHN Cloud Object Storage service on the Amazon S3 service"
+  },
+  {
+    "koTerm": "베어메탈",
+    "enTerm": "Bare Metal",
+    "abbr": "BM",
+    "koDef": "클라우드 환경에서 가상화되지 않은 물리 서버에 운영체제를 단독으로 설치하고 응용 프로그램을 직접 실행하는 개념. 동일한 물리적 서버 자원을 공유하여 사용하는 방식의 가상 서버를 보완하여 주로 데이터베이스와 같이 성능과 안정성에 민감한 서비스에서 활용",
+    "enDef": "The concept of installing an operating system and running applications directly on a physical server that is not virtualized in a cloud environment. A method designed to supplement virtual servers that share physical server resources, primarily used for services like databases that require high performance and stability"
+  },
+  {
+    "koTerm": "보안 관제",
+    "enTerm": "security control",
+    "abbr": "",
+    "koDef": "네트워크, 시스템, 애플리케이션 등 IT 인프라 전반에서 발생하는 보안 이벤트와 로그를 지속적으로 수집·분석하여 침해 위협을 탐지하고 사고 대응을 수행하는 운영 활동",
+    "enDef": "Operational activities involve detecting infringement threats and responding to incidents by continuously collecting and analyzing security events and logs from IT infrastructure, including networks, systems, and applications"
+  },
+  {
+    "koTerm": "보안 그룹",
+    "enTerm": "security groups",
+    "abbr": "",
+    "koDef": "인스턴스의 송수신 트래픽을 제어하는 기능",
+    "enDef": "Ability to control traffic to and from your instance"
+  },
+  {
+    "koTerm": "보안 기능 확인서",
+    "enTerm": "security function confirmation",
+    "abbr": "",
+    "koDef": "상용 보안 제품 또는 서비스가 관련 법·제도 및 보안 요구 사항에 따라 필요한 보안 기능을 갖추었음을 공인 기관이 확인·검증해 주는 제도",
+    "enDef": "A system where a certified agency verifies that a commercial security product or service meets the required security functions in accordance with relevant laws, regulations, and security standards"
+  },
+  {
+    "koTerm": "보안 적합성",
+    "enTerm": "security conformance",
+    "abbr": "",
+    "koDef": "정보시스템, 서비스 또는 제품이 관련 법·제도·표준·보안 요구 사항을 충족함을 정해진 기준에 따라 검증·확인하는 상태 또는 활동",
+    "enDef": "The process of verifying that an information system, service, or product complies with applicable laws, regulations, standards, and security requirements"
+  },
+  {
+    "koTerm": "복제",
+    "enTerm": "replication",
+    "abbr": "",
+    "koDef": "특정 개체(이미지, 블록 스토리지, 컨테이너 오브젝트 등)를 한 곳에서 다른 곳으로 그대로 복사해서 옮기는 일",
+    "enDef": "The process of directly copying and moving specific objects (like images, block storage, or container objects, etc.) from one location to another."
+  },
+  {
+    "koTerm": "복제 지연",
+    "enTerm": "replication latency",
+    "abbr": "",
+    "koDef": "복제 과정에서 발생하는 지연",
+    "enDef": "The latency that arises during the replication process"
+  },
+  {
+    "koTerm": "복제본",
+    "enTerm": "replica",
+    "abbr": "",
+    "koDef": "데이터베이스 복제에서 주(primary) 데이터베이스에 동기화되는 복제본(replica) 데이터베이스. 기존의 마스터(master)/슬레이브(slave) 관계에서 슬레이브에 해당",
+    "enDef": "In database replication, a replica database that is synchronized to the primary database. The component that acts as the slave in a traditional master/slave setup"
+  },
+  {
+    "koTerm": "복제하다",
+    "enTerm": "replicate",
+    "abbr": "",
+    "koDef": "특정 개체(이미지, 블록 스토리지, 컨테이너 오브젝트 등)를 한 곳에서 다른 곳으로 그대로 복사해서 옮기다",
+    "enDef": "To directly copy and move specific objects (like images, block storage, or container objects, etc.) from one location to another"
+  },
+  {
+    "koTerm": "복호화",
+    "enTerm": "decryption",
+    "abbr": "",
+    "koDef": "암호화한 정보를 평문으로 복구하는 과정",
+    "enDef": "The process of converting encrypted data back into plain text"
+  },
+  {
+    "koTerm": "본인 인증",
+    "enTerm": "identity verification",
+    "abbr": "",
+    "koDef": "본인의 신원을 입증하는 과정",
+    "enDef": "The process of proving one’s identity"
+  },
+  {
+    "koTerm": "분산 서비스 거부 공격",
+    "enTerm": "distributed denial of service attack",
+    "abbr": "DDoS",
+    "koDef": "다수의 감염된 시스템을 이용해 동시에 대규모 트래픽을 발생시켜 서비스 자원을 고갈시키는 공격 방식",
+    "enDef": "An attack method that depletes service resources by generating massive traffic from multiple compromised systems simultaneously"
+  },
+  {
+    "koTerm": "분산형 가상 라우팅",
+    "enTerm": "distributed virtual routing",
+    "abbr": "DVR",
+    "koDef": "가상 라우터를 인스턴스가 생성되는 각 하이퍼바이저에 분산 배포하는 방식. 트래픽이 하나의 네트워크 노드가 아닌 라우팅 테이블이 사용되는 위치에 고루 분산되고, 네트워크 노드 장애 시에도 인스턴스 간 또는 외부 단말과의 통신을 일정 부분 보장하여 안정성과 고가용성을 제공",
+    "enDef": "A method of distributed deployment of virtual routers to each hypervisor on which an instance is created. Instead of being concentrated on a single network node, traffic is evenly distributed to where routing tables are applied, ensuring partial communication between instances and external devices even during node failures, thereby offering stability and high availability"
+  },
+  {
+    "koTerm": "블랙홀",
+    "enTerm": "black hole",
+    "abbr": "",
+    "koDef": "정보를 중계하는 시스템이 망 주소 정보의 잘못된 설정 등으로 인해 중계해야 할 모든 트래픽을 폐기한 상태",
+    "enDef": "A condition where a relay system discards all traffic it is supposed to forward because of misconfigured network address settings or similar problems"
+  },
+  {
+    "koTerm": "블록 스토리지",
+    "enTerm": "block storage",
+    "abbr": "",
+    "koDef": "데이터를 블록 단위로 나눠서 저장하는 블록 수준 데이터 스토리지로, 인스턴스 기본 디스크 외에 추가로 연결하여 사용할 수 있음",
+    "enDef": "Block-level data storage that divides data into blocks, which can be attached and used in addition to the instance's primary disk."
+  },
+  {
+    "koTerm": "비대칭 키 암호 기법",
+    "enTerm": "asymmetric key cryptography",
+    "abbr": "",
+    "koDef": "대칭 키 암호 기법이 가진 키 분배 및 확산 문제를 보완하기 위해 개발된 암호화 기법으로, 공개 키와 개인 키로 구성된 키 쌍을 사용함. 공개 키와 개인 키 중 하나의 키로 암호화한 정보는 쌍을 이루는 다른 하나의 키로만 복호화할 수 있음. 공개 키 암호 기법(public key cryptography)이라고도 함",
+    "enDef": "A cryptographic technique developed to compensate for the key distribution and diffusion problems of symmetric key cryptography. It uses a key pair consisting of a public key and a private key. Data encrypted with either the public or private key can only be decrypted using the matching counterpart key Also known as public key cryptography"
+  },
+  {
+    "koTerm": "비밀 키",
+    "enTerm": "secret key",
+    "abbr": "",
+    "koDef": "대칭 키 암호 기법에서 암호화와 복호화 시 동일하게 사용하며, 정보를 교환하는 당사자들에게만 공유되는 키",
+    "enDef": "In symmetric key cryptography, a key that is used equally for encryption and decryption and is shared only with the parties exchanging information."
+  },
+  {
+    "koTerm": "사용자 그룹",
+    "enTerm": "user group",
+    "abbr": "",
+    "koDef": "System Monitoring 서비스에서 이벤트가 발생했을 때 알림을 받을 사용자 목록",
+    "enDef": "List of users to be notified when events occur in the System Monitoring service"
+  },
+  {
+    "koTerm": "사용자 스크립트",
+    "enTerm": "user script",
+    "abbr": "",
+    "koDef": "인스턴스 생성 후 부팅 시 자동으로 실행할 사용자 정의 스크립트",
+    "enDef": "Script to be automatically executed during the initial booting after the instance is created"
+  },
+  {
+    "koTerm": "사용자 이미지",
+    "enTerm": "user image",
+    "abbr": "",
+    "koDef": "퍼블릭 이미지를 토대로 사용자가 자신이 원하는 구성으로 생성한 이미지",
+    "enDef": "Images created by users in their own configuration based on public images."
+  },
+  {
+    "koTerm": "서버리스",
+    "enTerm": "serverless",
+    "abbr": "",
+    "koDef": "클라우드 서비스 사용자가 애플리케이션 핵심 기능 개발에만 집중할 수 있도록 클라우드 서비스 공급자(CSP)가 인프라 및 플랫폼 자원뿐 아니라 애플리케이션 구동에 필요한 주변 응용 소프트웨어 기능을 가상화하여 제공하는 클라우드 서비스",
+    "enDef": "A cloud service model in which the cloud service provider (CSP) virtualizes and delivers infrastructure, platform resources, and ancillary application software functionalities required to run applications, enabling users to focus exclusively on the development of core application capabilities."
+  },
+  {
+    "koTerm": "서브넷",
+    "enTerm": "subnet",
+    "abbr": "",
+    "koDef": "Subnetwork를 의미하여, IP 네트워크를 더 작은 단위로 세분화한 IP 주소 영역",
+    "enDef": "Subnetwork, a region of IP addresses that subdivides an IP network into smaller units."
+  },
+  {
+    "koTerm": "서비스",
+    "enTerm": "service",
+    "abbr": "",
+    "koDef": "동일한 서비스를 제공하는 여러 파드를 논리적으로 그룹화한 것으로, 네트워크 트래픽의 로드 밸런싱 및 서비스 디스커버리 역할",
+    "enDef": "A logical grouping of multiple Pods that provide the same service, serving as load balancing and service discovery for network traffic."
+  },
+  {
+    "koTerm": "서비스 거부 공격",
+    "enTerm": "denial of service attack",
+    "abbr": "DoS",
+    "koDef": "단일 공격 원천에서 과도한 트래픽 또는 요청을 발생시켜 서버, 네트워크, 애플리케이션의 정상적인 서비스 제공을 방해하는 공격 방식",
+    "enDef": "An attack method that disrupts normal service by overwhelming servers, networks, and applications with excessive traffic or requests from a single source"
+  },
+  {
+    "koTerm": "service gateway",
+    "enTerm": "service gateway",
+    "abbr": "",
+    "koDef": "VPC에서 인터넷을 경유하지 않고 NHN Cloud의 서비스에 연결하게 해 주는 서비스",
+    "enDef": "A service that allows you to connect to services on NHN Cloud from your VPC without going through the internet."
+  },
+  {
+    "koTerm": "서비스 메시",
+    "enTerm": "service mesh",
+    "abbr": "",
+    "koDef": "컨테이너화된 마이크로서비스로 구성된 인프라 계층으로, 분산 시스템에서 애플리케이션 서비스 간 통신을 제어하고 효율적으로 관리함",
+    "enDef": "An infrastructure layer of containerized microservices that controls and efficiently manages communication between application services in distributed systems."
+  },
+  {
+    "koTerm": "서비스 수준 계약",
+    "enTerm": "service-level agreement",
+    "abbr": "SLA",
+    "koDef": "서비스 공급자와 서비스 사용자 간의 계약으로, 제공할 서비스의 내용, 기대되는 성능 수준, 성능 측정 지표, 합의된 서비스 수준의 충족 여부에 따른 보상 및 패널티 등의 내용을 명시",
+    "enDef": "A contract between a service provider and a service user that specifies the content of the services to be provided, expected performance levels, performance metrics, and rewards and penalties for meeting agreed upon service levels."
+  },
+  {
+    "koTerm": "세그먼트 오브젝트",
+    "enTerm": "segment object",
+    "abbr": "",
+    "koDef": "Object Storage 서비스에서 멀티파트 업로드 시 분할된 각 부분에 해당하는 오브젝트",
+    "enDef": "Objects corresponding to each part of a multi-part upload in the Object Storage service"
+  },
+  {
+    "koTerm": "세션 지속성",
+    "enTerm": "session persistence",
+    "abbr": "",
+    "koDef": "사용자 정보를 유지할 필요가 있거나 한 클라이언트의 요청이 특정 서버에게만 전달되어야 하는 서비스를 위해 사용하는 기능",
+    "enDef": "A feature used for services where user information must be maintained or where a client's requests need to be consistently directed to a specific server"
+  },
+  {
+    "koTerm": "소산 백업",
+    "enTerm": "vaulting backup",
+    "abbr": "",
+    "koDef": "비상사태에 대비하기 위해 백업 데이터를 물리적으로 일정 거리 이상 떨어진 장소에 보관하는 방식",
+    "enDef": "Storing backup data at a location that is physically more than a certain distance away in case of an emergency."
+  },
+  {
+    "koTerm": "소스 저장소",
+    "enTerm": "source repository",
+    "abbr": "",
+    "koDef": "git 명령어를 사용해서 접근할 수 있는 소스 코드 저장소(예: GitHub, GitLab)",
+    "enDef": "A source code repository that can be accessed using the git command (e.g: GitHub, GitLab)"
+  },
+  {
+    "koTerm": "속성 기반 접근 제어",
+    "enTerm": "attribute-based access control",
+    "abbr": "ABAC",
+    "koDef": "사용자, 리소스, 환경 등이 가진 속성에 의해 자원에 대한 접근 권한이 결정되는 접근 제어 방식. 다양한 속성을 이용해 구체적이고 세분화된 접근 제어 규칙을 수립할 수 있어 높은 수준의 보안을 보장할 수 있음.",
+    "enDef": "An approach to access control where access to a resource is determined by attributes of the user, resource, environment, etc. Specific and granular access control rules can be established using a variety of attributes to ensure a high level of security."
+  },
+  {
+    "koTerm": "수신 도메인",
+    "enTerm": "destination domain",
+    "abbr": "",
+    "koDef": "네트워크 요청을 받는 도메인",
+    "enDef": "Domains receiving network requests"
+  },
+  {
+    "koTerm": "수신자",
+    "enTerm": "receiver",
+    "abbr": "",
+    "koDef": "네트워크로 요청을 받는 사람",
+    "enDef": "A user who receives requests over the network"
+  },
+  {
+    "koTerm": "수신지",
+    "enTerm": "destination",
+    "abbr": "",
+    "koDef": "네트워크 요청을 받는 지점",
+    "enDef": "The point where network requests are received"
+  },
+  {
+    "koTerm": "수직 확장",
+    "enTerm": "vertical scaling (scaling up)",
+    "abbr": "",
+    "koDef": "단일 서버에 CPU, 메모리, 스토리지 등을 추가하여 서버 자체의 사양을 업그레이드하는 확장 방식",
+    "enDef": "A scaling approach that upgrades the specifications of a single server by adding CPU, memory, storage, etc. to the server itself."
+  },
+  {
+    "koTerm": "수탁사",
+    "enTerm": "consignee",
+    "abbr": "",
+    "koDef": "서비스나 데이터의 처리를 위탁 받는 제3자",
+    "enDef": "A third party that is commissioned to handle services or data."
+  },
+  {
+    "koTerm": "수탁자",
+    "enTerm": "consignee",
+    "abbr": "",
+    "koDef": "서비스나 데이터의 처리를 위탁 받는 제3자",
+    "enDef": "A third party that is commissioned to handle services or data."
+  },
+  {
+    "koTerm": "수평 확장",
+    "enTerm": "horizontal scaling (scaling out)",
+    "abbr": "",
+    "koDef": "시스템이 사용하는 서버 또는 노드의 개수를 늘려 시스템의 처리량을 높이는 방식",
+    "enDef": "Increasing the throughput of a system by increasing the number of servers or nodes the system uses."
+  },
+  {
+    "koTerm": "스냅숏",
+    "enTerm": "snapshot",
+    "abbr": "",
+    "koDef": "특정 시점의 스토리지 데이터를 저장하고, 장애나 데이터 손상 시 해당 시점의 데이터를 원하는 서버로 복구할 수 있는 기능",
+    "enDef": "The ability to save storage data at a point in time and restore that point in time data to any server in the event of a failure or data corruption."
+  },
+  {
+    "koTerm": "스니핑",
+    "enTerm": "sniffing",
+    "abbr": "",
+    "koDef": "네트워크상에서 송수신되는 패킷을 수집하여 비밀번호 등을 알아내는 해킹 유형",
+    "enDef": "A type of hacking that collects packets sent and received on a network to find passwords and more."
+  },
+  {
+    "koTerm": "스케일링 그룹",
+    "enTerm": "scaling group",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 인스턴스를 추가로 생성 또는 삭제하는 조건과, 조건이 만족하는 경우 수행할 행동을 정의한 것",
+    "enDef": "A definition of the conditions for creating or deleting instances in the Auto Scale service and the actions to be performed when those conditions are met"
+  },
+  {
+    "koTerm": "스토리지 티어링",
+    "enTerm": "storage tiering",
+    "abbr": "",
+    "koDef": "중요도나 접근 빈도에 따라 데이터를 서로 다른 종류의 스토리지 계층에 자동으로 분배하는 기술. 자주 접근하는 데이터는 더 빠르고 비용이 높은 고성능 스토리지에 저장하고, 접근 빈도가 낮은 데이터는 더 저렴하고 느린 스토리지에 저장하는 방식으로 효율적인 자원 관리, 비용 절감, 성능 최적화를 목적으로 함",
+    "enDef": "A technology that automatically distributes data to different kinds of storage tiers based on importance or frequency of access A method that stores frequently accessed data in faster, higher-cost high-performance storage, and infrequently accessed data in cheaper, slower storage, aiming for efficient resource management, cost reduction, and performance optimization"
+  },
+  {
+    "koTerm": "시스템 지표",
+    "enTerm": "system metrics",
+    "abbr": "",
+    "koDef": "System Monitoring 서비스에서 수집하는 각 인스턴스의 리소스",
+    "enDef": "Resources for each instance collected by the System Monitoring service"
+  },
+  {
+    "koTerm": "시점 복원",
+    "enTerm": "point-in-time recovery",
+    "abbr": "PITR",
+    "koDef": "데이터베이스에서 과거 특정 시점의 데이터나 설정을 복구하는 기능",
+    "enDef": "The ability to recover data or settings from a database at a specific point in the past."
+  },
+  {
+    "koTerm": "시크릿",
+    "enTerm": "secret",
+    "abbr": "",
+    "koDef": "사용자 이름, 비밀번호, API 키와 같은 민감한 데이터를 안전하게 저장하고 관리하는 데 사용되는 객체",
+    "enDef": "Objects used to securely store and manage sensitive data, such as usernames, passwords, and API keys."
+  },
+  {
+    "koTerm": "아카이브 컨테이너",
+    "enTerm": "archive container",
+    "abbr": "",
+    "koDef": "Object Storage 서비스에서 오브젝트의 이전 버전을 보관할 컨테이너",
+    "enDef": "A container to hold older versions of objects in the Object Storage service."
+  },
+  {
+    "koTerm": "악성코드",
+    "enTerm": "malware",
+    "abbr": "",
+    "koDef": "악의적인 목적을 위해 작성된 실행 가능한 코드나 프로그램",
+    "enDef": "Executable code or programs written for malicious purposes"
+  },
+  {
+    "koTerm": "알림 그룹",
+    "enTerm": "notification group",
+    "abbr": "",
+    "koDef": "System Monitoring 서비스에서 감시 대상 인스턴스와 이벤트 발생 시 통보할 사용자 그룹을 관리하는 단위",
+    "enDef": "The unit that manages which instances are monitored by the System Monitoring service and which user groups are notified when events occur."
+  },
+  {
+    "koTerm": "암호화",
+    "enTerm": "encryption",
+    "abbr": "",
+    "koDef": "데이터를 전송하거나 저장할 때 정보를 보호하기 위해 암호 키를 이용해 평문을 암호문으로 변환하는 과정",
+    "enDef": "The process of converting plain text into ciphertext using a cryptographic key to protect information when transmitting or storing data."
+  },
+  {
+    "koTerm": "암호화 스위트",
+    "enTerm": "cipher suite",
+    "abbr": "",
+    "koDef": "HTTPS 통신을 위해 사용되는 암호 알고리즘의 묶음",
+    "enDef": "A set of cipher algorithms used for HTTPS communication."
+  },
+  {
+    "koTerm": "얼굴 인식",
+    "enTerm": "Face Recognition",
+    "abbr": "",
+    "koDef": "얼굴 감지 및 분석, 비교를 통해 개인의 신원을 식별하는 기술 또는 인증 체계",
+    "enDef": "A technology or authentication scheme that identifies an individual's identity through face detection, analysis, and comparison."
+  },
+  {
+    "koTerm": "엔드포인트",
+    "enTerm": "endpoint",
+    "abbr": "",
+    "koDef": "요청을 받아 응답을 제공하는 서비스를 사용할 수 있는 지점. 주로 API 엔드포인트를 의미하며, URL 형식이 사용됨",
+    "enDef": "The point at which a service is available to take a request and provide a response. Primarily refers to an API endpoint, which is formatted as a URL"
+  },
+  {
+    "koTerm": "역할",
+    "enTerm": "role",
+    "abbr": "",
+    "koDef": "관리자가 사용자 또는 사용자 그룹에 지정하는 권한의 모음",
+    "enDef": "A collection of permissions that an administrator assigns to a user or group of users."
+  },
+  {
+    "koTerm": "역할 그룹",
+    "enTerm": "role group",
+    "abbr": "",
+    "koDef": "서비스별 역할을 일괄 관리하고자 역할을 그룹화한 것",
+    "enDef": "A grouping of roles designed to collectively manage roles for different services"
+  },
+  {
+    "koTerm": "역할 기반 접근 제어",
+    "enTerm": "role-based access control",
+    "abbr": "RBAC",
+    "koDef": "역할에 의해 자원에 대한 접근 권한이 결정되는 접근 제어 방식. 조직의 업무 기능 및 목적에 따라 역할을 생성하고, 역할에 부여된 접근 권한에 따라 역할 수행에 필요한 최소한의 자원에 접근할 수 있도록 함",
+    "enDef": "An approach to access control where access to resources is determined by roles. Create roles based on your organization's business functions and objectives, and ensure that roles have access to the minimum resources needed to perform their roles based on the access granted to them"
+  },
+  {
+    "koTerm": "연결 해제하다",
+    "enTerm": "disconnect",
+    "abbr": "",
+    "koDef": "네트워크와 네크워크, VPC와 외부 네트워크 등의 연결을 해제하다",
+    "enDef": "Disconnect networks from networks, VPCs from external networks, etc."
+  },
+  {
+    "koTerm": "연결 해제하다",
+    "enTerm": "disassociate",
+    "abbr": "",
+    "koDef": "플로팅 IP, 라우팅 테이블 등 논리적 요소와 인스턴스 등 다른 개체 간의 연결을 해제하다",
+    "enDef": "Disconnect logical elements, such as floating IPs and routing tables, from other objects, such as instances"
+  },
+  {
+    "koTerm": "연결 해제하다",
+    "enTerm": "detach",
+    "abbr": "",
+    "koDef": "스토리지, 네트워크 인터페이스, 네트워크 게이트웨이 등 물리적 요소와 인스턴스 등 다른 개체 간의 연결을 해제하다",
+    "enDef": "Disconnect physical elements, such as storage, network interfaces, and network gateways, from other objects, such as instances."
+  },
+  {
+    "koTerm": "연결하다",
+    "enTerm": "connect",
+    "abbr": "",
+    "koDef": "네트워크와 네크워크, VPC와 외부 네트워크 등을 연결하다",
+    "enDef": "Connect networks to networks, VPCs to external networks, and more"
+  },
+  {
+    "koTerm": "연결하다",
+    "enTerm": "associate",
+    "abbr": "",
+    "koDef": "플로팅 IP, 라우팅 테이블 등 논리적 요소를 인스턴스 등 다른 개체와 연결하다",
+    "enDef": "Associate logical elements such as floating IPs and routing tables with other objects such as instances"
+  },
+  {
+    "koTerm": "연결하다",
+    "enTerm": "attach",
+    "abbr": "",
+    "koDef": "스토리지, 네트워크 인터페이스, 네트워크 게이트웨이 등 물리적 요소를 인스턴스 등 다른 개체와 연결하다",
+    "enDef": "Connect physical elements, such as storage, network interfaces, and network gateways, to other objects, such as instances."
+  },
+  {
+    "koTerm": "오브젝트",
+    "enTerm": "object",
+    "abbr": "",
+    "koDef": "오브젝트 스토리지의 기본적인 관리 단위",
+    "enDef": "The basic unit of management for object storage"
+  },
+  {
+    "koTerm": "오브젝트 스토리지",
+    "enTerm": "object storage",
+    "abbr": "",
+    "koDef": "데이터를 오브젝트 단위로 관리하는 데이터 스토리지로, 많은 양의 데이터를 저장할 수 있음",
+    "enDef": "A data storage system that manages data in object units and is capable of storing large volumes of data"
+  },
+  {
+    "koTerm": "오케스트레이션",
+    "enTerm": "orchestration",
+    "abbr": "",
+    "koDef": "컴퓨터 시스템 및 소프트웨어의 자동화된 구성, 조정 및 관리",
+    "enDef": "Automated configuration, coordination, and management of computer systems and software"
+  },
+  {
+    "koTerm": "오토스케일",
+    "enTerm": "auto scale",
+    "abbr": "",
+    "koDef": "인스턴스의 부하, 장애 여부를 모니터링하여 필요한 경우 인스턴스를 추가로 생성하거나 삭제하는 기능",
+    "enDef": "Ability to monitor instances for load, failure, and create or delete additional instances as needed"
+  },
+  {
+    "koTerm": "온디맨드",
+    "enTerm": "on-demand",
+    "abbr": "",
+    "koDef": "요구와 수요에 따라 즉시 제공하는 방식",
+    "enDef": "A method of delivering services or resources instantly based on demand"
+  },
+  {
+    "koTerm": "온프레미스",
+    "enTerm": "on-premises",
+    "abbr": "",
+    "koDef": "고객사의 영역에 서버를 비롯한 장비가 설치되고 운영되는 상태",
+    "enDef": "A condition in which servers and related equipment are installed and operated at the customer's site"
+  },
+  {
+    "koTerm": "외부 결제",
+    "enTerm": "external payment",
+    "abbr": "",
+    "koDef": "모바일 앱 내 결제 시스템이 아닌 외부 결제 시스템을 통해 결제가 이루어지는 방식",
+    "enDef": "A payment method where transactions are processed through an external payment system rather than within the mobile app"
+  },
+  {
+    "koTerm": "워커 노드",
+    "enTerm": "worker node",
+    "abbr": "",
+    "koDef": "Kubernetes 클러스터 내에서 컨테이너가 실행되는 물리 또는 가상 머신. 노드는 클러스터의 구성원으로서 컨테이너를 실행하고 관리",
+    "enDef": "The physical or virtual machine on which a container runs within a Kubernetes cluster. A node is a member of a cluster that runs and manages containers."
+  },
+  {
+    "koTerm": "워크로드",
+    "enTerm": "workload",
+    "abbr": "",
+    "koDef": "주어진 시간 안에 처리해야 할 컴퓨팅 작업 또는 해당 작업에 필요한 컴퓨팅, 스토리지, 메모리 및 네트워크 리소스. 클라우드 환경에서는 가상 머신, 데이터베이스, 애플리케이션, 노드 등을 포함하여 클라우드 리소스를 사용하는 모든 서비스 또는 기능을 의미",
+    "enDef": "The computing tasks to be processed in a given amount of time, or the compute, storage, memory, and network resources required for the corresponding tasks. In a cloud environment, any service or function that uses cloud resources, including virtual machines, databases, applications, nodes, etc."
+  },
+  {
+    "koTerm": "웹 애플리케이션",
+    "enTerm": "web application",
+    "abbr": "",
+    "koDef": "인터넷이나 인트라넷을 통해 웹 브라우저에서 이용할 수 있는 응용 소프트웨어",
+    "enDef": "Application software that is available in a web browser over the Internet or intranet."
+  },
+  {
+    "koTerm": "웹 애플리케이션 서버",
+    "enTerm": "web application server",
+    "abbr": "WAS",
+    "koDef": "HTTP 프로토콜을 기반으로 클라이언트의 다양한 요청에 따라 동적 콘텐츠를 제공하는 서버로, 프로그램 실행 환경과 데이터베이스 접속 기능을 제공하고, 트랜잭션을 관리하는 역할을 수행",
+    "enDef": "A server that provides dynamic content in response to various requests from clients based on the HTTP protocol, providing a program execution environment, database access, and managing transactions."
+  },
+  {
+    "koTerm": "웹뷰",
+    "enTerm": "WebView",
+    "abbr": "",
+    "koDef": "Android 또는 iOS 프레임워크에 내장된 웹 브라우저 컴포넌트로, 뷰(View) 형태로 앱에 임베딩할 수 있음",
+    "enDef": "A web browser component built into an Android or iOS framework that can be embedded into an app as a View"
+  },
+  {
+    "koTerm": "웹 셸",
+    "enTerm": "webshell",
+    "abbr": "",
+    "koDef": "웹 서버에 취약점을 통해 업로드되거나 삽입된 악성 스크립트로, 공격자가 웹 기반 인터페이스를 통해 원격에서 서버를 제어할 수 있도록 하는 악성코드",
+    "enDef": "Malicious that is uploaded or inserted through a vulnerability in a web server, allowing an attacker to remotely control the server through a web-based interface"
+  },
+  {
+    "koTerm": "웹훅",
+    "enTerm": "webhook",
+    "abbr": "",
+    "koDef": "사용자 정의 콜백을 사용하여 웹 페이지 또는 웹 애플리케이션의 동작을 보강하거나 변경하는 방법",
+    "enDef": "A way to enhance or modify the behavior of a web page or application by using custom callbacks."
+  },
+  {
+    "koTerm": "위탁",
+    "enTerm": "consignment",
+    "abbr": "",
+    "koDef": "서비스나 데이터의 처리를 제3자에게 맡기는 일",
+    "enDef": "Outsourcing the processing of services or data to third parties"
+  },
+  {
+    "koTerm": "위탁자",
+    "enTerm": "consignor",
+    "abbr": "",
+    "koDef": "서비스나 데이터의 처리를 위탁하는 주체",
+    "enDef": "The party that delegates the handling of services or data to another"
+  },
+  {
+    "koTerm": "위탁하다",
+    "enTerm": "consign",
+    "abbr": "",
+    "koDef": "서비스나 데이터의 처리를 제3자에게 맡기다",
+    "enDef": "outsource the processing of services or data to a third party"
+  },
+  {
+    "koTerm": "유효 기간",
+    "enTerm": "validity period",
+    "abbr": "",
+    "koDef": "만료일과 다르게 기간 개념으로 사용되는 용어",
+    "enDef": "Terms used with the concept of duration as opposed to expiration date"
+  },
+  {
+    "koTerm": "이메일 인증",
+    "enTerm": "email verification",
+    "abbr": "",
+    "koDef": "인증 수단으로 이메일을 사용하는 인증 방식",
+    "enDef": "Authentication methods that use email as a means of authentication"
+  },
+  {
+    "koTerm": "이미지",
+    "enTerm": "image",
+    "abbr": "",
+    "koDef": "애플리케이션을 실행하기 위해 필요한 모든 소프트웨어 및 설정이 패키징된 가상 디스크",
+    "enDef": "A virtual disk that is packaged with all the software and settings needed to run an application."
+  },
+  {
+    "koTerm": "이미지 공지",
+    "enTerm": "image notice",
+    "abbr": "",
+    "koDef": "이미지 형태로 사용자에게 공지할 내용을 표시하는 팝업",
+    "enDef": "A popup that displays an announcement to the user in the form of an image"
+  },
+  {
+    "koTerm": "이미지 레지스트리",
+    "enTerm": "image registry",
+    "abbr": "",
+    "koDef": "컨테이너 이미지를 저장, 관리 및 배포하는 데 사용되는 저장소(예: NHN Container Registry(NCR), Docker Hub)",
+    "enDef": "The repository used to store, manage, and deploy container images (e.g: NHN Container Registry (NCR), Docker Hub)"
+  },
+  {
+    "koTerm": "이미지 템플릿",
+    "enTerm": "image template",
+    "abbr": "",
+    "koDef": "이미지를 만들기 위한 정보(설치 구성 요소, 사용자 스크립트 등)를 기록한 문서",
+    "enDef": "Documentation of information (installation components, user scripts, etc.) to create the image."
+  },
+  {
+    "koTerm": "이용 정지",
+    "enTerm": "ban",
+    "abbr": "",
+    "koDef": "유저의 서비스 이용을 정지하는 것",
+    "enDef": "Suspending a user's use of the service"
+  },
+  {
+    "koTerm": "이용 정지 해제",
+    "enTerm": "ban release",
+    "abbr": "",
+    "koDef": "유저의 서비스 이용 정지를 해제하는 것",
+    "enDef": "Lifting the suspension on a user's access to the service"
+  },
+  {
+    "koTerm": "이용 정지 해제하다",
+    "enTerm": "unban",
+    "abbr": "",
+    "koDef": "유저의 서비스 이용 정지를 해제하다",
+    "enDef": "Lift the suspension on a user's access to the service"
+  },
+  {
+    "koTerm": "이용 정지하다",
+    "enTerm": "ban",
+    "abbr": "",
+    "koDef": "유저의 서비스 이용을 정지하다",
+    "enDef": "Suspend a user's use of the service"
+  },
+  {
+    "koTerm": "이전",
+    "enTerm": "migration",
+    "abbr": "",
+    "koDef": "데이터 또는 서버, 네트워크 등을 다른 시스템으로(온프레미스에서 클라우드로, 또는 어떤 클라우드 서비스에서 다른 클라우드 서비스로) 옮기는 일",
+    "enDef": "Moving data or servers, networks, etc. to another system (from on-premises to the cloud, or from one cloud service to another)."
+  },
+  {
+    "koTerm": "이전하다",
+    "enTerm": "migrate",
+    "abbr": "",
+    "koDef": "데이터 또는 서버, 네트워크 등을 다른 시스템으로(온프레미스에서 클라우드로, 또는 어떤 클라우드 서비스에서 다른 클라우드 서비스로) 옮기다",
+    "enDef": "Move data or servers, networks, etc. from one system to another (on-premises to the cloud, or from one cloud service to another)."
+  },
+  {
+    "koTerm": "이중화",
+    "enTerm": "redundancy",
+    "abbr": "",
+    "koDef": "시스템의 일부에 어떠한 장애가 발생할 경우에도 시스템 전체의 기능을 계속 유지하도록 예비 장치를 평상시에도 백업으로 배치해 운용하는 일",
+    "enDef": "The practice of keeping backup devices ready at all times to ensure that the system continues to function even if part of it fails"
+  },
+  {
+    "koTerm": "인공 지능",
+    "enTerm": "artificial intelligence",
+    "abbr": "AI",
+    "koDef": "인간의 지능을 인공적으로 구현하는 방법론이나 실현 가능성 등을 연구하는 과학 기술 분야. 또는 그러한 기술을 이용하여 구현한 서비스",
+    "enDef": "A field of science and technology that studies the methodology or feasibility of artificially implementing human intelligence or services implemented using such technology"
+  },
+  {
+    "koTerm": "인그레스",
+    "enTerm": "ingress",
+    "abbr": "",
+    "koDef": "클러스터 외부에서 내부로의 HTTP 및 HTTPS 트래픽을 관리하는 Kubernetes 리소스",
+    "enDef": "Kubernetes resources for managing HTTP and HTTPS traffic from outside to inside the cluster"
+  },
+  {
+    "koTerm": "인스턴스",
+    "enTerm": "instance",
+    "abbr": "",
+    "koDef": "가상의 CPU, 메모리, 기본 디스크로 구성된 가상 서버",
+    "enDef": "A virtual server built with virtual CPU, memory, and primary storage disk"
+  },
+  {
+    "koTerm": "인스턴스 타입",
+    "enTerm": "flavor",
+    "abbr": "",
+    "koDef": "인스턴스의 가상 하드웨어 사양. 단순히 '타입'으로도 표현됨",
+    "enDef": "The virtual hardware specifications of the instance. Also expressed simply as 'type'"
+  },
+  {
+    "koTerm": "인스턴스 템플릿",
+    "enTerm": "instance template",
+    "abbr": "",
+    "koDef": "자주 사용하는 인스턴스 구성 요소 정보를 미리 정의해 보관하는 기능",
+    "enDef": "A function that allows users to predefine and save frequently used instance configuration details"
+  },
+  {
+    "koTerm": "인앱 결제",
+    "enTerm": "in-app purchase",
+    "abbr": "IAP",
+    "koDef": "모바일 앱 내 결제 시스템을 통해 결제가 이루어지는 방식",
+    "enDef": "How payments are taken through the payment system in your mobile app"
+  },
+  {
+    "koTerm": "인증",
+    "enTerm": "certification",
+    "abbr": "",
+    "koDef": "독립적인 심사 기관에 의해 기술적 기준을 충족함을 평가 받는 과정, 또는 그렇게 획득한 자격",
+    "enDef": "The process of being assessed by an independent auditor to verify compliance with technical standards, or the resulting certification"
+  },
+  {
+    "koTerm": "인증",
+    "enTerm": "authentication",
+    "abbr": "",
+    "koDef": "시스템에 접근한 사용자가 등록된 사용자인지를 확인하는 절차",
+    "enDef": "The procedure to verify whether a user who accessed the system is a registered user."
+  },
+  {
+    "koTerm": "인증 기관",
+    "enTerm": "certificate authority",
+    "abbr": "CA",
+    "koDef": "인증서를 보관하고, 서명하고, 발급하는 개체",
+    "enDef": "Objects that store, sign, and issue certificates"
+  },
+  {
+    "koTerm": "인증 번호",
+    "enTerm": "verification code",
+    "abbr": "",
+    "koDef": "보안을 위해 사용자 인증에 사용되는 고유한 번호",
+    "enDef": "A unique number used to authenticate users for security purposes."
+  },
+  {
+    "koTerm": "인증 정보",
+    "enTerm": "credentials",
+    "abbr": "",
+    "koDef": "사용자 인증을 위해 관리자가 관리하는 사용자 이름과 비밀번호 등의 수단",
+    "enDef": "Administrator-managed means of authenticating users, such as usernames and passwords."
+  },
+  {
+    "koTerm": "인증서",
+    "enTerm": "certificate",
+    "abbr": "",
+    "koDef": "인증 기관의 고유 키 또는 비밀 키를 사용하여 변조를 불가능하게 한 개체의 데이터",
+    "enDef": "Data of an entity that has been made tamper-proof using the unique key or secret key of a certification authority"
+  },
+  {
+    "koTerm": "인터넷 게이트웨이",
+    "enTerm": "internet gateway",
+    "abbr": "",
+    "koDef": "VPC의 리소스를 인터넷에 연결하기 위해 사용되는 서비스",
+    "enDef": "Services used to connect resources in the VPC to the Internet"
+  },
+  {
+    "koTerm": "인터넷 데이터 센터",
+    "enTerm": "internet data center",
+    "abbr": "IDC",
+    "koDef": "기업이나 개인에게 다양한 인터넷 서비스를 공급하기 위한 대규모의 서버, 네트워크 설비, 데이터 처리 및 저장 장치 등 컴퓨팅 인프라를 갖춘 기반 시설",
+    "enDef": "An infrastructure with computing infrastructure, including a large number of servers, network facilities, and data processing and storage devices, to provide a variety of Internet services to businesses or individuals."
+  },
+  {
+    "koTerm": "자격 증명",
+    "enTerm": "credentials",
+    "abbr": "",
+    "koDef": "신분을 증명하기 위해 전송되는 데이터",
+    "enDef": "Data sent to prove identity"
+  },
+  {
+    "koTerm": "자동 복구",
+    "enTerm": "auto healing",
+    "abbr": "",
+    "koDef": "개별 인스턴스에 장애가 발생했을 때 해당 인스턴스를 삭제하고 새로운 인스턴스를 생성해 대체하도록 처리하는 일",
+    "enDef": "The process of deleting a failed individual instance and creating a new instance to replace it."
+  },
+  {
+    "koTerm": "자동 확장/자동 감축",
+    "enTerm": "scale out/scale in",
+    "abbr": "",
+    "koDef": "오토 스케일 정책에 따라 사용 중인 가상 서버, 노드, 인스턴스를 자동으로 확장하거나 축소하도록 제공하는 기능",
+    "enDef": "Ability to provide automatic scaling up or down of virtual servers, nodes, and instances in use based on Auto scale policies."
+  },
+  {
+    "koTerm": "장애 복구",
+    "enTerm": "failback",
+    "abbr": "",
+    "koDef": "이상이 생긴 시스템을 정상 상태로 복구하고 예비 시스템을 작동 상태에서 예비 상태로 되돌리는 기능",
+    "enDef": "Ability to restore failed systems to a healthy state and return spare systems from operational to spare status"
+  },
+  {
+    "koTerm": "장애 복구하다",
+    "enTerm": "fail back",
+    "abbr": "",
+    "koDef": "특정 대상에 대해 장애 복구를 수행하다",
+    "enDef": "Perform a failover for a specific target"
+  },
+  {
+    "koTerm": "장애 조치",
+    "enTerm": "failover",
+    "abbr": "",
+    "koDef": "서버, 시스템, 네트워크 등에 이상이 생겼을 때 예비 시스템으로 자동 전환하는 기능",
+    "enDef": "Ability to automatically switch to a redundant system in the event of a server, system, network, etc. failure"
+  },
+  {
+    "koTerm": "장애 조치하다",
+    "enTerm": "fail over",
+    "abbr": "",
+    "koDef": "특정 대상에 대해 장애 조치를 수행하다",
+    "enDef": "Perform failover for a specific target"
+  },
+  {
+    "koTerm": "재사용 대기 시간",
+    "enTerm": "cooldown period",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 확장 또는 감축 정책이 발동된 후 다시 발동되기까지 기다려야 하는 시간",
+    "enDef": "The amount of time the Auto Scale service must wait after a scale-up or scale-down policy is triggered before it is triggered again."
+  },
+  {
+    "koTerm": "재해 복구",
+    "enTerm": "disaster recovery",
+    "abbr": "DR",
+    "koDef": "자연재해나 인위적인 재해가 일어났을 때 시스템을 복구하는 일",
+    "enDef": "Recovering systems after natural or man-made disasters"
+  },
+  {
+    "koTerm": "접두사",
+    "enTerm": "prefix",
+    "abbr": "",
+    "koDef": "특정한 형식의 이름 앞에 붙는 문자열",
+    "enDef": "A string prefixed to a name in a specific format"
+  },
+  {
+    "koTerm": "접두어",
+    "enTerm": "prefix",
+    "abbr": "",
+    "koDef": "특정한 형식의 이름 앞에 붙는 문자열",
+    "enDef": "A string prefixed to a name in a specific format"
+  },
+  {
+    "koTerm": "접미사",
+    "enTerm": "suffix",
+    "abbr": "",
+    "koDef": "특정한 형식의 이름 뒤에 붙는 문자열",
+    "enDef": "A string that follows a name in a specific format"
+  },
+  {
+    "koTerm": "제로 트러스트",
+    "enTerm": "zero trust",
+    "abbr": "",
+    "koDef": "내부 네트워크에 있더라도 이를 신뢰하지 않고, 모든 사용자·기기·접근 요청을 지속적으로 검증한 후 최소 권한만 부여하는 보안 모델 및 보안 원칙",
+    "enDef": "A security model and a security principle that do not trust internal networks and continuously verify all users, devices, and access requests before granting only the minimum privileges"
+  },
+  {
+    "koTerm": "제로 트러스트 아키텍처",
+    "enTerm": "zero trust architecture",
+    "abbr": "",
+    "koDef": "제로 트러스트 개념을 활용하여 네트워크, 시스템 및 리소스를 보호할 수 있는 추상적인 보안 구조",
+    "enDef": "An abstract security architecture that leverages the concept of zero trust to protect networks, systems, and resources."
+  },
+  {
+    "koTerm": "조직",
+    "enTerm": "organization",
+    "abbr": "",
+    "koDef": "NHN Cloud 서비스를 효율적으로 사용하고 관리하기 위해 생성하는 그룹",
+    "enDef": "Groups you create to efficiently use and manage NHN Cloud services"
+  },
+  {
+    "koTerm": "조직 멤버",
+    "enTerm": "organization member",
+    "abbr": "",
+    "koDef": "조직에 소속된 구성원",
+    "enDef": "A member belonging to an organization"
+  },
+  {
+    "koTerm": "조회하다",
+    "enTerm": "retrieve",
+    "abbr": "",
+    "koDef": "API 호출이나 DB 쿼리 실행 등을 통해 데이터를 가져오는 일",
+    "enDef": "Getting data by making API calls, running DB queries, etc."
+  },
+  {
+    "koTerm": "중앙 집중형 가상 라우팅",
+    "enTerm": "centralized virtual routing",
+    "abbr": "CVR",
+    "koDef": "가상 라우터를 중앙에 위치한 하나의 네트워크 노드에 배포하는 방식. 게이트웨이나 방화벽과 같이 하나의 지점을 통해 트래픽을 제어하는 경우 사용",
+    "enDef": "Deploying a virtual router on one centrally located network node. This method is used when traffic is controlled through a single point, such as a gateway or firewall."
+  },
+  {
+    "koTerm": "지속적 배포",
+    "enTerm": "continuous delivery",
+    "abbr": "CD",
+    "koDef": "소프트웨어 개발에서 애플리케이션 변경 사항이 운영 환경에 자동으로 배포되는 개발 전략",
+    "enDef": "A development strategy in software development where application changes are automatically deployed to the production environment"
+  },
+  {
+    "koTerm": "지속적 통합",
+    "enTerm": "continuous integration",
+    "abbr": "CI",
+    "koDef": "소프트웨어 개발에서 다수의 개발자가 각각 개발한 소스코드를 지속적으로 빌드하고 테스트하여 코드 통합 시 발생할 수 있는 오류를 줄이고 시스템을 안정적으로 유지하는 개발 전략",
+    "enDef": "In software development, a development strategy in which source code developed by multiple developers is continuously built and tested to reduce errors in code integration and keep the system stable."
+  },
+  {
+    "koTerm": "지연 시간",
+    "enTerm": "latency",
+    "abbr": "",
+    "koDef": "입력 신호에 대해 출력 신호가 지연되어 응답하는 시간 간격 또는 패킷 전송을 요청한 시간과 전송이 시작될 때까지의 시간 간격",
+    "enDef": "The time interval in which an output signal responds with a delay to an input signal, or the time interval between when a packet is requested to be sent and when it is sent."
+  },
+  {
+    "koTerm": "지원 종료",
+    "enTerm": "deprecated",
+    "abbr": "",
+    "koDef": "특정 기능이나 요소를 더 이상 지원하지 않으며 향후 릴리스에서 제거될 것임을 선언하는 프로세스",
+    "enDef": "The process of declaring that a particular feature or element is no longer supported and will be removed in a future release."
+  },
+  {
+    "koTerm": "책임 공유 모델",
+    "enTerm": "shared responsibility model",
+    "abbr": "SRM",
+    "koDef": "클라우드 서비스 공급자와 사용자가 클라우드에 구성한 리소스와 데이터를 안전하게 보호하기 위해 영역별 보안에 대한 책임을 분담하는 모델",
+    "enDef": "A model in which cloud service providers and users share responsibility for security by zone to secure the resources and data they have configured in the cloud."
+  },
+  {
+    "koTerm": "처리량",
+    "enTerm": "throughput",
+    "abbr": "",
+    "koDef": "특정 시간 동안 실제로 처리할 수 있는 작업의 양",
+    "enDef": "The volume of work that can be handled during a given time period"
+  },
+  {
+    "koTerm": "최대 인스턴스",
+    "enTerm": "maximum instances",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 스케일링 그룹이 생성할 수 있는 인스턴스 수의 최댓값",
+    "enDef": "The maximum number of instances that a scaling group can create in the Auto Scale service."
+  },
+  {
+    "koTerm": "최소 인스턴스",
+    "enTerm": "minimum instances",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 스케일링 그룹이 생성할 수 있는 인스턴스 수의 최솟값",
+    "enDef": "The minimum number of instances that a scaling group can create in the Auto Scale service."
+  },
+  {
+    "koTerm": "추상화",
+    "enTerm": "abstraction",
+    "abbr": "",
+    "koDef": "서비스나 시스템을 계층화하고 단순화하여 사용자가 보다 쉽고 일반적인 개념으로 인지하고 활용할 수 있도록 모델링한 것",
+    "enDef": "A service or system modeled in a way that layers and simplifies it so that users can perceive and utilize it in an easier, more general concept."
+  },
+  {
+    "koTerm": "침입 방지 시스템",
+    "enTerm": "intrusion prevention system",
+    "abbr": "IPS",
+    "koDef": "네트워크나 시스템에서 탐지된 악의적인 트래픽이나 공격 행위를 실시간으로 분석하여 차단하거나 우회/세션 종료 등의 조치를 수행하는 보안 시스템",
+    "enDef": "A security system analyzes malicious traffic or attacks detected in real time, taking measures such as blocking, bypassing, or terminating the session"
+  },
+  {
+    "koTerm": "침입 탐지 시스템",
+    "enTerm": "intrusion detection system",
+    "abbr": "IDS",
+    "koDef": "네트워크나 시스템에서 발생하는 트래픽과 이벤트를 분석하여 비정상적이거나 악의적인 행위를 탐지하고 관리자에게 경고(Alert)를 제공하는 보안 시스템",
+    "enDef": "A security system analyzes network traffic and events to detect abnormal or malicious behavior, providing alerts to administrators"
+  },
+  {
+    "koTerm": "커넥트 타임 로드 밸런싱",
+    "enTerm": "connect-time load balancing",
+    "abbr": "CTLB",
+    "koDef": "네트워크 로드 밸런싱 기술의 하나로 클라이언트-서버 간 첫 연결 시 첫 번째 패킷에서 백엔드 서버를 선택하고, 그 이후의 모든 트래픽은 앞서 선택한 백엔드 서버로 직접 전달되는 방식. 이를 통해 세션 지속성이 보장되며, 매번 로드 밸런싱을 수행하는 오버헤드를 줄일 수 있음",
+    "enDef": "A network load balancing technique in which a backend server is selected in the first packet on the first client-to-server connection, and all subsequent traffic is directed to the previously selected backend server. This ensures session persistence and can reduce the overhead of performing load balancing every time"
+  },
+  {
+    "koTerm": "컨택 센터",
+    "enTerm": "contact center",
+    "abbr": "",
+    "koDef": "NHN Cloud의 통합 상담 솔루션 서비스",
+    "enDef": "Integrated Consultation Solution Service on NHN Cloud"
+  },
+  {
+    "koTerm": "컨테이너",
+    "enTerm": "container",
+    "abbr": "",
+    "koDef": "1. 애플리케이션이 다양한 컴퓨팅 환경에서 빠르고 안정적으로 실행되도록 코드와 모든 종속성을 패키지화한 것\r\n2. 오브젝트 스토리지에서 최상위 폴더를 의미. 기본적으로 접근 권한 설정의 단위가 됨",
+    "enDef": "1.  The packaging of code and all dependencies so that the application runs quickly and reliably on a variety of computing environments.\r\n2. The top-level folder in object storage. Becomes the default unit of access permission settings"
+  },
+  {
+    "koTerm": "컨테이너 네트워크 인터페이스",
+    "enTerm": "container network interface",
+    "abbr": "CNI",
+    "koDef": "컨테이너 네트워킹을 관리하기 위한 표준 인터페이스",
+    "enDef": "Standard interface for managing container networking"
+  },
+  {
+    "koTerm": "컨테이너 런타임",
+    "enTerm": "container runtime",
+    "abbr": "",
+    "koDef": "Kubernetes 환경에서 컨테이너를 실행하고 컨테이너의 라이프사이클을 관리하는 소프트웨어",
+    "enDef": "Software to run containers in a Kubernetes environment and manage their lifecycle"
+  },
+  {
+    "koTerm": "컨테이너 오케스트레이션",
+    "enTerm": "container orchestration",
+    "abbr": "",
+    "koDef": "조직에서 컨테이너의 배포, 관리, 확장, 네트워킹을 자동화하여 전사적으로 활용하는 것을 의미",
+    "enDef": "The enterprise-wide adoption of automating container deployment, management, scaling, and networking within an organization"
+  },
+  {
+    "koTerm": "컨트롤 플레인",
+    "enTerm": "control plane",
+    "abbr": "",
+    "koDef": "Kubernetes 클러스터의 제어를 담당하는 주요 노드로 클러스터 상태를 관리하고 파드(pod)의 스케줄링을 담당",
+    "enDef": "The primary node in control of a Kubernetes cluster, responsible for managing cluster state and scheduling pods."
+  },
+  {
+    "koTerm": "컴플라이언스",
+    "enTerm": "compliance",
+    "abbr": "",
+    "koDef": "기업 내 모든 임직원들이 관련 법률, 규정 등을 보다 철저하게 준수하도록 사전 또는 상시적으로 통제·감독하는 것",
+    "enDef": "Oversee and manage all executives and employees within the company to ensure ongoing and thorough compliance with relevant laws and regulations"
+  },
+  {
+    "koTerm": "코로케이션 게이트웨이",
+    "enTerm": "colocation gateway",
+    "abbr": "",
+    "koDef": "NHN Cloud와 온프레미스 환경의 네트워크를 하이브리드로 연결하게 해 주는 서비스",
+    "enDef": "A service that connects NHN Cloud and on-premises networks in a hybrid environment"
+  },
+  {
+    "koTerm": "콘솔",
+    "enTerm": "console",
+    "abbr": "",
+    "koDef": "NHN Cloud 서비스를 웹 환경에서 이용할 수 있는 도구",
+    "enDef": "A tool that allows the use of NHN Cloud services in a web environment"
+  },
+  {
+    "koTerm": "콜백",
+    "enTerm": "callback",
+    "abbr": "",
+    "koDef": "함수를 미리 등록해 두었다가 특정 이벤트가 발생했을 때 호출되도록 하는 방법, 또는 그렇게 등록되고 호출되는 함수",
+    "enDef": "A method where a function is pre-registered and then called when a specific event occurs, or a function that is registered and called in this way"
+  },
+  {
+    "koTerm": "쿼리 지연",
+    "enTerm": "query latency",
+    "abbr": "",
+    "koDef": "쿼리 처리 과정에서 발생하는 지연",
+    "enDef": "The delay that occurs during the query processing process"
+  },
+  {
+    "koTerm": "크론 표현식",
+    "enTerm": "cron expression",
+    "abbr": "",
+    "koDef": "공백으로 구분된 5개 또는 6개의 필드로 구성된 문자열로 특정 시간 또는 간격으로 작업을 실행하기 위한 시간 집합을 표현하기 위해 사용함",
+    "enDef": "A string composed of five or six fields separated by spaces, used to represent a set of times for executing tasks at specific times or intervals"
+  },
+  {
+    "koTerm": "클라우드 네이티브",
+    "enTerm": "cloud native",
+    "abbr": "",
+    "koDef": "클라우드 컴퓨팅 환경에서 애플리케이션을 구축, 배포 및 관리하는 접근 방식으로 클라우드의 이점인 확장성, 유연성, 복원력 등을 최대로 활용할 수 있도록 함",
+    "enDef": "An approach to building, deploying, and managing applications in a cloud computing environment that enables you to take full advantage of the benefits of cloud such as scalability, flexibility, resiliency, and more"
+  },
+  {
+    "koTerm": "클라우드 서비스 공급자",
+    "enTerm": "cloud service provider",
+    "abbr": "CSP",
+    "koDef": "자체 데이터 센터 및 컴퓨팅 리소스를 사용해 클라우드 컴퓨팅 기반 인프라 및 플랫폼 서비스를 제공하는 사업자",
+    "enDef": "A provider of cloud computing-based infrastructure and platform services using its own data centers and computing resources."
+  },
+  {
+    "koTerm": "클러스터",
+    "enTerm": "cluster",
+    "abbr": "",
+    "koDef": "연결되어 하나의 시스템처럼 동작하는 각기 다른 컴퓨터들의 집합. 여러 대의 컴퓨터 노드(서버)로 구성된 컨테이너 오케스트레이션 단위를 나타내는 개념",
+    "enDef": "A set of different computers that are connected and act as a single system. A concept that refers to a container orchestration unit consisting of multiple computer nodes (servers)."
+  },
+  {
+    "koTerm": "키페어",
+    "enTerm": "key pair",
+    "abbr": "",
+    "koDef": "공개 키 기반 구조(PKI, public key infrastructure)를 바탕으로 한 SSH 공개 키, 개인 키 쌍으로, 인스턴스 접속 수단으로 사용됨",
+    "enDef": "SSH public key, a private key pair based on a public key infrastructure (PKI), used as a means of accessing an instance."
+  },
+  {
+    "koTerm": "탈퇴",
+    "enTerm": "withdrawal",
+    "abbr": "",
+    "koDef": "유저가 서비스에서 탈퇴하는 것",
+    "enDef": "A user leaving or unsubscribing from the service"
+  },
+  {
+    "koTerm": "탈퇴하다",
+    "enTerm": "withdrawl",
+    "abbr": "",
+    "koDef": "유저가 서비스에서 탈퇴하다",
+    "enDef": "A user leaves or unsubscribe from the service"
+  },
+  {
+    "koTerm": "테넌트",
+    "enTerm": "tenant",
+    "abbr": "",
+    "koDef": "인스턴스에 대해 공통적인 특정 접근 권한을 공유하는 사용자들의 그룹",
+    "enDef": "A group of users who share certain common access rights to an instance."
+  },
+  {
+    "koTerm": "토큰",
+    "enTerm": "token",
+    "abbr": "",
+    "koDef": "API와 상호 작용을 위해 사용자를 인증하고 권한을 부여하는 데 사용되는 식별 정보",
+    "enDef": "Identifying information used to authenticate and authorize users to interact with the API."
+  },
+  {
+    "koTerm": "트래픽",
+    "enTerm": "traffic",
+    "abbr": "",
+    "koDef": "일정 시간 동안 네트워크를 통해 송수신되는 데이터의 양",
+    "enDef": "The amount of data sent and received over the network over a period of time."
+  },
+  {
+    "koTerm": "파드",
+    "enTerm": "pod",
+    "abbr": "",
+    "koDef": "Kubernetes에서 가장 작은 배포 단위이며 하나 이상의 컨테이너로 구성. 동일한 파드 내의 컨테이너는 동일한 네트워크 네임스페이스와 IP 주소를 공유",
+    "enDef": "The smallest deployment unit in Kubernetes, consisting of one or more containers. Containers within the same Pod share the same network namespace and IP address"
+  },
+  {
+    "koTerm": "퍼블릭 IP",
+    "enTerm": "public IP",
+    "abbr": "",
+    "koDef": "인터넷 사용자의 로컬 네트워크를 식별하기 위해 인터넷 서비스 공급자(ISP)가 제공하는 고유하고 공개된 IP 주소. 내·외부에서 접근할 수 있음",
+    "enDef": "A unique, publicly available IP address provided by an Internet service provider (ISP) to identify an Internet user's local network. Accessible internally and externally"
+  },
+  {
+    "koTerm": "퍼블릭 이미지",
+    "enTerm": "public image",
+    "abbr": "",
+    "koDef": "NHN Cloud에서 미리 생성하여 기본 제공하는 이미지",
+    "enDef": "Pre-generated and built-in images from NHN Cloud"
+  },
+  {
+    "koTerm": "퍼지",
+    "enTerm": "purge",
+    "abbr": "",
+    "koDef": "CDN의 캐시 서버에 저장되어 있는 콘텐츠가 변경될 경우 해당 콘텐츠를 삭제하고 변경된 콘텐츠로 반영할 수 있는 기능",
+    "enDef": "The ability to delete content stored on the CDN's cache servers when it changes and reflect the corresponding content as changed."
+  },
+  {
+    "koTerm": "페이드 아웃",
+    "enTerm": "fade out",
+    "abbr": "",
+    "koDef": "일정 기간에 걸쳐 시스템 및 서비스에서 특정 기능이나 요소에 대해 대체 기능을 제공하지 않고 점진적으로 제거하는 프로세스로 해당 기능을 비활성화하거나 완전히 제거될 때까지 사용을 제한함",
+    "enDef": "The process of gradually removing certain features or elements from systems and services over a period of time without providing alternatives, restricting their use until they are disabled or completely removed"
+  },
+  {
+    "koTerm": "포트 포워딩",
+    "enTerm": "port forwarding",
+    "abbr": "",
+    "koDef": "컴퓨터 네트워크에서 패킷이 네트워크 게이트웨이를 통과하는 동안 하나의 IP 주소와 포트 번호로 결합된 통신 요청을 다른 곳으로 넘겨 주는 네트워크 주소를 변환해 주는 것",
+    "enDef": "In computer networks, a network address translation that passes communication requests that are combined into one IP address and port number to another as packets pass through a network gateway"
+  },
+  {
+    "koTerm": "프라이빗 IP",
+    "enTerm": "private IP",
+    "abbr": "",
+    "koDef": "회사 등 조직이나 일반 가정 내부 네트워크에서 사용하는 비공개된 IP 주소로 라우터를 통해 외부 네트워크와 통신함",
+    "enDef": "A private IP address used inside an organization's or home’s internal network that connects to external networks via a router"
+  },
+  {
+    "koTerm": "프라이빗 네트워크",
+    "enTerm": "private network",
+    "abbr": "",
+    "koDef": "인터넷 주소 구조에서 사설 네트워크를 정의하는 IP 영역으로 표기된 네트워크",
+    "enDef": "A network represented by an IP zone that defines a private network in the Internet address structure."
+  },
+  {
+    "koTerm": "프로비저닝",
+    "enTerm": "provisioning",
+    "abbr": "",
+    "koDef": "사용자 또는 비즈니스의 요구에 맞추어 서비스를 제공할 수 있도록 미리 자원을 할당하고 배치하는 것",
+    "enDef": "Allocating and deploying resources in advance to ensure that services are available to meet the needs of users or the business."
+  },
+  {
+    "koTerm": "프로젝트",
+    "enTerm": "project",
+    "abbr": "",
+    "koDef": "조직 내에서 일정 단위로 서비스 이용을 관리하기 위해 생성하는 그룹",
+    "enDef": "Groups you create within your organization to manage service usage on a scheduled basis."
+  },
+  {
+    "koTerm": "프로젝트 멤버",
+    "enTerm": "project member",
+    "abbr": "",
+    "koDef": "프로젝트에 소속된 구성원",
+    "enDef": "A member belonging to a project"
+  },
+  {
+    "koTerm": "프로젝트 피어링",
+    "enTerm": "project peering",
+    "abbr": "",
+    "koDef": "동일 리전, 다른 프로젝트의 서로 다른 두 개의 VPC를 연결하는 기능",
+    "enDef": "This is a feature to connect two different VPCs that are in different projects but in the same region."
+  },
+  {
+    "koTerm": "플로팅 IP",
+    "enTerm": "floating IP",
+    "abbr": "",
+    "koDef": "외부 네트워크와 통신할 수 있도록 별도 요청을 통해 지정된 네트워크로부터 할당 받는 IP 주소",
+    "enDef": "An IP address that is assigned by a network through a separate request to be able to communicate with external networks."
+  },
+  {
+    "koTerm": "피어",
+    "enTerm": "peer",
+    "abbr": "",
+    "koDef": "특정 네트워크에 속해 있고 모두 동일한 기능을 가진 기기로 이는 하드웨어 장비, 소프트웨어 프로그램, 노드, 또는 사용자가 될 수 있음",
+    "enDef": "Devices that belong to a specific network and all have the same capabilities, which can be hardware equipment, software programs, nodes, or users."
+  },
+  {
+    "koTerm": "피어링",
+    "enTerm": "peering",
+    "abbr": "",
+    "koDef": "서로 다른 두 VPC를 연결하는 기능. 피어링 게이트웨이에서는 동일 리전, 동일 프로젝트의 서로 다른 두 개의 VPC를 연결하는 기능을 뜻함",
+    "enDef": "The ability to connect two different VPCs. In a peering gateway, it means connecting two separate VPCs within the same region and project"
+  },
+  {
+    "koTerm": "피어링 게이트웨이",
+    "enTerm": "peering gateway",
+    "abbr": "",
+    "koDef": "서로 다른 두 VPC를 연결하게 해 주는 서비스",
+    "enDef": "Services that allow you to connect two different VPCs"
+  },
+  {
+    "koTerm": "하이브리드 클라우드",
+    "enTerm": "hybrid cloud",
+    "abbr": "",
+    "koDef": "단일 애플리케이션을 위해 프라이빗 클라우드와 퍼블릭 클라우드를 결합하여 사용하는 클라우드 컴퓨팅 전략",
+    "enDef": "A cloud computing strategy that combines private and public clouds for a single application."
+  },
+  {
+    "koTerm": "하이퍼바이저",
+    "enTerm": "hypervisor",
+    "abbr": "",
+    "koDef": "가상화를 구현하기 위한 기반이 되는 기술로 하나의 컴퓨터에서 다수의 서로 다른 운영체제를 동시에 실행하기 위한 논리적 계층",
+    "enDef": "A core technology for virtualization, serving as a logical layer that enables multiple operating systems to run at the same time on a single computer"
+  },
+  {
+    "koTerm": "허브 앤 스포크",
+    "enTerm": "Hub-Spoke",
+    "abbr": "",
+    "koDef": "중앙 허브(Hub) 네트워크에 여러 개의 스포크(Spoke) 네트워크를 연결하여 공통 서비스와 트래픽을 중앙에서 통합 관리하는 네트워크 설계 방식",
+    "enDef": "A method for network design that centrally manages common services and traffic by connecting several spoke networks to a central hub network"
+  },
+  {
+    "koTerm": "헬스 체크",
+    "enTerm": "health check",
+    "abbr": "",
+    "koDef": "설정한 값에 따라 Pool 내에 속한 엔드포인트에 대해 접근성을 확인하는 기능",
+    "enDef": "A feature that verifies the accessibility of endpoints in a Pool based on pre-defined settings"
+  },
+  {
+    "koTerm": "확장",
+    "enTerm": "scale-out",
+    "abbr": "",
+    "koDef": "Auto Scale 서비스에서 구동 인스턴스 수를 늘리는 것",
+    "enDef": "Increasing the number of running instances in the Auto Scale service"
+  },
+  {
+    "koTerm": "회원",
+    "enTerm": "member",
+    "abbr": "",
+    "koDef": "NHN Cloud 서비스에 가입한 회원. 일반적으로 'NHN Cloud 계정'과 동의어",
+    "enDef": "Members who have subscribed to NHN Cloud services. Generally synonymous with 'NHN Cloud account'"
+  },
+  {
+    "koTerm": "",
+    "enTerm": "엔에이치엔클라우드",
+    "abbr": "",
+    "koDef": "",
+    "enDef": ""
+  },
+  {
+    "koTerm": "",
+    "enTerm": "13487 경기도 성남시 분당구 대왕판교로645번길 16 NHN 플레이뮤지엄\r\n고객 센터: 1588-7967 I 이메일: support@nhncloud.com\r\n©NHN Cloud Corp. All rights reserved.",
+    "abbr": "",
+    "koDef": "",
+    "enDef": ""
+  }
+]
