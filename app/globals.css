@@ -117,6 +117,33 @@ p { margin: 6px 0; }
 .option.correct .option-marker { border-color: var(--success); color: var(--success); background: var(--success-soft); }
 .option.wrong .option-marker { border-color: var(--error); color: var(--error); background: var(--error-soft); }
 .option-text { flex: 1; font-size: 15px; line-height: 1.5; }
+.option-rationale {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  background: rgba(0,0,0,0.025);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border-left: 2px solid var(--border);
+  white-space: pre-wrap;
+}
+.option.correct .option-rationale {
+  background: var(--success-soft);
+  border-left-color: var(--success);
+  color: #065f46;
+}
+.option.wrong .option-rationale {
+  background: var(--error-soft);
+  border-left-color: var(--error);
+  color: #991b1b;
+}
+.explanation-summary {
+  font-weight: 600;
+  color: var(--text);
+  margin: 4px 0 10px;
+  font-size: 14px;
+}
 .explanation {
   margin-top: 14px;
   padding: 14px;

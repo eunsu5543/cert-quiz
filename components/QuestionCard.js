@@ -38,6 +38,7 @@ export default function QuestionCard({ question, selected, revealed, onSelect, d
           } else if (sel) {
             cls += ' selected';
           }
+          const rationale = effectiveRevealed ? question.perOption?.[idx] : null;
           return (
             <div
               key={idx}
@@ -47,7 +48,12 @@ export default function QuestionCard({ question, selected, revealed, onSelect, d
               }}
             >
               <div className="option-marker">{String.fromCharCode(65 + idx)}</div>
-              <div className="option-text">{opt}</div>
+              <div className="option-text">
+                <div>{opt}</div>
+                {rationale && (
+                  <div className="option-rationale">{rationale}</div>
+                )}
+              </div>
             </div>
           );
         })}
@@ -55,6 +61,9 @@ export default function QuestionCard({ question, selected, revealed, onSelect, d
       {effectiveRevealed && (
         <div className="explanation">
           <span className="label">해설</span>
+          {question.summary && (
+            <div className="explanation-summary">{question.summary}</div>
+          )}
           <div style={{ whiteSpace: 'pre-wrap' }}>{question.explain}</div>
         </div>
       )}
