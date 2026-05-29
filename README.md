@@ -65,6 +65,10 @@ npm run build    # 정적 export → out/
 설계 문서: [`docs/superpowers/specs/`](docs/superpowers/specs/)
 구현 계획: [`docs/superpowers/plans/`](docs/superpowers/plans/)
 
+## 피드백
+
+문제·해설 오류, UX 개선 제안, 추가하고 싶은 자격증 등은 [GitHub Issues](https://github.com/eunsu5543/cert-quiz/issues)로 받습니다.
+
 ## 라이선스
 
 미정.
