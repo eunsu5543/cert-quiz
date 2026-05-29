@@ -42,6 +42,12 @@ export default function Quiz() {
     setResults([]);
   };
 
+  const handleHome = () => {
+    if (results.length === 0 || confirm('현재 풀이를 종료하고 처음으로 돌아갈까요?')) {
+      restart();
+    }
+  };
+
   if (!started) {
     return (
       <div className="app">
@@ -71,7 +77,7 @@ export default function Quiz() {
   if (idx >= filtered.length) {
     return (
       <div className="app">
-        <div className="card"><ModeToggle /></div>
+        <Header onHome={handleHome} />
         <StatsScreen
           results={results}
           domains={allDomains}
@@ -114,9 +120,18 @@ export default function Quiz() {
     setRevealed(false);
   };
 
+  const handlePrev = () => {
+    if (idx === 0) return;
+    // truncate any results recorded for this and prior question (re-attempt-friendly)
+    setResults(results.slice(0, idx - 1));
+    setIdx(idx - 1);
+    setSelected(new Set());
+    setRevealed(false);
+  };
+
   return (
     <div className="app">
-      <div className="card"><ModeToggle /></div>
+      <Header onHome={handleHome} />
       <div className="topbar">
         <span>{idx + 1} / {filtered.length}</span>
         <span>{domainMeta.name}</span>
@@ -134,8 +149,28 @@ export default function Quiz() {
         hasSelection={selected.size > 0}
         onReveal={handleReveal}
         onNext={handleNext}
+        onPrev={handlePrev}
+        isFirst={idx === 0}
         isLast={idx === filtered.length - 1}
       />
+    </div>
+  );
+}
+
+function Header({ onHome }) {
+  return (
+    <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <button
+        type="button"
+        className="btn secondary"
+        style={{ flex: '0 0 auto', minHeight: 36, padding: '6px 14px', fontSize: 14 }}
+        onClick={onHome}
+      >
+        홈
+      </button>
+      <div style={{ flex: 1 }}>
+        <ModeToggle />
+      </div>
     </div>
   );
 }

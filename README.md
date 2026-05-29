@@ -2,7 +2,7 @@
 
 자격증 학습 플랫폼. NHN Cloud Essentials 모의고사를 시드로, 향후 AWS·CKA 등 여러 자격증으로 확장 예정.
 
-🌐 **Live**: https://nhn-psi.vercel.app
+🌐 **Live**: https://cert-quiz-psi.vercel.app
 
 ## 특징
 
