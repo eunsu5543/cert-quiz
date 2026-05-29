@@ -144,6 +144,35 @@ p { margin: 6px 0; }
   margin: 4px 0 10px;
   font-size: 14px;
 }
+.glossary {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: #fafbfc;
+  border: 1px solid var(--border);
+}
+.glossary-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.glossary-item {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.glossary-item:last-child { margin-bottom: 0; }
+.glossary-term {
+  color: var(--text);
+  font-weight: 700;
+  margin-right: 6px;
+}
+.glossary-def {
+  color: var(--muted);
+}
 .explanation {
   margin-top: 14px;
   padding: 14px;

@@ -67,6 +67,17 @@ export default function QuestionCard({ question, selected, revealed, onSelect, d
           <div style={{ whiteSpace: 'pre-wrap' }}>{question.explain}</div>
         </div>
       )}
+      {effectiveRevealed && question.glossary && question.glossary.length > 0 && (
+        <div className="glossary">
+          <div className="glossary-title">관련 용어</div>
+          {question.glossary.map((g, i) => (
+            <div key={i} className="glossary-item">
+              <span className="glossary-term">{g.term}</span>
+              <span className="glossary-def">{g.definition}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
