@@ -8,3 +8,5 @@ out/
 # Editor/tooling
 .idea/
 .claude/
+
+.vercel
