@@ -12,6 +12,20 @@
 - Agent 정의: `.claude/agents/question-generator.md` — summary tone 보강됨 (오늘 v3 fix)
 - 검수 워크플로: staging → user review → approved → questions.json
 
+## ⚠️ 사용자 피드백 (2026-05-29 18:00, 폰 실제 풀이 후)
+
+다음 세션 시작 시 반드시 반영할 것:
+
+1. **"가이드는~" 주어 표현 금지** — 해설은 사실 자체를 단정 서술해야 함 (cert/시험 톤). instruction에 추가 완료. 기존 5문제도 검수 시 같이 정비.
+2. **4번 문제(concept-004) 교체** — "시나리오 3" 같이 cache 문서 내부 식별자에 의존한 문제는 외부 학습자가 풀 수 없음. status를 needs-revision으로 옮기거나 폐기 후 재생성.
+3. **Quickstarts 시험 범위 검토** — 시험 안내서: "사용자 가이드 내용으로만 출제". Quickstarts는 빠른 시작 튜토리얼이지 사용자 가이드 본문 아닐 가능성 큼. 현재 5문제 **전부** Quickstarts 기반 → 출제 범위 부적합 가능성. 정식 사용자 가이드(각 서비스의 overview, console-guide, api-guide)로 옮겨야 함.
+4. **난이도 기준** — Essentials는 초급 자격증. 운영 깊이 지식(ACL Rule 101번, 도메인 명명 3~40자 같은 외울 거리)은 부적절. 공식 샘플 8문제 톤이 적정 기준선. instruction에 가이드 추가 완료.
+
+**즉, 1.6단계 sample 5문제는 '워크플로 검증'으로는 성공이지만 '콘텐츠 품질'은 다음 세션에 다음 작업:**
+- 4번 폐기 + 재생성
+- Quickstarts 출처 1, 2, 3, 5번 재검토 — 진짜 사용자 가이드 기반인지 확인 후 부적합하면 재생성
+- 정식 사용자 가이드(`data/source/guide/ko/<Service>/<Product>/ko/overview.md` 등)로 source 전환
+
 ## 다음 세션 첫 작업 후보
 
 ### 옵션 1: 100문제 batch 본격 시작 (사용자가 가장 원했던 것)
