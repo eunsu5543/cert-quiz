@@ -7,9 +7,13 @@ import path from 'node:path';
 import { buildAvoidList, selectSourcePaths, ID_PREFIX } from './cert-batch.lib.mjs';
 
 const domain = process.argv[2];
-const batchSize = Number(process.argv[3] || 8);
 if (!domain || !ID_PREFIX[domain]) {
   console.error(`usage: node scripts/prepare-batch.mjs <${Object.keys(ID_PREFIX).join('|')}> [batchSize]`);
+  process.exit(1);
+}
+const batchSize = parseInt(process.argv[3] || '8', 10);
+if (!Number.isInteger(batchSize) || batchSize < 1) {
+  console.error('batchSize must be a positive integer');
   process.exit(1);
 }
 
