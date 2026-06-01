@@ -1,91 +1,60 @@
-# 다음 세션 진입 메모 (2026-05-29 작성)
+# 다음 세션 진입 메모 (2026-06-01 갱신 — 1.7단계 자동화)
 
-오늘 1.6단계 sample 5문제까지 검수 완료. 다음 세션 진입 시 아래 순서로 가면 자연스럽게 이어집니다.
+1.7단계: 문제 생성→에이전트 검수→`data/questions.json` 자동 반영 파이프라인을 구축하고 concept-security 도메인을 마감했다.
 
 ## 현재 상태 스냅샷
 
 - Live: https://cert-quiz-psi.vercel.app
-- 데이터: v2 스키마, 5문제 (concept-security 도메인만, 40문제 더 필요)
-- 도메인 진행률: concept 5/45, service-feature 0/102, service-skill 0/120, billing 0/33 (총 5/300)
-- 가이드 캐시: `data/source/guide/` — 크롤 일부 완료 (Essentials 범위 외 페이지 포함, gitignored)
-- 용어 사전: `data/source/glossary.json` — 341 terms (한/영 + 정의)
-- Agent 정의: `.claude/agents/question-generator.md` — summary tone 보강됨 (오늘 v3 fix)
-- 검수 워크플로: staging → user review → approved → questions.json
+- 최신 커밋: `86d01a2` (push 완료, Vercel 자동배포됨)
+- 데이터: 총 29문제, 전부 concept-security 도메인, 전부 v2 스키마 valid
+- 도메인 진행률:
+  - **concept-security: 29 / 30** (target 45→30 하향, 사실상 완료. need=1)
+  - service-feature: 0 / 102
+  - service-skill: 0 / 120
+  - billing: 0 / 33
+- ⚠️ `meta.targetCount`=300인데 도메인 target 합=285 (concept 하향 탓). 미해결 결정: 285로 인정 vs 300 유지+15개 재분배.
 
-## ⚠️ 사용자 피드백 (2026-05-29 18:00, 폰 실제 풀이 후)
+## 자동화 파이프라인 (완성·검증됨)
 
-다음 세션 시작 시 반드시 반영할 것:
+설계/계획: `docs/superpowers/specs/2026-06-01-cert-batch-automation-design.md`, `docs/superpowers/plans/2026-06-01-cert-batch-automation.md`
 
-1. **"가이드는~" 주어 표현 금지** — 해설은 사실 자체를 단정 서술해야 함 (cert/시험 톤). instruction에 추가 완료. 기존 5문제도 검수 시 같이 정비.
-2. **4번 문제(concept-004) 교체** — "시나리오 3" 같이 cache 문서 내부 식별자에 의존한 문제는 외부 학습자가 풀 수 없음. status를 needs-revision으로 옮기거나 폐기 후 재생성.
-3. **Quickstarts 시험 범위 검토** — 시험 안내서: "사용자 가이드 내용으로만 출제". Quickstarts는 빠른 시작 튜토리얼이지 사용자 가이드 본문 아닐 가능성 큼. 현재 5문제 **전부** Quickstarts 기반 → 출제 범위 부적합 가능성. 정식 사용자 가이드(각 서비스의 overview, console-guide, api-guide)로 옮겨야 함.
-4. **난이도 기준** — Essentials는 초급 자격증. 운영 깊이 지식(ACL Rule 101번, 도메인 명명 3~40자 같은 외울 거리)은 부적절. 공식 샘플 8문제 톤이 적정 기준선. instruction에 가이드 추가 완료.
+| 구성요소 | 역할 |
+|---|---|
+| `scripts/cert-batch.lib.mjs` | 순수 로직(검증·avoidList·ID재부여·append·소스선별). `npm test` 26개 통과 |
+| `scripts/prepare-batch.mjs` | `node scripts/prepare-batch.mjs <domain>` → `data/staging/<domain>/_batch-args.json` 생성 |
+| `scripts/apply-batch.mjs` | `node scripts/apply-batch.mjs <domain> <approvedJsonPath>` → questions.json에 검증·append |
+| `.claude/agents/question-generator.md` | 생성 에이전트(기존) |
+| `.claude/agents/question-reviewer.md` | 검수 에이전트(신규). 루브릭: ①공식 샘플 깊이 정합 ②중복. 인증키·설정값 트리비아 reject |
+| `.claude/workflows/cert-batch.js` | 생성→검수 루프 Workflow. 소프트상한(3회 dry시 조기종료) |
 
-**즉, 1.6단계 sample 5문제는 '워크플로 검증'으로는 성공이지만 '콘텐츠 품질'은 다음 세션에 다음 작업:**
-- 4번 폐기 + 재생성
-- Quickstarts 출처 1, 2, 3, 5번 재검토 — 진짜 사용자 가이드 기반인지 확인 후 부적합하면 재생성
-- 정식 사용자 가이드(`data/source/guide/ko/<Service>/<Product>/ko/overview.md` 등)로 source 전환
+### 실행 절차 (도메인 1개 채우기)
+
+1. `selectSourcePaths`(lib)의 해당 도메인 후보에 시험범위 소스 경로 추가 (service-*/billing은 현재 placeholder 1개뿐 → 확장 필수)
+2. `node scripts/prepare-batch.mjs <domain>` → args 파일 생성
+3. **Workflow 실행** (중요 교훈):
+   - 명명 워크플로 레지스트리엔 없음 → `Workflow({scriptPath: "C:/Docs/cert-quiz/.claude/workflows/cert-batch.js", args: <args객체>})`
+   - args는 문자열로 전달됨 → 워크플로가 내부에서 JSON.parse 처리(이미 반영됨)
+   - 세션 cwd가 `C:/Docs`(프로젝트 부모)라 워크플로 서브에이전트가 프로젝트 `.claude/agents`를 모름 → `agentType` 안 쓰고 기본 서브에이전트가 정의파일을 절대경로로 Read, 소스도 baseDir로 절대화(이미 반영됨). args에 `baseDir: "C:/Docs/cert-quiz"` 포함시킬 것
+   - args의 avoidList는 `_batch-args.json`에서 그대로 복사
+4. 반환된 `approved` 배열을 `data/staging/<domain>/_approved.json`에 저장
+5. (필요시) 품질 표본점검 후 부적합 문제 제외
+6. `node scripts/apply-batch.mjs <domain> data/staging/<domain>/_approved.json`
+7. `npm test` + 검증(count/유니크/invalid 0) → commit → `git push`
+
+## 핵심 교훈 — 도메인별 출제 천장
+
+concept-security가 45→29에서 멈춘 건 **공식 범위 한계**(재크롤로 안 풀림). 시험안내서상 concept-security = "클라우드 컴퓨팅 개념·특징, 책임공유 모델, 일반적인 클라우드 보안 개념" = 일반 개념 수준. NHN 사용자 가이드는 제품 문서라 순수 일반개념 콘텐츠가 얕음 → ~29~30이 실질 천장. **품질·범위 지키며 소프트상한까지 뽑고 멈추는** 방식이 옳음(45 강제 충원 = 트리비아 유발).
+
+→ **service-feature/service-skill/billing은 제품 가이드가 풍부**해 천장이 훨씬 높을 것. 파이프라인이 제 성능을 낼 도메인들.
 
 ## 다음 세션 첫 작업 후보
 
-### 옵션 1: 100문제 batch 본격 시작 (사용자가 가장 원했던 것)
-
-도메인 비율로 분배:
-- concept-security: 15문제 (5 이미 있음 → 10 더)
-- service-feature: 34문제
-- service-skill: 40문제
-- billing: 11문제
-
-batch size 5–10씩 dispatch → staging → 검수 → approved. 도메인 하나씩 끝내는 방식 권장.
-
-**준비물 / 확인 사항:**
-- 크롤링 캐시가 도메인별로 충분한지 점검 (`ls data/source/guide/ko/`)
-- 부족하면 추가 페이지 fetch (시험 범위만 좁혀서)
-- crawl-guide.mjs를 시험 범위 entry URLs만 받게 좁히는 게 효율적
-
-### 옵션 2: 자동화 batch 스크립트 작성 + 사용자 비-세션 실행
-
-`scripts/run-batch.mjs` — Anthropic SDK 직접 호출:
-- 입력: 도메인 + batch size + 가이드 청크 경로들
-- 출력: staging file에 결과 저장
-- 본인 ANTHROPIC_API_KEY로 자기 시간에 N번 실행 가능
-
-장점: Claude Code 세션 없이 본인이 자기 페이스로 batch 진행
-단점: API 비용 본인 부담, 검수는 별개
-
-### 옵션 3: 검수 UI 만들기
-
-지금 staging JSON 직접 검토 → 별도 review 화면 (next.js 라우트 `/review`)에서:
-- staging file 로드해서 문제 카드로 표시
-- 각 문제에 approve / edit / reject 버튼
-- approved JSON을 questions.json에 자동 append
-
-장점: 검수 사이클 크게 단축, 폰에서도 검수 가능
-단점: 작업량 큼 (4–6시간 추정)
-
-## 우선순위 추천
-
-1. **옵션 1** — 직접적 진행, 결과 빨리 보임
-2. **옵션 3** — 검수 사이클이 진짜 병목이라 한 번 잘 만들어두면 효율 폭증
-3. **옵션 2** — 1번에서 batch가 너무 많아진 후 고려
-
-## 추가 정비 항목 (작업 중 발견)
-
-- **크롤 범위 좁히기**: 현재 `crawl-guide.mjs`는 depth 2로 전체 사이트 크롤. Essentials 범위(Compute, Network, Storage, Database, NHN Cloud 기본 정책, Billing)만 cover하도록 entry URL 리스트 명시.
-- **agent prompt에 glossary 활용 강화**: 현재 generator가 일부 문제에만 glossary 작성. `data/source/glossary.json` 의 341개 용어를 적극 인용하도록 instruction 보정.
-- **단일/다중 비율 검증**: 현재 80/20 가정. 시험 후기 등으로 실제 비율 확인되면 수정.
-- **출처 표시 UI**: 현재 question에 `source[]` 있지만 UI에서 표시 안 함. "출처: 사용자 가이드 X 섹션" 같이 작은 글씨로 표시 검토.
-
-## 작업 디렉토리 컨텍스트
-
-- main branch에서 작업 (feature branch 분리 없음, 단독 사이드 프로젝트)
-- git push → Vercel 자동 deploy + alias 갱신은 수동 (`vercel alias set <new-deployment> cert-quiz-psi.vercel.app`)
-- Vercel deployment protection: 비활성화됨 (사용자가 dashboard에서)
+1. `meta.targetCount` 정리 (285 인정 vs 300 재분배) — 사용자 결정 필요
+2. **service-feature(102) 시작** — `selectSourcePaths['service-feature']`에 각 서비스 overview/console-guide(시험범위) 추가 → prepare→workflow→apply 반복. 도메인 비율 큼(34%)이라 batch 여러 번 필요
+3. service-skill(120) 전: 깊이 재크롤은 선택(콘텐츠 대부분 단일 장문 페이지라 필수 아님)
 
 ## 관련 문서
 
-- 1.6 spec: `docs/superpowers/specs/2026-05-29-cert-content-sourcing-design.md`
-- 1.6 plan: `docs/superpowers/plans/2026-05-29-cert-content-sourcing-plan.md`
-- 시험 안내서: `docs/nhn-cloud-essentials-exam-guide.md`
-- 공식 샘플 문제: `docs/nhn-cloud-essentials-sample-questions.md`
-- Agent 정의: `.claude/agents/question-generator.md`, `.claude/agents/cert-explainer.md` (1.5 deprecated)
+- spec/plan: `docs/superpowers/specs|plans/2026-06-01-cert-batch-automation.*`
+- 시험 안내서: `docs/nhn-cloud-essentials-exam-guide.md` (도메인 범위·비율 기준)
+- 공식 샘플: `docs/nhn-cloud-essentials-sample-questions.md` (난이도 기준선)
