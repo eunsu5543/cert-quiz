@@ -1,6 +1,8 @@
 // Pure helpers for the cert-batch automation. No side effects except the
 // explicit file readers/writers at the bottom (apply/prepare CLIs call those).
 
+import { existsSync } from 'node:fs';
+
 const REQUIRED = ['id', 'domain', 'type', 'q', 'options', 'answer', 'summary', 'perOption', 'source'];
 
 export function validateQuestion(q) {
@@ -76,4 +78,26 @@ export function appendQuestions(doc, newQuestions) {
     added++;
   }
   return { doc: next, added, skipped };
+}
+
+const G = 'data/source/guide/ko';
+export const DOMAIN_SOURCE_CANDIDATES = {
+  'concept-security': [
+    `${G}/nhncloud/ko/overview.md`,
+    `${G}/nhncloud/ko/security-policy.md`,
+    `${G}/nhncloud/ko/resource-policy.md`,
+    `${G}/nhncloud/ko/region-guide.md`,
+    `${G}/nhncloud/ko/user-guide.md`,
+    `${G}/nhncloud/ko/public-api/overview.md`,
+    `${G}/nhncloud/ko/public-api/auth-method-overview.md`,
+  ],
+  'service-feature': [`${G}/nhncloud/ko/overview.md`],
+  'service-skill': [`${G}/nhncloud/ko/overview.md`],
+  'billing': [`${G}/nhncloud/ko/user-guide.md`],
+};
+
+export function selectSourcePaths(domain, exists = existsSync) {
+  const cands = DOMAIN_SOURCE_CANDIDATES[domain];
+  if (!cands) throw new Error(`unknown domain: ${domain}`);
+  return cands.filter(p => exists(p));
 }

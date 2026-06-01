@@ -4,6 +4,7 @@ import { validateQuestion } from './cert-batch.lib.mjs';
 import { buildAvoidList } from './cert-batch.lib.mjs';
 import { resequenceIds, ID_PREFIX } from './cert-batch.lib.mjs';
 import { appendQuestions, normalizeQ } from './cert-batch.lib.mjs';
+import { selectSourcePaths, DOMAIN_SOURCE_CANDIDATES } from './cert-batch.lib.mjs';
 
 const good = {
   id: 'concept-011', domain: 'concept-security', type: 'single',
@@ -138,4 +139,21 @@ test('appendQuestions does not mutate input doc', () => {
   const doc = makeDoc();
   appendQuestions(doc, [valid]);
   assert.equal(doc.questions.length, 1);
+});
+
+test('concept-security has candidate source paths', () => {
+  assert.ok(DOMAIN_SOURCE_CANDIDATES['concept-security'].length >= 3);
+  assert.ok(DOMAIN_SOURCE_CANDIDATES['concept-security']
+    .some(p => p.includes('security-policy')));
+});
+
+test('selectSourcePaths filters to existing files only', () => {
+  const exists = (p) => p.includes('overview') || p.includes('security-policy');
+  const out = selectSourcePaths('concept-security', exists);
+  assert.ok(out.length >= 2);
+  assert.ok(out.every(p => exists(p)));
+});
+
+test('selectSourcePaths unknown domain throws', () => {
+  assert.throws(() => selectSourcePaths('nope', () => true));
 });
