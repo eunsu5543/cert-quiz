@@ -20,6 +20,8 @@ data/source/glossary-raw.xlsx
 
 .vercel
 
-# Batch automation staging artifacts
-data/staging/*/_batch-args.json
-data/staging/*/_approved.json
+# Batch automation staging artifacts (convention: throwaway files use a `_` prefix;
+# real kept batches like batch-02-v2.json have no underscore and stay tracked)
+data/staging/_*
+data/staging/**/_*
+.tmp-*
