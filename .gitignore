@@ -10,6 +10,8 @@ out/
 .claude/*
 !.claude/agents/
 !.claude/agents/**
+!.claude/workflows/
+!.claude/workflows/**
 
 # Crawled user guide cache (large, regenerable)
 data/source/guide/
