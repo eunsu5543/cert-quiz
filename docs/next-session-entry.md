@@ -1,18 +1,40 @@
-# 다음 세션 진입 메모 (2026-06-01 갱신 — 1.7단계 자동화)
+# 다음 세션 진입 메모 (2026-06-01 갱신 — service-feature 착수 직전)
 
-1.7단계: 문제 생성→에이전트 검수→`data/questions.json` 자동 반영 파이프라인을 구축하고 concept-security 도메인을 마감했다.
+1.7단계: 문제 생성→에이전트 검수→`data/questions.json` 자동 반영 파이프라인 구축 완료, concept-security 마감.
+**이번 세션**: 워킹트리 정리 + service-feature 소스 28개 확장 + 배치 args 준비까지 완료. 워크플로 실행 직전에서 세션 종료.
+
+## ▶ 다음 세션 첫 작업 (여기부터 시작)
+
+service-feature 워크플로 실행 준비가 **모두 끝나 있음**. 남은 결정 하나: **need 값**(=이번 실행에서 뽑을 문제 수).
+- 사용자에게 물었으나 미응답(세션 종료). **권장: 검증 배치 need=12 먼저** → 새 28개 소스로 나온 품질 표본점검 후 전량 확장.
+- `data/staging/service-feature/_batch-args.json` 은 이미 생성돼 있음(need=102로 박혀있으니 **실행 시 args에서 need만 12로 덮어쓸 것**).
+
+실행 명령 (need=12 검증 배치 예시):
+```
+Workflow({ scriptPath: "C:/Docs/cert-quiz/.claude/workflows/cert-batch.js",
+           args: { ...(_batch-args.json 내용), need: 12, baseDir: "C:/Docs/cert-quiz" } })
+```
+반환 `approved` → `data/staging/service-feature/_approved.json` 저장 → 표본점검 → `node scripts/apply-batch.mjs service-feature data/staging/service-feature/_approved.json` → `npm test` → commit → push.
+
+⚠️ 워크플로 규모 주의: need=102 전량이면 ~21라운드 × (생성1+검수8) ≈ 서브에이전트 150개+ 토큰 대량. 그래서 검증 배치 먼저 권장.
 
 ## 현재 상태 스냅샷
 
 - Live: https://cert-quiz-psi.vercel.app
-- 최신 커밋: `86d01a2` (push 완료, Vercel 자동배포됨)
-- 데이터: 총 29문제, 전부 concept-security 도메인, 전부 v2 스키마 valid
+- 최신 커밋: 이번 세션 커밋(아래) push 완료, Vercel 자동배포됨
+- 데이터: 총 29문제, 전부 concept-security 도메인, 전부 v2 스키마 valid (service-feature는 아직 0 — 워크플로 미실행)
 - 도메인 진행률:
   - **concept-security: 29 / 30** (target 45→30 하향, 사실상 완료. need=1)
-  - service-feature: 0 / 102
+  - service-feature: 0 / 102 ← **다음 작업. 소스·args 준비 완료, 워크플로만 돌리면 됨**
   - service-skill: 0 / 120
   - billing: 0 / 33
 - ⚠️ `meta.targetCount`=300인데 도메인 target 합=285 (concept 하향 탓). 미해결 결정: 285로 인정 vs 300 유지+15개 재분배.
+
+## 이번 세션에 한 것
+
+1. **워킹트리 정리**: 버려지는 staging/임시 산출물 6개 삭제, `.gitignore`에 `_` 접두사 컨벤션 규칙 추가(`data/staging/_*`, `data/staging/**/_*`, `.tmp-*`). 추적 중인 실제 배치(`batch-02-v2.json`)는 유지. 커밋 `4b494f9`.
+2. **service-feature 소스 확장**: `cert-batch.lib.mjs`의 `DOMAIN_SOURCE_CANDIDATES['service-feature']`를 placeholder 1개 → 핵심 IaaS overview 28개로 확장(Compute 6 / Network 10 / Storage 4 / Database 4 / Container 3 + nhncloud/overview). 입문 시험 범위 밖 니치 상품(Traffic Mirroring, Webshell Detector, Notification 하위상품 등)은 의도적 제외 — 필요시 2차 확장. 28/28 경로 존재 확인, `npm test` 26개 통과.
+3. `node scripts/prepare-batch.mjs service-feature` 실행 → `_batch-args.json` 생성 완료(gitignore라 미추적, 재생성 가능).
 
 ## 자동화 파이프라인 (완성·검증됨)
 

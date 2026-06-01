@@ -98,7 +98,43 @@ export const DOMAIN_SOURCE_CANDIDATES = {
     `${G}/Network/Network%20ACL/ko/overview.md`,
     `${G}/Security/Secure%20Key%20Manager/ko/overview.md`,
   ],
-  'service-feature': [`${G}/nhncloud/ko/overview.md`],
+  // 공식 범위(시험안내서): NHN Cloud의 일반적인 서비스 특징(정책·리소스 제한), 각 상품에 대한
+  // 일반적인 설명. → 입문 시험에 실제 출제될 핵심 IaaS 서비스의 overview만 선별(니치 상품 제외).
+  'service-feature': [
+    `${G}/nhncloud/ko/overview.md`, // 일반 서비스 특징·정책·리소스 제한
+    // Compute
+    `${G}/Compute/Instance/ko/overview.md`,
+    `${G}/Compute/Auto%20Scale/ko/overview.md`,
+    `${G}/Compute/Image/ko/overview.md`,
+    `${G}/Compute/Instance%20Template/ko/overview.md`,
+    `${G}/Compute/GPU%20Instance/ko/overview.md`,
+    `${G}/Compute/Cloud%20Functions/ko/overview.md`,
+    // Network
+    `${G}/Network/VPC/ko/overview.md`,
+    `${G}/Network/Floating%20IP/ko/overview.md`,
+    `${G}/Network/Internet%20Gateway/ko/overview.md`,
+    `${G}/Network/NAT%20Gateway/ko/overview.md`,
+    `${G}/Network/Load%20Balancer/ko/overview.md`,
+    `${G}/Network/Security%20Groups/ko/overview.md`,
+    `${G}/Network/Network%20ACL/ko/overview.md`,
+    `${G}/Network/Network%20Interface/ko/overview.md`,
+    `${G}/Network/VPN%20Gateway(Site-to-Site%20VPN)/ko/overview.md`,
+    `${G}/Network/Peering%20Gateway/ko/overview.md`,
+    // Storage
+    `${G}/Storage/Block%20Storage/ko/overview.md`,
+    `${G}/Storage/Object%20Storage/ko/Overview.md`,
+    `${G}/Storage/NAS/ko/overview.md`,
+    `${G}/Storage/Backup/ko/overview.md`,
+    // Database
+    `${G}/Database/RDS%20for%20MySQL/ko/overview.md`,
+    `${G}/Database/RDS%20for%20MariaDB/ko/overview.md`,
+    `${G}/Database/RDS%20for%20PostgreSQL/ko/overview.md`,
+    `${G}/Database/EasyCache/ko/overview.md`,
+    // Container
+    `${G}/Container/NKS/ko/overview.md`,
+    `${G}/Container/NCR/ko/overview.md`,
+    `${G}/Container/NCS/ko/overview.md`,
+  ],
   'service-skill': [`${G}/nhncloud/ko/overview.md`],
   'billing': [`${G}/nhncloud/ko/user-guide.md`],
 };
