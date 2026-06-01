@@ -17,3 +17,7 @@ data/source/glossary.preview.json
 data/source/glossary-raw.xlsx
 
 .vercel
+
+# Batch automation staging artifacts
+data/staging/*/_batch-args.json
+data/staging/*/_approved.json
