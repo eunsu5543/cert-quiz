@@ -1,0 +1,34 @@
+// Pure helpers for the cert-batch automation. No side effects except the
+// explicit file readers/writers at the bottom (apply/prepare CLIs call those).
+
+const REQUIRED = ['id', 'domain', 'type', 'q', 'options', 'answer', 'summary', 'perOption', 'source'];
+
+export function validateQuestion(q) {
+  const errors = [];
+  for (const k of REQUIRED) {
+    if (q[k] === undefined || q[k] === null) errors.push(`missing field: ${k}`);
+  }
+  if (q.type === 'single') {
+    if (!Array.isArray(q.options) || q.options.length !== 4) errors.push('single: options must be length 4');
+    if (!Array.isArray(q.answer) || q.answer.length !== 1) errors.push('single: answer must be length 1');
+  } else if (q.type === 'multi') {
+    if (!Array.isArray(q.options) || q.options.length !== 5) errors.push('multi: options must be length 5');
+    if (!Array.isArray(q.answer) || q.answer.length < 2) errors.push('multi: answer must have 2+');
+  } else {
+    errors.push(`unknown type: ${q.type}`);
+  }
+  if (Array.isArray(q.options) && Array.isArray(q.perOption) && q.perOption.length !== q.options.length) {
+    errors.push('perOption length must equal options length');
+  }
+  if (Array.isArray(q.perOption)) {
+    for (const [i, p] of q.perOption.entries()) {
+      if (typeof p !== 'string' || !/^(정답|오답)\./.test(p)) errors.push(`perOption[${i}] must start with 정답. or 오답.`);
+    }
+  }
+  if (Array.isArray(q.answer) && Array.isArray(q.options)) {
+    for (const a of q.answer) {
+      if (!Number.isInteger(a) || a < 0 || a >= q.options.length) errors.push(`answer index out of range: ${a}`);
+    }
+  }
+  return { valid: errors.length === 0, errors };
+}
