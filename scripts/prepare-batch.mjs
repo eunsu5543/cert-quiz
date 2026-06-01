@@ -33,6 +33,7 @@ const args = {
   domain,
   domainName: doc.domains[domain].name,
   batchSize,
+  multiRatio: 0.2,
   need,
   haveCount: have,
   sourcePaths,

@@ -7,11 +7,11 @@ export const meta = {
   ],
 }
 
-// args = { domain, domainName, batchSize, need, haveCount, sourcePaths, glossaryPath, avoidList }
+// args = { domain, domainName, batchSize, multiRatio, need, haveCount (참고용; need는 caller가 계산), sourcePaths, glossaryPath, avoidList }
 const A = args || {}
 const need = A.need || 0
 const batchSize = A.batchSize || 8
-const maxRounds = Math.ceil(need / Math.max(1, batchSize)) + 5
+const maxRounds = Math.ceil(need / Math.max(1, batchSize)) + 8
 
 const VERDICT = {
   type: 'object',
@@ -34,6 +34,9 @@ while (approved.length < need && round < maxRounds) {
   round++
   const remaining = need - approved.length
   const thisBatch = Math.min(batchSize, remaining + 2) // slight over-generate to absorb rejects
+  const multiRatio = A.multiRatio ?? 0.2
+  const multiCount = Math.round(thisBatch * multiRatio)
+  const singleCount = thisBatch - multiCount
   const avoidStems = [
     ...(A.avoidList || []).map(x => x.q),
     ...approved.map(q => q.q),
@@ -43,6 +46,7 @@ while (approved.length < need && round < maxRounds) {
   const genPrompt = [
     `도메인: ${A.domain} (${A.domainName})`,
     `이번 라운드 생성 개수: ${thisBatch}`,
+    `문제 유형 분포: single ${singleCount}개, multi ${multiCount}개 (single=4지 1정답, multi=5지 2개 이상 정답)`,
     `참조 소스 경로 (이 안에서만 출제):`,
     ...(A.sourcePaths || []).map(p => `  - ${p}`),
     `glossaryPath: ${A.glossaryPath || ''}`,
@@ -50,8 +54,9 @@ while (approved.length < need && round < maxRounds) {
     ``,
     `다음 질문들과 토픽이 겹치지 않게 생성하라 (중복 금지):`,
     ...avoidStems.map(s => `  - ${s}`),
-    rejectFeedback.length ? `\n직전 탈락 사유(반복 금지):` : ``,
-    ...rejectFeedback.slice(-8).map(r => `  - ${r.reasons.join('; ')}`),
+    ...(rejectFeedback.length
+      ? ['\n직전 탈락 사유(반복 금지):', ...rejectFeedback.slice(-8).map(r => `  - ${r.reasons.join('; ')}`)]
+      : []),
     ``,
     `출력: v2 스키마 문제 JSON 배열만. fence/주석 없이.`,
   ].join('\n')
@@ -84,15 +89,17 @@ while (approved.length < need && round < maxRounds) {
     ).then(v => ({ q, v })).catch(() => null)
   ))
 
+  let addedThisRound = 0
   for (const item of reviewed.filter(Boolean)) {
     const { q, v } = item
     if (v && v.verdict === 'pass' && approved.length < need) {
       approved.push(q)
+      addedThisRound++
     } else if (v && v.verdict === 'reject') {
       rejectFeedback.push({ q: q.q, reasons: v.reasons || [] })
     }
   }
-  log(`round ${round}: approved ${approved.length}/${need} (이번 통과 ${reviewed.filter(x => x && x.v && x.v.verdict === 'pass').length})`)
+  log(`round ${round}: approved ${approved.length}/${need} (이번 추가 ${addedThisRound})`)
 }
 
 if (approved.length < need) {
