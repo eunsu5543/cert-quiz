@@ -1,10 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validateQuestion } from './cert-batch.lib.mjs';
-import { buildAvoidList } from './cert-batch.lib.mjs';
-import { resequenceIds, ID_PREFIX } from './cert-batch.lib.mjs';
-import { appendQuestions, normalizeQ } from './cert-batch.lib.mjs';
-import { selectSourcePaths, DOMAIN_SOURCE_CANDIDATES } from './cert-batch.lib.mjs';
+import {
+  validateQuestion,
+  buildAvoidList,
+  resequenceIds, ID_PREFIX,
+  appendQuestions, normalizeQ,
+  selectSourcePaths, DOMAIN_SOURCE_CANDIDATES,
+} from './cert-batch.lib.mjs';
 
 const good = {
   id: 'concept-011', domain: 'concept-security', type: 'single',
@@ -156,4 +158,47 @@ test('selectSourcePaths filters to existing files only', () => {
 
 test('selectSourcePaths unknown domain throws', () => {
   assert.throws(() => selectSourcePaths('nope', () => true));
+});
+
+// Fix 1: validateQuestion must not throw on null/undefined input
+test('validateQuestion(null) returns {valid:false} with errors, does not throw', () => {
+  const r = validateQuestion(null);
+  assert.equal(r.valid, false);
+  assert.ok(Array.isArray(r.errors) && r.errors.length > 0);
+});
+
+test('validateQuestion(undefined) returns {valid:false} with errors, does not throw', () => {
+  const r = validateQuestion(undefined);
+  assert.equal(r.valid, false);
+  assert.ok(Array.isArray(r.errors) && r.errors.length > 0);
+});
+
+test('appendQuestions skips null element (reason invalid) and still adds valid one', () => {
+  const doc = makeDoc();
+  const res = appendQuestions(doc, [null, valid]);
+  assert.equal(res.added, 1);
+  assert.equal(res.skipped.length, 1);
+  assert.equal(res.skipped[0].reason, 'invalid');
+  assert.equal(res.doc.questions.length, 2);
+});
+
+// Fix 2: missing `type` must not also emit "unknown type" error
+test('missing type field produces only "missing field" error, not "unknown type"', () => {
+  const { type: _t, ...noType } = good;
+  const r = validateQuestion(noType);
+  assert.equal(r.valid, false);
+  assert.ok(r.errors.some(e => e.includes('missing field: type')));
+  assert.ok(!r.errors.some(e => e.includes('unknown type')));
+});
+
+// Fix 3: perOption regex must require text after the prefix
+test('perOption bare prefix "정답." (no text) fails validation', () => {
+  const r = validateQuestion({ ...good, perOption: ['정답.', '정답. b', '오답. c', '오답. d'] });
+  assert.equal(r.valid, false);
+  assert.ok(r.errors.some(e => e.includes('perOption[0]')));
+});
+
+test('perOption "정답. 설명" passes validation', () => {
+  const r = validateQuestion({ ...good, perOption: ['정답. 설명', '오답. b', '오답. c', '오답. d'] });
+  assert.equal(r.valid, true);
 });

@@ -6,6 +6,9 @@ import { existsSync } from 'node:fs';
 const REQUIRED = ['id', 'domain', 'type', 'q', 'options', 'answer', 'summary', 'perOption', 'source'];
 
 export function validateQuestion(q) {
+  if (q == null || typeof q !== 'object') {
+    return { valid: false, errors: ['not an object'] };
+  }
   const errors = [];
   for (const k of REQUIRED) {
     if (q[k] === undefined || q[k] === null) errors.push(`missing field: ${k}`);
@@ -16,7 +19,7 @@ export function validateQuestion(q) {
   } else if (q.type === 'multi') {
     if (!Array.isArray(q.options) || q.options.length !== 5) errors.push('multi: options must be length 5');
     if (!Array.isArray(q.answer) || q.answer.length < 2) errors.push('multi: answer must have 2+');
-  } else {
+  } else if (q.type !== undefined && q.type !== null) {
     errors.push(`unknown type: ${q.type}`);
   }
   if (Array.isArray(q.options) && Array.isArray(q.perOption) && q.perOption.length !== q.options.length) {
@@ -24,7 +27,7 @@ export function validateQuestion(q) {
   }
   if (Array.isArray(q.perOption)) {
     for (const [i, p] of q.perOption.entries()) {
-      if (typeof p !== 'string' || !/^(정답|오답)\./.test(p)) errors.push(`perOption[${i}] must start with 정답. or 오답.`);
+      if (typeof p !== 'string' || !/^(정답|오답)\.\s+\S/.test(p)) errors.push(`perOption[${i}] must start with 정답. or 오답.`);
     }
   }
   if (Array.isArray(q.answer) && Array.isArray(q.options)) {
@@ -70,7 +73,7 @@ export function appendQuestions(doc, newQuestions) {
   let added = 0;
   for (const q of newQuestions) {
     const v = validateQuestion(q);
-    if (!v.valid) { skipped.push({ q: q.q, reason: 'invalid', errors: v.errors }); continue; }
+    if (!v.valid) { skipped.push({ q: q != null ? q.q : null, reason: 'invalid', errors: v.errors }); continue; }
     const key = normalizeQ(q.q);
     if (seen.has(key)) { skipped.push({ q: q.q, reason: 'duplicate' }); continue; }
     seen.add(key);
