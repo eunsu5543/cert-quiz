@@ -32,3 +32,9 @@ export function validateQuestion(q) {
   }
   return { valid: errors.length === 0, errors };
 }
+
+export function buildAvoidList(doc, domain) {
+  return doc.questions
+    .filter(q => q.domain === domain)
+    .map(q => ({ id: q.id, q: q.q, summary: q.summary }));
+}

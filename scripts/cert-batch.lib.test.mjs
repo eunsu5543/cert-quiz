@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validateQuestion } from './cert-batch.lib.mjs';
+import { buildAvoidList } from './cert-batch.lib.mjs';
 
 const good = {
   id: 'concept-011', domain: 'concept-security', type: 'single',
@@ -46,4 +47,24 @@ test('each perOption must start with 정답. or 오답.', () => {
 test('answer index out of range fails', () => {
   const r = validateQuestion({ ...good, answer: [9] });
   assert.equal(r.valid, false);
+});
+
+const sampleDoc = {
+  meta: {}, domains: {},
+  questions: [
+    { id: 'concept-001', domain: 'concept-security', q: 'Q1?', summary: 's1' },
+    { id: 'concept-002', domain: 'concept-security', q: 'Q2?', summary: 's2' },
+    { id: 'bill-001', domain: 'billing', q: 'B1?', summary: 'sb' },
+  ],
+};
+
+test('buildAvoidList returns only the target domain stems', () => {
+  const list = buildAvoidList(sampleDoc, 'concept-security');
+  assert.equal(list.length, 2);
+  assert.deepEqual(list.map(x => x.q), ['Q1?', 'Q2?']);
+  assert.ok(list[0].summary);
+});
+
+test('buildAvoidList empty domain returns []', () => {
+  assert.deepEqual(buildAvoidList(sampleDoc, 'service-skill'), []);
 });
