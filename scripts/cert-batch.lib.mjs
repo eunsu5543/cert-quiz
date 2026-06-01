@@ -56,3 +56,24 @@ export function resequenceIds(approved, domain, haveCount) {
     status: 'approved',
   }));
 }
+
+export function normalizeQ(q) {
+  return String(q).replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+export function appendQuestions(doc, newQuestions) {
+  const next = { ...doc, questions: [...doc.questions] };
+  const seen = new Set(doc.questions.map(q => normalizeQ(q.q)));
+  const skipped = [];
+  let added = 0;
+  for (const q of newQuestions) {
+    const v = validateQuestion(q);
+    if (!v.valid) { skipped.push({ q: q.q, reason: 'invalid', errors: v.errors }); continue; }
+    const key = normalizeQ(q.q);
+    if (seen.has(key)) { skipped.push({ q: q.q, reason: 'duplicate' }); continue; }
+    seen.add(key);
+    next.questions.push(q);
+    added++;
+  }
+  return { doc: next, added, skipped };
+}

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { validateQuestion } from './cert-batch.lib.mjs';
 import { buildAvoidList } from './cert-batch.lib.mjs';
 import { resequenceIds, ID_PREFIX } from './cert-batch.lib.mjs';
+import { appendQuestions, normalizeQ } from './cert-batch.lib.mjs';
 
 const good = {
   id: 'concept-011', domain: 'concept-security', type: 'single',
@@ -88,4 +89,53 @@ test('ID_PREFIX maps all four domains', () => {
 test('resequenceIds pads to 3 digits', () => {
   const out = resequenceIds([{ q: 'x' }], 'billing', 5);
   assert.equal(out[0].id, 'bill-006');
+});
+
+function makeDoc() {
+  return { meta: {}, domains: {},
+    questions: [{ id: 'concept-001', domain: 'concept-security', type: 'single',
+      q: '기존 질문?', options: ['A','B','C','D'], answer: [0],
+      summary: 's', perOption: ['정답. a','오답. b','오답. c','오답. d'],
+      glossary: [], source: [{type:'user-guide',url:'u',path:'p',section:'x'}], status: 'approved' }] };
+}
+
+const valid = {
+  domain: 'concept-security', type: 'single', q: '새 질문?',
+  options: ['A','B','C','D'], answer: [1], summary: 's2',
+  perOption: ['오답. a','정답. b','오답. c','오답. d'],
+  glossary: [], source: [{type:'user-guide',url:'u',path:'p',section:'y'}], status: 'approved', id: 'concept-002',
+};
+
+test('normalizeQ strips whitespace and case-insensitive', () => {
+  assert.equal(normalizeQ('  기존 질문? '), normalizeQ('기존 질문?'));
+});
+
+test('appendQuestions adds valid new question', () => {
+  const doc = makeDoc();
+  const res = appendQuestions(doc, [valid]);
+  assert.equal(res.doc.questions.length, 2);
+  assert.equal(res.added, 1);
+  assert.equal(res.skipped.length, 0);
+});
+
+test('appendQuestions skips exact-duplicate q', () => {
+  const doc = makeDoc();
+  const dup = { ...valid, q: '기존 질문?' };
+  const res = appendQuestions(doc, [dup]);
+  assert.equal(res.added, 0);
+  assert.equal(res.skipped[0].reason, 'duplicate');
+});
+
+test('appendQuestions skips schema-invalid q', () => {
+  const doc = makeDoc();
+  const bad = { ...valid, options: ['A','B'] };
+  const res = appendQuestions(doc, [bad]);
+  assert.equal(res.added, 0);
+  assert.equal(res.skipped[0].reason, 'invalid');
+});
+
+test('appendQuestions does not mutate input doc', () => {
+  const doc = makeDoc();
+  appendQuestions(doc, [valid]);
+  assert.equal(doc.questions.length, 1);
 });
