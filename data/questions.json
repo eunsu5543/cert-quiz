@@ -902,6 +902,251 @@
       ],
       "status": "approved",
       "generatedAt": "2026-06-01T06:56:47Z"
+    },
+    {
+      "id": "concept-024",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud 보안 그룹(Security Group)이 사용하는 '포지티브 시큐리티 모델(positive security model)'에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "규칙으로 지정한 트래픽만 허용하고 나머지 트래픽은 모두 차단한다",
+        "규칙으로 지정한 트래픽만 차단하고 나머지 트래픽은 모두 허용한다",
+        "모든 트래픽을 기본으로 허용한 뒤 위협 패턴에 해당하는 트래픽만 탐지하여 차단한다",
+        "유입 트래픽은 모두 허용하고 유출 트래픽만 규칙에 따라 제어한다"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "보안 그룹의 포지티브 시큐리티 모델 동작 방식을 묻는 문제",
+      "perOption": [
+        "정답. 보안 그룹(Security Group)은 규칙으로 지정한 트래픽은 허용하고 나머지 트래픽은 차단하는 포지티브 시큐리티 모델을 사용한다. 서비스를 처음 시작하면 기본 보안 그룹이 유입되는 모든 트래픽을 차단하므로, 필요한 규칙을 명시적으로 설정해야 통신할 수 있다.",
+        "오답. 지정한 트래픽만 차단하고 나머지를 허용하는 방식은 블랙리스트 기반의 네거티브 모델로, 보안 그룹이 사용하는 방식이 아니다.",
+        "오답. 보안 그룹은 규칙 기반의 허용/차단 방식이며, 위협 패턴 탐지 기반의 차단 방식과는 다르다.",
+        "오답. 보안 그룹은 유입/유출 트래픽 모두에 규칙을 적용할 수 있으며, 유입 트래픽을 무조건 허용하지 않는다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Security%20Groups/ko/overview/",
+          "path": "data/source/guide/ko/Network/Security Groups/ko/overview.md",
+          "section": "Network > Security Groups > 개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-01T07:40:00Z"
+    },
+    {
+      "id": "concept-025",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud 보안 그룹(Security Group)이 'stateful'로 동작한다는 것은 무엇을 의미하나요?",
+      "options": [
+        "규칙으로 한 번 연결된 세션은 반대 방향의 규칙이 없더라도 허용된다",
+        "유입 규칙과 유출 규칙을 항상 짝으로 설정해야만 트래픽이 허용된다",
+        "규칙이 적용되기 전에 모든 세션 정보를 사용자가 직접 등록해야 한다",
+        "세션과 무관하게 패킷 단위로 매번 규칙을 평가하여 허용 여부를 결정한다"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "보안 그룹의 stateful 동작 특성을 묻는 문제",
+      "perOption": [
+        "정답. 보안 그룹은 stateful로 동작하므로, 규칙에 따라 한 번 연결된 세션은 반대 방향의 규칙이 없더라도 응답 트래픽이 허용된다. 다만 일정 시간 트래픽이 없어 세션이 만료되면 반대 방향 패킷도 차단된다.",
+        "오답. 유입/유출 규칙을 짝으로 설정해야 하는 것은 Network ACL의 rule 설정 특성으로, 세션 상태를 추적하지 않는 동작 방식과 연결된다.",
+        "오답. 사용자가 세션 정보를 직접 등록하는 절차는 stateful 동작과 무관하다.",
+        "오답. 세션과 무관하게 패킷마다 규칙을 평가하는 것은 stateless 방식이며, 보안 그룹의 동작과 반대된다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Security%20Groups/ko/overview/",
+          "path": "data/source/guide/ko/Network/Security Groups/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-01T07:40:00Z"
+    },
+    {
+      "id": "concept-026",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud Secure Key Manager에서 비대칭 키(asymmetric key) 관리 기능이 제공하는 주요 용도로 맞는 것은 무엇인가요?",
+      "options": [
+        "데이터의 서명/검증",
+        "데이터의 암호화/복호화",
+        "기밀 데이터의 등록 및 조회",
+        "네트워크 트래픽의 허용/차단"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Secure Key Manager 비대칭 키 관리 기능의 용도를 묻는 문제",
+      "perOption": [
+        "정답. Secure Key Manager의 비대칭 키 관리 기능은 데이터의 서명/검증에 사용할 수 있는 사용자 비대칭 키를 생성·관리하는 기능을 제공한다.",
+        "오답. 데이터의 암호화/복호화는 대칭 키 관리 기능이 담당하는 용도이다.",
+        "오답. 기밀 데이터의 등록 및 조회는 기밀 데이터 관리 기능에 해당한다.",
+        "오답. 네트워크 트래픽의 허용/차단은 보안 그룹이나 Network ACL의 기능으로, Secure Key Manager의 키 관리 기능과 무관하다."
+      ],
+      "glossary": [
+        {
+          "term": "공개 키(public key)",
+          "definition": "비대칭 키 암호 기법에서 사용되는 키 쌍 중 누구에게나 공개되는 키로, 개인 키와 수학적 쌍을 이룸",
+          "source": "glossary"
+        },
+        {
+          "term": "개인 키(private key)",
+          "definition": "비대칭 키 암호 기법에서 사용되는 키 쌍 중 공개되지 않는 키",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Security/Secure%20Key%20Manager/ko/overview/",
+          "path": "data/source/guide/ko/Security/Secure Key Manager/ko/overview.md",
+          "section": "비대칭 키 관리"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-01T07:40:00Z"
+    },
+    {
+      "id": "concept-027",
+      "domain": "concept-security",
+      "type": "single",
+      "q": "NHN Cloud의 '리전 서비스(Region Service)'에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "인프라 환경이나 국가/지역/법률/상품의 제한에 따라 특정 지역에서만 제공되는 서비스이다",
+        "모든 리전에서 동일한 기능과 정책으로 제공되며 모든 리전을 선택해 사용할 수 있는 서비스이다",
+        "리전과 무관하게 항상 동일한 과금 정책이 적용되는 서비스이다",
+        "온프레미스 환경에서만 사용할 수 있는 서비스이다"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "리전 서비스의 개념과 특성을 묻는 문제",
+      "perOption": [
+        "정답. 리전 서비스는 서비스를 제공하는 리전의 인프라 환경과 국가/지역/법률/상품 제한에 의해 특정 지역에만 제공되는 서비스로, 리전별로 과금 정책이 다를 수 있다.",
+        "오답. 모든 리전에서 동일한 기능과 정책으로 제공되며 모든 리전을 선택할 수 있는 서비스는 글로벌 서비스에 대한 설명이다.",
+        "오답. 리전 서비스는 리전별로 과금 정책이 다를 수 있으므로 항상 동일한 과금이 적용되는 것은 아니다.",
+        "오답. 리전 서비스는 NHN Cloud의 리전에서 제공되는 서비스이며, 온프레미스 전용 서비스가 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "리전(region)",
+          "definition": "독립적이고 지리적으로 격리된 서버의 물리적 위치",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/nhncloud/ko/region-guide/",
+          "path": "data/source/guide/ko/nhncloud/ko/region-guide.md",
+          "section": "NHN Cloud 리전 서비스"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-01T07:40:00Z"
+    },
+    {
+      "id": "concept-028",
+      "domain": "concept-security",
+      "type": "multi",
+      "q": "NHN Cloud의 보안 그룹(Security Group)과 Network ACL의 차이로 맞는 것을 모두 고르시오.",
+      "options": [
+        "보안 그룹의 제어 대상은 인스턴스이고, Network ACL의 제어 대상은 네트워크와 인스턴스이다",
+        "보안 그룹은 허용 정책만 설정할 수 있고, Network ACL은 허용 또는 차단 정책을 선택해 설정할 수 있다",
+        "유입/유출 트래픽에서 Network ACL 설정이 보안 그룹 설정보다 먼저 적용된다",
+        "보안 그룹은 black list와 white list를 선택적으로 운영할 수 있고, Network ACL은 white list만 운영한다",
+        "Network ACL에서 허용되면 보안 그룹 설정과 무관하게 항상 트래픽이 통과된다"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "보안 그룹과 Network ACL의 제어 대상, 정책 유형, 적용 순서 차이를 묻는 문제",
+      "perOption": [
+        "정답. 보안 그룹의 제어 대상은 인스턴스이며, Network ACL의 제어 대상은 네트워크와 인스턴스이다.",
+        "정답. 보안 그룹은 허용 정책만 설정할 수 있는 반면, Network ACL은 허용 또는 차단 정책을 선택해 설정할 수 있다.",
+        "정답. 유입/유출 트래픽에서 Network ACL 설정이 보안 그룹 설정보다 먼저 적용된다.",
+        "오답. black list, white list를 선택적으로 운영할 수 있는 것은 Network ACL이며, 보안 그룹은 허용 정책만 설정하는 방식이다.",
+        "오답. Network ACL에서 허용되었더라도 보안 그룹에서 차단될 수 있으므로 두 곳 모두 확인해야 한다."
+      ],
+      "glossary": [
+        {
+          "term": "Network ACL",
+          "definition": "네트워크 트래픽을 통제하고 보안을 강화하기 위해 제공하는 NHN Cloud 서비스로, 네트워크로 유입되는 트래픽을 규칙에 따라 허용하거나 차단하는 접근 제어 목록",
+          "source": "glossary"
+        },
+        {
+          "term": "네트워크 접근제어(network access control)",
+          "definition": "프로토콜, IP, 포트 등을 기준으로 인바운드 및 아웃바운드 통신을 허용하거나 차단하는 것",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Network%20ACL/ko/overview/",
+          "path": "data/source/guide/ko/Network/Network ACL/ko/overview.md",
+          "section": "ACL 기능 - 보안 그룹과 Network ACL 기능 비교"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-01T07:40:00Z"
+    },
+    {
+      "id": "concept-029",
+      "domain": "concept-security",
+      "type": "multi",
+      "q": "NHN Cloud Secure Key Manager가 제공하는 주요 기능에 해당하는 것을 모두 고르시오.",
+      "options": [
+        "기밀 데이터의 등록, 관리, 조회",
+        "대칭 키 생성, 관리, 회전 및 데이터 암/복호화",
+        "비대칭 키 생성, 관리, 회전 및 데이터 서명/검증",
+        "외부 DDoS 공격의 탐지 및 차단",
+        "가상 서버 인스턴스의 자동 확장 및 축소"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "Secure Key Manager의 주요 기능 범위를 묻는 문제",
+      "perOption": [
+        "정답. Secure Key Manager는 기밀 데이터를 등록, 관리, 조회하는 데이터 관리 기능을 제공한다.",
+        "정답. 대칭 키의 생성, 관리, 회전 및 데이터 암/복호화 기능을 제공한다.",
+        "정답. 비대칭 키의 생성, 관리, 회전 및 데이터 서명/검증 기능을 제공한다.",
+        "오답. 외부 DDoS 공격의 탐지 및 차단은 DDoS Guard 서비스의 기능으로, Secure Key Manager의 기능이 아니다.",
+        "오답. 가상 서버 인스턴스의 자동 확장 및 축소는 Auto Scale 서비스의 기능으로, Secure Key Manager의 기능이 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "대칭 키 암호 기법(symmetric key cryptography)",
+          "definition": "암호화와 복호화에 동일한 비밀 키를 사용하는 기법으로, 비밀 키 암호 기법이라고도 함",
+          "source": "glossary"
+        },
+        {
+          "term": "키 저장소",
+          "definition": "사용자 데이터를 저장하고 인증 방법을 설정하는 단위",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Security/Secure%20Key%20Manager/ko/overview/",
+          "path": "data/source/guide/ko/Security/Secure Key Manager/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-01T07:40:00Z"
     }
   ]
 }
