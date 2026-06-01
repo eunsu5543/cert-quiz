@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validateQuestion } from './cert-batch.lib.mjs';
 import { buildAvoidList } from './cert-batch.lib.mjs';
+import { resequenceIds, ID_PREFIX } from './cert-batch.lib.mjs';
 
 const good = {
   id: 'concept-011', domain: 'concept-security', type: 'single',
@@ -67,4 +68,24 @@ test('buildAvoidList returns only the target domain stems', () => {
 
 test('buildAvoidList empty domain returns []', () => {
   assert.deepEqual(buildAvoidList(sampleDoc, 'service-skill'), []);
+});
+
+test('resequenceIds assigns sequential ids after the existing count', () => {
+  const approved = [
+    { id: 'tmp1', type: 'single', q: 'a', status: 'draft' },
+    { id: 'tmp2', type: 'single', q: 'b', status: 'draft' },
+  ];
+  const out = resequenceIds(approved, 'concept-security', 10);
+  assert.deepEqual(out.map(x => x.id), ['concept-011', 'concept-012']);
+  assert.ok(out.every(x => x.status === 'approved'));
+});
+
+test('ID_PREFIX maps all four domains', () => {
+  assert.deepEqual(Object.keys(ID_PREFIX).sort(),
+    ['billing', 'concept-security', 'service-feature', 'service-skill']);
+});
+
+test('resequenceIds pads to 3 digits', () => {
+  const out = resequenceIds([{ q: 'x' }], 'billing', 5);
+  assert.equal(out[0].id, 'bill-006');
 });

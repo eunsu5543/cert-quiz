@@ -38,3 +38,21 @@ export function buildAvoidList(doc, domain) {
     .filter(q => q.domain === domain)
     .map(q => ({ id: q.id, q: q.q, summary: q.summary }));
 }
+
+export const ID_PREFIX = {
+  'concept-security': 'concept',
+  'service-feature': 'feature',
+  'service-skill': 'skill',
+  'billing': 'bill',
+};
+
+export function resequenceIds(approved, domain, haveCount) {
+  const prefix = ID_PREFIX[domain];
+  if (!prefix) throw new Error(`unknown domain: ${domain}`);
+  return approved.map((q, i) => ({
+    ...q,
+    id: `${prefix}-${String(haveCount + i + 1).padStart(3, '0')}`,
+    domain,
+    status: 'approved',
+  }));
+}
