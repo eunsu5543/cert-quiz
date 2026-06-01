@@ -34,6 +34,11 @@ const VERDICT = {
 const approved = []
 const rejectFeedback = []
 let round = 0
+// Soft ceiling: if generation dries up (no new approvals for DRY_LIMIT consecutive
+// rounds), stop early instead of burning all rounds. Lets the domain's natural
+// in-scope question pool reveal itself rather than forcing the target with trivia.
+const DRY_LIMIT = 3
+let dryStreak = 0
 
 if (need === 0) {
   return { approved: [], rounds: 0, note: 'need=0, nothing to generate' }
@@ -83,10 +88,15 @@ while (approved.length < need && round < maxRounds) {
     batch = JSON.parse(raw)
   } catch {
     log(`round ${round}: JSON parse 실패, 스킵`)
+    if (++dryStreak >= DRY_LIMIT) { log(`소스 고갈 추정 (dry ${dryStreak}회) — 조기 종료`); break }
     continue
   }
   batch = (Array.isArray(batch) ? batch : []).filter(q => q && !q._warning && q.q)
-  if (batch.length === 0) { log(`round ${round}: 빈 배치`); continue }
+  if (batch.length === 0) {
+    log(`round ${round}: 빈 배치`)
+    if (++dryStreak >= DRY_LIMIT) { log(`소스 고갈 추정 (dry ${dryStreak}회) — 조기 종료`); break }
+    continue
+  }
 
   const reviewed = await parallel(batch.map(q => () =>
     agent(
@@ -117,10 +127,15 @@ while (approved.length < need && round < maxRounds) {
     }
   }
   log(`round ${round}: approved ${approved.length}/${need} (이번 추가 ${addedThisRound})`)
+  if (addedThisRound === 0) {
+    if (++dryStreak >= DRY_LIMIT) { log(`소스 고갈 추정 (dry ${dryStreak}회) — 조기 종료`); break }
+  } else {
+    dryStreak = 0
+  }
 }
 
 if (approved.length < need) {
-  log(`⚠ 목표 미달: ${approved.length}/${need} (rounds=${round}). 부족분은 다음 실행에서 채울 것.`)
+  log(`⚠ 목표 미달: ${approved.length}/${need} (rounds=${round}, dryStreak=${dryStreak}). 범위 내 소스 한계일 수 있음.`)
 }
 
 return {

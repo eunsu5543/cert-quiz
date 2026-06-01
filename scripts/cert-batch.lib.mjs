@@ -85,14 +85,18 @@ export function appendQuestions(doc, newQuestions) {
 
 const G = 'data/source/guide/ko';
 export const DOMAIN_SOURCE_CANDIDATES = {
+  // 공식 범위(시험안내서): 클라우드 컴퓨팅 개념·특징, 책임공유 모델, 일반적인 클라우드 보안 개념.
+  // → NHN 특정 제품 기능(Floating IP/NAT/Public API 인증 등)이 아니라 "일반 개념" 수준 소스만.
   'concept-security': [
-    `${G}/nhncloud/ko/overview.md`,
-    `${G}/nhncloud/ko/security-policy.md`,
+    `${G}/nhncloud/ko/overview.md`,        // 클라우드 개념·서비스모델·리전/AZ·책임공유
+    `${G}/nhncloud/ko/security-policy.md`, // 일반 보안: DRDoS·비밀번호·포트차단
     `${G}/nhncloud/ko/resource-policy.md`,
     `${G}/nhncloud/ko/region-guide.md`,
     `${G}/nhncloud/ko/user-guide.md`,
-    `${G}/nhncloud/ko/public-api/overview.md`,
-    `${G}/nhncloud/ko/public-api/auth-method-overview.md`,
+    // 일반적인 클라우드 보안 개념 (제품이 아닌 개념 차원 — 보안그룹/ACL/키관리)
+    `${G}/Network/Security%20Groups/ko/overview.md`,
+    `${G}/Network/Network%20ACL/ko/overview.md`,
+    `${G}/Security/Secure%20Key%20Manager/ko/overview.md`,
   ],
   'service-feature': [`${G}/nhncloud/ko/overview.md`],
   'service-skill': [`${G}/nhncloud/ko/overview.md`],
