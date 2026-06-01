@@ -8,7 +8,16 @@ export const meta = {
 }
 
 // args = { domain, domainName, batchSize, multiRatio, need, haveCount (참고용; need는 caller가 계산), sourcePaths, glossaryPath, avoidList }
-const A = args || {}
+let A = args || {}
+if (typeof A === 'string') { try { A = JSON.parse(A) } catch { A = {} } }
+// The workflow subagent registry does not include this project's .claude/agents,
+// and its cwd is the session root (not the project). So we use the default
+// subagent, point it at the agent-definition files by absolute path (single
+// source of truth), and absolutize all data paths against baseDir.
+const baseDir = A.baseDir || 'C:/Docs/cert-quiz'
+const abs = (p) => (p && p.startsWith(baseDir) ? p : `${baseDir}/${p}`)
+const GEN_DEF = `${baseDir}/.claude/agents/question-generator.md`
+const REV_DEF = `${baseDir}/.claude/agents/question-reviewer.md`
 const need = A.need || 0
 const batchSize = A.batchSize || 8
 const maxRounds = Math.ceil(need / Math.max(1, batchSize)) + 8
@@ -44,12 +53,16 @@ while (approved.length < need && round < maxRounds) {
   ]
 
   const genPrompt = [
+    `너는 NHN Cloud Essentials 문제 생성 에이전트다.`,
+    `먼저 이 정의 파일을 Read 해서 규칙을 그대로 따른다: ${GEN_DEF}`,
+    `작업 기준 디렉토리(모든 상대경로 기준): ${baseDir}`,
+    ``,
     `도메인: ${A.domain} (${A.domainName})`,
     `이번 라운드 생성 개수: ${thisBatch}`,
     `문제 유형 분포: single ${singleCount}개, multi ${multiCount}개 (single=4지 1정답, multi=5지 2개 이상 정답)`,
-    `참조 소스 경로 (이 안에서만 출제):`,
-    ...(A.sourcePaths || []).map(p => `  - ${p}`),
-    `glossaryPath: ${A.glossaryPath || ''}`,
+    `참조 소스 경로 (이 안에서만 출제, 절대경로):`,
+    ...(A.sourcePaths || []).map(p => `  - ${abs(p)}`),
+    `glossaryPath: ${A.glossaryPath ? abs(A.glossaryPath) : ''}`,
     `idStart: ${A.domain}-tmp (dispatcher가 최종 ID 재부여하므로 임시 ID 사용)`,
     ``,
     `다음 질문들과 토픽이 겹치지 않게 생성하라 (중복 금지):`,
@@ -58,11 +71,11 @@ while (approved.length < need && round < maxRounds) {
       ? ['\n직전 탈락 사유(반복 금지):', ...rejectFeedback.slice(-8).map(r => `  - ${r.reasons.join('; ')}`)]
       : []),
     ``,
-    `출력: v2 스키마 문제 JSON 배열만. fence/주석 없이.`,
+    `출력: v2 스키마 문제 JSON 배열만. fence/주석 없이. 너의 최종 응답 전체가 JSON.parse 대상이다.`,
   ].join('\n')
 
   const raw = await agent(genPrompt, {
-    agentType: 'question-generator', phase: 'Generate', label: `gen-r${round}`,
+    phase: 'Generate', label: `gen-r${round}`,
   })
 
   let batch
@@ -78,6 +91,10 @@ while (approved.length < need && round < maxRounds) {
   const reviewed = await parallel(batch.map(q => () =>
     agent(
       [
+        `너는 NHN Cloud Essentials 문제 검수 에이전트다.`,
+        `먼저 이 정의 파일을 Read 해서 루브릭을 그대로 따른다: ${REV_DEF}`,
+        `작업 기준 디렉토리(정의 파일이 참조하는 상대경로 기준): ${baseDir}`,
+        ``,
         `다음 문제를 검수하라.`,
         `question:`, JSON.stringify(q, null, 2),
         ``,
@@ -85,7 +102,7 @@ while (approved.length < need && round < maxRounds) {
         JSON.stringify((A.avoidList || []).map(x => ({ q: x.q, summary: x.summary }))
           .concat(approved.map(a => ({ q: a.q, summary: a.summary }))), null, 2),
       ].join('\n'),
-      { agentType: 'question-reviewer', phase: 'Review', label: `rev-r${round}`, schema: VERDICT },
+      { phase: 'Review', label: `rev-r${round}`, schema: VERDICT },
     ).then(v => ({ q, v })).catch(() => null)
   ))
 
