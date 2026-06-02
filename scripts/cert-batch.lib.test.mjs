@@ -6,6 +6,7 @@ import {
   resequenceIds, ID_PREFIX,
   appendQuestions, normalizeQ,
   selectSourcePaths, DOMAIN_SOURCE_CANDIDATES,
+  reconcileAnswer,
 } from './cert-batch.lib.mjs';
 
 const good = {
@@ -199,6 +200,61 @@ test('perOption bare prefix "정답." (no text) fails validation', () => {
 });
 
 test('perOption "정답. 설명" passes validation', () => {
-  const r = validateQuestion({ ...good, perOption: ['정답. 설명', '오답. b', '오답. c', '오답. d'] });
+  // answer must match the 정답 marker position (index 0 here) for the question to be valid
+  const r = validateQuestion({ ...good, answer: [0], perOption: ['정답. 설명', '오답. b', '오답. c', '오답. d'] });
   assert.equal(r.valid, true);
+});
+
+// Fix 4: answer must agree with perOption 정답 markers (0-vs-1-index slip)
+test('answer that does not match perOption 정답 markers fails validation', () => {
+  // perOption marks index 1 as 정답, but answer says [2] (1-indexed slip)
+  const r = validateQuestion({ ...good, answer: [2] });
+  assert.equal(r.valid, false);
+  assert.ok(r.errors.some(e => e.includes('does not match perOption')));
+});
+
+test('multi answer mismatched with perOption markers fails', () => {
+  const multi = { ...good, type: 'multi', options: ['A', 'B', 'C', 'D', 'E'],
+    perOption: ['정답. a', '정답. b', '정답. c', '오답. d', '오답. e'], answer: [1, 2, 3] };
+  const r = validateQuestion(multi);
+  assert.equal(r.valid, false);
+  assert.ok(r.errors.some(e => e.includes('does not match perOption')));
+});
+
+test('reconcileAnswer fixes a 1-indexed single answer from perOption', () => {
+  const r = reconcileAnswer({ ...good, answer: [2] }); // 정답 marker at index 1
+  assert.equal(r.fixed, true);
+  assert.deepEqual(r.q.answer, [1]);
+  assert.deepEqual(r.from, [2]);
+  assert.deepEqual(r.to, [1]);
+});
+
+test('reconcileAnswer fixes a shifted multi answer set', () => {
+  const multi = { ...good, type: 'multi', options: ['A', 'B', 'C', 'D', 'E'],
+    perOption: ['정답. a', '정답. b', '정답. c', '오답. d', '오답. e'], answer: [1, 2, 3] };
+  const r = reconcileAnswer(multi);
+  assert.equal(r.fixed, true);
+  assert.deepEqual(r.q.answer, [0, 1, 2]);
+});
+
+test('reconcileAnswer leaves a correct answer untouched (fixed:false)', () => {
+  const r = reconcileAnswer(good);
+  assert.equal(r.fixed, false);
+  assert.equal(r.q, good); // same reference, no copy
+});
+
+test('reconcileAnswer leaves malformed perOption untouched', () => {
+  const r = reconcileAnswer({ ...good, perOption: ['맞음', '정답. b', '오답. c', '오답. d'] });
+  assert.equal(r.fixed, false);
+});
+
+test('reconcileAnswer does not force a cardinality-violating fix', () => {
+  // single but perOption marks two 정답 → ambiguous, leave for validation to reject
+  const r = reconcileAnswer({ ...good, perOption: ['정답. a', '정답. b', '오답. c', '오답. d'], answer: [0] });
+  assert.equal(r.fixed, false);
+});
+
+test('a reconciled question then passes validateQuestion', () => {
+  const { q } = reconcileAnswer({ ...good, answer: [2] });
+  assert.equal(validateQuestion(q).valid, true);
 });

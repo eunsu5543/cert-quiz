@@ -35,7 +35,43 @@ export function validateQuestion(q) {
       if (!Number.isInteger(a) || a < 0 || a >= q.options.length) errors.push(`answer index out of range: ${a}`);
     }
   }
+  // answer must agree with the 정답/오답 markers in perOption. A 0-vs-1-index slip
+  // produces an answer that is structurally valid (in range, right cardinality) but
+  // semantically wrong — the worst failure for a quiz, and invisible to the checks
+  // above. Only enforced when perOption is well-formed, so we don't double-report.
+  const perOptWellFormed = Array.isArray(q.perOption) && Array.isArray(q.options)
+    && q.perOption.length === q.options.length
+    && q.perOption.every(p => typeof p === 'string' && /^(정답|오답)\.\s+\S/.test(p));
+  if (perOptWellFormed && Array.isArray(q.answer)) {
+    const expected = q.perOption.map((p, i) => (p.startsWith('정답') ? i : -1)).filter(i => i >= 0);
+    const got = [...q.answer].sort((a, b) => a - b).join(',');
+    const exp = [...expected].sort((a, b) => a - b).join(',');
+    if (got !== exp) {
+      errors.push(`answer ${JSON.stringify(q.answer)} does not match perOption 정답 markers (expected ${JSON.stringify(expected)})`);
+    }
+  }
   return { valid: errors.length === 0, errors };
+}
+
+// Derive the canonical answer set from a question's perOption 정답 markers and,
+// when it disagrees with q.answer, return a corrected copy. perOption (the prose
+// explanation shown to learners) is the authoritative answer key; q.answer is just
+// a derived index that the generator sometimes emits 1-indexed by mistake. Returns
+// { q, fixed, from, to }. Leaves q untouched if perOption is malformed or the
+// resulting cardinality would violate the type rule (let validateQuestion catch it).
+export function reconcileAnswer(q) {
+  if (q == null || typeof q !== 'object') return { q, fixed: false };
+  const wellFormed = Array.isArray(q.perOption) && Array.isArray(q.options)
+    && q.perOption.length === q.options.length
+    && q.perOption.every(p => typeof p === 'string' && /^(정답|오답)\.\s+\S/.test(p));
+  if (!wellFormed) return { q, fixed: false };
+  const expected = q.perOption.map((p, i) => (p.startsWith('정답') ? i : -1)).filter(i => i >= 0);
+  const cardOk = q.type === 'single' ? expected.length === 1 : q.type === 'multi' ? expected.length >= 2 : false;
+  if (!cardOk) return { q, fixed: false };
+  const got = [...(Array.isArray(q.answer) ? q.answer : [])].sort((a, b) => a - b).join(',');
+  const exp = [...expected].sort((a, b) => a - b).join(',');
+  if (got === exp) return { q, fixed: false };
+  return { q: { ...q, answer: expected }, fixed: true, from: q.answer, to: expected };
 }
 
 export function buildAvoidList(doc, domain) {

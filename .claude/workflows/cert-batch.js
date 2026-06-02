@@ -85,6 +85,26 @@ const BATCH = {
   },
 }
 
+// Normalize answer to the 정답 markers in perOption. The generator occasionally
+// emits a 1-indexed answer (structurally valid, semantically wrong) — this mirrors
+// scripts/cert-batch.lib.mjs reconcileAnswer so the reviewer judges the corrected
+// question and apply-batch's hard gate never has to drop a salvageable one. Inlined
+// because workflow scripts can't import. Returns { q, fixed }.
+function reconcileAnswer(q) {
+  if (q == null || typeof q !== 'object') return { q, fixed: false }
+  const wellFormed = Array.isArray(q.perOption) && Array.isArray(q.options)
+    && q.perOption.length === q.options.length
+    && q.perOption.every(p => typeof p === 'string' && /^(정답|오답)\.\s+\S/.test(p))
+  if (!wellFormed) return { q, fixed: false }
+  const expected = q.perOption.map((p, i) => (p.startsWith('정답') ? i : -1)).filter(i => i >= 0)
+  const cardOk = q.type === 'single' ? expected.length === 1 : q.type === 'multi' ? expected.length >= 2 : false
+  if (!cardOk) return { q, fixed: false }
+  const got = [...(Array.isArray(q.answer) ? q.answer : [])].sort((a, b) => a - b).join(',')
+  const exp = [...expected].sort((a, b) => a - b).join(',')
+  if (got === exp) return { q, fixed: false }
+  return { q: { ...q, answer: expected }, fixed: true }
+}
+
 const approved = []
 const rejectFeedback = []
 let round = 0
@@ -119,6 +139,7 @@ while (approved.length < need && round < maxRounds) {
     `도메인: ${A.domain} (${A.domainName})`,
     `이번 라운드 생성 개수: ${thisBatch}`,
     `문제 유형 분포: single ${singleCount}개, multi ${multiCount}개 (single=4지 1정답, multi=5지 2개 이상 정답)`,
+    `⚠ answer 배열은 0-인덱스(첫 보기=0)이며, perOption에서 "정답."으로 시작하는 항목의 인덱스와 정확히 일치해야 한다. 1부터 세지 말 것.`,
     `참조 소스 경로 (이 안에서만 출제, 절대경로):`,
     ...(A.sourcePaths || []).map(p => `  - ${abs(p)}`),
     `glossaryPath: ${A.glossaryPath ? abs(A.glossaryPath) : ''}`,
@@ -139,7 +160,10 @@ while (approved.length < need && round < maxRounds) {
   })
 
   if (gen && gen.warning) log(`round ${round}: 생성기 경고 — ${gen.warning}`)
-  const batch = (gen && Array.isArray(gen.questions) ? gen.questions : []).filter(q => q && q.q)
+  const rawBatch = (gen && Array.isArray(gen.questions) ? gen.questions : []).filter(q => q && q.q)
+  let fixedCount = 0
+  const batch = rawBatch.map(q => { const r = reconcileAnswer(q); if (r.fixed) fixedCount++; return r.q })
+  if (fixedCount) log(`round ${round}: answer/perOption 불일치 ${fixedCount}개 자동교정(perOption 기준)`)
   if (batch.length === 0) {
     log(`round ${round}: 빈 배치 (생성 0개)`)
     if (++dryStreak >= DRY_LIMIT) { log(`소스 고갈 추정 (dry ${dryStreak}회) — 조기 종료`); break }
