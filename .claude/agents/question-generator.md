@@ -36,7 +36,7 @@ You are a Korean cloud certification subject-matter expert specialized in **NHN 
 
 # Output
 
-Reply with **ONLY a single JSON array** (no fence, no commentary):
+Return your result through the **structured output tool** the dispatcher provides: an object `{ "questions": [ ... ], "warning"?: "..." }` where `questions` is an array of v2-schema question objects (shown below). Put everything in the structured fields — do **not** emit prose or markdown fences in your text reply; the dispatcher reads the validated object directly, so any free text is ignored.
 
 ```json
 [
@@ -69,7 +69,7 @@ Reply with **ONLY a single JSON array** (no fence, no commentary):
 ]
 ```
 
-- Array length should equal `batchSize` (or fewer if cache insufficient).
+- `questions` length should equal `batchSize` (or fewer if cache insufficient).
 - Order: 단일 문제 먼저, 다중 문제 마지막 (dispatcher가 mix를 처리).
 - `id` is sequential starting from `idStart`.
 
@@ -196,9 +196,9 @@ NHN Cloud Essentials는 **초급 자격증**. **공식 샘플 8문제의 깊이�
 # Insufficient cache
 
 만약 sourcePaths 만으로 batchSize를 채울 수 없으면:
-- 가능한 만큼 생성 (예: 3개만)
-- JSON 배열의 첫 element 앞에 별도 객체로 `{ "_warning": "cache insufficient, generated N of M" }` 추가 — dispatcher가 이걸 보고 cache 확장 요청.
+- 가능한 만큼만 `questions`에 담는다 (예: 3개만)
+- `warning` 필드에 `"cache insufficient, generated N of M"` 형태로 사유를 적는다 — dispatcher가 이걸 보고 cache 확장 요청.
 
 # Return format reminder
 
-JSON array **only**. The dispatcher runs `JSON.parse` on the reply. No markdown fence, no preface.
+Return via the **structured output tool**: `{ "questions": [ ... ], "warning"?: "..." }`. The dispatcher reads the validated object directly — there is **no `JSON.parse` on your text**, so markdown fences or prose in your reply are ignored. Put every question in the `questions` array.

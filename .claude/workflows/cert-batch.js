@@ -31,6 +31,60 @@ const VERDICT = {
   },
 }
 
+// Generator output schema. Forcing structured output (vs JSON.parse on the
+// agent's raw text) eliminates the markdown-fence / preface contamination that
+// broke 4 of 5 rounds in the first service-feature batch. Kept loose on field
+// detail — apply-batch.mjs / validateQuestion does the strict v2 gate — but
+// strict enough to guarantee a parseable, shaped batch every round.
+const QUESTION = {
+  type: 'object',
+  required: ['id', 'domain', 'type', 'q', 'options', 'answer', 'summary', 'perOption'],
+  properties: {
+    id: { type: 'string' },
+    domain: { type: 'string' },
+    type: { type: 'string', enum: ['single', 'multi'] },
+    q: { type: 'string' },
+    options: { type: 'array', items: { type: 'string' }, minItems: 4 },
+    answer: { type: 'array', items: { type: 'integer' }, minItems: 1 },
+    summary: { type: 'string' },
+    perOption: { type: 'array', items: { type: 'string' }, minItems: 4 },
+    glossary: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          term: { type: 'string' },
+          definition: { type: 'string' },
+          source: { type: 'string' },
+        },
+      },
+    },
+    source: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          type: { type: 'string' },
+          url: { type: 'string' },
+          path: { type: 'string' },
+          section: { type: 'string' },
+        },
+      },
+    },
+    status: { type: 'string' },
+    generatedAt: { type: 'string' },
+  },
+}
+
+const BATCH = {
+  type: 'object',
+  required: ['questions'],
+  properties: {
+    questions: { type: 'array', items: QUESTION },
+    warning: { type: 'string' },
+  },
+}
+
 const approved = []
 const rejectFeedback = []
 let round = 0
@@ -76,24 +130,18 @@ while (approved.length < need && round < maxRounds) {
       ? ['\n직전 탈락 사유(반복 금지):', ...rejectFeedback.slice(-8).map(r => `  - ${r.reasons.join('; ')}`)]
       : []),
     ``,
-    `출력: v2 스키마 문제 JSON 배열만. fence/주석 없이. 너의 최종 응답 전체가 JSON.parse 대상이다.`,
+    `출력: 구조화 출력 도구(StructuredOutput)로 questions 배열을 반환하라. 각 원소는 v2 스키마 문제 객체.`,
+    `캐시가 부족하면 questions 개수를 줄이고 warning 필드에 사유를 적어라. 절대 지어내지 말 것.`,
   ].join('\n')
 
-  const raw = await agent(genPrompt, {
-    phase: 'Generate', label: `gen-r${round}`,
+  const gen = await agent(genPrompt, {
+    phase: 'Generate', label: `gen-r${round}`, schema: BATCH,
   })
 
-  let batch
-  try {
-    batch = JSON.parse(raw)
-  } catch {
-    log(`round ${round}: JSON parse 실패, 스킵`)
-    if (++dryStreak >= DRY_LIMIT) { log(`소스 고갈 추정 (dry ${dryStreak}회) — 조기 종료`); break }
-    continue
-  }
-  batch = (Array.isArray(batch) ? batch : []).filter(q => q && !q._warning && q.q)
+  if (gen && gen.warning) log(`round ${round}: 생성기 경고 — ${gen.warning}`)
+  const batch = (gen && Array.isArray(gen.questions) ? gen.questions : []).filter(q => q && q.q)
   if (batch.length === 0) {
-    log(`round ${round}: 빈 배치`)
+    log(`round ${round}: 빈 배치 (생성 0개)`)
     if (++dryStreak >= DRY_LIMIT) { log(`소스 고갈 추정 (dry ${dryStreak}회) — 조기 종료`); break }
     continue
   }
