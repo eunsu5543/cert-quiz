@@ -187,7 +187,16 @@ export const DOMAIN_SOURCE_CANDIDATES = {
     `${G}/Container/NCR/ko/user-guide.md`,
   ],
   'service-skill': [`${G}/nhncloud/ko/overview.md`],
-  'billing': [`${G}/nhncloud/ko/user-guide.md`],
+  // 공식 범위(시험안내서): 결제/요금. 캐시에 billing 전용 페이지가 적어 nhncloud 이용
+  // 안내(결제수단·크레딧·약정·요금 정책)를 1차 소스로, eTax(전자세금계산서)를 보조로.
+  // 콘솔 클릭 단계·카드 검증 금액 등 운영 트리비아는 검수기/표본점검에서 제외.
+  'billing': [
+    `${G}/nhncloud/ko/user-guide.md`,      // 결제 수단·요금·크레딧·약정 등 이용 안내(결제 정책 핵심)
+    `${G}/nhncloud/ko/resource-policy.md`, // 리소스 제공/크레딧 정책
+    `${G}/nhncloud/ko/overview.md`,        // 과금 모델·합리적 가격 정책 개요
+    `${G}/Bill/eTax/ko/overview.md`,       // 전자세금계산서(개념)
+    `${G}/Bill/eTax/ko/service-guide.md`,
+  ],
 };
 
 export function selectSourcePaths(domain, exists = existsSync) {
