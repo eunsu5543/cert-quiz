@@ -170,6 +170,21 @@ export const DOMAIN_SOURCE_CANDIDATES = {
     `${G}/Container/NKS/ko/overview.md`,
     `${G}/Container/NCR/ko/overview.md`,
     `${G}/Container/NCS/ko/overview.md`,
+    // 2차 확장: overview만으로는 ~72에서 천장 → 개념·기능 페이지 추가(시험범위=사용자 가이드 전체).
+    // 순수 console-guide(메뉴·입력값 트리비아)는 제외하고 개념/기능 중심 페이지만. RDS는
+    // MySQL을 대표로(MariaDB/PostgreSQL은 내용 거의 동일 → 교차 중복 방지), PostgreSQL 고유의
+    // db-extension만 추가.
+    `${G}/Compute/Instance/ko/component-guide.md`,
+    `${G}/Compute/Cloud%20Functions/ko/trigger-guide.md`,
+    `${G}/Storage/Object%20Storage/ko/acl-guide.md`,
+    `${G}/Storage/Object%20Storage/ko/container-policy-guide.md`,
+    `${G}/Database/RDS%20for%20MySQL/ko/db-instance.md`,
+    `${G}/Database/RDS%20for%20MySQL/ko/db-engine.md`,
+    `${G}/Database/RDS%20for%20MySQL/ko/backup-and-restore.md`,
+    `${G}/Database/RDS%20for%20MySQL/ko/db-security-group.md`,
+    `${G}/Database/RDS%20for%20PostgreSQL/ko/db-extension.md`,
+    `${G}/Container/NKS/ko/user-guide.md`,
+    `${G}/Container/NCR/ko/user-guide.md`,
   ],
   'service-skill': [`${G}/nhncloud/ko/overview.md`],
   'billing': [`${G}/nhncloud/ko/user-guide.md`],
