@@ -1977,6 +1977,1174 @@
       ],
       "status": "approved",
       "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-021",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 인스턴스(Instance) 구성 요소에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "이미지는 인스턴스의 가상 하드웨어 성능을 결정하는 요소이다.",
+        "타입(flavor)은 인스턴스의 운영체제를 담고 있는 가상 디스크이다.",
+        "가용성 영역(AZ, availability zone)은 인스턴스가 만들어질 물리적인 위치이다.",
+        "키페어(key-pair)는 인스턴스가 연결될 가상 네트워크를 의미한다."
+      ],
+      "answer": [
+        2
+      ],
+      "summary": "인스턴스 구성 요소 각각의 의미를 묻는 문제",
+      "perOption": [
+        "오답. 이미지는 인스턴스의 운영체제를 담고 있는 가상 디스크이다. 가상 하드웨어 성능을 결정하는 요소는 타입(flavor)이다.",
+        "오답. 타입(flavor)은 인스턴스의 가상 하드웨어 성능을 의미한다. 운영체제를 담고 있는 가상 디스크는 이미지이다.",
+        "정답. 가용성 영역(AZ, availability zone)은 인스턴스가 만들어질 물리적인 위치를 의미하는 구성 요소이다.",
+        "오답. 키페어(key-pair)는 인스턴스 접속 수단으로 사용되는 키이다. 인스턴스가 연결될 가상 네트워크는 네트워크 구성 요소이다."
+      ],
+      "glossary": [
+        {
+          "term": "가용성 영역(availability zone, AZ)",
+          "definition": "독립된 전원 및 네트워크를 갖춘 데이터 센터로, 인스턴스가 만들어지는 물리적인 위치",
+          "source": "glossary"
+        },
+        {
+          "term": "공용 이미지(public image)",
+          "definition": "NHN Cloud에서 미리 생성하여 기본 제공하는 이미지",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Instance/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Instance/ko/overview.md",
+          "section": "인스턴스 구성 요소"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-022",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 플로팅 IP(Floating IP)와 고정 IP(fixed IP)의 관계에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "인스턴스가 생성되면 서브넷으로부터 할당받는 프라이빗 주소가 고정 IP이며, 이는 인터넷에서 직접 액세스할 수 없다.",
+        "플로팅 IP를 연결하면 기존 고정 IP가 사라지고 플로팅 IP로 대체된다.",
+        "고정 IP는 인터넷에서 직접 접근할 수 있는 공인 주소이므로 외부 접근 시 플로팅 IP가 필요 없다.",
+        "플로팅 IP는 시간이 지나면 자동으로 변경되는 동적 주소이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "플로팅 IP와 고정 IP의 개념적 차이를 묻는 문제",
+      "perOption": [
+        "정답. 인스턴스가 생성되면 지정한 서브넷으로부터 고정 IP(fixed IP)를 할당받으며, 이는 프라이빗 네트워크 주소이므로 인터넷에서 직접 액세스할 수 없다. 외부에서 직접 접근하려면 플로팅 IP를 연결해야 한다.",
+        "오답. 플로팅 IP가 연결된다고 해서 고정 IP가 사라지거나 플로팅 IP로 변경되는 것이 아니다. 두 주소는 함께 유지된다.",
+        "오답. 고정 IP는 프라이빗 네트워크 주소이므로 인터넷에서 직접 접근할 수 없다. 외부 직접 접근에는 플로팅 IP가 필요하다.",
+        "오답. 플로팅 IP는 정적인 주소로, 시간이 지나도 변경되지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "고정 IP(fixed IP)",
+          "definition": "인스턴스가 생성되면 서브넷에서 할당 받는 프라이빗 네트워크 주소",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Floating IP/ko/overview/",
+          "path": "data/source/guide/ko/Network/Floating%20IP/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-023",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud RDS for MySQL 서비스에 대한 설명으로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "MySQL 데이터베이스를 클라우드 환경에서 사용할 수 있도록 제공하는 관리형 데이터베이스 서비스이다.",
+        "컨테이너 이미지를 저장하고 배포하기 위한 레지스트리 서비스이다.",
+        "인메모리 캐시 서버를 제공하여 데이터 조회 속도를 높이는 서비스이다.",
+        "여러 인스턴스에서 파일을 공유하기 위한 네트워크 파일 스토리지 서비스이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "RDS for MySQL 서비스의 용도를 묻는 문제",
+      "perOption": [
+        "정답. RDS for MySQL은 MySQL 데이터베이스를 클라우드 환경에서 사용할 수 있는 서비스로, 손쉽게 MySQL이 설치된 가상 장비를 사용할 수 있다.",
+        "오답. 컨테이너 이미지를 저장하고 배포하는 것은 NCR(NHN Container Registry)의 역할이다.",
+        "오답. 인메모리 캐시 서버를 제공하는 것은 EasyCache 서비스이다.",
+        "오답. 여러 인스턴스에서 파일을 공유하는 네트워크 파일 스토리지는 NAS 서비스이다."
+      ],
+      "glossary": [
+        {
+          "term": "RDS(Relational Database Service)",
+          "definition": "클라우드 환경에서 관계형 데이터베이스(relational database)를 제공하는 서비스",
+          "source": "glossary"
+        },
+        {
+          "term": "DB 인스턴스(DB instance)",
+          "definition": "RDS 서비스에서 제공하는 관계형 데이터베이스의 단위로, 가상 장비와 설치된 관계형 데이터베이스를 아우르는 개념",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/RDS for MySQL/ko/overview/",
+          "path": "data/source/guide/ko/Database/RDS%20for%20MySQL/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-024",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud VPN Gateway(Site-to-Site VPN) 서비스의 용도로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 제공한다.",
+        "같은 프로젝트 내 서로 다른 두 VPC를 직접 연결한다.",
+        "프라이빗 네트워크의 인스턴스가 인터넷에 아웃바운드로 접근할 수 있게 한다.",
+        "인스턴스에 인터넷에서 직접 접근할 수 있는 공인 IP를 부여한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "VPN Gateway 서비스의 용도를 묻는 문제",
+      "perOption": [
+        "정답. VPN Gateway(Site-to-Site VPN)는 VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 할 수 있는 기능을 제공한다.",
+        "오답. 같은 프로젝트 내 서로 다른 두 VPC를 연결하는 것은 피어링 게이트웨이(Peering Gateway)의 역할이다.",
+        "오답. 프라이빗 네트워크의 인스턴스가 인터넷에 접근하게 해 주는 것은 NAT 게이트웨이(NAT Gateway)이다.",
+        "오답. 인스턴스에 인터넷 직접 접근용 공인 IP를 부여하는 것은 플로팅 IP(Floating IP)이다."
+      ],
+      "glossary": [
+        {
+          "term": "VPN gateway",
+          "definition": "VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 할 수 있게 해 주는 서비스",
+          "source": "glossary"
+        },
+        {
+          "term": "IPSec VPN",
+          "definition": "IP 계층(L3)에서 데이터 패킷을 암호화하여 네트워크 간 통신을 안전하게 연결하는 가상 사설망 기술",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPN Gateway(Site-to-Site VPN)/ko/overview/",
+          "path": "data/source/guide/ko/Network/VPN%20Gateway(Site-to-Site%20VPN)/ko/overview.md",
+          "section": "개요 / 주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-025",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud EasyCache 서비스에 대한 설명으로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "Valkey를 기반으로 한 인메모리 캐시 서버를 클라우드 환경에서 제공하는 서비스이다.",
+        "관계형 데이터베이스인 MySQL을 제공하는 서비스이다.",
+        "객체(파일)를 인터넷으로 저장하고 조회하는 오브젝트 스토리지 서비스이다.",
+        "컨테이너 오케스트레이션을 위한 관리형 Kubernetes 서비스이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "EasyCache 서비스의 정의를 묻는 문제",
+      "perOption": [
+        "정답. EasyCache는 Valkey를 클라우드 환경에서 제공하는 서비스로, 간단한 설정만으로 Valkey가 설치된 인메모리 캐시 서버를 사용할 수 있다.",
+        "오답. 관계형 데이터베이스 MySQL을 제공하는 것은 RDS for MySQL 서비스이다.",
+        "오답. 객체를 인터넷으로 저장하고 조회하는 것은 오브젝트 스토리지(Object Storage)이다.",
+        "오답. 관리형 Kubernetes 컨테이너 오케스트레이션은 NKS(NHN Kubernetes Service)이다."
+      ],
+      "glossary": [
+        {
+          "term": "EasyCache",
+          "definition": "클라우드에서 고가용성의 인메모리 데이터스토어 환경 또는 인메모리 캐시 환경을 간단하게 설정하고 관리할 수 있는 NHN Cloud 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/EasyCache/ko/overview/",
+          "path": "data/source/guide/ko/Database/EasyCache/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-026",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 가용성 영역(AZ, availability zone)에 대한 설명으로 맞지 않은 것은 무엇인가요?",
+      "options": [
+        "물리 하드웨어 장애에 대비해 전체 시스템을 여러 개의 가용성 영역으로 나누어 둔 것이다.",
+        "서로 다른 가용성 영역에 흩어져 생성된 인스턴스끼리도 네트워크 통신이 가능하다.",
+        "서로 다른 가용성 영역 사이에서도 블록 스토리지를 자유롭게 공유할 수 있다.",
+        "인스턴스를 여러 가용성 영역에 나눠 구축하면 서비스의 가용성을 더욱 높일 수 있다."
+      ],
+      "answer": [
+        2
+      ],
+      "summary": "가용성 영역의 특성 중 옳지 않은 설명을 고르는 문제",
+      "perOption": [
+        "오답. 가용성 영역은 물리 하드웨어 문제로 생기는 장애에 대비하기 위해 전체 시스템을 여러 개로 나눈 것으로, 맞는 설명이다.",
+        "오답. 여러 가용성 영역에 흩어져 생성된 인스턴스끼리 네트워크 통신이 가능하며, 이때 발생하는 네트워크 사용 비용은 부과되지 않는다. 맞는 설명이다.",
+        "정답. 같은 가용성 영역의 인스턴스 사이에서는 블록 스토리지를 공유할 수 있으나, 서로 다른 가용성 영역 간에는 블록 스토리지를 공유할 수 없다. 따라서 틀린 설명이다.",
+        "오답. 인스턴스를 여러 가용성 영역에 나눠 구축하면 한 영역의 장애가 다른 영역에 영향을 주지 않아 가용성이 높아진다. 맞는 설명이다."
+      ],
+      "glossary": [
+        {
+          "term": "가용성 영역(availability zone, AZ)",
+          "definition": "독립된 전원 및 네트워크를 갖춘 데이터 센터로, 인스턴스가 만들어지는 물리적인 위치",
+          "source": "glossary"
+        },
+        {
+          "term": "가용성(availability)",
+          "definition": "시스템이 정상적으로 사용 가능한 정도",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Instance/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Instance/ko/overview.md",
+          "section": "가용성 영역(Availability zone)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-027",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud 추가 블록 스토리지(Block Storage)의 특징으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "연결된 인스턴스를 삭제하더라도 블록 스토리지는 삭제되지 않는다.",
+        "하나의 블록 스토리지를 여러 개의 인스턴스에 동시에 연결하여 사용할 수 있다.",
+        "연결이 해제된 블록 스토리지는 다른 인스턴스에 연결하여 사용할 수 있다.",
+        "블록 스토리지는 같은 가용성 영역 안에 있는 인스턴스에만 연결할 수 있다.",
+        "블록 스토리지는 인스턴스를 종료(삭제)해야만 연결할 수 있다."
+      ],
+      "answer": [
+        0,
+        2,
+        3
+      ],
+      "summary": "블록 스토리지의 연결 및 공유 특징을 모두 고르는 문제",
+      "perOption": [
+        "정답. 연결된 인스턴스를 삭제하더라도 블록 스토리지는 삭제되지 않고 유지된다.",
+        "오답. 블록 스토리지는 여러 개의 인스턴스에서 동시에 연결하여 사용할 수 없다.",
+        "정답. 연결이 해제된 블록 스토리지는 다른 인스턴스에 연결하여 사용할 수 있다.",
+        "정답. 블록 스토리지는 같은 가용성 영역(availability zone) 안에 있는 인스턴스에만 연결할 수 있다.",
+        "오답. 블록 스토리지는 인스턴스 실행 중에도 연결할 수 있으므로, 종료해야만 연결할 수 있다는 설명은 틀리다."
+      ],
+      "glossary": [
+        {
+          "term": "가용성 영역(availability zone, AZ)",
+          "definition": "독립된 전원 및 네트워크를 갖춘 데이터 센터로, 인스턴스가 만들어지는 물리적인 위치",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Block Storage/ko/overview/",
+          "path": "data/source/guide/ko/Storage/Block%20Storage/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-028",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud 플로팅 IP(Floating IP)의 특징으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "플로팅 IP는 인스턴스 또는 네트워크 인터페이스와 같은 리소스와 연결하여 사용한다.",
+        "플로팅 IP는 정적인 주소로, 시간이 지나도 변경되지 않는다.",
+        "플로팅 IP는 인스턴스에 연결되어 있을 때에만 과금되고 연결이 해제되면 과금되지 않는다.",
+        "플로팅 IP는 한 리소스에서 연결을 해제하고 다른 리소스에 다시 연결하여 사용할 수 있다.",
+        "플로팅 IP를 사용하면 한 인스턴스에 여러 개를 1:N으로 연결하여 대역폭을 늘릴 수 있다."
+      ],
+      "answer": [
+        0,
+        1,
+        3
+      ],
+      "summary": "플로팅 IP의 연결·과금·이동 특징을 모두 고르는 문제",
+      "perOption": [
+        "정답. 플로팅 IP는 인스턴스 또는 네트워크 인터페이스와 같은 리소스와 연결하여 사용해야 한다.",
+        "정답. 플로팅 IP는 정적인 주소로, 시간이 지나도 변경되지 않는다.",
+        "오답. 플로팅 IP는 생성과 동시에 과금되며 삭제하기 전까지 인스턴스 연결과 무관하게 지속적으로 과금된다.",
+        "정답. 플로팅 IP는 한 리소스에서 연결을 해제하고 다른 리소스와 연결하여 사용할 수 있다.",
+        "오답. 플로팅 IP는 인스턴스 등의 리소스와 1:1로 연결하여 사용하며, 한 인스턴스에 1:N으로 연결한다는 설명은 맞지 않다."
+      ],
+      "glossary": [
+        {
+          "term": "고정 IP(fixed IP)",
+          "definition": "인스턴스가 생성되면 서브넷에서 할당 받는 프라이빗 네트워크 주소",
+          "source": "glossary"
+        },
+        {
+          "term": "네트워크 인터페이스(network interface)",
+          "definition": "인스턴스를 네트워크에 연결하기 위한 장치로, '인터페이스'로 줄여서 사용하기도 함",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Floating IP/ko/overview/",
+          "path": "data/source/guide/ko/Network/Floating%20IP/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-029",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 오브젝트 스토리지(Object Storage)의 데이터 구성 단위에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "컨테이너(container)는 오브젝트를 관리하기 위한 네임스페이스이며, 모든 오브젝트는 반드시 컨테이너 안에 존재한다.",
+        "오브젝트(object)는 컨테이너를 묶는 상위 단위이며, 여러 컨테이너를 하나의 오브젝트로 그룹화한다.",
+        "폴더(folder)는 물리적인 디스크 파티션 단위로, 오브젝트를 서로 다른 하드웨어에 저장하기 위한 단위이다.",
+        "스토리지 계정(account)은 오브젝트 단위로 격리되며, 오브젝트마다 별도의 계정이 부여된다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오브젝트 스토리지의 데이터 구성 단위(컨테이너·오브젝트·폴더·계정) 개념을 묻는 문제",
+      "perOption": [
+        "정답. 컨테이너(container)는 오브젝트를 관리하기 위한 네임스페이스(namespace)이며 다양한 관리 설정의 단위가 된다. 모든 오브젝트는 반드시 컨테이너 안에 존재하고 컨테이너 내에서 유일한 이름을 가진다.",
+        "오답. 오브젝트(object)는 오브젝트 스토리지의 기본 데이터 단위이며, 컨테이너를 묶는 상위 단위가 아니다. 오히려 오브젝트가 컨테이너 안에 존재한다.",
+        "오답. 폴더(folder)는 오브젝트를 묶는 가상의 단위로, 계층적으로 오브젝트를 관리하도록 돕는 논리적 개념이지 물리적 디스크 파티션이 아니다.",
+        "오답. 스토리지 계정(account)은 오브젝트 스토리지의 사용자 계정이며, 오브젝트 스토리지는 계정 단위로 격리된다. 오브젝트 단위 격리가 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "WORM(write once read many)",
+          "definition": "한번 기록한 정보를 수정할 수 없는 저장 방식. 사람 및 시스템 오류 등에 의해 중요한 데이터가 삭제되거나 변조될 위험을 제거하여 무결성을 보장",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/Overview.md",
+          "section": "용어 (오브젝트/폴더/컨테이너/스토리지 계정)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-030",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NHN Kubernetes Service(NKS)의 용도로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "클라우드에서 Kubernetes 클러스터를 생성하고 관리할 수 있도록 지원하는 서비스이다.",
+        "컨테이너 이미지를 저장하고 배포하는 컨테이너 레지스트리 서비스이다.",
+        "인메모리 캐시 서버를 간단하게 설정하고 관리하는 데이터스토어 서비스이다.",
+        "온프레미스와 클라우드 사이를 전용 회선으로 연결하는 네트워크 서비스이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NKS 서비스의 핵심 용도(Kubernetes 클러스터 생성·관리)를 묻는 문제",
+      "perOption": [
+        "정답. NHN Kubernetes Service(NKS)는 클라우드에서 Kubernetes를 올바르고 안전하게 구동할 수 있도록 Kubernetes 클러스터를 생성하고 관리할 수 있는 서비스이다.",
+        "오답. 컨테이너 이미지를 저장·배포하는 컨테이너 레지스트리 서비스는 NHN Container Registry(NCR)이다.",
+        "오답. 인메모리 캐시 서버를 간단하게 설정·관리하는 서비스는 EasyCache이다.",
+        "오답. 온프레미스와 클라우드를 전용 회선으로 연결하는 서비스는 Direct Connect이다."
+      ],
+      "glossary": [
+        {
+          "term": "Kubernetes",
+          "definition": "컨테이너화된 애플리케이션을 배포, 관리 및 크기 조정하기 위한 오픈 소스 오케스트레이션 플랫폼. Google이 2014년 오픈소스화했으며 K와 S 사이에 있는 8자를 줄여 K8s라고도 표기",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NKS/ko/overview/",
+          "path": "data/source/guide/ko/Container/NKS/ko/overview.md",
+          "section": "NHN Kubernetes Service(NKS)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-031",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NAS 서비스의 스냅숏(snapshot)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "볼륨의 읽기 전용 복사본으로, 특정 시점의 데이터를 백업 및 복원하는 데 사용된다.",
+        "여러 인스턴스가 동시에 쓰기 작업을 수행할 수 있도록 볼륨을 분할하는 기능이다.",
+        "볼륨과 무관하게 별도의 외부 스토리지에 저장되어 볼륨 용량을 사용하지 않는다.",
+        "하루에 최대 24회까지만 자동 생성 시점을 지정할 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NAS 스냅숏의 정의와 특성을 묻는 문제",
+      "perOption": [
+        "정답. NAS 스냅숏은 볼륨의 읽기 전용 복사본으로, 특정 시점의 데이터를 백업 및 복원하는 데 사용된다.",
+        "오답. 스냅숏은 백업·복원을 위한 읽기 전용 복사본이며, 동시 쓰기를 위한 볼륨 분할 기능이 아니다.",
+        "오답. 스냅숏은 볼륨의 저장 공간을 사용하므로, 필요하지 않은 경우 생성을 비활성화할 수 있다.",
+        "오답. 스냅숏은 하루 1회 자동 생성 시점을 지정할 수 있다."
+      ],
+      "glossary": [
+        {
+          "term": "NAS(network-attached storage)",
+          "definition": "네트워크에 연결된 파일 수준 데이터 스토리지로, 이기종 클라이언트가 데이터에 접근할 수 있음",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/NAS/ko/overview/",
+          "path": "data/source/guide/ko/Storage/NAS/ko/overview.md",
+          "section": "용어 (스냅숏)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-032",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud NHN Kubernetes Service(NKS)의 기반인 Kubernetes가 제공하는 기능에 해당하는 것을 모두 고르세요.",
+      "options": [
+        "서비스 디스커버리와 로드 밸런싱",
+        "자동화된 롤아웃과 롤백",
+        "자동화된 복구(self-healing)",
+        "물리 서버의 발주와 데이터 센터 전원 공사",
+        "신용카드 결제 대행 및 정산 처리"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "Kubernetes(NKS 기반)가 제공하는 컨테이너 오케스트레이션 기능을 묻는 문제",
+      "perOption": [
+        "정답. Kubernetes는 서비스 디스커버리와 로드 밸런싱 기능을 제공한다.",
+        "정답. Kubernetes는 자동화된 롤아웃과 롤백 기능을 제공한다.",
+        "정답. Kubernetes는 자동화된 복구(self-healing) 기능을 제공한다.",
+        "오답. 물리 서버 발주나 데이터 센터 전원 공사는 컨테이너 오케스트레이션 플랫폼인 Kubernetes의 기능이 아니다.",
+        "오답. 신용카드 결제 대행·정산은 Kubernetes가 제공하는 기능이 아니며, 컨테이너화된 워크로드 관리와 무관하다."
+      ],
+      "glossary": [
+        {
+          "term": "Kubernetes 클러스터(Kubernetes cluster)",
+          "definition": "노드의 집합. 노드는 마스터와 연결되어 동작하므로 Kubernetes 클러스터는 마스터와 노드로 구성됨. 모든 클러스터는 한 개 이상의 노드를 가지며, Kubernetes가 제공하는 기능은 클러스터 단위로 동작하고 설정할 수 있음",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NKS/ko/overview/",
+          "path": "data/source/guide/ko/Container/NKS/ko/overview.md",
+          "section": "Kubernetes (제공 기능)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-033",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 로드 밸런서(Load Balancer)가 지원하는 TERMINATED_HTTPS 프로토콜에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "클라이언트와 로드 밸런서 사이, 로드 밸런서와 멤버 인스턴스 사이 모두 HTTPS로 통신한다.",
+        "HTTPS 트래픽을 수신한 뒤 멤버 인스턴스에는 HTTP 트래픽으로 전달하여 서버의 복호화 부하를 줄인다.",
+        "클라이언트와 로드 밸런서 사이는 HTTP, 멤버 인스턴스로는 HTTPS로 전달한다.",
+        "TCP 계층에서만 동작하므로 인증서를 등록할 필요가 없다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "로드 밸런서의 TERMINATED_HTTPS 프로토콜이 트래픽을 처리하는 방식을 묻는 문제",
+      "perOption": [
+        "오답. TERMINATED_HTTPS는 클라이언트와 로드 밸런서 사이에서만 HTTPS로 통신하고, 멤버 인스턴스에는 복호화된 HTTP 트래픽을 전달한다.",
+        "정답. TERMINATED_HTTPS 프로토콜은 HTTPS 트래픽을 수신하여 멤버 인스턴스에는 HTTP 트래픽으로 전달하는 방식으로, 사용자와 로드 밸런서 사이는 HTTPS로 통신해 보안성을 확보하면서 서버의 복호화 CPU 부하를 줄인다.",
+        "오답. 방향이 반대다. 클라이언트와 로드 밸런서 사이가 HTTPS이고, 멤버 인스턴스로 전달되는 트래픽이 HTTP다.",
+        "오답. TERMINATED_HTTPS는 HTTPS 트래픽을 종단 처리하는 방식이므로 인증서와 개인 키를 로드 밸런서에 등록해야 하며, 이때 개인 키는 비밀번호가 제거되어야 한다."
+      ],
+      "glossary": [
+        {
+          "term": "로드 밸런서(load balancer)",
+          "definition": "인스턴스의 트래픽 부하 분산 기능을 제공하는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load%20Balancer/ko/overview.md",
+          "section": "지원 프로토콜"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-034",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud VPN Gateway(Site-to-Site VPN)의 구성 개념에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "로컬 게이트웨이는 온프레미스 측에서 VPN 터널 구성에 할당되는 리소스이다.",
+        "리모트 게이트웨이는 NHN Cloud 측에서 VPN 터널 구성에 할당되는 리소스이다.",
+        "VPN 터널은 리모트 게이트웨이와 로컬 게이트웨이 사이에 구성되는 암호화된 링크이다.",
+        "VPN 터널은 암호화 없이 평문으로 두 게이트웨이를 연결하는 링크이다."
+      ],
+      "answer": [
+        2
+      ],
+      "summary": "VPN Gateway의 로컬/리모트 게이트웨이와 VPN 터널 개념을 묻는 문제",
+      "perOption": [
+        "오답. 로컬 게이트웨이는 NHN Cloud에서 VPN 터널 구성에 할당되는 리소스이다. 온프레미스 측 리소스는 리모트 게이트웨이다.",
+        "오답. 리모트 게이트웨이는 온프레미스 측에서 VPN 터널 구성에 할당되는 리소스이다. NHN Cloud 측 리소스는 로컬 게이트웨이다.",
+        "정답. VPN 터널은 리모트 게이트웨이와 로컬 게이트웨이 사이에 구성되는 암호화된 링크로, VPC와 고객의 온프레미스 네트워크 사이를 암호화된 연결로 잇는다.",
+        "오답. VPN 터널은 암호화된 링크이며, AES192·AES256 같은 암호화 알고리즘을 사용해 통신을 보호한다."
+      ],
+      "glossary": [
+        {
+          "term": "VPN gateway",
+          "definition": "VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 할 수 있게 해 주는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPN%20Gateway(Site-to-Site%20VPN)/ko/overview/",
+          "path": "data/source/guide/ko/Network/VPN%20Gateway(Site-to-Site%20VPN)/ko/overview.md",
+          "section": "개념"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-035",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Backup(백업) 서비스가 데이터를 백업하는 방식에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "매번 사용자가 등록한 경로의 데이터 전체를 다시 백업한다.",
+        "최초 1회는 전체 백업을 수행하고, 이후에는 중복을 제거하여 증분만 백업한다.",
+        "백업 데이터는 암호화하지 않고 백업 스토리지로 전송된다.",
+        "전체 백업만 지원하며 증분 백업 방식은 사용하지 않는다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "Backup 서비스의 전체/증분 백업과 중복 제거 방식을 묻는 문제",
+      "perOption": [
+        "오답. 최초 1회만 전체 백업을 수행하고 이후에는 증분만 백업하므로, 매번 전체 데이터를 다시 백업하지 않는다.",
+        "정답. NHN Cloud 백업 서비스는 전체 백업과 증분 백업 방식을 함께 사용한다. 최초 1회는 데이터 전체를 백업하고, 이후에는 가변 길이 중복제거(variable-length deduplication) 기술로 중복을 제거하여 증분만 백업해 백업 시간과 네트워크 사용량을 줄인다.",
+        "오답. 데이터는 암호화 과정을 거쳐 백업 스토리지로 안전하게 전송된다.",
+        "오답. 전체 백업 방식과 증분 백업 방식을 함께 사용한다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Backup/ko/overview/",
+          "path": "data/source/guide/ko/Storage/Backup/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-036",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 인스턴스(Instance)의 과금 방식에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "인스턴스를 종료(삭제)한 이후에도 계속 과금된다.",
+        "인스턴스를 중지하면 90일 동안 정상 요금의 90%가 할인된 금액이 적용된다.",
+        "인스턴스 루트 블록 스토리지는 인스턴스 요금에 포함되어 별도로 과금되지 않는다.",
+        "인스턴스는 생성 후 최초 기동된 시점이 아니라 첫 접속 시점부터 과금된다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "인스턴스의 생성/중지/종료 상태별 과금 정책을 묻는 문제",
+      "perOption": [
+        "오답. 종료된 인스턴스는 과금되지 않는다.",
+        "정답. 인스턴스가 중지되면 90일 동안 홈페이지 요금 기준으로 90% 할인된 금액이 적용되며, 중지 상태가 90일을 초과하면 정상 요금으로 전환된다.",
+        "오답. 인스턴스 루트 블록 스토리지는 인스턴스와 별도로 블록 스토리지 과금 기준에 따라 과금된다.",
+        "오답. 인스턴스는 생성하는 순간부터 과금되며, 접속 여부와 무관하다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Instance/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Instance/ko/overview.md",
+          "section": "과금"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-037",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 오토스케일(Auto Scale)의 스케일링 그룹(scaling group) 구성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "스케일링 그룹은 최소, 최대, 구동 인스턴스 설정값과 확장·감축 정책, 자동 복구(Auto Healing) 정책으로 구성된다.",
+        "구동 인스턴스 수는 최소·최대 인스턴스로 지정한 범위를 자유롭게 벗어날 수 있다.",
+        "스케일링 그룹은 인스턴스 한 대의 성능 지표만을 기준으로 정책 발동 여부를 판단한다.",
+        "최소, 최대, 구동 인스턴스는 선택 항목이므로 정의하지 않아도 스케일링 그룹을 만들 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오토스케일 스케일링 그룹의 구성 요소를 묻는 문제",
+      "perOption": [
+        "정답. 스케일링 그룹은 기본적으로 최소·최대·구동 인스턴스에 대한 설정값과 확장·감축(Scale Out, Scale In) 정책, 자동 복구(Auto Healing) 정책으로 구성된다.",
+        "오답. 구동 인스턴스는 어떤 상황에서도 최소, 최대 인스턴스로 지정된 범위를 넘어설 수 없다.",
+        "오답. 오토스케일이 확인하는 값은 스케일링 그룹 내 모든 인스턴스들의 평균값으로, 그룹 단위로 관리된다.",
+        "오답. 최소, 최대, 구동 인스턴스는 스케일링 그룹에서 반드시 정의해야 하는 매개변수다."
+      ],
+      "glossary": [
+        {
+          "term": "감축(scale-in)",
+          "definition": "Auto Scale 서비스에서 구동 인스턴스 수를 줄이는 것",
+          "source": "glossary"
+        },
+        {
+          "term": "구동 인스턴스(running instances)",
+          "definition": "Auto Scale 서비스에서 스케일링 그룹이 생성하여 구동 중인 인스턴스의 수",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Auto%20Scale/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Auto%20Scale/ko/overview.md",
+          "section": "스케일링 그룹"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-038",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud VPC(Virtual Private Cloud)의 주요 기능으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "VPC 전체를 아우르는 프라이빗 IP 주소 범위를 지정하고, 각 서브넷은 그 범위 내에서 생성할 수 있다.",
+        "라우팅 테이블을 수정하여 각 서비스에 맞는 네트워크 구성을 할 수 있다.",
+        "특정 인스턴스에 여러 서브넷의 인터페이스(복수개의 인터페이스)를 적용할 수 있다.",
+        "VPC는 서브넷마다 서로 다른 연결 방법을 사용할 수 없으며 모든 서브넷이 동일하게 인터넷에 연결되어야 한다.",
+        "VPC는 프라이빗 IP DNS 기능을 제공하지 않으므로 IP 기반 DNS 호스트 이름을 사용할 수 없다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "VPC가 제공하는 주요 네트워크 구성 기능을 묻는 문제",
+      "perOption": [
+        "정답. VPC는 전체를 아우르는 프라이빗 IP 주소 범위를 지정하며, VPC 내 각 서브넷은 그 IP 주소 범위 내에서 자유롭게 생성할 수 있다.",
+        "정답. 라우팅 테이블을 이용해 각 서비스에 맞는 네트워크 구성을 할 수 있으며, 필요에 따라 라우팅 테이블을 원하는 대로 수정하여 사용할 수 있다.",
+        "정답. 목적에 따라 특정 인스턴스가 여러 서브넷에 서비스해야 하는 경우, 해당 인스턴스에 여러 서브넷의 인터페이스를 적용할 수 있다.",
+        "오답. VPC는 각 서브넷을 서로 다른 연결 방법으로 사용할 수 있어, 일부 서브넷은 외부에 공개하고 다른 서브넷은 폐쇄되도록 분할 구성할 수 있다.",
+        "오답. VPC는 프라이빗 IP DNS 기능의 사용 여부를 지정할 수 있으며, 이 기능은 네트워크 인터페이스에 IP 기반으로 할당되는 DNS 호스트 이름을 제공한다."
+      ],
+      "glossary": [
+        {
+          "term": "VPC(virtual private cloud)",
+          "definition": "가상 사설 클라우드. 논리적으로 분리된 가상의 네트워크",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPC/ko/overview/",
+          "path": "data/source/guide/ko/Network/VPC/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-039",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Image(이미지) 서비스의 이미지 구분과 공유에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "이미지는 퍼블릭 이미지, 사용자 이미지, 공유 이미지로 구분되며, 다른 프로젝트로부터 공유받은 이미지는 다시 공유할 수 없다.",
+        "사용자는 외부에서 직접 만든 개인 이미지 파일을 NHN Cloud에 업로드하여 등록할 수 있다.",
+        "퍼블릭 이미지는 사용자가 직접 생성하여 등록한 이미지를 의미한다.",
+        "공유 이미지는 다른 프로젝트로부터 공유받은 후 제한 없이 다시 다른 프로젝트로 재공유할 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Image 서비스의 이미지 종류 구분과 공유 제약을 묻는 문제",
+      "perOption": [
+        "정답. NHN Cloud 이미지는 크게 퍼블릭 이미지, 사용자 이미지, 공유 이미지 3가지로 구분되며, 다른 프로젝트로부터 공유받은 이미지는 다시 공유할 수 없다.",
+        "오답. NHN Cloud는 개인 이미지 업로드를 지원하지 않으며, 사용자 이미지는 퍼블릭 이미지를 토대로 수정하여 생성한다.",
+        "오답. 퍼블릭 이미지는 NHN Cloud에서 제공하는 이미지이며, 사용자가 퍼블릭 이미지를 토대로 수정하여 만든 것은 사용자 이미지이다.",
+        "오답. 공유받은 이미지는 다시 공유할 수 없으므로 제한 없이 재공유할 수 있다는 설명은 사실과 다르다."
+      ],
+      "glossary": [
+        {
+          "term": "퍼블릭 이미지(public image)",
+          "definition": "NHN Cloud에서 미리 생성하여 기본 제공하는 이미지",
+          "source": "glossary"
+        },
+        {
+          "term": "공유 이미지(shared image)",
+          "definition": "다른 프로젝트와 공유하도록 설정한 사용자 이미지",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Image/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Image/ko/overview.md",
+          "section": "Compute > Image > 개요 / 퍼블릭·사용자·공유 이미지"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-040",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud GPU Instance(GPU 인스턴스)의 구성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "인스턴스에 GPU(Graphics Processing Unit)가 추가로 구성된 가상 서버이며, 여러 개의 GPU를 선택하여 사용할 수 있다.",
+        "GPU 없이 CPU만 제공하는 저비용 인스턴스로, 루트 볼륨을 로컬 스토리지로 제공한다.",
+        "GPU 인스턴스는 하나의 GPU만 장착할 수 있으며 GPU 개수는 변경할 수 없다.",
+        "물리적 GPU 서버를 단독 임대하는 베어메탈 전용 서비스로 가상화를 사용하지 않는다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "GPU Instance의 구성(가상 서버에 GPU 추가) 특성을 묻는 문제",
+      "perOption": [
+        "정답. GPU 인스턴스는 인스턴스에 GPU(Graphics Processing Unit)가 추가 구성된 가상 서버이며, 여러 개의 GPU를 선택하여 사용할 수 있다.",
+        "오답. 루트 볼륨을 로컬 스토리지로 저렴하게 제공하는 것은 Ephemeral Storage Instance이며, GPU 인스턴스는 GPU가 추가된 가상 서버이다.",
+        "오답. GPU 인스턴스는 여러 개의 GPU를 선택하여 사용할 수 있으므로 하나만 장착 가능하다는 설명은 사실과 다르다.",
+        "오답. GPU 인스턴스는 GPU가 추가 구성된 가상 서버(가상화 기반)이며, 가상화를 사용하지 않는 베어메탈 단독 임대 서비스가 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "GPU instance",
+          "definition": "인스턴스에 GPU(graphics processing unit)가 추가로 구성된 가상 서버",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/GPU%20Instance/ko/overview/",
+          "path": "data/source/guide/ko/Compute/GPU%20Instance/ko/overview.md",
+          "section": "Compute > GPU Instance > 개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-041",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 로드 밸런서(Load Balancer)를 사용함으로써 얻을 수 있는 효과로 맞는 것은 무엇인가요?",
+      "options": [
+        "인스턴스 하나로 처리하기 힘든 부하를 여러 인스턴스로 분산하고, 장애가 발생했거나 점검 중인 인스턴스를 자동으로 서비스에서 제외하여 가용성을 높일 수 있다.",
+        "인스턴스의 부하 지표를 기준으로 인스턴스 수 자체를 자동으로 늘리거나 줄인다.",
+        "프라이빗 네트워크의 인스턴스에 인터넷에서 직접 접근할 수 있도록 공인 IP를 부여한다.",
+        "여러 인스턴스의 블록 스토리지 데이터를 하나의 볼륨으로 통합하여 공유한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "로드 밸런서를 사용해 얻는 효과(부하 분산·가용성)를 묻는 문제",
+      "perOption": [
+        "정답. 로드 밸런서를 이용하면 인스턴스 하나로 처리하기 힘든 부하를 여러 대의 인스턴스로 분산해 처리량을 늘리고, 장애가 발생했거나 점검 중인 인스턴스를 자동으로 서비스에서 제외하여 가용성을 높일 수 있다.",
+        "오답. 부하에 따라 인스턴스 수 자체를 자동으로 늘리거나 줄이는 것은 오토스케일(Auto Scale)의 기능이며, 로드 밸런서는 트래픽을 분산하는 역할을 한다.",
+        "오답. 프라이빗 네트워크 인스턴스에 인터넷 직접 접근용 공인 IP를 부여하는 것은 플로팅 IP(Floating IP)의 역할이다.",
+        "오답. 로드 밸런서는 트래픽 부하를 분산하는 서비스이며, 블록 스토리지 볼륨을 통합·공유하는 기능을 제공하지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "로드 밸런서(load balancer)",
+          "definition": "인스턴스의 트래픽 부하 분산 기능을 제공하는 서비스",
+          "source": "glossary"
+        },
+        {
+          "term": "로드 밸런싱(load balancing)",
+          "definition": "병렬로 트래픽을 처리하는 리소스들 간에 특정 리소스에 부하가 집중되지 않도록 트래픽을 적절하게 분배하는 것",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load%20Balancer/ko/overview.md",
+          "section": "Network > Load Balancer > 개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-042",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Object Storage(오브젝트 스토리지)의 재해 복구(disaster recovery) 기능에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "컨테이너 복제 기능을 이용해 컨테이너의 오브젝트를 다른 리전의 컨테이너에 복제하여 예기치 않은 재해 상황에 대비할 수 있다.",
+        "삭제된 오브젝트를 즉시 자동으로 다른 클라우드 사업자에게 이전하는 기능이다.",
+        "오브젝트를 동일 컨테이너 내에서만 중복 저장하여 다른 리전에는 복제하지 않는 기능이다.",
+        "한 번 기록한 오브젝트의 덮어쓰기와 삭제를 영구적으로 차단하는 기능이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage의 재해 복구(컨테이너 복제) 기능을 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 스토리지는 컨테이너 복제 기능으로 컨테이너의 오브젝트를 다른 리전의 컨테이너에 복제할 수 있으며, 복제된 데이터를 이용해 예기치 않은 재해 상황에 대비할 수 있다.",
+        "오답. 재해 복구는 다른 리전 컨테이너로 데이터를 복제하는 기능이며, 삭제된 오브젝트를 다른 클라우드 사업자에게 이전하는 기능이 아니다.",
+        "오답. 재해 복구 기능은 다른 리전의 컨테이너로 복제하는 것이므로 동일 컨테이너 내 중복 저장에 한정된다는 설명은 사실과 다르다.",
+        "오답. 덮어쓰기·삭제로부터 데이터를 보호하는 것은 객체 잠금(WORM) 기능이며, 재해 복구는 다른 리전으로의 컨테이너 복제 기능이다."
+      ],
+      "glossary": [
+        {
+          "term": "리전(region)",
+          "definition": "독립적이고 지리적으로 격리된 서버의 물리적 위치",
+          "source": "glossary"
+        },
+        {
+          "term": "WORM(write once read many)",
+          "definition": "한번 기록한 정보를 수정할 수 없는 저장 방식. 사람 및 시스템 오류 등에 의해 중요한 데이터가 삭제되거나 변조될 위험을 제거하여 무결성을 보장",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/Overview.md",
+          "section": "Storage > Object Storage > 서비스 특징 / 재해 복구(disaster recovery)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-043",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud NHN Container Service(NCS)가 제공하는 특징으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "퍼블릭/프라이빗 컨테이너 레지스트리에 보관된 컨테이너 이미지를 구동할 수 있다.",
+        "롤링 업데이트 방식으로 컨테이너를 무중단 배포할 수 있다.",
+        "시간 기반 스케줄을 설정하여 컨테이너 실행을 예약할 수 있다.",
+        "VM 인스턴스나 Kubernetes 같은 컨테이너 실행 환경을 사용자가 직접 구성해야만 컨테이너를 실행할 수 있다.",
+        "컨테이너는 사용자 VPC와 분리되어 VPC를 통한 IaaS 자원과의 통신이 불가능하다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "NCS가 제공하는 기능 특징을 묻는 문제",
+      "perOption": [
+        "정답. NCS는 퍼블릭/프라이빗 컨테이너 레지스트리에 보관된 컨테이너 이미지를 구동시킬 수 있다.",
+        "정답. NCS는 롤링 업데이트 방식으로 컨테이너를 무중단 배포할 수 있다.",
+        "정답. NCS는 시간 기반 스케줄을 설정하여 컨테이너 실행을 예약할 수 있다.",
+        "오답. NCS는 VM 인스턴스나 Kubernetes 같은 컨테이너 실행 환경을 구성하지 않아도 컨테이너를 실행할 수 있게 해 주는 서비스이다.",
+        "오답. NCS의 컨테이너는 사용자 VPC에 연결되므로 VPC를 통해 통신 가능한 인스턴스, 로드 밸런서, Online NAS 등 IaaS 자원과 통신할 수 있다."
+      ],
+      "glossary": [
+        {
+          "term": "Docker 레지스트리(Docker registry)",
+          "definition": "컨테이너 이미지를 저장하고 공유하는 데 사용되는 저장소",
+          "source": "glossary"
+        },
+        {
+          "term": "VPC(virtual private cloud)",
+          "definition": "가상 사설 클라우드. 논리적으로 분리된 가상의 네트워크",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCS/ko/overview/",
+          "path": "data/source/guide/ko/Container/NCS/ko/overview.md",
+          "section": "Container > NHN Container Service(NCS) > 개요 / 특징"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-044",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud 오토스케일(Auto Scale)에서 스케일링 그룹의 구동 인스턴스 수를 조정하는 방식에 해당하는 것을 모두 고르세요.",
+      "options": [
+        "정책에 의한 조정: 스케일링 그룹에 지정한 정책대로 인스턴스 수를 조정한다.",
+        "사용자에 의한 조정: 사용자가 콘솔에서 확장·감축 정책을 발동하며, 정책 발동 조건을 만족하지 않아도 수행된다.",
+        "예약에 의한 조정: 성능 지표 대신 특정 시점마다 구동 인스턴스 수를 조정하며, 한 번만 또는 주기적으로 반복 실행되도록 설정할 수 있다.",
+        "결제 잔액에 의한 조정: 보유 크레딧 잔액에 따라 인스턴스 수를 자동으로 늘리거나 줄인다.",
+        "리전 혼잡도에 의한 조정: 다른 리전의 부하를 측정하여 인스턴스를 자동으로 이전한다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "Auto Scale에서 구동 인스턴스 수를 조정하는 방식의 종류를 묻는 문제",
+      "perOption": [
+        "정답. 정책에 의한 조정은 스케일링 그룹에서 지정한 정책대로 인스턴스 수를 조정하는 스케일링 그룹의 기본 동작이다.",
+        "정답. 사용자에 의한 조정은 사용자가 콘솔에서 확장·감축 정책을 발동하는 방식으로, 정책의 발동 조건을 만족하지 않아도 수행된다.",
+        "정답. 예약에 의한 조정은 성능 지표 대신 특정 시점마다 구동 인스턴스 수를 조정하며, 단 한 번 또는 주기적으로 반복하도록 설정할 수 있다.",
+        "오답. 오토스케일은 보유 크레딧 잔액을 기준으로 인스턴스 수를 조정하지 않는다.",
+        "오답. 오토스케일은 다른 리전의 혼잡도를 기준으로 인스턴스를 자동 이전하는 조정 방식을 제공하지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "구동 인스턴스(running instances)",
+          "definition": "Auto Scale 서비스에서 스케일링 그룹이 생성하여 구동 중인 인스턴스의 수",
+          "source": "glossary"
+        },
+        {
+          "term": "감축(scale-in)",
+          "definition": "Auto Scale 서비스에서 구동 인스턴스 수를 줄이는 것",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Auto%20Scale/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Auto%20Scale/ko/overview.md",
+          "section": "Compute > Auto Scale > 사용 시나리오"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-045",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 로드 밸런서(Load Balancer)의 인스턴스 상태 확인(health check) 기능에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "멤버 인스턴스가 정상 응답하지 않으면 해당 인스턴스를 부하 분산 대상에서 제외한다.",
+        "상태 확인은 ICMP(ping) 프로토콜로만 수행할 수 있다.",
+        "상태 확인에 실패한 인스턴스는 자동으로 삭제되고 새 인스턴스로 대체된다.",
+        "상태 확인은 로드 밸런서 생성 시 한 번만 수행되고 이후에는 반복되지 않는다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "로드 밸런서의 인스턴스 상태 확인(health check) 동작 방식을 묻는 문제",
+      "perOption": [
+        "정답. 로드 밸런서는 멤버 인스턴스가 정상 동작하는지 주기적으로 상태 확인을 시도하며, 지정된 횟수나 시간 내에 정상 응답이 오지 않으면 비정상 인스턴스로 간주하여 부하 분산 대상에서 제외한다. 이를 통해 예기치 못한 장애나 점검에도 중단 없이 서비스를 제공할 수 있다.",
+        "오답. 상태 확인 프로토콜로는 TCP, HTTP, HTTPS를 지원한다. ICMP(ping) 전용이 아니며 각 프로토콜별로 확인 방법을 다양하게 설정할 수 있다.",
+        "오답. 비정상 인스턴스를 삭제하고 새 인스턴스로 대체하는 것은 오토스케일(Auto Scale)의 자동 복구(Auto Healing) 정책이다. 로드 밸런서의 상태 확인은 비정상 인스턴스를 부하 분산 대상에서 제외할 뿐 인스턴스를 삭제하지 않는다.",
+        "오답. 상태 확인은 한 번만 수행되는 것이 아니라 주기적으로 반복 시도되어 멤버 인스턴스의 정상 여부를 지속적으로 점검한다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load Balancer/ko/overview.md",
+          "section": "인스턴스 상태 확인"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-046",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 오토스케일(Auto Scale)의 자동 복구(Auto Healing) 정책에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "개별 인스턴스에 장애가 발생하면 해당 인스턴스를 삭제하고 새 인스턴스를 생성해 대체한다.",
+        "구동 인스턴스 수가 최댓값을 초과하면 자동으로 인스턴스를 추가 생성한다.",
+        "장애 인스턴스를 정지한 뒤 사용자가 수동으로 재시작할 때까지 대기한다.",
+        "스케일링 그룹의 재사용 대기 시간(cooldown time)이 지난 경우에만 동작한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오토스케일 자동 복구(Auto Healing) 정책의 동작을 묻는 문제",
+      "perOption": [
+        "정답. 자동 복구 정책을 사용하면 개별 인스턴스에 장애가 발생했을 때 해당 인스턴스를 삭제하고 새로운 인스턴스를 생성해 대체한다. 개별 인스턴스의 성능 지표가 일정 시간 동안 수집되지 않으면 장애로 판단해 자동 복구가 진행된다.",
+        "오답. 최댓값을 초과해 인스턴스를 추가하는 것은 자동 복구가 아니며, 최대 인스턴스 수는 스케일링 그룹이 생성할 수 있는 인스턴스 수의 상한으로 이를 넘겨 생성하지 않는다.",
+        "오답. 자동 복구는 장애 인스턴스를 삭제하고 새 인스턴스로 대체하는 방식이며, 정지 후 사용자 수동 재시작을 기다리는 방식이 아니다.",
+        "오답. 자동 복구는 재사용 대기 시간(cooldown time)과 상관없이 동작한다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Auto%20Scale/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Auto Scale/ko/overview.md",
+          "section": "정책 - 자동 복구"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-047",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 로드 밸런서(Load Balancer)의 IP 접근제어 기능과 보안 그룹(Security Groups)의 차이에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "로드 밸런서 IP 접근제어는 로드 밸런서로 유입되는 패킷을 제어하고, 보안 그룹은 인스턴스를 제어 대상으로 한다.",
+        "로드 밸런서 IP 접근제어와 보안 그룹은 모두 인스턴스를 제어 대상으로 하며 기능이 동일하다.",
+        "로드 밸런서 IP 접근제어는 IP와 포트를 함께 설정하고, 보안 그룹은 IP만 설정한다.",
+        "보안 그룹은 로드 밸런서로 유입되는 패킷을 직접 제어하기 위한 전용 기능이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "로드 밸런서 IP 접근제어와 보안 그룹의 제어 대상 차이를 묻는 문제",
+      "perOption": [
+        "정답. 로드 밸런서로 유입되는 패킷을 제어하려면 IP 접근제어 기능을 이용하며, 이 기능의 제어 대상은 로드 밸런서이다. 반면 보안 그룹의 제어 대상은 인스턴스로, 두 기능은 구분된다.",
+        "오답. 두 기능은 제어 대상이 다르다. IP 접근제어는 로드 밸런서를, 보안 그룹은 인스턴스를 제어 대상으로 하므로 동일하지 않다.",
+        "오답. 설정 대상이 반대로 서술되었다. 로드 밸런서 IP 접근제어는 IP만 설정하고, 보안 그룹은 IP와 포트를 함께 설정한다.",
+        "오답. 로드 밸런서로 유입되는 패킷을 제어하는 전용 기능은 보안 그룹이 아니라 로드 밸런서 IP 접근제어 기능이다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load Balancer/ko/overview.md",
+          "section": "로드 밸런서 IP 접근제어 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-048",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 오브젝트 스토리지(Object Storage)의 접근성 제어 기능에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "컨테이너별로 접근 권한을 제어할 수 있으며, 퍼블릭으로 공개하거나 역할 기반 접근 제어(RBAC)로 권한을 차등 부여할 수 있다.",
+        "모든 컨테이너는 항상 누구나 조회할 수 있는 퍼블릭 상태로만 사용할 수 있다.",
+        "접근 권한은 오브젝트 단위로만 설정할 수 있고 컨테이너 단위 설정은 지원하지 않는다.",
+        "접근 제어는 IP 주소 기반으로만 가능하며 사용자 단위 권한 부여는 지원하지 않는다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오브젝트 스토리지의 컨테이너 접근성 제어 방식을 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 스토리지는 컨테이너별로 접근 권한을 제어할 수 있다. 누구나 조회할 수 있도록 퍼블릭으로 설정할 수도 있고, 역할 기반 접근 제어(RBAC, Role Based Access Control)를 이용하여 NHN Cloud의 프로젝트 또는 개별 사용자 단위로 읽기/쓰기 권한을 차등 부여할 수 있다.",
+        "오답. 퍼블릭 공개는 선택 가능한 설정 중 하나일 뿐이며, RBAC를 통한 비공개·차등 권한 부여도 지원하므로 항상 퍼블릭으로만 사용하는 것은 아니다.",
+        "오답. 접근 권한은 컨테이너별로 제어할 수 있으며, 컨테이너 단위 설정을 지원한다.",
+        "오답. 역할 기반 접근 제어(RBAC)를 통해 프로젝트 또는 개별 사용자 단위로 권한을 부여할 수 있으므로 IP 기반으로만 제한되지 않는다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/Overview.md",
+          "section": "서비스 특징 - 접근성 제어"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-049",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 오토스케일(Auto Scale)에서 스케일링 그룹과 로드 밸런서를 연동하는 구성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "확장 정책으로 새로 생성된 인스턴스는 지정된 로드 밸런서에 연결되어 부하를 분배받는다.",
+        "로드 밸런서에 연결된 인스턴스는 확장 정책이 발동해도 새 인스턴스를 생성하지 않는다.",
+        "오토스케일은 로드 밸런서 없이도 인스턴스에 트래픽을 직접 분산하는 기능을 자체 제공한다.",
+        "새로 생성된 인스턴스는 부팅이 시작되는 즉시 로드 밸런서의 부하 분산 대상이 된다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오토스케일 스케일링 그룹과 로드 밸런서 연동 동작을 묻는 문제",
+      "perOption": [
+        "정답. 스케일링 그룹에 로드 밸런서를 지정해 두면, 확장 정책이 발동하여 생성된 인스턴스들이 지정된 로드 밸런서에 연결된다. 이를 통해 새로 추가된 인스턴스에 자연스럽게 부하를 분배해 서비스에 투입할 수 있다.",
+        "오답. 로드 밸런서 연동 여부와 무관하게, 확장 정책이 발동하면 스케일링 그룹은 구동 인스턴스 값을 늘려 새 인스턴스를 생성한다.",
+        "오답. 트래픽을 여러 인스턴스로 분산하는 것은 로드 밸런서의 역할이다. 오토스케일은 인스턴스 수를 조정하며, 부하 분산을 위해 로드 밸런서를 연동한다.",
+        "오답. 새로 생성된 인스턴스가 실제 서비스에 투입되는 시점은 부팅 완료 후 사용자 서비스가 시작되어 로드 밸런서의 상태 확인에 정상적으로 응답한 이후이다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Auto%20Scale/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Auto Scale/ko/overview.md",
+          "section": "로드밸런서"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
     }
   ]
 }
