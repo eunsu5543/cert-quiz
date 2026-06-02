@@ -34,7 +34,7 @@ npm run build    # 정적 export → out/
 {
   "meta": { "id": "...", "name": "...", "version": "0.2.0", "targetCount": 300 },
   "domains": {
-    "concept-security":  { "name": "클라우드 개념 및 보안", "ratio": 0.15, "target": 45 },
+    "concept-security":  { "name": "클라우드 개념 및 보안", "ratio": 0.15, "target": 30 },
     "service-feature":   { "name": "NHN Cloud 서비스 특징", "ratio": 0.34, "target": 102 },
     "service-skill":     { "name": "NHN Cloud 서비스 활용 기술", "ratio": 0.40, "target": 120 },
     "billing":           { "name": "결제 및 요금", "ratio": 0.11, "target": 33 }
@@ -57,20 +57,23 @@ npm run build    # 정적 export → out/
 
 도메인 비율은 NHN 공식 [시험 안내서](docs/nhn-cloud-essentials-exam-guide.md)에서 추출. 시험 60문제 × 5배 = 300문제 목표.
 
-## 콘텐츠 생성 워크플로
+## 콘텐츠 생성 워크플로 (자동화 파이프라인)
 
 1. **사용자 가이드 크롤링** — `node scripts/crawl-guide.mjs` → `data/source/guide/**/*.md` (gitignored, 재생성 가능)
-2. **용어 사전 변환** — NHN 공식 glossary.xlsx → `data/source/glossary.json` (341 terms) via `scripts/build-glossary.mjs`
-3. **문제 생성** — `.claude/agents/question-generator.md` subagent에 도메인 + 가이드 청크 + batch size 전달
-4. **검수** — 결과를 `data/staging/<domain>/batch-NN.json`으로 저장, 사용자가 검수 후 approved로 `data/questions.json`에 반영
-5. **자동 배포** — git push → Vercel 자동 빌드
+2. **용어 사전 변환** — NHN 공식 glossary.xlsx → `data/source/glossary.json` via `scripts/build-glossary.mjs`
+3. **배치 준비** — `node scripts/prepare-batch.mjs <domain>` → 도메인 시험범위 소스 선별 + 기존 문제 기반 중복 회피 목록 생성 → `data/staging/<domain>/_batch-args.json`
+4. **생성→검수 루프** — `.claude/workflows/cert-batch.js` 워크플로가 question-generator(구조화 출력) → question-reviewer(난이도·중복·정답 정합성) 루프를 자동 실행. `answer`↔`perOption` 정합성은 `reconcileAnswer`로 자동 교정 후 검증
+5. **반영** — 표본점검 후 `node scripts/apply-batch.mjs <domain> <approved.json>` → 스키마 검증·중복 제거·ID 재부여 후 `data/questions.json`에 append
+6. **자동 배포** — git push → Vercel 자동 빌드
+
+순수 로직은 `scripts/cert-batch.lib.mjs`에 모여 있고 `scripts/cert-batch.lib.test.mjs`로 테스트(`npm test`).
 
 ## 로드맵
 
 - [x] **1단계** — Next.js 마이그레이션 + 풀이/해설 모드 토글 + Vercel 배포
 - [x] **1.5단계** — URL 정리 (`cert-quiz-psi.vercel.app`) + 홈/이전 버튼 + AI agent 첫 사이클
-- [x] **1.6단계 (진행 중)** — 출처 기반 콘텐츠 시스템: v2 스키마, 사용자 가이드 크롤링, 용어 사전 캐시, question-generator subagent, sample 5문제 검수 완료
-- [ ] **1.7단계** — 300문제 batch 본격 생성 (도메인별 batch 검수 사이클)
+- [x] **1.6단계** — 출처 기반 콘텐츠 시스템: v2 스키마, 사용자 가이드 크롤링, 용어 사전 캐시, question-generator subagent, sample 검수 완료
+- [ ] **1.7단계 (진행 중)** — 생성→검수→반영 **자동화 파이프라인** 구축(구조화 출력 + 정답 정합성 가드레일) + 도메인별 batch 생성. 현재 **137/300** (concept-security 29/30, service-feature 98/102, billing 10/33, service-skill 0/120)
 - [ ] **2단계** — PWA (manifest, service worker) + 커스텀 도메인
 - [ ] **3단계** — Spring Boot 백엔드 + AWS 배포 + Google OAuth + 풀이 기록
 - [ ] **4단계** — 공유 / 피드백 루프
