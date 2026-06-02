@@ -4035,6 +4035,1019 @@
       ],
       "status": "approved",
       "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-073",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Object Storage(오브젝트 스토리지)가 제공하는 편리한 클라우드 접근성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "Service Gateway 서비스를 통해 외부 네트워크와 격리된 사용자 VPC 내 인스턴스에서 사설 네트워크로 오브젝트 스토리지에 접근할 수 있다.",
+        "사설 네트워크에서는 접근할 수 없으며 반드시 공인 인터넷 구간을 통해서만 접근해야 한다.",
+        "VPC 내 인스턴스에서 접근하려면 인스턴스마다 플로팅 IP를 할당해야만 한다.",
+        "오브젝트 스토리지 접근은 같은 가용성 영역(AZ)에 있는 인스턴스에서만 가능하다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오브젝트 스토리지를 VPC 내부에서 사설 네트워크로 접근하는 방법(Service Gateway 연동)을 묻는 문제",
+      "perOption": [
+        "정답. NHN Cloud의 Service Gateway 서비스를 통해 외부 네트워크와 격리된 사용자 VPC 내의 인스턴스에서 사설 네트워크를 통해 오브젝트 스토리지에 접근할 수 있다.",
+        "오답. Service Gateway를 이용하면 사설 네트워크를 통한 접근이 가능하다.",
+        "오답. Service Gateway 연동으로 사설 네트워크 접근이 가능하므로 인스턴스마다 플로팅 IP를 할당해야 하는 것은 아니다.",
+        "오답. 오브젝트 스토리지 접근은 특정 가용성 영역에 한정되지 않는다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/Overview.md",
+          "section": "서비스 특징 > 편리한 클라우드 접근성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-074",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 인스턴스 접속에 사용하는 키페어(key-pair)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "키페어는 공개 키 기반 구조(PKI)를 바탕으로 한 SSH 공개 키와 개인 키 쌍으로, 인스턴스 접속 수단으로 사용된다.",
+        "키페어는 인스턴스 접속 시 아이디와 비밀번호 입력을 보조하기 위한 추가 인증 수단이다.",
+        "키페어의 공개 키는 사용자가 안전하게 보관하고, 개인 키는 인스턴스에 등록하여 접속한다.",
+        "키페어는 인스턴스의 가상 하드웨어 성능을 결정하는 구성 요소이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "인스턴스 접속 수단인 키페어의 개념(SSH 공개 키/개인 키 쌍)을 묻는 문제",
+      "perOption": [
+        "정답. 키페어는 공개 키 기반 구조(PKI)를 바탕으로 한 SSH 공개 키, 개인 키 쌍이며, 보안에 취약한 아이디/비밀번호 인증 대신 인스턴스 접속 수단으로 사용된다.",
+        "오답. 키페어는 아이디/비밀번호 입력 방식을 대체하는 접속 수단이지, 이를 보조하는 추가 인증 수단이 아니다.",
+        "오답. 사용자는 개인 키를 이용해 로그인 정보를 인코딩하여 접속 인증을 받으며, 공개 키와 개인 키의 역할 설명이 뒤바뀌었다.",
+        "오답. 인스턴스의 가상 하드웨어 성능을 결정하는 요소는 타입(flavor)이며, 키페어는 접속 수단이다."
+      ],
+      "glossary": [
+        {
+          "term": "공개 키(public key)",
+          "definition": "비대칭 키 암호 기법에서 사용되는 키 쌍 중 누구에게나 공개되는 키로, 개인 키와 수학적 쌍을 이룸",
+          "source": "glossary"
+        },
+        {
+          "term": "개인 키(private key)",
+          "definition": "비대칭 키 암호 기법에서 사용되는 키 쌍 중 공개되지 않는 키",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Instance/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Instance/ko/overview.md",
+          "section": "인스턴스 구성 요소 > 키페어(Key-pair)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-075",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 인스턴스 타입(flavor)과 생성 후 변경 가능 여부에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "인스턴스 구성 요소 중 이미지와 가용성 영역(AZ)을 제외한 설정은 생성 이후에도 변경할 수 있으나, 일부 인스턴스 타입은 생성 이후 변경할 수 없다.",
+        "한번 생성한 인스턴스의 타입은 어떤 경우에도 변경할 수 없다.",
+        "이미지와 가용성 영역(AZ)은 생성 이후 언제든 자유롭게 변경할 수 있다.",
+        "u2 타입은 고사양의 CPU와 메모리를 지원하여 높은 성능이 필요한 서비스에 적합하다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "인스턴스 타입(flavor)의 변경 가능 여부와 이미지/AZ의 변경 제약을 묻는 문제",
+      "perOption": [
+        "정답. 인스턴스 구성 요소 중 이미지와 가용성 영역을 제외한 설정은 생성 이후에도 변경할 수 있으나, 일부 인스턴스 타입(flavor)은 생성 이후에 변경할 수 없다.",
+        "오답. 이미 생성된 인스턴스의 타입도 웹 콘솔에서 변경할 수 있으며, 다만 일부 타입은 변경이 제한된다.",
+        "오답. 이미지와 가용성 영역은 생성 이후 변경할 수 없는 구성 요소이다.",
+        "오답. u2는 가장 저렴한 인스턴스로 워크로드가 높지 않은 서버에 사용하며, 고사양 CPU·메모리가 필요한 경우에는 x1 타입을 사용한다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Instance/ko/overview/",
+          "path": "data/source/guide/ko/Compute/Instance/ko/overview.md",
+          "section": "인스턴스 구성 요소 / 인스턴스 타입(Instance flavor)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-076",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud의 서비스 구성에서 'OpenStack 기반 On-Demand 인프라 서비스로, 저렴한 비용으로 인프라 리소스를 필요한 만큼 사용할 수 있게 해 주는' 서비스 범주는 무엇인가요?",
+      "options": [
+        "Compute",
+        "Database",
+        "Notification",
+        "Governance & Audit"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NHN Cloud 서비스 구성에서 On-Demand 인프라 리소스를 제공하는 범주를 묻는 문제",
+      "perOption": [
+        "정답. Compute는 OpenStack 기반의 On-Demand 인프라 서비스로, 저렴한 비용으로 인프라 리소스를 필요한 만큼 사용할 수 있게 해 주는 서비스 범주이다.",
+        "오답. Database는 복잡한 설치 및 설정 과정 없이 클라우드 환경에서 관계형 데이터베이스를 사용할 수 있게 해 주는 범주로, 인프라 리소스 자체를 제공하는 범주가 아니다.",
+        "오답. Notification은 모바일 푸시 및 SMS 플랫폼을 사용할 수 있게 해 주는 범주이다.",
+        "오답. Governance & Audit는 조직의 거버넌스를 관리하고 클라우드에서 발생한 활동 로그 및 이벤트를 감시하는 범주이다."
+      ],
+      "glossary": [
+        {
+          "term": "IaaS(Infrastructure as a Service)",
+          "definition": "CPU, 서버, 스토리지 등의 IT 인프라 자원을 네트워크를 통해 제공하는 클라우드 컴퓨팅 형태",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/",
+          "path": "data/source/guide/ko/nhncloud/ko/overview.md",
+          "section": "NHN Cloud > 개요 > 서비스 구성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-077",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NAS 서비스의 보안성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "볼륨은 프로젝트의 네트워크를 통해서만 접근할 수 있어 다른 프로젝트의 네트워크와 격리되며, XTS-AES-256 알고리즘으로 암호화하여 데이터를 보관한다.",
+        "볼륨은 인터넷에 공개된 공인 IP로만 접근할 수 있어 어떤 프로젝트에서나 직접 마운트할 수 있다.",
+        "볼륨에 저장되는 데이터는 암호화되지 않으며, 보안은 전적으로 인스턴스 운영체제 설정에 의존한다.",
+        "볼륨은 생성 시점 이후에는 다른 프로젝트와 자동으로 공유되어 누구나 읽고 쓸 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NAS 서비스의 보안성(네트워크 격리·암호화) 특징을 묻는 문제",
+      "perOption": [
+        "정답. NAS 볼륨은 프로젝트의 네트워크를 통해서만 접근할 수 있어 다른 프로젝트의 네트워크와 격리되며, XTS-AES-256 알고리즘으로 암호화하여 데이터를 안전하게 보관한다.",
+        "오답. NAS 볼륨은 프로젝트 네트워크를 통해서만 접근하도록 격리되며, 인터넷 공인 IP로 누구나 접근하도록 공개되는 방식이 아니다.",
+        "오답. NAS는 XTS-AES-256 알고리즘으로 데이터를 암호화하므로, 데이터가 암호화되지 않는다는 설명은 사실과 다르다.",
+        "오답. NAS 볼륨은 동일 프로젝트의 네트워크 안에서 격리되어 접근이 제어되며, 생성 후 자동으로 다른 프로젝트와 공유되지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "NAS(network-attached storage)",
+          "definition": "네트워크에 연결된 파일 수준 데이터 스토리지로, 이기종 클라이언트가 데이터에 접근할 수 있음",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/NAS/ko/overview/",
+          "path": "data/source/guide/ko/Storage/NAS/ko/overview.md",
+          "section": "특징 > 보안성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-078",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NHN Container Registry(NCR)가 제공하는 Private URI 기능의 용도로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "인터넷 게이트웨이에 연결하지 않은 인스턴스에서도 NCR 서비스를 이용할 수 있게 한다.",
+        "컨테이너 이미지의 취약점을 자동으로 스캐닝하여 보고한다.",
+        "레지스트리를 다른 리전으로 복제하여 가용성을 높인다.",
+        "동일한 이미지를 여러 번 내려받을 때 캐시를 이용해 다운로드 속도를 높인다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NCR Private URI 기능의 용도를 묻는 문제",
+      "perOption": [
+        "정답. NCR의 Private URI 기능은 인터넷 게이트웨이에 연결하지 않은 인스턴스에서도 NCR 서비스를 이용할 수 있게 해 주는 기능이다.",
+        "오답. 컨테이너 이미지의 취약점을 점검하는 것은 NCR의 이미지 취약점 스캐닝 기능으로, Private URI 기능과는 별개이다.",
+        "오답. 레지스트리를 다른 리전으로 복제하는 것은 NCR의 리전 간 레지스트리 복제 기능으로, Private URI 기능과는 별개이다.",
+        "오답. 동일 이미지의 다운로드 속도를 높이는 것은 NCR의 이미지 캐시 기능으로, Private URI 기능과는 별개이다."
+      ],
+      "glossary": [
+        {
+          "term": "NAT(network address translation)",
+          "definition": "사설 네트워크의 개별 주소를 공인 IP 주소로 변환하는 기술",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCR/ko/overview/",
+          "path": "data/source/guide/ko/Container/NCR/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-079",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Object Storage(오브젝트 스토리지)가 데이터의 높은 안정성과 복원력을 확보하는 방식에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "오브젝트를 서로 다른 여러 하드웨어에 중복으로 저장하여, 일부 복제본에 문제가 생겨도 온전한 복제본으로부터 빠르게 복원한다.",
+        "오브젝트를 단일 하드웨어에만 저장하여 저장 비용을 최소화한다.",
+        "오브젝트를 사용자의 로컬 PC에 자동으로 복사하여 보관한다.",
+        "오브젝트를 일정 기간이 지나면 자동으로 삭제하여 저장 공간을 확보한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage가 안정성·복원력을 확보하는 저장 방식을 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 스토리지는 데이터를 안전하게 저장하기 위해 오브젝트를 서로 다른 여러 하드웨어에 중복으로 저장하며, 일부 복제본에 문제가 발생해도 온전한 복제본으로부터 빠르게 복원한다.",
+        "오답. 오브젝트 스토리지는 여러 하드웨어에 중복 저장하여 안정성을 확보하므로, 단일 하드웨어에만 저장한다는 설명은 사실과 다르다.",
+        "오답. 오브젝트 스토리지의 안정성은 여러 하드웨어에 중복 저장하는 방식으로 확보되며, 사용자 로컬 PC에 자동 복사하는 방식이 아니다.",
+        "오답. 일정 기간 후 자동 삭제는 수명 주기 제어 기능에 해당하며, 안정성과 복원력을 확보하는 중복 저장 방식과는 다르다."
+      ],
+      "glossary": [
+        {
+          "term": "내결함성(fault tolerance)",
+          "definition": "장애 등의 상황에서 시스템의 일부 구성 요소가 작동하지 않더라도 시스템 중단 없이 서비스를 지속할 수 있는 속성",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/Overview.md",
+          "section": "서비스 특징 > 높은 안정성과 복원력"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-080",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud 로드 밸런서(Load Balancer)가 지원하는 프로토콜에 해당하는 것을 모두 고르세요.",
+      "options": [
+        "TCP",
+        "HTTP",
+        "TERMINATED_HTTPS",
+        "FTP",
+        "SMTP"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "로드 밸런서가 지원하는 프로토콜 분류를 묻는 문제",
+      "perOption": [
+        "정답. TCP는 로드 밸런서가 지원하는 프로토콜에 해당한다.",
+        "정답. HTTP는 로드 밸런서가 지원하는 프로토콜에 해당한다.",
+        "정답. TERMINATED_HTTPS는 로드 밸런서가 지원하는 프로토콜에 해당하며, HTTPS 트래픽을 수신하여 멤버 인스턴스에는 HTTP로 전달한다.",
+        "오답. FTP는 로드 밸런서가 지원하는 프로토콜 목록(TCP, HTTP, HTTPS, TERMINATED_HTTPS)에 포함되지 않는다.",
+        "오답. SMTP는 로드 밸런서가 지원하는 프로토콜 목록(TCP, HTTP, HTTPS, TERMINATED_HTTPS)에 포함되지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "로드 밸런서(load balancer)",
+          "definition": "인스턴스의 트래픽 부하 분산 기능을 제공하는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load%20Balancer/ko/overview.md",
+          "section": "지원 프로토콜"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-081",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud의 서비스 릴리스 정책에서 SLA(서비스 수준 협약)가 보장되는 정식 서비스 단계로 맞는 것은 무엇인가요?",
+      "options": [
+        "GA",
+        "ALPHA",
+        "BETA",
+        "CLOSED"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NHN Cloud 서비스 릴리스 단계 중 SLA가 보장되는 정식 단계를 묻는 문제",
+      "perOption": [
+        "정답. NHN Cloud의 릴리스 정책에서 GA(General Availability)는 정식 서비스 단계로, SLA가 보장되고 서비스가 지속된다.",
+        "오답. ALPHA는 정식 출시 전 사용자에게 공개하는 단계로 SLA가 보장되지 않으며 회사 정책에 따라 중단될 수 있다.",
+        "오답. BETA는 정식 출시 전 단계로 SLA가 보장되지 않는다. 서비스 지속은 되지만 정식 단계는 아니다.",
+        "오답. CLOSED는 NHN Cloud의 릴리스 정책에 존재하는 단계가 아니다. 릴리스 단계는 ALPHA, BETA, GA로 구분된다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/",
+          "path": "data/source/guide/ko/nhncloud/ko/overview.md",
+          "section": "서비스 릴리스 정책"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-082",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Object Storage(오브젝트 스토리지)가 제공하는 편리한 웹 콘솔에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "익숙한 계층적 디렉터리 구조로 데이터를 관리할 수 있으며, 컨테이너 내에 가상의 폴더를 만들어 오브젝트를 그룹화할 수 있다.",
+        "오브젝트를 반드시 단일 평면(flat) 구조로만 나열해야 하며 폴더 개념을 사용할 수 없다.",
+        "웹 콘솔에서는 오브젝트 조회만 가능하고 업로드나 삭제는 API로만 수행할 수 있다.",
+        "컨테이너 없이 오브젝트를 최상위에 직접 저장하는 구조만 지원한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오브젝트 스토리지 웹 콘솔의 계층적 디렉터리/가상 폴더 관리 특징을 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 스토리지는 익숙한 계층적 디렉터리 구조로 데이터를 관리할 수 있는 웹 콘솔을 제공하며, 컨테이너 내에 가상의 폴더를 만들어 오브젝트들을 그룹화하여 관리할 수 있다.",
+        "오답. 폴더(folder)는 오브젝트를 묶는 가상의 단위로, 계층적으로 오브젝트를 관리하도록 도와준다. 평면 구조만 지원한다는 설명은 사실과 다르다.",
+        "오답. 웹 콘솔은 조회뿐 아니라 데이터 관리 기능을 제공하며, 조회만 가능하다는 제약은 없다.",
+        "오답. 모든 오브젝트는 반드시 컨테이너 안에 존재한다. 컨테이너 없이 최상위에 직접 저장하는 구조는 사용하지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "컨테이너(container)",
+          "definition": "오브젝트를 관리하기 위한 네임스페이스로, 모든 오브젝트는 반드시 컨테이너 안에 존재하며 컨테이너 내에서 유일한 이름을 가진다.",
+          "source": "user-guide"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/Overview.md",
+          "section": "서비스 특징 - 편리한 웹 콘솔 / 용어"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-083",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud Object Storage의 스토리지 계정(account)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "오브젝트 스토리지의 사용자 계정으로, NHN Cloud 오브젝트 스토리지는 계정 단위로 격리된다.",
+        "오브젝트를 묶는 가상의 단위로, 폴더와 동일한 개념이다.",
+        "REST API로 접근하기 위해 제공되는 HTTP URL을 의미한다.",
+        "오브젝트 스토리지의 기본적인 데이터 단위로, 데이터와 메타데이터로 구성된다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오브젝트 스토리지의 스토리지 계정 개념(계정 단위 격리)을 묻는 문제",
+      "perOption": [
+        "정답. 스토리지 계정은 오브젝트 스토리지의 사용자 계정이며, NHN Cloud 오브젝트 스토리지는 계정 단위로 격리된다.",
+        "오답. 오브젝트를 묶는 가상의 단위는 폴더(folder)다. 스토리지 계정과 폴더는 서로 다른 개념이다.",
+        "오답. REST API로 접근하기 위해 제공되는 HTTP URL은 API Endpoint다. 스토리지 계정과는 다르다.",
+        "오답. 오브젝트 스토리지의 기본적인 데이터 단위는 오브젝트(object)다. 스토리지 계정은 사용자 계정을 의미한다."
+      ],
+      "glossary": [
+        {
+          "term": "스토리지 계정(account)",
+          "definition": "오브젝트 스토리지의 사용자 계정으로, NHN Cloud 오브젝트 스토리지는 계정 단위로 격리된다.",
+          "source": "user-guide"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/Overview.md",
+          "section": "용어"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-084",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud의 일반적인 특징으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "누구나 쉽게 사용할 수 있도록 웹 브라우저상에서 간단한 클릭만으로 서비스를 사용할 수 있다.",
+        "개발에만 전념할 수 있도록 편리한 인프라와 플랫폼을 제공한다.",
+        "합리적인 비용으로 인프라와 플랫폼을 이용할 수 있다.",
+        "모든 서비스 이용 시 반드시 온프레미스 전용 회선 설치가 선행되어야 한다.",
+        "서비스를 이용하려면 사용자가 직접 물리 데이터 센터를 구축해야 한다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "NHN Cloud 통합 클라우드 서비스의 일반적 특징을 묻는 문제",
+      "perOption": [
+        "정답. NHN Cloud는 누구나 쉽게 사용할 수 있는 클라우드 서비스로, 웹 브라우저상에서 간단한 클릭만으로 서비스를 사용할 수 있다.",
+        "정답. 개발에만 전념할 수 있도록 편리한 인프라와 플랫폼을 제공하는 것이 NHN Cloud의 특징이다.",
+        "정답. 합리적인 비용으로 인프라와 플랫폼을 이용할 수 있는 것이 NHN Cloud의 특징이다.",
+        "오답. NHN Cloud는 클라우드 서비스로 온프레미스 전용 회선 설치가 모든 이용의 전제 조건은 아니다. 전용 회선 연결은 Direct Connect 등 별도 서비스의 선택적 기능이다.",
+        "오답. 클라우드 서비스는 사용자가 직접 물리 데이터 센터를 구축할 필요가 없도록 인프라를 제공한다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/nhncloud/ko/overview/",
+          "path": "data/source/guide/ko/nhncloud/ko/overview.md",
+          "section": "특징"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-085",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 오브젝트 스토리지(Object Storage)가 제공하는 REST API의 용도로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "HTTP 기반의 REST API로 컨테이너와 오브젝트를 제어하여 사용자의 애플리케이션에서 오브젝트 스토리지를 사용할 수 있다.",
+        "인스턴스의 운영체제 커널을 원격으로 업그레이드할 수 있다.",
+        "VPC 간 사설 네트워크 경로를 직접 생성할 수 있다.",
+        "인스턴스에 블록 스토리지를 추가로 연결하고 포맷할 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "오브젝트 스토리지가 제공하는 REST API의 용도를 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 스토리지는 컨테이너와 오브젝트를 제어할 수 있는 HTTP 기반의 REST API를 제공하며, 이를 이용해 사용자의 애플리케이션에서 오브젝트 스토리지를 사용할 수 있다.",
+        "오답. 운영체제 커널 업그레이드는 인스턴스 영역의 작업으로, 오브젝트 스토리지 REST API의 용도가 아니다.",
+        "오답. VPC 간 사설 네트워크 연결은 피어링 게이트웨이 등 네트워크 서비스의 역할이며, 오브젝트 스토리지 REST API와 무관하다.",
+        "오답. 블록 스토리지를 인스턴스에 연결·포맷하는 것은 블록 스토리지의 사용 방식으로, 오브젝트 스토리지 REST API의 용도가 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/Overview.md",
+          "section": "서비스 특징 - REST API"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-086",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 로드 밸런서(Load Balancer)의 세션 지속성(session persistence) 기능을 사용하는 목적으로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "한 클라이언트의 요청이 계속 동일한 서버에서 처리되도록 하여 사용자 정보를 유지해야 하는 서비스를 지원하기 위해서이다.",
+        "인스턴스의 상태를 주기적으로 점검하여 비정상 인스턴스를 트래픽 대상에서 제외하기 위해서이다.",
+        "허용된 IP만 로드 밸런서에 접근하도록 출발지 IP를 제어하기 위해서이다.",
+        "여러 가용성 영역에 인스턴스를 분산 배치하여 물리적 장애에 대비하기 위해서이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "로드 밸런서 세션 지속성 기능의 사용 목적을 묻는 문제",
+      "perOption": [
+        "정답. 세션 지속성은 사용자 정보를 유지할 필요가 있거나 한 클라이언트의 요청이 특정 서버에게만 전달되어야 하는 서비스를 위해, 요청을 처리한 서버가 계속 그 클라이언트의 요청을 처리하도록 하는 기능이다.",
+        "오답. 비정상 인스턴스를 트래픽 대상에서 제외하는 것은 인스턴스 상태 확인(health check) 기능의 목적이며, 세션 지속성과 다르다.",
+        "오답. 허용된 출발지 IP만 접근하도록 제어하는 것은 IP 접근제어 기능의 목적으로, 세션 지속성과 구분된다.",
+        "오답. 가용성 영역에 인스턴스를 분산 배치하는 것은 가용성 확보를 위한 구성으로, 세션 지속성 기능의 목적이 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "로드 밸런서(load balancer)",
+          "definition": "인스턴스의 트래픽 부하 분산 기능을 제공하는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load Balancer/ko/overview.md",
+          "section": "세션 지속성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-087",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NAS 서비스의 용량 유연성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "볼륨을 사용하는 중에도 저장소 용량을 확장하거나 축소할 수 있다.",
+        "용량을 변경하려면 반드시 볼륨을 모든 인스턴스에서 마운트 해제하고 재생성해야 한다.",
+        "한 번 지정한 용량은 볼륨 삭제 전까지 변경할 수 없다.",
+        "용량을 늘릴 수는 있으나 줄이는 것은 어떤 경우에도 불가능하다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NAS 볼륨의 용량 변경(유연성) 가능 여부를 묻는 문제",
+      "perOption": [
+        "정답. NAS는 볼륨을 사용하는 중에도 저장소 용량을 확장하거나 축소할 수 있는 유연성을 제공한다.",
+        "오답. 용량 변경을 위해 볼륨을 모든 인스턴스에서 마운트 해제하고 재생성해야 하는 것은 아니며, 사용 중에도 용량을 조정할 수 있다.",
+        "오답. 지정한 용량을 볼륨 삭제 전까지 변경할 수 없다는 설명은 사실과 다르다. NAS는 사용 중 용량 확장·축소가 가능하다.",
+        "오답. NAS는 확장뿐 아니라 축소도 가능하므로 줄이는 것이 어떤 경우에도 불가능하다는 설명은 틀리다."
+      ],
+      "glossary": [
+        {
+          "term": "NAS(network-attached storage)",
+          "definition": "네트워크에 연결된 파일 수준 데이터 스토리지로, 이기종 클라이언트가 데이터에 접근할 수 있음",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/NAS/ko/overview/",
+          "path": "data/source/guide/ko/Storage/NAS/ko/overview.md",
+          "section": "특징 - 유연성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-088",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud VPN Gateway(Site-to-Site VPN) 서비스의 기능 및 특성에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 제공한다.",
+        "VPN Gateway에 네트워크 ACL을 적용할 수 있다.",
+        "VPN Gateway는 각 VPC마다 한 개씩 생성할 수 있다.",
+        "VPN Gateway는 컨테이너 이미지를 저장하고 배포하기 위한 레지스트리 기능을 제공한다.",
+        "VPN 연결은 IPv4와 IPv6 트래픽을 모두 동일하게 지원한다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "VPN Gateway의 기능과 구성 특성으로 옳은 항목을 묻는 문제",
+      "perOption": [
+        "정답. VPN Gateway는 VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 제공한다.",
+        "정답. VPN Gateway에는 네트워크 ACL을 적용할 수 있다.",
+        "정답. VPN Gateway는 각 VPC마다 한 개씩 생성할 수 있다.",
+        "오답. 컨테이너 이미지를 저장·배포하는 레지스트리는 NHN Container Registry(NCR)의 기능으로, VPN Gateway와 무관하다.",
+        "오답. VPN 연결에는 IPv6 트래픽이 지원되지 않으며 IPv4 트래픽만 지원된다."
+      ],
+      "glossary": [
+        {
+          "term": "VPN gateway",
+          "definition": "VPC와 고객의 온프레미스 네트워크 사이에 암호화된 네트워크 연결을 할 수 있게 해 주는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPN%20Gateway(Site-to-Site%20VPN)/ko/overview/",
+          "path": "data/source/guide/ko/Network/VPN Gateway(Site-to-Site VPN)/ko/overview.md",
+          "section": "주요 기능 / 제한 사항"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-089",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud NHN Container Service(NCS)에서 워크로드(workload)를 정의할 때 기술하는 항목에 해당하는 것을 모두 고르세요.",
+      "options": [
+        "참조하는 템플릿",
+        "워크로드 실행 수",
+        "로드 밸런서 사용 여부",
+        "인스턴스에 연결할 키페어(key-pair)",
+        "오브젝트 스토리지의 버전 관리 정책"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "NCS 워크로드 정의에 포함되는 구성 항목을 묻는 문제",
+      "perOption": [
+        "정답. 워크로드에는 참조되는 템플릿을 기술한다.",
+        "정답. 워크로드에는 워크로드 실행 수를 기술한다.",
+        "정답. 워크로드에는 로드 밸런서 사용 여부(및 플로팅 IP 사용 여부)를 기술한다.",
+        "오답. 키페어는 인스턴스 접속을 위한 요소로, NCS 워크로드 정의 항목에 해당하지 않는다.",
+        "오답. 버전 관리 정책은 Object Storage의 기능으로, NCS 워크로드 정의 항목과 무관하다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCS/ko/overview/",
+          "path": "data/source/guide/ko/Container/NCS/ko/overview.md",
+          "section": "구성 및 용어 - 워크로드"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-090",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud EasyCache가 제공하는 고가용성(High Availability) 기능의 목적으로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "장애가 발생하더라도 가용성에 문제가 없도록 캐시 환경을 구성하기 위한 기능이다.",
+        "캐시에 저장되는 데이터를 자동으로 암호화하기 위한 기능이다.",
+        "캐시의 저장 용량을 무제한으로 확장하기 위한 기능이다.",
+        "여러 리전에 동일한 캐시를 동시에 배포하기 위한 기능이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "EasyCache 고가용성 기능의 목적을 묻는 문제",
+      "perOption": [
+        "정답. EasyCache는 장애가 발생하더라도 가용성에 문제가 없도록 고가용성 기능을 설정할 수 있다.",
+        "오답. 고가용성 기능은 장애 시 가용성 유지를 위한 것이며, 데이터 암호화를 목적으로 하지 않는다.",
+        "오답. 고가용성은 장애 대비 기능으로, 저장 용량을 무제한 확장하는 기능이 아니다.",
+        "오답. 고가용성 기능의 목적은 장애 시 가용성 유지이며, 리전 간 동시 배포를 의미하지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "고가용성(HA)",
+          "definition": "시스템이 상당히 오랜 기간 동안 지속적으로 정상 운영이 가능한 성질",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/EasyCache/ko/overview/",
+          "path": "data/source/guide/ko/Database/EasyCache/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-091",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NHN Container Registry(NCR)가 제공하는 이미지 취약점 스캐닝 및 이미지 신뢰 기능의 목적으로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "저장된 컨테이너 이미지의 보안성을 점검하고 신뢰할 수 있는 이미지만 사용하도록 지원하기 위한 것이다.",
+        "이미지를 여러 리전으로 자동 복제하여 가용성을 높이기 위한 것이다.",
+        "인터넷 게이트웨이 없이도 인스턴스에서 레지스트리에 접근하도록 하기 위한 것이다.",
+        "이미지의 저장 용량을 무제한으로 확장하기 위한 것이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NCR 이미지 취약점 스캐닝·신뢰 기능의 목적을 묻는 문제",
+      "perOption": [
+        "정답. NCR은 이미지 취약점 스캐닝 기능과 이미지 신뢰 기능을 제공하여 저장된 컨테이너 이미지의 보안성을 점검하고 신뢰할 수 있는 이미지를 사용하도록 지원한다.",
+        "오답. 이미지를 다른 리전으로 복제하는 것은 리전 간 레지스트리 복제 기능에 해당한다.",
+        "오답. 인터넷 게이트웨이 없이 접근하도록 하는 것은 Private URI 기능에 해당한다.",
+        "오답. 저장 확장성과 안정성은 Object Storage 기반 구성에서 비롯되며, 취약점 스캐닝/신뢰 기능과는 다른 목적이다."
+      ],
+      "glossary": [
+        {
+          "term": "공통 취약성 및 노출(CVE)",
+          "definition": "공개적으로 알려진 보안 결함 및 기타 정보 보안 노출 사항에 대한 규격화된 목록",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCR/ko/overview/",
+          "path": "data/source/guide/ko/Container/NCR/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-092",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud RDS for PostgreSQL의 DB 확장 기능(extension)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "미리 빌드된 확장 기능을 PostgreSQL에 설치하여 데이터베이스의 기능을 확장할 수 있다.",
+        "확장 기능은 NHN Cloud가 임의로 설치하므로 사용자가 선택해 설치할 수 없다.",
+        "확장 기능을 설치하면 기존 데이터베이스의 모든 데이터가 초기화된다.",
+        "확장 기능은 RDS for PostgreSQL이 아닌 별도의 인스턴스에서만 사용할 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "RDS for PostgreSQL 확장 기능의 개념과 목적을 묻는 문제",
+      "perOption": [
+        "정답. RDS for PostgreSQL은 미리 빌드된 확장 기능을 PostgreSQL에 설치하여 기능을 확장할 수 있도록 지원한다.",
+        "오답. 사용자가 필요한 확장 기능을 설치하여 기능을 확장할 수 있다.",
+        "오답. 확장 기능 설치가 데이터 초기화를 유발한다는 설명은 사실이 아니다.",
+        "오답. 확장 기능은 RDS for PostgreSQL의 데이터베이스에 설치하여 사용하는 기능이다."
+      ],
+      "glossary": [
+        {
+          "term": "RDS",
+          "definition": "클라우드 환경에서 관계형 데이터베이스(relational database)를 제공하는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/RDS%20for%20PostgreSQL/ko/db-extension/",
+          "path": "data/source/guide/ko/Database/RDS for PostgreSQL/ko/db-extension.md",
+          "section": "DB 확장 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-093",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NAS 서비스의 볼륨(volume)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "볼륨은 NAS의 논리적인 저장 공간으로, 인스턴스에 마운트하여 데이터를 저장하거나 읽을 수 있다.",
+        "볼륨은 인스턴스의 로컬 디스크로만 제공되며 네트워크를 통해 마운트할 수 없다.",
+        "볼륨은 단 하나의 인스턴스에만 연결할 수 있으며 공유가 불가능하다.",
+        "볼륨은 생성 후 용량을 변경할 수 없는 고정 크기 저장소이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NAS 볼륨의 개념을 묻는 문제",
+      "perOption": [
+        "정답. 볼륨은 NAS의 논리적인 저장 공간으로, 인스턴스에 마운트하여 데이터를 저장하거나 읽을 수 있다.",
+        "오답. NAS 볼륨은 네트워크 파일 시스템을 통해 마운트하여 사용하는 공유 스토리지이다.",
+        "오답. 볼륨은 하나 이상의 인스턴스에 마운트하여 공유할 수 있다.",
+        "오답. NAS 볼륨은 사용 중에도 저장소 용량을 확장하거나 축소할 수 있다."
+      ],
+      "glossary": [
+        {
+          "term": "NAS",
+          "definition": "네트워크에 연결된 파일 수준 데이터 스토리지로, 이기종 클라이언트가 데이터에 접근할 수 있음",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/NAS/ko/overview/",
+          "path": "data/source/guide/ko/Storage/NAS/ko/overview.md",
+          "section": "용어 > 볼륨"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-094",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NHN Container Registry(NCR)가 NHN Kubernetes Service(NKS)와 연동되어 제공하는 효과로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "사용자의 애플리케이션을 손쉽게 컨테이너 환경으로 구축할 수 있다.",
+        "관계형 데이터베이스를 클라우드에서 자동으로 생성할 수 있다.",
+        "인스턴스에 공유 파일 스토리지를 마운트할 수 있다.",
+        "온프레미스 네트워크와 VPC를 암호화된 회선으로 연결할 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NCR과 NKS 연동의 효과를 묻는 문제",
+      "perOption": [
+        "정답. NCR은 NKS와 연동해 사용자의 애플리케이션을 손쉽게 컨테이너 환경으로 구축할 수 있도록 지원한다.",
+        "오답. 관계형 데이터베이스 제공은 RDS 서비스의 역할이다.",
+        "오답. 공유 파일 스토리지 마운트는 NAS 서비스의 역할이다.",
+        "오답. 온프레미스 네트워크와 VPC의 암호화 연결은 VPN Gateway 서비스의 역할이다."
+      ],
+      "glossary": [
+        {
+          "term": "Kubernetes",
+          "definition": "컨테이너화된 애플리케이션을 배포, 관리 및 크기 조정하기 위한 오픈 소스 오케스트레이션 플랫폼",
+          "source": "glossary"
+        },
+        {
+          "term": "Docker 레지스트리",
+          "definition": "컨테이너 이미지를 저장하고 공유하는 데 사용되는 저장소",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCR/ko/overview/",
+          "path": "data/source/guide/ko/Container/NCR/ko/overview.md",
+          "section": "개요"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-095",
+      "domain": "service-feature",
+      "type": "multi",
+      "q": "NHN Cloud의 관계형 데이터베이스 서비스(RDS for MySQL, RDS for MariaDB, RDS for PostgreSQL)와 EasyCache가 공통적으로 가지는 운영 특성에 해당하는 것을 모두 고르세요.",
+      "options": [
+        "자동 또는 수동으로 백업을 수행하고, 생성된 백업으로 복원할 수 있다.",
+        "설정값들을 파라미터 그룹으로 관리하여 여러 인스턴스에 적용할 수 있다.",
+        "접속할 수 있는 보안 규칙을 설정하여 접근을 제어할 수 있다.",
+        "별도의 Compute, Network 서비스 활성화 없이 단독으로만 사용할 수 있다.",
+        "물리적인 데이터 센터의 전원 및 공조 설비를 사용자가 직접 운영해야 한다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "RDS 계열과 EasyCache의 공통 운영 특성을 묻는 문제",
+      "perOption": [
+        "정답. RDS 계열과 EasyCache 모두 자동 또는 수동으로 백업을 수행하고, 생성된 백업으로 복원할 수 있다.",
+        "정답. 설정값들을 파라미터 그룹으로 관리하여 여러 데이터베이스 또는 캐시에 쉽고 빠르게 적용할 수 있다.",
+        "정답. 접속할 수 있는 보안 규칙을 설정하여 접근을 제어할 수 있다.",
+        "오답. 해당 서비스들은 Compute, Network 서비스를 활성화해야 사용할 수 있다.",
+        "오답. 데이터 센터의 물리적 설비 운영은 클라우드 서비스 공급자(CSP)의 책임이며 사용자가 직접 운영하지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "파라미터 그룹",
+          "definition": "데이터베이스나 캐시의 설정값들을 묶어 여러 인스턴스에 적용할 수 있도록 관리하는 단위",
+          "source": "user-guide"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/EasyCache/ko/overview/",
+          "path": "data/source/guide/ko/Database/EasyCache/ko/overview.md",
+          "section": "주요 기능 / 알아두기"
+        },
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/RDS%20for%20MariaDB/ko/overview/",
+          "path": "data/source/guide/ko/Database/RDS for MariaDB/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-096",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud 블록 스토리지(Block Storage)의 과금 시점에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "블록 스토리지는 인스턴스에 연결(attach)된 시점부터 요금이 부과된다.",
+        "블록 스토리지는 생성한 순간부터 설정된 크기에 따라 요금이 부과된다.",
+        "블록 스토리지는 운영체제에서 포맷하고 마운트를 완료한 이후부터 요금이 부과된다.",
+        "블록 스토리지는 실제로 데이터를 기록한 사용량만큼만 요금이 부과된다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "블록 스토리지의 과금 시점을 묻는 문제",
+      "perOption": [
+        "오답. 블록 스토리지는 인스턴스 연결 여부와 관계없이 생성 시점부터 과금된다. 연결되지 않은 상태에서도 요금이 발생한다.",
+        "정답. 블록 스토리지는 생성한 순간부터 요금이 부과되며, 생성 시 설정한 블록 스토리지 크기에 따라 요금이 부과된다.",
+        "오답. 포맷·마운트 같은 운영체제 단의 작업 완료 여부는 과금 기준이 아니다. 과금은 생성 시점부터 시작된다.",
+        "오답. 블록 스토리지는 실제 기록된 데이터 사용량이 아니라 생성 시 설정한 크기를 기준으로 과금된다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Block%20Storage/ko/overview/",
+          "path": "data/source/guide/ko/Storage/Block Storage/ko/overview.md",
+          "section": "블록 스토리지 스냅숏 > 과금"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-097",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud RDS for MySQL의 읽기 복제본(read replica)을 사용하는 목적으로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "데이터베이스의 쓰기 성능을 높이기 위해 쓰기 부하를 여러 인스턴스로 분산하기 위해 사용한다.",
+        "읽기 성능을 높이기 위해 읽기 전용으로 사용할 수 있는 복제본을 두기 위해 사용한다.",
+        "마스터에 장애가 발생했을 때 자동으로 마스터를 대체하는 예비 마스터로 사용하기 위해 사용한다.",
+        "데이터베이스 설정값을 여러 인스턴스에 일괄 적용하기 위해 사용한다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "RDS for MySQL 읽기 복제본의 용도를 묻는 문제",
+      "perOption": [
+        "오답. 읽기 복제본은 읽기 전용으로 동작하므로 쓰기 부하 분산 용도가 아니다. 쓰기 작업은 마스터에서 처리된다.",
+        "정답. 읽기 복제본은 읽기 성능을 높이기 위해 읽기 전용으로 사용할 수 있도록 마스터로부터 생성하는 복제본이다.",
+        "오답. 장애 시 마스터를 자동 대체하는 역할은 고가용성 DB 인스턴스의 예비 마스터가 담당한다. 읽기 복제본의 목적과는 다르다.",
+        "오답. 설정값을 여러 인스턴스에 일괄 적용하는 것은 파라미터 그룹의 역할이며, 읽기 복제본의 목적이 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "RDS(Relational Database Service)",
+          "definition": "클라우드 환경에서 관계형 데이터베이스(relational database)를 제공하는 서비스",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Database/RDS%20for%20MySQL/ko/db-instance/",
+          "path": "data/source/guide/ko/Database/RDS for MySQL/ko/db-instance.md",
+          "section": "읽기 복제본"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
+    },
+    {
+      "id": "feature-098",
+      "domain": "service-feature",
+      "type": "single",
+      "q": "NHN Cloud NHN Container Registry(NCR)가 제공하는 리전 간 레지스트리 복제 기능의 용도로 가장 적절한 것은 무엇인가요?",
+      "options": [
+        "하나의 리전에 저장된 컨테이너 이미지를 다른 리전의 레지스트리로 복제해 사용할 수 있게 하기 위함이다.",
+        "동일한 컨테이너 이미지를 여러 버전 태그로 자동 분리 저장하기 위함이다.",
+        "컨테이너 이미지의 보안 취약점을 자동으로 점검하기 위함이다.",
+        "인터넷 게이트웨이에 연결하지 않은 인스턴스에서 레지스트리에 접근하기 위함이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NCR 리전 간 레지스트리 복제 기능의 용도를 묻는 문제",
+      "perOption": [
+        "정답. NCR은 리전 간 레지스트리 복제 기능을 제공하여 한 리전의 레지스트리 이미지를 다른 리전의 레지스트리에서도 사용할 수 있게 한다.",
+        "오답. 태그 생성·조회·삭제는 별도의 레지스트리 관리 기능이며, 리전 간 복제 기능과는 다르다.",
+        "오답. 이미지의 보안 취약점 점검은 이미지 취약점 스캐닝 기능이 담당한다. 리전 간 복제 기능의 용도가 아니다.",
+        "오답. 인터넷 게이트웨이 없이 레지스트리에 접근하는 것은 Private URI 기능의 용도이며, 리전 간 복제 기능과는 다르다."
+      ],
+      "glossary": [
+        {
+          "term": "레지스트리(registry)",
+          "definition": "컴퓨터 및 응용 프로그램의 환경 설정 및 구성 정보가 저장된 장소",
+          "source": "glossary"
+        },
+        {
+          "term": "리전(region)",
+          "definition": "독립적이고 지리적으로 격리된 서버의 물리적 위치",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCR/ko/overview/",
+          "path": "data/source/guide/ko/Container/NCR/ko/overview.md",
+          "section": "주요 기능"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-02T00:00:00Z"
     }
   ]
 }
