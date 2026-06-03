@@ -204,10 +204,14 @@ export const DOMAIN_SOURCE_CANDIDATES = {
     `${G}/Network/Floating%20IP/ko/console-guide.md`,
     `${G}/Network/Load%20Balancer/ko/console-guide.md`,
     `${G}/Network/Security%20Groups/ko/console-guide.md`,
+    `${G}/Network/Network%20ACL/ko/console-guide.md`,        // 2차: 네트워킹 활용 보강
+    `${G}/Network/NAT%20Gateway/ko/console-guide.md`,
+    `${G}/Network/Internet%20Gateway/ko/console-guide.md`,
     `${G}/Storage/Block%20Storage/ko/console-guide.md`,
-    `${G}/Storage/Object%20Storage/ko/console-guide.md`,
     `${G}/Storage/NAS/ko/console-guide.md`,
     `${G}/Container/NCS/ko/user-guide.md`,     // NKS/NCR은 feature가 사용 → NCS만
+    // Object Storage console-guide 제외: 1차 본배치에서 18문제(도메인의 43%)로 과집중·소진.
+    // 조직/IAM(console-guide.md)과 네트워킹 상품으로 분포 재조정.
   ],
   // 공식 범위(시험안내서): 결제/요금. 캐시에 billing 전용 페이지가 적어 nhncloud 이용
   // 안내(결제수단·크레딧·약정·요금 정책)를 1차 소스로, eTax(전자세금계산서)를 보조로.
