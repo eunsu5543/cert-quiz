@@ -186,7 +186,29 @@ export const DOMAIN_SOURCE_CANDIDATES = {
     `${G}/Container/NKS/ko/user-guide.md`,
     `${G}/Container/NCR/ko/user-guide.md`,
   ],
-  'service-skill': [`${G}/nhncloud/ko/overview.md`],
+  // 공식 범위(시험안내서): "NHN Cloud 상품 활용 기술 영역, 조직/프로젝트 개념 활용"(40%).
+  // → service-feature(상품 "무엇" = overview)와 구분되는 "어떻게 쓰나"(활용/조작/조직관리).
+  // 핵심: ① 조직/프로젝트/IAM 거버넌스 활용 ② API 인증 활용 ③ 핵심 IaaS 상품 console-guide
+  // (활용 기술). service-feature가 쓴 overview/concept 파일과 겹치지 않게 console-guide만 선별.
+  // 콘솔 클릭 단계·메뉴명·입력 글자수 트리비아는 검수기/표본점검이 제외(활용 "기술" 개념만 채택).
+  'service-skill': [
+    // 조직/프로젝트/IAM 활용 (도메인의 명시 범위 — 천장 높고 트리비아 낮음)
+    `${G}/nhncloud/ko/console-guide.md`,       // 조직·IAM 거버넌스·프로젝트 관리·역할그룹
+    `${G}/nhncloud/ko/console-user-guide.md`,  // 조직/프로젝트 개념·용어·권한
+    // API 활용
+    `${G}/nhncloud/ko/public-api/auth-method-overview.md`, // 공통 API 인증 방식(개념)
+    // 핵심 IaaS 상품 활용 기술 (console-guide — feature의 overview와 다른 파일)
+    `${G}/Compute/Instance/ko/console-guide.md`,
+    `${G}/Compute/Auto%20Scale/ko/console-guide.md`,
+    `${G}/Network/VPC/ko/console-guide.md`,
+    `${G}/Network/Floating%20IP/ko/console-guide.md`,
+    `${G}/Network/Load%20Balancer/ko/console-guide.md`,
+    `${G}/Network/Security%20Groups/ko/console-guide.md`,
+    `${G}/Storage/Block%20Storage/ko/console-guide.md`,
+    `${G}/Storage/Object%20Storage/ko/console-guide.md`,
+    `${G}/Storage/NAS/ko/console-guide.md`,
+    `${G}/Container/NCS/ko/user-guide.md`,     // NKS/NCR은 feature가 사용 → NCS만
+  ],
   // 공식 범위(시험안내서): 결제/요금. 캐시에 billing 전용 페이지가 적어 nhncloud 이용
   // 안내(결제수단·크레딧·약정·요금 정책)를 1차 소스로, eTax(전자세금계산서)를 보조로.
   // 콘솔 클릭 단계·카드 검증 금액 등 운영 트리비아는 검수기/표본점검에서 제외.
