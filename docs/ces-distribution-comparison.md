@@ -1,6 +1,6 @@
 # CES 교재 vs 현재 문제 분포 비교
 
-기준일: 2026-06-03 · 현재 문제 수: 280 (concept-security 29 · service-feature 98 · service-skill 120 · billing 33)
+기준일: 2026-06-03 (커버리지 패스 후) · 총 264 (concept 41 · feature 97 · skill 96 · billing 30)
 
 출처: NHN CES 공인 교육교재(157p, 비공개·개인 워터마크본). 본 표는 **사실·구조(섹션 페이지 수)**만 담는다.
 
@@ -31,3 +31,12 @@
 - **billing**: ✅ 한 바퀴 배치로 33(12%) 달성, 공식 11% 충족. 추가 불필요(원하면 교재 §6로 미세 보강 가능).
 - **service-skill**: 약간 과다 — 추가 생성 불필요. NCS(쿠버네티스) 과집중 3~4개 정리 검토(쿠버네티스는 CES 범위 밖).
 - **service-feature**: 적정.
+
+
+## 교재 §1~§6 전 섹션 커버리지 패스 (2026-06-03)
+
+각 섹션 슬라이드에서 가르치는 토픽을 추출→기존 문제와 대조→갭을 기준 난이도로 보강.
+- §1: concept-security +15 (일반 클라우드 개념)
+- §2~§6: +12 (Public/Private Subnet·사설/공인IP·DNS Plus·ScaleOut vs Up·Cloud Monitoring·관리형RDS vs 직접설치·CDN·CloudTrail·요금계산기·트래픽과금·중지과금·요금구조)
+- 의도적 제외: 너무 깊은 토픽(CIDR 비트계산 등)·교재 고유표현/시나리오(저작권).
+→ **교재 전 섹션 토픽이 대조·반영됨.**
