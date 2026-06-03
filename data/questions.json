@@ -5831,6 +5831,1135 @@
       ],
       "status": "approved",
       "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-013",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud VPC의 프라이빗 네트워크 특성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "VPC는 다른 VPC와 일부 트래픽을 자동으로 공유하므로 별도 격리 설정이 필요하다.",
+        "VPC는 프라이빗 네트워크이므로 인터넷에서 직접 액세스할 수 없으며, 인터넷 게이트웨이 없이는 내부 인스턴스가 인터넷에 연결되지 않는다.",
+        "VPC 내 모든 인스턴스는 인터넷 게이트웨이 없이도 기본적으로 인터넷에 연결된다.",
+        "VPC는 리전을 넘어서는 트래픽에 대해 기본적으로 로컬 통신을 제공한다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "VPC 프라이빗 네트워크의 격리 및 인터넷 연결 특성을 묻는 문제",
+      "perOption": [
+        "오답. VPC는 다른 VPC와 완전히 격리되어 트래픽으로부터 안전하다.",
+        "정답. VPC는 프라이빗 네트워크이기 때문에 인터넷에서 직접 액세스가 불가능하며, 인터넷 게이트웨이가 없으면 VPC 내 모든 인스턴스가 인터넷에 연결되지 않는다.",
+        "오답. 인터넷 게이트웨이 없이는 VPC 내 모든 인스턴스가 인터넷에 연결되지 않는다.",
+        "오답. VPC는 Region을 넘어서는 트래픽에 대해서는 로컬 통신을 제공하지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "VPC(virtual private cloud)",
+          "definition": "가상 사설 클라우드. 논리적으로 분리된 가상의 네트워크",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPC/ko/console-guide/",
+          "path": "data/source/guide/ko/Network/VPC/ko/console-guide.md",
+          "section": "VPC"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-014",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud의 인스턴스에 여러 보안 그룹을 설정했을 때 규칙이 적용되는 방식에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "여러 보안 그룹을 설정하면 가장 먼저 생성된 보안 그룹의 규칙만 적용된다.",
+        "여러 보안 그룹을 설정하면 우선순위가 가장 높은 하나의 보안 그룹 규칙만 선택적으로 적용된다.",
+        "각 보안 그룹의 모든 규칙이 합쳐져서 해당 인스턴스의 통신에 적용된다.",
+        "보안 그룹을 생성하기만 하면 인스턴스에 설정하지 않아도 규칙이 자동으로 적용된다."
+      ],
+      "answer": [
+        2
+      ],
+      "summary": "인스턴스에 다수의 보안 그룹을 적용할 때 규칙이 합산 적용되는 방식을 묻는 문제",
+      "perOption": [
+        "오답. 설정된 모든 보안 그룹의 규칙이 적용되며, 특정 보안 그룹의 규칙만 적용되는 것이 아니다.",
+        "오답. 보안 그룹 간에는 우선순위로 하나만 선택되는 방식이 아니라, 설정된 모든 보안 그룹의 규칙이 함께 적용된다.",
+        "정답. 인스턴스가 여러 보안 그룹에 속한 경우 각 보안 그룹의 모든 룰이 합쳐져서 해당 인스턴스의 외부 통신에 적용된다.",
+        "오답. 보안 그룹을 생성하더라도 인스턴스에 설정하지 않으면 규칙이 적용되지 않는다."
+      ],
+      "glossary": [
+        {
+          "term": "네트워크 접근제어(network access control)",
+          "definition": "프로토콜, IP, 포트 등을 기준으로 인바운드 및 아웃바운드 통신을 허용하거나 차단하는 것",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Security%20Groups/ko/console-guide/",
+          "path": "data/source/guide/ko/Network/Security Groups/ko/console-guide.md",
+          "section": "보안 그룹 적용"
+        },
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Instance/ko/console-guide/",
+          "path": "data/source/guide/ko/Compute/Instance/ko/console-guide.md",
+          "section": "인스턴스 생성 > 보안 그룹"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-015",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Container Service(NCS)에서 워크로드를 생성할 때 선택하는 배포 컨트롤러인 디플로이먼트와 스테이트풀셋의 차이에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "디플로이먼트는 컨테이너 IP가 고정되고 작업이 순차적으로 실행된다.",
+        "디플로이먼트는 Stateless 방식으로 컨테이너 IP가 유동적이며 작업이 병렬적으로 실행되고, 스테이트풀셋은 Stateful 방식으로 컨테이너 IP가 고정되며 작업이 순차적으로 실행된다.",
+        "두 컨트롤러 모두 컨테이너 IP가 고정되며 차이는 작업 실행 순서에만 있다.",
+        "스테이트풀셋은 컨테이너 IP가 유동적이며 작업이 병렬적으로 실행된다."
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "NCS 워크로드의 배포 컨트롤러(디플로이먼트, 스테이트풀셋) 차이를 묻는 문제",
+      "perOption": [
+        "오답. 컨테이너 IP가 고정되고 작업이 순차적으로 실행되는 것은 스테이트풀셋의 특성이다.",
+        "정답. 디플로이먼트는 Stateless 방식으로 컨테이너 IP가 유동적이며 작업이 병렬적으로 실행되고, 스테이트풀셋은 Stateful 방식으로 컨테이너 IP가 고정되며 작업이 순차적으로 실행된다.",
+        "오답. 디플로이먼트는 컨테이너 IP가 유동적이고 스테이트풀셋은 고정되므로, 두 컨트롤러의 IP 특성은 동일하지 않다.",
+        "오답. 컨테이너 IP가 유동적이며 작업이 병렬적으로 실행되는 것은 디플로이먼트의 특성이다."
+      ],
+      "glossary": [
+        {
+          "term": "디플로이먼트(deployment)",
+          "definition": "애플리케이션을 배포하기 위한 리소스로 레플리카셋을 생성하고 관리하는 역할을 수행. 롤링 업데이트 및 롤백과 같은 배포 전략을 제공",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCS/ko/user-guide/",
+          "path": "data/source/guide/ko/Container/NCS/ko/user-guide.md",
+          "section": "워크로드 > 워크로드 생성 > 배포 컨트롤러"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-016",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage에서 컨테이너의 객체 잠금(Object Lock) 기능을 사용하는 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "컨테이너에 업로드되는 모든 오브젝트의 접근 빈도를 낮춰 저장 요금을 절감하기 위해",
+        "업로드한 오브젝트를 WORM(Write-Once-Read-Many) 모델로 저장하여, 설정한 잠금 만료 날짜 이전에는 덮어쓰거나 삭제할 수 없도록 보호하기 위해",
+        "공개 URL을 통해 누구나 컨테이너 내부 오브젝트에 접근할 수 있도록 허용하기 위해",
+        "오브젝트를 다른 리전의 컨테이너로 자동 복제하기 위해"
+      ],
+      "answer": [
+        1
+      ],
+      "summary": "Object Storage 객체 잠금(WORM) 기능의 목적을 묻는 문제",
+      "perOption": [
+        "오답. 접근 빈도가 낮은 데이터를 저렴하게 보관하는 것은 Economy 스토리지 클래스의 목적이며, 객체 잠금과는 다르다.",
+        "정답. 객체 잠금 컨테이너에 업로드한 오브젝트는 WORM(Write-Once-Read-Many) 모델로 저장되며, 설정된 잠금 만료 날짜 이전에는 오브젝트를 덮어쓰거나 삭제할 수 없다.",
+        "오답. 공개 URL을 통한 접근 허용은 PUBLIC 접근 정책의 기능으로 객체 잠금과 무관하다.",
+        "오답. 다른 컨테이너로 데이터를 복사하는 것은 컨테이너 복제 기능에 해당하며 객체 잠금의 목적이 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "WORM(write once read many)",
+          "definition": "한번 기록한 정보를 수정할 수 없는 저장 방식. 사람 및 시스템 오류 등에 의해 중요한 데이터가 삭제되거나 변조될 위험을 제거하여 무결성을 보장",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "컨테이너 생성 > 객체 잠금 설정"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-017",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud Block Storage를 인스턴스에 연결하거나 해제할 때의 특성에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "블록 스토리지는 같은 가용성 영역(availability zone)에 있는 인스턴스에만 연결할 수 있다.",
+        "루트 블록 스토리지는 인스턴스에서 연결 해제할 수 없다.",
+        "인스턴스가 실행 중일 때에는 블록 스토리지를 연결하거나 해제할 수 없다.",
+        "블록 스토리지가 마운트된 상태에서 연결을 해제하면 데이터가 손상되어 유실될 수 있다.",
+        "인스턴스에 연결되어 있는 블록 스토리지는 연결 해제 없이도 바로 삭제할 수 있다."
+      ],
+      "answer": [
+        0,
+        1,
+        3
+      ],
+      "summary": "Block Storage 연결/해제의 가용성 영역, 루트 볼륨, 마운트 관련 특성을 묻는 문제",
+      "perOption": [
+        "정답. 블록 스토리지는 같은 가용성 영역에 있는 인스턴스에만 연결할 수 있으므로, 연결할 인스턴스와 동일한 가용성 영역에서 만들어야 한다.",
+        "정답. 루트 블록 스토리지는 인스턴스에서 연결 해제할 수 없다.",
+        "오답. 블록 스토리지는 인스턴스가 실행 중인 상태에서도 연결하거나 연결을 해제할 수 있다.",
+        "정답. 블록 스토리지가 마운트된 상태에서 연결을 해제하면 데이터가 손상되어 유실될 수 있으므로, 먼저 인스턴스에서 마운트를 해제해야 한다.",
+        "오답. 인스턴스에 연결되어 있는 블록 스토리지는 삭제할 수 없으며, 먼저 연결을 해제해야 한다."
+      ],
+      "glossary": [
+        {
+          "term": "가용성 영역(availability zone)",
+          "definition": "독립된 전원 및 네트워크를 갖춘 데이터 센터로, 인스턴스가 만들어지는 물리적인 위치",
+          "source": "glossary"
+        },
+        {
+          "term": "마운트하다(mount)",
+          "definition": "지정된 디렉터리에 특정 장치의 파일 시스템을 연결하다",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Block%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Block Storage/ko/console-guide.md",
+          "section": "블록 스토리지 삭제 / 연결 추가 / 연결 해제"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-018",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage에서 컨테이너(container)의 개념에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "오브젝트를 관리하기 위한 네임스페이스로, 모든 오브젝트는 반드시 컨테이너 안에 존재한다.",
+        "오브젝트 스토리지에 저장되는 데이터의 가장 작은 단위로, 데이터와 메타데이터로 구성된다.",
+        "오브젝트 스토리지에 REST API로 접근하기 위해 제공되는 HTTP URL이다.",
+        "계정 단위로 격리된 오브젝트 스토리지의 사용자 계정 그 자체를 가리킨다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage에서 컨테이너가 무엇을 의미하는지 개념을 묻는 문제",
+      "perOption": [
+        "정답. 컨테이너는 오브젝트를 관리하기 위한 네임스페이스(namespace)이며, 다양한 관리 설정의 단위가 된다. 모든 오브젝트는 반드시 컨테이너 안에 존재하고 컨테이너 내에서 유일한 이름을 가진다.",
+        "오답. 데이터와 메타데이터, 고유한 주소로 구성되는 가장 작은 데이터 단위는 오브젝트(object)이며, 컨테이너가 아니다.",
+        "오답. 오브젝트 스토리지에 REST API로 접근하기 위한 HTTP URL은 API Endpoint이며, 컨테이너의 정의가 아니다.",
+        "오답. 계정 단위로 격리되는 사용자 계정은 스토리지 계정(account)이며, 오브젝트를 담는 네임스페이스인 컨테이너와 구분된다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/Overview.md",
+          "section": "용어 - 컨테이너(container)"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-019",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud VPC에서 서브넷(subnet)의 역할에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "가상 네트워크에 자원을 연결하고 IP를 부여하기 위한 단위로, IP 할당 풀을 관리한다.",
+        "인터넷에서 인스턴스를 직접 접근하기 위해 부여하는 공인 IP 주소이다.",
+        "VPC 외부의 다른 리전에 있는 VPC와 네트워크를 연결하는 기능이다.",
+        "인스턴스로 유입되는 트래픽을 허용하거나 차단하는 접근 제어 규칙의 집합이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "VPC에서 서브넷이 수행하는 역할을 묻는 문제",
+      "perOption": [
+        "정답. 가상 네트워크(VPC)에 자원을 연결하고 IP를 부여하려면 하나 이상의 서브넷을 생성해야 하며, 서브넷은 IP 할당 풀을 관리하고 DHCP 서버를 운영하여 자원에 사용 가능한 IP를 할당한다.",
+        "오답. 인터넷에서 인스턴스를 직접 접근하기 위해 부여하는 공인 IP는 플로팅 IP(Floating IP)이며, 서브넷의 역할이 아니다.",
+        "오답. 다른 리전의 VPC를 연결하는 기능은 리전 피어링(region peering)에 해당하며, 서브넷의 역할이 아니다.",
+        "오답. 트래픽을 허용하거나 차단하는 접근 제어 규칙은 보안 그룹 또는 네트워크 ACL의 기능이며, 서브넷의 역할이 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "고정 IP(fixed IP)",
+          "definition": "인스턴스가 생성되면 서브넷에서 할당 받는 프라이빗 네트워크 주소",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPC/ko/console-guide/",
+          "path": "data/source/guide/ko/Network/VPC/ko/console-guide.md",
+          "section": "서브넷"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-020",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud 로드 밸런서의 로드 밸런싱 방식 중 Source IP(원본 IP 기준 선택) 방식을 사용하는 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "동일한 IP에서 들어오는 요청을 항상 같은 인스턴스로 전달하기 위해서",
+        "트래픽을 전달할 인스턴스를 순차적으로 번갈아 선택하기 위해서",
+        "현재 TCP 연결 수가 가장 적은 인스턴스로 요청을 보내기 위해서",
+        "HTTPS 트래픽을 멤버 인스턴스에 HTTP로 전달하기 위해서"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "로드 밸런서의 Source IP 로드 밸런싱 방식의 목적을 묻는 문제",
+      "perOption": [
+        "정답. Source IP 방식은 요청자의 원본 IP를 해싱하여 처리할 인스턴스를 선택하므로, 동일한 IP에서 들어오는 요청은 항상 같은 인스턴스로 전달된다. 한 사용자의 요청을 매번 같은 인스턴스에서 처리하려 할 때 유용하다.",
+        "오답. 인스턴스를 순차적으로 번갈아 선택하는 방식은 Round Robin(순차 선택) 방식이다.",
+        "오답. TCP 연결 수가 가장 적은 인스턴스를 선택하는 방식은 Least Connections(최소 연결 우선 선택) 방식이다.",
+        "오답. HTTPS 트래픽을 수신해 멤버에 HTTP로 전달하는 것은 TERMINATED_HTTPS 프로토콜에 대한 설명이며, 로드 밸런싱 선택 방식과는 다른 개념이다."
+      ],
+      "glossary": [
+        {
+          "term": "로드 밸런싱(load balancing)",
+          "definition": "병렬로 트래픽을 처리하는 리소스들 간에 특정 리소스에 부하가 집중되지 않도록 트래픽을 적절하게 분배하는 것",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Load%20Balancer/ko/overview/",
+          "path": "data/source/guide/ko/Network/Load Balancer/ko/overview.md",
+          "section": "로드 밸런싱 방식"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-021",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Container Service(NCS)에서 템플릿(template)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "워크로드 실행에 필요한 컨테이너, 네트워크 등의 리소스를 정의하는 것이다.",
+        "정의된 내용을 이용하여 실제로 컨테이너를 실행하는 것이다.",
+        "컨테이너 이미지를 저장하고 공유하는 데 사용되는 저장소이다.",
+        "리소스 사용률에 따라 작업 수를 자동으로 조정하는 기능이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NCS에서 템플릿이 무엇을 정의하는 단위인지를 묻는 문제",
+      "perOption": [
+        "정답. 템플릿은 워크로드 실행에 필요한 컨테이너, 네트워크 등의 리소스를 정의하는 서비스이며, NCS를 사용하려면 먼저 템플릿을 생성해야 한다.",
+        "오답. 정의된 템플릿을 이용하여 실제로 컨테이너를 실행하는 것은 워크로드(workload)이다.",
+        "오답. 컨테이너 이미지를 저장하고 공유하는 저장소는 컨테이너 레지스트리(registry)이며, 템플릿이 아니다.",
+        "오답. 리소스 사용률에 따라 작업 수를 자동 조정하는 것은 오토 스케일러 기능이며, 템플릿의 정의가 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "Docker 레지스트리(Docker registry)",
+          "definition": "컨테이너 이미지를 저장하고 공유하는 데 사용되는 저장소",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Container/NCS/ko/user-guide/",
+          "path": "data/source/guide/ko/Container/NCS/ko/user-guide.md",
+          "section": "템플릿 / 워크로드"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-022",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud 보안 그룹(Security Group)의 동작에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "보안 그룹을 생성하더라도 인스턴스에 설정하지 않으면 규칙이 적용되지 않는다.",
+        "하나의 보안 그룹은 단 하나의 인스턴스에만 적용할 수 있다.",
+        "동일한 보안 그룹을 여러 인스턴스에 적용할 수 있다.",
+        "인스턴스를 생성할 때 보안 그룹을 선택하면 보안 그룹이 적용된다.",
+        "보안 그룹은 트래픽의 허용 규칙뿐 아니라 명시적인 차단 규칙도 우선순위 번호 순서대로 적용한다."
+      ],
+      "answer": [
+        0,
+        2,
+        3
+      ],
+      "summary": "보안 그룹의 적용 방식과 동작 특성을 묻는 문제",
+      "perOption": [
+        "정답. 보안 그룹을 생성하더라도 인스턴스에 설정하지 않으면 해당 보안 그룹의 규칙은 적용되지 않는다.",
+        "오답. 보안 그룹은 단 하나의 인스턴스에만 적용되는 것이 아니라, 동일한 보안 그룹을 여러 인스턴스에 적용할 수 있다.",
+        "정답. 동일한 보안 그룹을 여러 인스턴스에 적용할 수 있다.",
+        "정답. 인스턴스 생성 시에 보안 그룹을 선택하면 해당 보안 그룹이 인스턴스에 적용되며, 적용된 보안 그룹은 인스턴스 관리 메뉴에서 변경할 수 있다.",
+        "오답. 보안 그룹은 허용 규칙을 정의하는 방식으로 동작하며, 우선순위 번호 순서에 따라 적용되는 명시적 차단 규칙을 사용하는 것은 네트워크 ACL의 특성이다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Security%20Groups/ko/console-guide/",
+          "path": "data/source/guide/ko/Network/Security Groups/ko/console-guide.md",
+          "section": "보안 그룹 생성 / 보안 그룹 적용"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-023",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud Object Storage가 제공하는 서비스 특징에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "용량을 무제한으로 증설할 수 있어 스토리지 용량을 미리 고려할 필요가 없다.",
+        "데이터를 안전하게 저장하기 위해 오브젝트를 서로 다른 여러 하드웨어에 중복으로 저장한다.",
+        "컨테이너별로 접근 권한을 제어할 수 있어 퍼블릭 공개나 사용자 단위 권한 부여가 가능하다.",
+        "오브젝트 스토리지는 단일 인스턴스의 운영체제 디스크로만 마운트하여 사용할 수 있다.",
+        "외부 도구와 연동할 수 없는 NHN Cloud 전용 프로토콜로만 접근할 수 있다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "Object Storage의 서비스 특징을 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 스토리지는 무제한으로 용량을 증설할 수 있어 사용자가 스토리지 용량을 고려할 필요 없이 필요할 때 원하는 만큼 데이터를 저장할 수 있다.",
+        "정답. 데이터를 안전하게 저장하기 위해 오브젝트를 서로 다른 여러 하드웨어에 중복으로 저장하며, 일부 복제본에 문제가 생겨도 온전한 복제본으로부터 빠르게 복원된다.",
+        "정답. 컨테이너별로 접근 권한을 제어할 수 있어 누구나 조회할 수 있는 퍼블릭으로 설정하거나 역할 기반 접근 제어(RBAC)로 프로젝트·사용자 단위 읽기/쓰기 권한을 차등 부여할 수 있다.",
+        "오답. 오브젝트 스토리지는 HTTP 기반의 REST API로 접근하는 객체 스토리지 서비스이며, 단일 인스턴스의 운영체제 디스크로 마운트하여 사용하는 블록 스토리지와 성격이 다르다.",
+        "오답. 오브젝트 스토리지는 HTTP 기반 REST API와 Amazon S3 호환 API를 제공하여 다양한 서드파티 도구 및 SDK 기반 애플리케이션과 연동할 수 있다."
+      ],
+      "glossary": [
+        {
+          "term": "WORM(write once read many)",
+          "definition": "한번 기록한 정보를 수정할 수 없는 저장 방식. 사람 및 시스템 오류 등에 의해 중요한 데이터가 삭제되거나 변조될 위험을 제거하여 무결성을 보장",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/Overview/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/Overview.md",
+          "section": "서비스 특징"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-024",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage 컨테이너에 오브젝트 수명 주기(lifecycle) 규칙을 설정하는 주된 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "오래된 오브젝트를 자동으로 만료 처리하거나 저비용 클래스 컨테이너로 옮겨 장기 보관 비용을 절감하기 위해",
+        "오브젝트 업로드 시 파일 이름의 확장자나 키워드를 검사해 업로드를 제한하기 위해",
+        "브라우저에서 API를 직접 호출할 수 있도록 허용 출처(origin)를 등록하기 위해",
+        "컨테이너의 오브젝트를 다른 리전의 컨테이너로 동일하게 복제해 재해 복구에 대비하기 위해"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 오브젝트 수명 주기 규칙의 용도를 묻는 문제",
+      "perOption": [
+        "정답. 오브젝트 수명 주기를 일 단위로 설정하면 만료된 오브젝트를 자동으로 처리하거나 다른 컨테이너로 이동할 수 있으며, Standard 클래스 오브젝트를 Economy 클래스 컨테이너로 옮겨 장기 보관 비용을 절감할 수 있다.",
+        "오답. 파일 확장자나 키워드 기반으로 업로드를 제한하는 것은 업로드 정책 설정의 기능이며, 수명 주기와는 다른 항목이다.",
+        "오답. 허용 출처(origin) 등록은 교차 출처 리소스 공유(CORS) 설정의 목적으로, 수명 주기와는 무관하다.",
+        "오답. 다른 리전으로의 동일 복제는 복제(replication) 기능의 목적이며, 수명 주기 규칙의 목적이 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/console-guide.md",
+          "section": "컨테이너 관리 > 수명 주기"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T03:04:00Z"
+    },
+    {
+      "id": "skill-025",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage의 오브젝트 버전 관리(versioning) 기능에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "오브젝트를 업데이트하거나 삭제할 때 이전 버전을 지정한 아카이브 컨테이너에 보관해 과거 시점의 데이터를 유지할 수 있다.",
+        "오브젝트가 한번 기록되면 지정한 기간 동안 어떤 사용자도 수정하거나 삭제할 수 없도록 보호한다.",
+        "컨테이너의 오브젝트를 다른 리전으로 실시간 복제하여 재해 복구에 대비한다.",
+        "인덱스 문서와 오류 문서를 등록해 컨테이너를 정적 웹사이트로 호스팅할 수 있게 한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 오브젝트 버전 관리 기능의 동작을 묻는 문제",
+      "perOption": [
+        "정답. 버전 관리 정책을 사용하면 오브젝트를 업데이트 또는 삭제할 때 이전 버전이 지정된 아카이브 컨테이너에 보관되어, 이전 시점의 데이터를 보존할 수 있다.",
+        "오답. 기록된 오브젝트를 일정 기간 수정·삭제하지 못하게 막는 것은 객체 잠금(Object Lock) 기능의 설명이다.",
+        "오답. 다른 리전으로의 복제는 복제(replication) 기능의 설명으로, 버전 관리와는 다른 기능이다.",
+        "오답. 인덱스/오류 문서를 등록해 컨테이너를 웹사이트로 호스팅하는 것은 정적 웹사이트 설정의 기능이다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/console-guide.md",
+          "section": "컨테이너 관리 > 오브젝트 버전"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T03:04:00Z"
+    },
+    {
+      "id": "skill-026",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud VPC의 라우팅 테이블(routing table)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "라우팅 테이블은 VPC와 함께 생성되고 VPC가 삭제되면 함께 삭제되며, 서브넷은 적어도 하나의 라우팅 테이블에 연결되어야 한다.",
+        "하나의 VPC에는 라우팅 테이블을 하나만 생성할 수 있으며 추가로 만들 수 없다.",
+        "기본 라우팅 테이블은 사용자가 필요에 따라 언제든 직접 삭제할 수 있다.",
+        "라우팅 테이블은 인스턴스로 유입되는 트래픽을 프로토콜과 포트 기준으로 허용하거나 차단한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "VPC 라우팅 테이블의 생성·연결 특성을 묻는 문제",
+      "perOption": [
+        "정답. 라우팅 테이블은 VPC와 함께 생성되고 VPC 삭제 시 함께 삭제되며, 서브넷은 적어도 하나의 라우팅 테이블에 연결되어야 한다.",
+        "오답. 라우팅 테이블은 VPC에 복수 개로 생성할 수 있으며, 기본 라우팅 테이블이 아니라면 명시적으로 삭제할 수도 있다.",
+        "오답. 기본 라우팅 테이블은 삭제할 수 없으며, VPC 삭제 시에만 함께 삭제된다.",
+        "오답. 프로토콜·포트 기준으로 트래픽을 허용·차단하는 것은 보안 그룹이나 네트워크 ACL의 역할로, 라우팅 테이블은 목적지로 가는 경로 정보를 담는 기능이다."
+      ],
+      "glossary": [
+        {
+          "term": "라우팅 테이블(routing table)",
+          "definition": "네트워크 통신을 위해 목적지로 가는 경로 정보를 담고 있는 테이블",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/VPC/ko/console-guide/",
+          "path": "data/source/guide/ko/Network/VPC/ko/console-guide.md",
+          "section": "라우팅 테이블"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T03:04:00Z"
+    },
+    {
+      "id": "skill-027",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Auto Scale의 스케일링 정책에서 '재사용 대기 시간(cooldown)'을 설정하는 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "증설·감축 정책이 발동된 후 일정 시간 동안은 조건을 만족해도 정책이 다시 발동되지 않게 하여 과도한 반복 조정을 방지하기 위해",
+        "스케일링 그룹이 유지할 수 있는 인스턴스의 최소 개수와 최대 개수를 제한하기 위해",
+        "장애가 발생한 인스턴스를 삭제하고 새 인스턴스로 자동 대체하기 위해",
+        "스케일링 그룹에 연결된 로드 밸런서가 트래픽을 분산하는 방식을 결정하기 위해"
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Auto Scale 재사용 대기 시간(cooldown)의 용도를 묻는 문제",
+      "perOption": [
+        "정답. 재사용 대기 시간은 정책이 발동된 후 다시 발동되기까지 기다려야 하는 시간으로, 대기 시간이 지나지 않았다면 조건을 만족해도 정책이 발동되지 않아 잦은 조정을 막는다.",
+        "오답. 인스턴스의 개수 범위를 제한하는 것은 최소 인스턴스·최대 인스턴스 설정으로, 재사용 대기 시간과는 다른 항목이다.",
+        "오답. 장애 인스턴스를 삭제·재생성으로 대체하는 것은 자동 복구(Auto Healing) 정책의 동작이며, 자동 복구는 재사용 대기 시간과 상관없이 동작한다.",
+        "오답. 트래픽 분산 방식 결정은 로드 밸런서의 로드 밸런싱 방식 설정으로, 재사용 대기 시간의 목적이 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Auto%20Scale/ko/console-guide/",
+          "path": "data/source/guide/ko/Compute/Auto%20Scale/ko/console-guide.md",
+          "section": "스케일링 그룹 생성 > 증설/감축 정책"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T03:04:00Z"
+    },
+    {
+      "id": "skill-028",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Public API에서 요청을 처리할 때 구분하는 '인증(authentication)'과 '인가(authorization)'의 개념적 차이에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "인증은 요청자가 누구인지 신원을 확인하는 과정이고, 인가는 확인된 요청자가 어떤 작업을 수행할 수 있는지 권한 범위를 결정하는 과정이다.",
+        "인증과 인가는 같은 의미이며, 모든 인증 방식은 항상 동일한 권한 범위를 자동으로 부여한다.",
+        "인증은 권한 범위를 결정하는 과정이고, 인가는 요청자의 신원만 확인하는 과정이다.",
+        "인증은 네트워크 트래픽을 허용·차단하는 과정이고, 인가는 데이터를 암호화하는 과정이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "API 인증과 인가의 개념적 차이를 묻는 문제",
+      "perOption": [
+        "정답. 인증은 요청자의 신원을 확인하는 과정이고, 인가는 신원이 확인된 요청자에게 허용된 작업의 범위(권한)를 결정하는 과정이다. NHN Cloud Public API의 인증 방식은 인증만 제공하기도 하고 인증과 인가를 함께 제공하기도 한다.",
+        "오답. 인증과 인가는 별개의 개념이며, 일부 인증 방식은 인증만 수행하고 권한 범위(인가)는 별도로 적용된다.",
+        "오답. 인증과 인가의 역할을 뒤바꿔 설명한 것으로, 신원 확인이 인증이고 권한 범위 결정이 인가이다.",
+        "오답. 트래픽 허용·차단은 네트워크 접근 제어, 데이터 암호화는 별개의 보안 기능으로 인증·인가의 정의가 아니다."
+      ],
+      "glossary": [
+        {
+          "term": "권한(permission)",
+          "definition": "사용자 또는 사용자 그룹이 클라우드 서비스에서 행할 수 있는 기능의 범위",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/nhncloud/ko/public-api/auth-method-overview/",
+          "path": "data/source/guide/ko/nhncloud/ko/public-api/auth-method-overview.md",
+          "section": "인증 방식 비교"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T03:04:00Z"
+    },
+    {
+      "id": "skill-029",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud NAS 서비스가 제공하는 특징에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "볼륨을 사용하는 중에도 저장소 용량을 확장하거나 축소할 수 있다.",
+        "볼륨은 프로젝트의 네트워크를 통해서만 접근할 수 있어 다른 프로젝트의 네트워크와 격리된다.",
+        "볼륨은 하나의 인스턴스에만 마운트할 수 있어 여러 인스턴스가 함께 사용할 수 없다.",
+        "저장된 데이터는 암호화 알고리즘으로 암호화되어 안전하게 보관된다.",
+        "NAS 볼륨은 사용 전에 반드시 사용자가 직접 파티션을 나누고 포맷해야 한다."
+      ],
+      "answer": [
+        0,
+        1,
+        3
+      ],
+      "summary": "NAS 서비스의 유연성·보안성 등 특징을 묻는 문제",
+      "perOption": [
+        "정답. NAS는 볼륨을 사용하는 중에도 저장소 용량을 확장하거나 축소할 수 있는 유연성을 제공한다.",
+        "정답. NAS 볼륨은 프로젝트의 네트워크를 통해서만 접근할 수 있어, 다른 프로젝트의 네트워크와 격리된다.",
+        "오답. NAS 볼륨은 하나 이상의 인스턴스에 마운트하여 데이터를 공유할 수 있는 공유 스토리지이다.",
+        "정답. NAS 볼륨은 XTS-AES-256 알고리즘으로 암호화되어 데이터를 안전하게 보관한다.",
+        "오답. NAS는 별도의 파일 시스템 구성이나 포맷 작업 없이 네트워크 파일 시스템을 통해 마운트하여 사용할 수 있다."
+      ],
+      "glossary": [
+        {
+          "term": "NAS(network-attached storage)",
+          "definition": "네트워크에 연결된 파일 수준 데이터 스토리지로, 이기종 클라이언트가 데이터에 접근할 수 있음",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/NAS/ko/overview/",
+          "path": "data/source/guide/ko/Storage/NAS/ko/overview.md",
+          "section": "특징"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T03:04:00Z"
+    },
+    {
+      "id": "skill-030",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage에서 암호화 컨테이너를 사용해 오브젝트를 보호하는 방식에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "암호화 컨테이너의 오브젝트는 Secure Key Manager 서비스에서 관리하는 대칭 키로 암호화되어 저장된다.",
+        "암호화 컨테이너는 별도의 키 서비스 없이 컨테이너 생성 시 자동으로 생성된 키로만 암호화된다.",
+        "암호화된 오브젝트는 다운로드할 때에도 암호문 그대로 전송되어 사용자가 직접 복호화해야 한다.",
+        "이미 생성된 일반 컨테이너에 저장된 모든 오브젝트는 암호화 설정을 켜면 즉시 일괄 암호화된다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 암호화 컨테이너가 오브젝트를 보호하는 방식을 묻는 문제",
+      "perOption": [
+        "정답. 암호화 컨테이너에 업로드하는 오브젝트는 NHN Cloud의 Secure Key Manager 서비스에서 관리하는 대칭 키를 사용해 암호화되어 저장된다. 따라서 암호화 컨테이너를 만들려면 미리 Secure Key Manager에서 대칭 키를 생성해야 한다.",
+        "오답. 암호화는 자동 생성 키가 아니라 Secure Key Manager 서비스에서 미리 생성해 둔 대칭 키 ID를 지정해 적용한다.",
+        "오답. 암호화된 오브젝트를 다운로드하면 복호화되어 전송된다. 사용자가 별도로 복호화할 필요가 없다.",
+        "오답. 암호화 설정은 업로드 시점에 적용되며, 키 회전 등으로 새로 업로드되는 오브젝트가 대상이 된다. 컨테이너 단위로 기존 오브젝트가 일괄 암호화되는 동작이 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "암호화 설정"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-031",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage 컨테이너로 정적 웹사이트를 호스팅하기 위한 조건에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "컨테이너의 접근 정책을 PUBLIC으로 설정하고 인덱스 문서와 오류 문서를 지정하면 정적 웹사이트를 호스팅할 수 있다.",
+        "접근 정책이 PRIVATE인 컨테이너에서도 인덱스 문서만 지정하면 누구나 접근 가능한 웹사이트가 된다.",
+        "정적 웹사이트를 호스팅하려면 컨테이너와 별도로 인스턴스에 웹 서버를 설치해 연결해야 한다.",
+        "정적 웹사이트는 객체 잠금 컨테이너에서만 활성화할 수 있는 기능이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 컨테이너 정적 웹사이트 호스팅 조건을 묻는 문제",
+      "perOption": [
+        "정답. 컨테이너의 접근 정책을 PUBLIC으로 설정하고 인덱스 문서와 오류 문서를 입력하면 컨테이너에서 정적 웹사이트를 호스팅할 수 있다.",
+        "오답. PRIVATE 접근 정책은 허가된 사용자만 오브젝트에 접근할 수 있게 한다. 정적 웹사이트 호스팅에는 PUBLIC 설정이 필요하다.",
+        "오답. 정적 웹사이트는 컨테이너 자체 설정으로 호스팅되며, 별도의 인스턴스 웹 서버 설치를 전제로 하지 않는다.",
+        "오답. 정적 웹사이트는 PUBLIC 접근 정책과 인덱스/오류 문서 설정으로 동작하며, 객체 잠금 컨테이너 전용 기능이 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "정적 웹사이트 설정"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-032",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage 컨테이너에 교차 출처 리소스 공유(CORS) 설정을 하는 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "브라우저에서 다른 출처의 Object Storage API를 직접 호출할 수 있도록 허용할 출처를 지정하기 위해서이다.",
+        "컨테이너에 저장된 오브젝트를 자동으로 다른 리전의 컨테이너로 복제하기 위해서이다.",
+        "오브젝트가 일정 기간이 지나면 자동으로 삭제되도록 만료 기간을 지정하기 위해서이다.",
+        "컨테이너에 업로드되는 오브젝트를 대칭 키로 암호화하기 위해서이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 컨테이너의 CORS 설정 목적을 묻는 문제",
+      "perOption": [
+        "정답. 브라우저에서 Object Storage API를 직접 호출하려면 교차 출처 리소스 공유 설정이 필요하며, 허용할 출처 URL을 등록해 다른 출처의 호출을 허용한다.",
+        "오답. 다른 리전 컨테이너로의 자동 복사는 컨테이너 복제 기능의 역할이다. CORS 설정과는 무관하다.",
+        "오답. 일정 기간 후 자동 삭제는 오브젝트 수명 주기 규칙의 역할이다.",
+        "오답. 오브젝트 암호화는 암호화 컨테이너와 대칭 키 설정의 역할이다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "교차 출처 리소스 공유(CORS) 변경"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-033",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Auto Scale 스케일링 그룹에서 '최소 인스턴스', '최대 인스턴스', '구동 인스턴스' 설정이 갖는 의미에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "최소·최대 인스턴스는 그룹이 유지할 인스턴스 수의 하한과 상한을 정하고, 구동 인스턴스는 그룹이 최초로 활성화될 때 생성되는 인스턴스 수이다.",
+        "최소 인스턴스는 그룹이 최초 활성화될 때 생성되는 수이고, 구동 인스턴스는 그룹이 유지할 수 있는 상한이다.",
+        "세 값은 모두 동일하게 설정되어야 하며 서로 다른 값을 지정하면 그룹이 생성되지 않는다.",
+        "최대 인스턴스는 정책 발동 1회당 한 번에 늘릴 수 있는 인스턴스 수를 의미한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Auto Scale 스케일링 그룹의 최소/최대/구동 인스턴스 설정의 의미를 묻는 문제",
+      "perOption": [
+        "정답. 최소·최대 인스턴스는 그룹이 활성화되는 동안 유지할 인스턴스 수의 하한과 상한이며, 구동 인스턴스는 그룹이 최초로 활성화되었을 때 생성되는 인스턴스 수이다.",
+        "오답. 최초 활성화 시 생성되는 수는 '구동 인스턴스'이고, 유지 상한은 '최대 인스턴스'이다. 두 항목의 의미가 뒤바뀌었다.",
+        "오답. 세 값은 서로 다른 값으로 지정할 수 있으며 동일해야 한다는 제약은 없다.",
+        "오답. 정책 발동 시 조정되는 인스턴스 수는 별도의 '인스턴스 조정' 항목이며, 최대 인스턴스는 유지 가능한 상한을 뜻한다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Compute/Auto%20Scale/ko/console-guide/",
+          "path": "data/source/guide/ko/Compute/Auto Scale/ko/console-guide.md",
+          "section": "스케일링 그룹 생성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-034",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud NAS의 볼륨 복제 기능에서 복제 대상 볼륨의 사용 특성에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "복제 대상 볼륨은 복제를 중지해야 쓰기 가능한 상태로 바뀌어 마운트해 사용할 수 있다.",
+        "복제 대상 볼륨은 복제 중에도 원본과 동시에 쓰기 작업을 수행할 수 있다.",
+        "볼륨 복제는 스냅숏을 사용하지 않고 원본의 모든 블록을 실시간으로 직접 복사한다.",
+        "복제 대상 볼륨은 NAS 요금 정책과 무관하게 추가 요금이 청구되지 않는다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "NAS 볼륨 복제에서 대상 볼륨의 쓰기 가능 시점을 묻는 문제",
+      "perOption": [
+        "정답. 볼륨 복제를 중지하면 대상 볼륨이 쓰기 가능한 상태로 변경되며, 그때 마운트하여 사용할 수 있다.",
+        "오답. 복제가 진행되는 동안 대상 볼륨은 원본과 동시에 쓰기 작업을 수행하는 용도가 아니다. 쓰기는 복제를 중지한 뒤에 가능하다.",
+        "오답. 볼륨 복제는 스냅숏을 이용하여 진행된다. 복제 설정 시 전용 스냅숏이 자동으로 생성된다.",
+        "오답. 복제 설정으로 생성된 대상 볼륨은 NAS 서비스 요금 정책에 따라 볼륨 용량 요금이 청구된다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/NAS/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/NAS/ko/console-guide.md",
+          "section": "볼륨 복제"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-035",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud Object Storage 암호화 컨테이너에 적용되는 정책에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "암호화 컨테이너에 업로드하는 오브젝트는 설정된 대칭 키로 암호화되어 저장된다.",
+        "암호화된 오브젝트를 다운로드하면 복호화되어 전송된다.",
+        "암호화 컨테이너의 오브젝트를 다른 컨테이너로 복사하면 대상 컨테이너의 암호화 설정에 따라 재암호화되거나 복호화되어 저장된다.",
+        "암호화 컨테이너를 만들 때 등록한 대칭 키 ID는 이후 콘솔에서 자유롭게 다른 키 ID로 변경할 수 있다.",
+        "Secure Key Manager에서 대칭 키를 삭제해도 암호화된 오브젝트는 영향 없이 항상 복호화할 수 있다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "Object Storage 암호화 컨테이너에 적용되는 정책을 묻는 문제",
+      "perOption": [
+        "정답. 암호화 컨테이너에 업로드하는 오브젝트는 설정된 대칭 키를 사용해 암호화되어 저장된다.",
+        "정답. 암호화된 오브젝트를 다운로드하면 복호화되어 전송된다.",
+        "정답. 암호화 컨테이너의 오브젝트를 복사하거나 리전 간 복제로 다른 컨테이너에 옮기면, 대상 컨테이너의 암호화 설정에 따라 재암호화되거나 복호화되어 저장된다.",
+        "오답. 암호화 컨테이너를 만들 때 등록한 대칭 키 ID는 변경할 수 없다. 대칭 키를 변경하려면 Secure Key Manager에서 키 회전을 사용해야 한다.",
+        "오답. Secure Key Manager에서 대칭 키를 삭제하면 암호화된 오브젝트를 복호화할 수 없다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "암호화 설정"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-036",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage에서 컨테이너 안에 생성하는 '폴더(folder)'의 개념에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "오브젝트를 그룹으로 묶어 계층적으로 관리하도록 돕는 가상의 단위이며, 파일 시스템의 실제 디렉터리와는 개념이 다른 의사(pseudo) 폴더이다.",
+        "폴더는 컨테이너와 동일한 최상위 저장 단위로, 오브젝트를 업로드하기 전에 반드시 폴더를 먼저 만들어야 한다.",
+        "폴더를 만들면 운영체제의 디렉터리처럼 별도의 파일 시스템 영역이 예약되어 용량이 미리 할당된다.",
+        "폴더는 오브젝트의 접근 권한을 제어하기 위한 단위로, 폴더 단위로만 PRIVATE 또는 PUBLIC 정책을 지정할 수 있다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 폴더(pseudo folder)의 개념적 성격을 묻는 문제",
+      "perOption": [
+        "정답. Object Storage의 폴더는 오브젝트를 그룹으로 묶어 계층적으로 관리하도록 돕는 가상의 단위이며, 파일 시스템이 제공하는 디렉터리와는 개념이 다른 편의용 의사(pseudo) 폴더이다. 실제로는 '{폴더-이름}/' 형태의 빈 오브젝트로 표현된다.",
+        "오답. 오브젝트를 업로드하려면 하나 이상의 컨테이너가 필요하며, 최상위 저장 단위는 컨테이너이다. 폴더는 오브젝트 업로드의 필수 선행 조건이 아니다.",
+        "오답. 폴더는 가상 단위일 뿐 별도의 파일 시스템 영역이나 용량을 미리 예약하지 않는다. 생성 시 빈 오브젝트만 만들어진다.",
+        "오답. 접근 정책(PRIVATE/PUBLIC)은 컨테이너 단위의 기본 접근 정책으로 설정하며, 폴더 단위로 지정하는 권한 단위가 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/console-guide.md",
+          "section": "오브젝트 > 폴더 생성"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-037",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud의 암호화 블록 스토리지(Encrypted Block Storage)에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "Secure Key Manager 서비스에서 관리하는 대칭 키를 사용해 암호화되므로, 사용하려면 미리 대칭 키를 생성해야 한다.",
+        "블록 스토리지 타입과 무관하게 모든 블록 스토리지는 기본으로 암호화되어 생성된다.",
+        "암호화 블록 스토리지는 별도의 키 없이 인스턴스의 키페어를 그대로 사용해 암호화된다.",
+        "암호화 블록 스토리지는 일반 블록 스토리지보다 I/O 성능이 항상 더 높다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "암호화 블록 스토리지의 키 관리 방식(Secure Key Manager 대칭 키 의존)을 묻는 문제",
+      "perOption": [
+        "정답. 암호화 블록 스토리지는 NHN Cloud의 Secure Key Manager 서비스에서 관리하는 대칭 키로 암호화되므로, 생성하려면 미리 Secure Key Manager에서 대칭 키를 만들어야 한다.",
+        "오답. 암호화는 Encrypted HDD, Encrypted SSD 같은 암호화 타입을 선택했을 때 적용되며, 모든 블록 스토리지가 기본으로 암호화되는 것은 아니다.",
+        "오답. 암호화에는 인스턴스 접속용 키페어가 아니라 Secure Key Manager의 대칭 키가 사용된다.",
+        "오답. 암호화와 복호화 처리로 인해 일반 블록 스토리지(HDD, SSD)에 비해 I/O 성능이 오히려 저하될 수 있다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Block%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Block%20Storage/ko/console-guide.md",
+          "section": "암호화 블록 스토리지"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-038",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage 컨테이너에 오브젝트 이름 기반의 업로드 정책(upload policy)을 설정하는 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "이름에 특정 확장자나 키워드가 포함된 오브젝트만 업로드하거나, 반대로 업로드하지 못하도록 제한하기 위해 사용한다.",
+        "이미 업로드된 모든 오브젝트의 이름을 일괄 변경하기 위해 사용한다.",
+        "오브젝트의 저장 위치를 다른 리전의 컨테이너로 자동 분산하기 위해 사용한다.",
+        "오브젝트를 다운로드할 수 있는 사용자를 IP 단위로 제한하기 위해 사용한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 업로드 정책(화이트리스트/블랙리스트)의 용도를 묻는 문제",
+      "perOption": [
+        "정답. 업로드 정책은 오브젝트 이름(확장자·키워드)을 기준으로 화이트리스트 또는 블랙리스트를 설정해, 특정 오브젝트만 업로드를 허용하거나 업로드를 제한하기 위해 사용한다. 정책은 설정 이후 신규 업로드되는 오브젝트에 적용된다.",
+        "오답. 업로드 정책은 업로드 허용/제한을 위한 규칙이며, 기존 오브젝트의 이름을 일괄 변경하는 기능이 아니다.",
+        "오답. 리전 간 오브젝트 분산·복사는 복제(replication) 기능의 영역이며, 업로드 정책과는 무관하다.",
+        "오답. IP 단위의 접근 제한은 IP ACL의 영역이며, 업로드 정책은 오브젝트 이름 기반의 업로드 허용·제한 규칙이다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object%20Storage/ko/console-guide.md",
+          "section": "컨테이너 관리 > 업로드 정책 설정 변경"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-039",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud 보안 그룹(Security Group)에서 보안 규칙을 구성하는 항목에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "방향에서 '수신'은 인스턴스로 유입되는 트래픽을, '송신'은 인스턴스에서 나가는 트래픽을 의미한다.",
+        "규칙의 '원격'에는 IP 주소 범위(CIDR)뿐 아니라 특정 보안 그룹을 지정해 해당 보안 그룹에 속한 인스턴스를 대상으로 삼을 수 있다.",
+        "하나의 보안 그룹에는 여러 개의 보안 규칙을 생성할 수 있으며, 인스턴스에 보안 그룹을 설정하면 그 보안 그룹의 모든 규칙이 적용된다.",
+        "보안 규칙은 사용자가 지정한 우선순위(priority) 번호 순서에 따라 위에서부터 차례로 하나만 적용된다.",
+        "보안 규칙은 IPv4 트래픽에만 적용할 수 있고 IPv6는 지정할 수 없다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "보안 그룹 보안 규칙의 구성 항목(방향, 원격 지정, 규칙 적용 방식)을 묻는 문제",
+      "perOption": [
+        "정답. 보안 규칙의 방향에서 '수신'은 인스턴스로 유입되는 방향을, '송신'은 인스턴스에서 나가는 방향을 의미한다.",
+        "정답. '원격'에는 보안 그룹 또는 IP 주소 범위를 지정할 수 있으며, 보안 그룹을 지정하면 그 보안 그룹에 속한 인스턴스의 IP인지를 비교한다.",
+        "정답. 하나의 보안 그룹에 다수의 보안 규칙을 만들 수 있고, 인스턴스에 보안 그룹을 설정하면 해당 보안 그룹의 모든 규칙이 함께 적용된다.",
+        "오답. 보안 그룹의 규칙은 우선순위 번호 순서대로 하나만 골라 적용되는 방식이 아니라, 설정된 모든 규칙이 합쳐져 적용된다.",
+        "오답. 보안 규칙은 Ether Type으로 IPv4와 IPv6를 모두 지정할 수 있으며 IPv4 전용이 아니다."
+      ],
+      "glossary": [],
+      "source": [
+        {
+          "type": "user-guide",
+          "url": "https://docs.nhncloud.com/ko/Network/Security%20Groups/ko/console-guide/",
+          "path": "data/source/guide/ko/Network/Security%20Groups/ko/console-guide.md",
+          "section": "보안 규칙 생성 / 보안 그룹 적용"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-040",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage 컨테이너의 IP ACL(접근 제어 목록)에서 화이트리스트와 블랙리스트를 설정하는 목적으로 맞는 것은 무엇인가요?",
+      "options": [
+        "출발지 IP 주소(또는 IP 대역)를 기준으로 컨테이너 접근을 허용하거나 차단하기 위해 사용한다.",
+        "컨테이너에 업로드할 수 있는 오브젝트의 파일 확장자나 키워드를 제한하기 위해 사용한다.",
+        "컨테이너에 저장된 오브젝트의 보관 기간이 지나면 자동으로 삭제하기 위해 사용한다.",
+        "브라우저에서 다른 출처(origin)의 스크립트가 컨테이너 API를 호출하도록 허용하기 위해 사용한다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 컨테이너의 IP ACL(화이트리스트/블랙리스트)이 무엇을 기준으로 접근을 통제하는지를 묻는 문제",
+      "perOption": [
+        "정답. IP ACL은 출발지 IP 주소나 CIDR 형식의 IP 대역을 기준으로 컨테이너에 대한 접근을 통제하는 기능으로, 화이트리스트는 지정한 IP의 접근을 허용하고 블랙리스트는 지정한 IP의 접근을 차단한다.",
+        "오답. 파일 확장자나 키워드로 업로드를 제한하는 것은 오브젝트 이름 기반의 업로드 정책(upload policy)이며, IP ACL과는 별개의 기능이다.",
+        "오답. 보관 기간 경과 후 오브젝트를 자동 삭제하는 것은 수명 주기(lifecycle) 규칙이며, IP ACL과는 관련이 없다.",
+        "오답. 다른 출처의 브라우저 스크립트가 API를 호출하도록 허용하는 것은 교차 출처 리소스 공유(CORS) 설정으로, IP ACL과는 다른 기능이다."
+      ],
+      "glossary": [
+        {
+          "term": "ACL(access control list)",
+          "definition": "접근 제어 목록. 네트워크의 유입/유출 트래픽을 제어하는 기능",
+          "source": "glossary"
+        },
+        {
+          "term": "CIDR(Classless Inter-Domain Routing)",
+          "definition": "클래스 없는 도메인 간 라우팅 기법이자, IP 주소를 효율적으로 사용하기 위한 IP 주소 할당 방법",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "console-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "컨테이너 관리 > IP ACL"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-041",
+      "domain": "service-skill",
+      "type": "single",
+      "q": "NHN Cloud Object Storage 컨테이너의 역할 기반 접근 정책에 대한 설명으로 맞는 것은 무엇인가요?",
+      "options": [
+        "테넌트 또는 개별 사용자(API 사용자) 단위로 Read, Write, View 같은 접근 권한을 부여해 컨테이너 접근을 세분화하여 제어한다.",
+        "컨테이너에 저장된 모든 오브젝트를 자동으로 암호화하기 위한 정책이다.",
+        "컨테이너의 오브젝트를 다른 리전의 컨테이너로 자동 복제하기 위한 정책이다.",
+        "정적 웹사이트 호스팅을 위해 인덱스 문서와 오류 문서를 지정하는 정책이다."
+      ],
+      "answer": [
+        0
+      ],
+      "summary": "Object Storage 컨테이너의 역할 기반 접근 정책이 무엇을 단위로 어떤 권한을 부여하는지를 묻는 문제",
+      "perOption": [
+        "정답. 역할 기반 접근 정책은 테넌트 ID 또는 API 사용자 ID 단위로 Read, Write, View 권한을 허용하도록 설정하여 컨테이너 접근을 세분화하여 제어하는 기능이다.",
+        "오답. 오브젝트를 자동으로 암호화하는 것은 암호화 컨테이너 설정에 대한 설명이며, 역할 기반 접근 정책과는 다르다.",
+        "오답. 오브젝트를 다른 컨테이너로 자동 복제하는 것은 복제 기능에 대한 설명이며, 접근 정책과는 별개이다.",
+        "오답. 인덱스 문서와 오류 문서를 지정하는 것은 정적 웹사이트 설정에 대한 설명이다."
+      ],
+      "glossary": [
+        {
+          "term": "권한(permission)",
+          "definition": "사용자 또는 사용자 그룹이 클라우드 서비스에서 행할 수 있는 기능의 범위",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "console-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "컨테이너 접근 정책 > 역할 기반 접근 정책"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
+    },
+    {
+      "id": "skill-042",
+      "domain": "service-skill",
+      "type": "multi",
+      "q": "NHN Cloud Object Storage 컨테이너에서 접근을 제어하기 위해 사용할 수 있는 방식에 대한 설명으로 맞는 것을 모두 고르세요.",
+      "options": [
+        "기본 접근 정책을 PRIVATE으로 설정하면 허가된 사용자만 컨테이너 내부의 오브젝트에 접근할 수 있다.",
+        "테넌트 또는 개별 사용자 단위로 Read, Write, View 권한을 부여하는 역할 기반 접근 정책을 사용할 수 있다.",
+        "출발지 IP 또는 IP 대역을 기준으로 접근을 허용·차단하는 IP ACL을 사용할 수 있다.",
+        "기본 접근 정책을 PUBLIC으로 설정하면 공개 URL을 통한 접근을 포함한 모든 외부 접근이 차단된다.",
+        "접근 제어는 오직 컨테이너 단위의 PRIVATE/PUBLIC 설정만 제공되며, 사용자나 IP 단위의 세부 제어는 제공되지 않는다."
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "summary": "Object Storage 컨테이너에 적용할 수 있는 접근 제어 방식(기본 접근 정책, 역할 기반, IP ACL)을 모두 고르는 문제",
+      "perOption": [
+        "정답. 기본 접근 정책을 PRIVATE으로 설정하면 허가된 사용자만 컨테이너 내부의 오브젝트에 접근할 수 있다.",
+        "정답. 역할 기반 접근 정책을 통해 테넌트 ID 또는 API 사용자 ID 단위로 Read, Write, View 권한을 부여할 수 있다.",
+        "정답. IP ACL을 통해 화이트리스트·블랙리스트 형태로 출발지 IP나 IP 대역을 기준으로 접근을 허용하거나 차단할 수 있다.",
+        "오답. PUBLIC으로 설정하면 공개 URL을 통해 누구나 오브젝트에 접근할 수 있으며, 모든 접근이 차단되는 것이 아니다.",
+        "오답. 컨테이너 단위 PRIVATE/PUBLIC 설정 외에도 역할 기반 접근 정책과 IP ACL을 통한 세부 접근 제어가 제공된다."
+      ],
+      "glossary": [
+        {
+          "term": "ACL(access control list)",
+          "definition": "접근 제어 목록. 네트워크의 유입/유출 트래픽을 제어하는 기능",
+          "source": "glossary"
+        },
+        {
+          "term": "권한(permission)",
+          "definition": "사용자 또는 사용자 그룹이 클라우드 서비스에서 행할 수 있는 기능의 범위",
+          "source": "glossary"
+        }
+      ],
+      "source": [
+        {
+          "type": "console-guide",
+          "url": "https://docs.nhncloud.com/ko/Storage/Object%20Storage/ko/console-guide/",
+          "path": "data/source/guide/ko/Storage/Object Storage/ko/console-guide.md",
+          "section": "컨테이너 접근 정책 / IP ACL"
+        }
+      ],
+      "status": "approved",
+      "generatedAt": "2026-06-03T00:00:00Z"
     }
   ]
 }
