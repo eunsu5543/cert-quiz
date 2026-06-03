@@ -9,6 +9,16 @@ import ActionBar from './ActionBar';
 import StatsScreen from './StatsScreen';
 import ProgressBar from './ProgressBar';
 
+// Fisher-Yates shuffle (copy, non-mutating) — used to randomize question order each run.
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export default function Quiz() {
   const { mode } = useMode();
   const allDomains = data.domains;
@@ -16,6 +26,8 @@ export default function Quiz() {
 
   const [selectedDomains, setSelectedDomains] = useState(() => new Set(Object.keys(allDomains)));
   const [started, setStarted] = useState(false);
+  // Shuffled question order for the current run; set fresh on each start (random each time).
+  const [quizQuestions, setQuizQuestions] = useState([]);
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState(new Set());
   const [revealed, setRevealed] = useState(false);
@@ -36,6 +48,7 @@ export default function Quiz() {
 
   const restart = () => {
     setStarted(false);
+    setQuizQuestions([]);
     setIdx(0);
     setSelected(new Set());
     setRevealed(false);
@@ -64,7 +77,12 @@ export default function Quiz() {
             <button
               className="btn"
               disabled={filtered.length === 0}
-              onClick={() => setStarted(true)}
+              onClick={() => {
+                setQuizQuestions(shuffle(filtered));
+                setIdx(0);
+                setResults([]);
+                setStarted(true);
+              }}
             >
               시작하기
             </button>
@@ -74,21 +92,21 @@ export default function Quiz() {
     );
   }
 
-  if (idx >= filtered.length) {
+  if (idx >= quizQuestions.length) {
     return (
       <div className="app">
         <Header onHome={handleHome} />
         <StatsScreen
           results={results}
           domains={allDomains}
-          total={filtered.length}
+          total={quizQuestions.length}
           onRestart={restart}
         />
       </div>
     );
   }
 
-  const q = filtered[idx];
+  const q = quizQuestions[idx];
   const domainMeta = allDomains[q.domain] || { name: q.domain, color: '#0064FF' };
 
   const handleSelect = (i) => {
@@ -133,10 +151,10 @@ export default function Quiz() {
     <div className="app">
       <Header onHome={handleHome} />
       <div className="topbar">
-        <span>{idx + 1} / {filtered.length}</span>
+        <span>{idx + 1} / {quizQuestions.length}</span>
         <span>{domainMeta.name}</span>
       </div>
-      <ProgressBar current={idx} total={filtered.length} />
+      <ProgressBar current={idx} total={quizQuestions.length} />
       <QuestionCard
         question={q}
         selected={selected}
@@ -151,7 +169,7 @@ export default function Quiz() {
         onNext={handleNext}
         onPrev={handlePrev}
         isFirst={idx === 0}
-        isLast={idx === filtered.length - 1}
+        isLast={idx === quizQuestions.length - 1}
       />
     </div>
   );
